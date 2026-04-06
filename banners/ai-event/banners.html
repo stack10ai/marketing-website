@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stack10 AI Event Banners</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: #f5f5f5;
+    padding: 40px;
+    color: #333;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 48px 0 8px;
+    color: #000;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 32px 0 16px;
+    color: #666;
+  }
+  .subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+  }
+  .banner-wrapper {
+    margin-bottom: 32px;
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .banner-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #999;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .banner-container {
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  /* ========================================
+     STACK10 LOGO SVG INLINE
+     ======================================== */
+
+  /* ========================================
+     OPTION A: THE DIAGONAL SLASH
+     Signature brand motif - black/green diagonal
+     ======================================== */
+
+  .banner-a {
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  .banner-a .diagonal-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+
+  .banner-a .diagonal-bg::before {
+    content: '';
+    position: absolute;
+    top: -20%; left: -10%;
+    width: 70%; height: 160%;
+    background: #6CE47C;
+    transform: skewX(-20deg);
+  }
+
+  .banner-a .content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 6%;
+  }
+
+  .banner-a .left-content {
+    color: #000;
+    max-width: 45%;
+  }
+
+  .banner-a .right-content {
+    color: #fff;
+    text-align: right;
+    max-width: 45%;
+  }
+
+  .banner-a .event-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+    opacity: 0.7;
+  }
+
+  .banner-a .event-title {
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .banner-a .event-sub {
+    font-weight: 400;
+    opacity: 0.7;
+    margin-top: 8px;
+  }
+
+  .banner-a .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .banner-a .logo-area svg {
+    height: 24px;
+    width: auto;
+  }
+
+  /* Size variants for Option A */
+  .banner-a.linkedin { width: 1584px; height: 396px; }
+  .banner-a.linkedin .event-title { font-size: 48px; }
+  .banner-a.linkedin .event-sub { font-size: 18px; }
+  .banner-a.linkedin .event-label { font-size: 13px; }
+  .banner-a.linkedin .logo-area svg { height: 28px; }
+
+  .banner-a.twitter { width: 1500px; height: 500px; }
+  .banner-a.twitter .event-title { font-size: 52px; }
+  .banner-a.twitter .event-sub { font-size: 20px; }
+  .banner-a.twitter .event-label { font-size: 14px; }
+  .banner-a.twitter .logo-area svg { height: 30px; }
+
+  .banner-a.instagram { width: 1080px; height: 1080px; }
+  .banner-a.instagram .diagonal-bg::before {
+    width: 120%; height: 55%;
+    transform: skewY(-12deg);
+    top: -5%; left: -10%;
+  }
+  .banner-a.instagram .content {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8% 8%;
+    text-align: center;
+  }
+  .banner-a.instagram .left-content,
+  .banner-a.instagram .right-content {
+    max-width: 100%;
+    text-align: center;
+  }
+  .banner-a.instagram .left-content {
+    padding-top: 20px;
+  }
+  .banner-a.instagram .event-title { font-size: 64px; }
+  .banner-a.instagram .event-sub { font-size: 22px; }
+  .banner-a.instagram .event-label { font-size: 14px; letter-spacing: 4px; }
+  .banner-a.instagram .logo-area { justify-content: center; margin-bottom: 16px; }
+  .banner-a.instagram .logo-area svg { height: 36px; }
+
+  .banner-a.facebook { width: 820px; height: 312px; }
+  .banner-a.facebook .event-title { font-size: 36px; }
+  .banner-a.facebook .event-sub { font-size: 14px; }
+  .banner-a.facebook .event-label { font-size: 11px; }
+  .banner-a.facebook .logo-area svg { height: 22px; }
+
+
+  /* ========================================
+     OPTION B: GRID / CIRCUIT
+     Tech-forward with geometric grid elements
+     ======================================== */
+
+  .banner-b {
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  .banner-b .grid-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image:
+      linear-gradient(rgba(108, 228, 124, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(108, 228, 124, 0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .banner-b .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+  }
+
+  .banner-b .glow-orb.green {
+    background: #6CE47C;
+    width: 300px; height: 300px;
+  }
+
+  .banner-b .glow-orb.teal {
+    background: #91EDE0;
+    width: 200px; height: 200px;
+  }
+
+  .banner-b .node {
+    position: absolute;
+    width: 6px; height: 6px;
+    background: #6CE47C;
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+
+  .banner-b .node::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 16px; height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 1px solid rgba(108, 228, 124, 0.2);
+    border-radius: 50%;
+  }
+
+  .banner-b .line {
+    position: absolute;
+    background: linear-gradient(90deg, rgba(108,228,124,0.3), transparent);
+    height: 1px;
+  }
+
+  .banner-b .content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 6%;
+  }
+
+  .banner-b .text-block {
+    color: #fff;
+  }
+
+  .banner-b .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .banner-b .logo-area svg { height: 24px; }
+
+  .banner-b .event-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #6CE47C;
+    margin-bottom: 12px;
+  }
+
+  .banner-b .event-title {
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .banner-b .event-sub {
+    font-weight: 400;
+    color: rgba(255,255,255,0.5);
+    margin-top: 12px;
+  }
+
+  .banner-b .accent-bar {
+    width: 48px;
+    height: 3px;
+    background: #6CE47C;
+    margin-top: 16px;
+  }
+
+  .banner-b .event-date {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6CE47C;
+    margin-top: 12px;
+    letter-spacing: 1px;
+  }
+
+  /* Size variants for Option B */
+  .banner-b.linkedin { width: 1584px; height: 396px; }
+  .banner-b.linkedin .event-title { font-size: 52px; }
+  .banner-b.linkedin .event-sub { font-size: 18px; }
+  .banner-b.linkedin .glow-orb.green { top: -80px; right: 15%; }
+  .banner-b.linkedin .glow-orb.teal { bottom: -60px; right: 40%; }
+  .banner-b.linkedin .logo-area svg { height: 28px; }
+
+  .banner-b.twitter { width: 1500px; height: 500px; }
+  .banner-b.twitter .event-title { font-size: 56px; }
+  .banner-b.twitter .event-sub { font-size: 20px; }
+  .banner-b.twitter .glow-orb.green { top: -60px; right: 20%; width: 400px; height: 400px; }
+  .banner-b.twitter .glow-orb.teal { bottom: -80px; right: 50%; }
+  .banner-b.twitter .logo-area svg { height: 30px; }
+
+  .banner-b.instagram { width: 1080px; height: 1080px; }
+  .banner-b.instagram .content {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 8%;
+  }
+  .banner-b.instagram .logo-area { justify-content: center; }
+  .banner-b.instagram .event-title { font-size: 64px; }
+  .banner-b.instagram .event-sub { font-size: 22px; }
+  .banner-b.instagram .event-label { font-size: 14px; letter-spacing: 4px; }
+  .banner-b.instagram .accent-bar { margin: 16px auto 0; }
+  .banner-b.instagram .event-date { font-size: 18px; }
+  .banner-b.instagram .glow-orb.green { top: 10%; right: -5%; width: 400px; height: 400px; }
+  .banner-b.instagram .glow-orb.teal { bottom: 15%; left: -5%; width: 300px; height: 300px; }
+  .banner-b.instagram .logo-area svg { height: 36px; }
+
+  .banner-b.facebook { width: 820px; height: 312px; }
+  .banner-b.facebook .event-title { font-size: 38px; }
+  .banner-b.facebook .event-sub { font-size: 14px; }
+  .banner-b.facebook .glow-orb.green { top: -60px; right: 10%; width: 200px; height: 200px; }
+  .banner-b.facebook .glow-orb.teal { bottom: -40px; right: 35%; width: 150px; height: 150px; }
+  .banner-b.facebook .logo-area svg { height: 20px; }
+
+
+  /* ========================================
+     OPTION C: BOLD STATEMENT
+     Typography-forward, lime/green accent, clean
+     ======================================== */
+
+  .banner-c {
+    position: relative;
+    overflow: hidden;
+    background: #E1FF73;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  .banner-c .content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 6%;
+  }
+
+  .banner-c .text-block {
+    color: #000;
+  }
+
+  .banner-c .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .banner-c .logo-area svg { height: 24px; }
+
+  .banner-c .event-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #000;
+    background: rgba(0,0,0,0.08);
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+
+  .banner-c .event-title {
+    font-weight: 800;
+    color: #000;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+  }
+
+  .banner-c .event-sub {
+    font-weight: 500;
+    color: rgba(0,0,0,0.5);
+    margin-top: 12px;
+  }
+
+  .banner-c .right-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  .banner-c .stat-pill {
+    background: #000;
+    color: #E1FF73;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .banner-c .stat-pill span {
+    font-weight: 400;
+    opacity: 0.7;
+    margin-left: 4px;
+  }
+
+  .banner-c .corner-mark {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 120px;
+    height: 120px;
+    background: #000;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  }
+
+  /* Size variants for Option C */
+  .banner-c.linkedin { width: 1584px; height: 396px; }
+  .banner-c.linkedin .event-title { font-size: 56px; }
+  .banner-c.linkedin .event-sub { font-size: 18px; }
+  .banner-c.linkedin .logo-area svg { height: 28px; }
+
+  .banner-c.twitter { width: 1500px; height: 500px; }
+  .banner-c.twitter .event-title { font-size: 60px; }
+  .banner-c.twitter .event-sub { font-size: 20px; }
+  .banner-c.twitter .logo-area svg { height: 30px; }
+  .banner-c.twitter .corner-mark { width: 160px; height: 160px; }
+
+  .banner-c.instagram { width: 1080px; height: 1080px; }
+  .banner-c.instagram .content {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 8%;
+  }
+  .banner-c.instagram .logo-area { justify-content: center; }
+  .banner-c.instagram .right-block { align-items: center; margin-top: 32px; }
+  .banner-c.instagram .event-title { font-size: 72px; }
+  .banner-c.instagram .event-sub { font-size: 22px; }
+  .banner-c.instagram .event-label { font-size: 13px; letter-spacing: 4px; }
+  .banner-c.instagram .corner-mark { width: 140px; height: 140px; }
+  .banner-c.instagram .logo-area svg { height: 36px; }
+
+  .banner-c.facebook { width: 820px; height: 312px; }
+  .banner-c.facebook .event-title { font-size: 40px; }
+  .banner-c.facebook .event-sub { font-size: 14px; }
+  .banner-c.facebook .logo-area svg { height: 20px; }
+  .banner-c.facebook .stat-pill { font-size: 12px; padding: 8px 14px; }
+  .banner-c.facebook .corner-mark { width: 80px; height: 80px; }
+
+  /* Responsive page scaling */
+  .scale-wrapper {
+    transform-origin: top left;
+    transform: scale(0.55);
+    margin-bottom: -200px;
+  }
+  .scale-wrapper.ig {
+    transform: scale(0.45);
+    margin-bottom: -550px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Stack10 AI Event Banners</h1>
+<p class="subtitle">3 art direction options across 4 platform sizes. Based on Stack10 brand guidelines.</p>
+
+<!-- ============================================
+     OPTION A: THE DIAGONAL SLASH
+     ============================================ -->
+
+<h2>Option A: The Diagonal</h2>
+<p style="color:#666; margin-bottom:24px;">Signature brand motif - bold diagonal slash dividing green and black. Matches existing Stack10 social media banners.</p>
+
+<!-- LinkedIn -->
+<h3>LinkedIn Banner (1584 x 396)</h3>
+<div class="banner-wrapper">
+  <div class="banner-label">LinkedIn Banner &mdash; 1584 x 396px</div>
+  <div class="scale-wrapper">
+    <div class="banner-container">
+      <div class="banner-a linkedin" id="a-linkedin">
+        <div class="diagonal-bg"></div>
+        <div class="content">
+          <div class="left-content">
+            <div class="event-label">Live Event</div>
+            <div class="event-title">AI In<br>Production</div>
+            <div class="event-sub">From pilot to profit. No more experiments.</div>
+          </div>
+          <div class="right-content">
+            <div class="logo-area" style="justify-content:flex-end;">
+              <svg viewBox="0 0 275.28 367.62" fill="white"><polygon points="94.2 249.9 0 249.9 0 207.44 66.34 106.58 236.48 106.58 236.48 162.31 94.2 249.9"/><polygon points="181.08 224.3 38.8 311.88 38.8 367.62 208.94 367.62 275.28 266.76 275.28 224.3 181.08 224.3"/></svg>
+              <span style="font-size:28px;font-weight:700;letter-spacing:-0.02em;">stack10</span>
+            </div>
+            <div class="event-sub" style="opacity:0.5;">Built To Run In Production</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Twitter -->
+<h3>Twitter/X Header (1500 x 500)</h3>
+<div class="banner-wrapper">
+  <div class="banner-label">Twitter/X Header &mdash; 1500 x 500px</div>
+  <div class="scale-wrapper">
+    <div class="banner-container">
+      <div class="banner-a twitter" id="a-twitter">
+        <div class="diagonal-bg"></div>
+        <div class="content">
+          <div class="left-content">
+            <div class="event-label">Live Event 2026</div>
+            <div class="event-title">AI In<br>Production</div>
+            <div class="event-sub">Stop experimenting. Start delivering.</div>
+          </div>
+          <div class="right-content">
+            <div class="logo-area" style="justify-content:flex-end;">
+              <svg viewBox="0 0 275.28 367.62" fill="white"><polygon points="94.2 249.9 0 249.9 0 207.44 66.34 106.58 236.48 106.58 236.48 162.31 94.2 249.9"/><polygon points="181.08 224.3 38.8 311.88 38.8 367.62 208.94 367.62 275.28 266.76 275.28 224.3 181.08 224.3"/></svg>
+              <span style="font-size:30px;font-weight:700;letter-spacing:-0.02em;">stack10</span>
+            </div>
+            <div class="event-sub" style="opacity:0.5;">Built To Run In Production</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Instagram -->
+<h3>Instagram Post (1080 x 1080)</h3>
+<div class="banner-wrapper">
+  <div class="banner-label">Instagram Post &mdash; 1080 x 1080px</div>
+  <div class="scale-wrapper ig">
+    <div class="banner-container">
+      <div class="banner-a instagram" id="a-instagram">
+        <div class="diagonal-bg"></div>
+        <div class="content">
+          <div class="left-content">
+            <div class="logo-area">
+              <svg viewBox="0 0 275.28 367.62" fill="black"><polygon points="94.2 249.9 0 249.9 0 207.44 66.34 106.58 236.48 106.58 236.48 162.31 94.2 249.9"/><polygon points="181.08 224.3 38.8 311.88 38.8 367.62 208.94 367.62 275.28 266.76 275.28 224.3 181.08 224.3"/></svg>
+              <span style="font-size:36px;font-weight:700;letter-spacing:-0.02em;color:#000;">stack10</span>
+            </div>
+            <div class="event-label">Live Event</div>
+            <div class="event-title">AI In<br>Production</div>
+          </div>
+          <div class="right-content" style="padding-bottom:20px;">
+            <div class="event-sub" style="font-size:24px;color:#fff;opacity:0.7;">From pilot to profit.<br>No more experiments.</div>
+            <div style="margin-top:24px;display:inline-block;padding:14px 32px;border:2px solid rgba(255,255,255,0.3);border-radius:8px;font-weight:600;font-size:18px;color:#fff;">Register Now</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Facebook -->
+<h3>Facebook Cover (820 x 312)</h3>
+<div class="banner-wrapper">
+  <div class="banner-label">Facebook Cover &mdash; 820 x 312px</div>
+  <div class="scale-wrapper">
+    <div class="banner-container">
+      <div class="banner-a facebook" id="a-facebook">
+        <div class="diagonal-bg"></div>
+        <div class="content">
+          <div class="left-content">
+            <div class="event-label">Live Event</div>
+            <div class="event-title">AI In<br>Production</div>
+            <div class="event-sub">From pilot to profit.</div>
+          </div>
+          <div class="right-content">
+            <div class="logo-area" style="justify-content:flex-end;">
+              <svg viewBox="0 0 275.28 367.62" fill="white"><polygon points="94.2 249.9 0 249.9 0 207.44 66.34 106.58 236.48 106.58 236.48 162.31 94.2 249.9"/><polygon points="181.08 224.3 38.8 311.88 38.8 367.62 208.94 367.62 275.28 266.76 275.28 224.3 181.08 224.3"/></svg>
+              <span style="font-size:22px;font-weight:700;letter-spacing:-0.02em;">stack10</span>
+            </div>
+            <div class="event-sub" style="opacity:0.5;font-size:12px;">Built To Run In Production</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================
+     OPTION B: CIRCUIT GRID
+     ============================================ -->
+
+<h2>Option B: Circuit Grid</h2>
+<p style="color:#666; margin-bottom:24px;">Dark, tech-forward aesthetic with subtle grid lines and glowing green nodes. Conveys intelligence and precision.</p>
+
+<!-- LinkedIn -->
+<h3>LinkedIn Banner (1584 x 396)</h3>
+<div class="banner-wrapper">
+  <div class="banner-label">LinkedIn Banner &mdash; 1584 x 396px</div>
+  <div class="scale-wrapper">
+    <div class="banner-container">
+      <div class="banner-b linkedin" id="b-linkedin">
+        <div class="grid-bg"></div>
+        <div class="glow-orb green"></div>
+        <div class="glow-orb teal" style="bottom:-60px;right:40%;"></div>
+        <div class="node" style="top:25%;left:55%;"></div>
+        <div class="node" style="top:60%;left:70%;"></div>
+        <div class="node" style="top:40%;left:85%;"></div>
+        <div class="node" style="top:75%;left:60%;"></div>
+        <div class="line" style="top:26%;left:55.3%;width:200px;transform:rotate(25deg);"></div>
+        <div class="line" style="top:62%;left:70.5%;width:180px;transform:rotate(-15deg);"></div>
+        <div class="content">
+          <div class="text-block">
+            <div class="logo-area">
+              <svg viewBox="0 0 275.28 367.62" fill="white"><polygon points="94.2 249.9 0 249.9 0 207.44 66.34 106.58 236.48 106.58 236.48 162.31 94.2 249.9"/><polygon points="181.08 224.3 38.8 311.88 38.8 367.62 208.94 367.62 275.28 266.76 275.28 224.3 181.08 224.3"/></svg>
+              <span style="font-size:28px;font-weight:700;letter-spacing:-0.02em;color:#fff;">stack10</span>
+            </div>
+            <div class="event-label">AI Event 2026</div>
+            <div class="event-title">Where AI Meets<br>Real Operations</div>
+            <div class="event-sub">Production-grade AI. Measurable impact. Zero theatrics.</div>
+            <div class="accent-bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Twitter -->
+<h3>Twitter/X Header (1500 x 500)</h3>
+<div class="banner-wrapper">
+  <div class="banner-label">Twitter/X Header &mdash; 1500 x 500px</div>
+  <div class="scale-wrapper">
+    <div class="banner-container">
+      <div class="banner-b twitter" id="b-twitter">
+        <div class="grid-bg"></div>
+        <div class="glow-orb green"></div>
+        <div class="glow-orb teal" style="bottom:-80px;right:50%;"></div>
+        <div class="node" style="top:30%;left:60%;"></div>
+        <div class="node" style="top:65%;left:75%;"></div>
+        <div class="node" style="top:45%;left:88%;"></div>
+        <div class="line" style="top:31%;left:60.4%;width:220px;transform:rotate(22deg);"></div>
+        <div class="line" style="top:67%;left:75.4%;width:160px;transform:rotate(-18deg);"></div>
+        <div class="content">
+          <div class="text-block">
+            <div class="logo-area">
+              <svg viewBox="0 0 275.28 367.62" fill="white"><polygon points="94.2 249.9 0 249.9 0 207.44 66.34 106.58 236.48 106.58 236.48 162.31 94.2 249.9"/><polygon points="181.08 224.3 38.8 311.88 38.8 367.62 208.94 367.62 275.28 266.76 275.28 224.3 181.08 224.3"/></svg>
+              <span style="font-size:30px;font-weight:700;letter-spacing:-0.02em;color:#fff;">stack10</span>
+            </div>
+            <div class="event-label">AI Event 2026</div>
+            <div class="event-title">Where AI Meets<br>Real Operations</div>
+            <div class="event-sub">Production-grade AI. Measurable impact. Zero theatrics.</div>
+            <div class="accent-bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Instagram -->
+<h3>Instagram Post (1080 x 1080)</h3>
+<div class="banner-wrapper">
+  <div class="banner-label">Instagram Post &mdash; 1080 x 1080px</div>
+  <div class="scale-wrapper ig">
+    <div class="banner-container">
+      <div class="banner-b instagram" id="b-instagram">
+        <div class="grid-bg"></div>
+        <div class="glow-orb green"></div>
+        <div class="glow-orb teal"></div>
+        <div class="node" style="top:20%;left:15%;"></div>
+        <div class="node" style="top:75%;left:80%;"></div>
+        <div class="node" style="top:30%;left:78%;"></div>
+        <div class="node" style="top:65%;left:22%;"></div>
+        <div class="line" style="top:21%;left:15.4%;width:280px;transform:rotate(8deg);"></div>
+        <div class="line" style="top:66%;left:22.5%;width:240px;transform:rotate(-12deg);"></div>
+        <div class="content">
+          <div class="text-block">
+            <div class="logo-area">
+              <svg viewBox="0 0 275.28 367.62" fill="white"><polygon points="94.2 249.9 0 249.9 0 207.44 66.34 106.58 236.48 106.58 236.48 162.31 94.2 249.9"/><polygon points="181.08 224.3 38.8 311.88 38.8 367.62 208.94 367.62 275.28 266.76 275.28 224.3 181.08 224.3"/></svg>
+              <span style="font-size:36px;font-weight:700;letter-spacing:-0.02em;color:#fff;">stack10</span>
+            </div>
+            <div class="event-label">AI Event 2026</div>
+            <div class="event-title">Where AI<br>Meets Real<br>Operations</div>
+            <div class="event-sub">Production-grade AI.<br>Measurable impact.<br>Zero theatrics.</div>
+            <div class="accent-bar"></div>
+            <div class="event-date">Register Now</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Facebook -->
+<h3>Facebook Cover (820 x 312)</h3>
+<div class="banner-wrapper">
+  <div class="banner-label">Facebook Cover &mdash; 820 x 312px</div>
+  <div class="scale-wrapper">
+    <div class="banner-container">
+      <div class="banner-b facebook" id="b-facebook">
+        <div class="grid-bg"></div>
+        <div class="glow-orb green"></div>
+        <div class="glow-orb teal" style="bottom:-40px;right:35%;"></div>
+        <div class="node" style="top:30%;left:65%;"></div>
+        <div class="node" style="top:60%;left:80%;"></div>
+        <div class="line" style="top:32%;left:65.4%;width:150px;transform:rotate(20deg);"></div>
+        <div class="content">
+          <div class="text-block">
+            <div class="logo-area">
+              <svg viewBox="0 0 275.28 367.62" fill="white"><polygon points="94.2 249.9 0 249.9 0 207.44 66.34 106.58 236.48 106.58 236.48 162.31 94.2 249.9"/><polygon points="181.08 224.3 38.8 311.88 38.8 367.62 208.94 367.62 275.28 266.76 275.28 224.3 181.08 224.3"/></svg>
+              <span style="font-size:20px;font-weight:700;letter-spacing:-0.02em;color:#fff;">stack10</span>
+            </div>
+            <div class="event-label" style="font-size:10px;">AI Event 2026</div>
+            <div class="event-title">Where AI Meets<br>Real Operations</div>
+            <div class="event-sub">Production-grade AI. Measurable impact.</div>
+            <div class="accent-bar" style="width:32px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================
+     OPTION C: BOLD STATEMENT
+     ============================================ -->
+
+<h2>Option C: Bold Statement</h2>
+<p style="color:#666; margin-bottom:24px;">Typography-forward on lime (#E1FF73) background. Matches the secondary brand palette used in Stack10 social creatives.</p>
+
+<!-- LinkedIn -->
+<h3>LinkedIn Banner (1584 x 396)</h3>
+<div class="banner-wrapper">
+  <div class="banner-label">LinkedIn Banner &mdash; 1584 x 396px</div>
+  <div class="scale-wrapper">
+    <div class="banner-container">
+      <div class="banner-c linkedin" id="c-linkedin">
+        <div class="corner-mark"></div>
+        <div class="content">
+          <div class="text-block" style="max-width:60%;">
+            <div class="logo-area">
+              <svg viewBox="0 0 275.28 367.62" fill="black"><polygon points="94.2 249.9 0 249.9 0 207.44 66.34 106.58 236.48 106.58 236.48 162.31 94.2 249.9"/><polygon points="181.08 224.3 38.8 311.88 38.8 367.62 208.94 367.62 275.28 266.76 275.28 224.3 181.08 224.3"/></svg>
+              <span style="font-size:28px;font-weight:700;letter-spacing:-0.02em;color:#000;">stack10</span>
+            </div>
+            <div class="event-label">AI Event 2026</div>
+            <div class="event-title">Deploy AI That<br>Actually Works</div>
+            <div class="event-sub">Real systems. Real data. Real outcomes.</div>
+          </div>
+          <div class="right-block">
+            <div class="stat-pill">87% <span>of AI pilots never reach production</span></div>
+            <div class="stat-pill">We fix that. <span>Every time.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Twitter -->
+<h3>Twitter/X Header (1500 x 500)</h3>
+<div class="banner-wrapper">
+  <div class="banner-label">Twitter/X Header &mdash; 1500 x 500px</div>
+  <div class="scale-wrapper">
+    <div class="banner-container">
+      <div class="banner-c twitter" id="c-twitter">
+        <div class="corner-mark"></div>
+        <div class="content">
+          <div class="text-block" style="max-width:55%;">
+            <div class="logo-area">
+              <svg viewBox="0 0 275.28 367.62" fill="black"><polygon points="94.2 249.9 0 249.9 0 207.44 66.34 106.58 236.48 106.58 236.48 162.31 94.2 249.9"/><polygon points="181.08 224.3 38.8 311.88 38.8 367.62 208.94 367.62 275.28 266.76 275.28 224.3 181.08 224.3"/></svg>
+              <span style="font-size:30px;font-weight:700;letter-spacing:-0.02em;color:#000;">stack10</span>
+            </div>
+            <div class="event-label">AI Event 2026</div>
+            <div class="event-title">Deploy AI That<br>Actually Works</div>
+            <div class="event-sub">Real systems. Real data. Real outcomes.</div>
+          </div>
+          <div class="right-block">
+            <div class="stat-pill">87% <span>of AI pilots never reach production</span></div>
+            <div class="stat-pill">We fix that. <span>Every time.</span></div>
+            <div class="stat-pill" style="background:#6CE47C;color:#000;">Register Now</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Instagram -->
+<h3>Instagram Post (1080 x 1080)</h3>
+<div class="banner-wrapper">
+  <div class="banner-label">Instagram Post &mdash; 1080 x 1080px</div>
+  <div class="scale-wrapper ig">
+    <div class="banner-container">
+      <div class="banner-c instagram" id="c-instagram">
+        <div class="corner-mark"></div>
+        <div class="content">
+          <div class="text-block">
+            <div class="logo-area">
+              <svg viewBox="0 0 275.28 367.62" fill="black"><polygon points="94.2 249.9 0 249.9 0 207.44 66.34 106.58 236.48 106.58 236.48 162.31 94.2 249.9"/><polygon points="181.08 224.3 38.8 311.88 38.8 367.62 208.94 367.62 275.28 266.76 275.28 224.3 181.08 224.3"/></svg>
+              <span style="font-size:36px;font-weight:700;letter-spacing:-0.02em;color:#000;">stack10</span>
+            </div>
+            <div class="event-label">AI Event 2026</div>
+            <div class="event-title">Deploy AI<br>That Actually<br>Works</div>
+            <div class="event-sub" style="font-size:22px;">Real systems. Real data.<br>Real outcomes.</div>
+          </div>
+          <div class="right-block" style="align-items:center;">
+            <div class="stat-pill" style="font-size:18px;">87% <span>of AI pilots never reach production</span></div>
+            <div class="stat-pill" style="font-size:18px;">We fix that. <span>Every time.</span></div>
+            <div class="stat-pill" style="font-size:18px;background:#6CE47C;color:#000;">Register Now</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Facebook -->
+<h3>Facebook Cover (820 x 312)</h3>
+<div class="banner-wrapper">
+  <div class="banner-label">Facebook Cover &mdash; 820 x 312px</div>
+  <div class="scale-wrapper">
+    <div class="banner-container">
+      <div class="banner-c facebook" id="c-facebook">
+        <div class="corner-mark"></div>
+        <div class="content">
+          <div class="text-block" style="max-width:55%;">
+            <div class="logo-area">
+              <svg viewBox="0 0 275.28 367.62" fill="black"><polygon points="94.2 249.9 0 249.9 0 207.44 66.34 106.58 236.48 106.58 236.48 162.31 94.2 249.9"/><polygon points="181.08 224.3 38.8 311.88 38.8 367.62 208.94 367.62 275.28 266.76 275.28 224.3 181.08 224.3"/></svg>
+              <span style="font-size:20px;font-weight:700;letter-spacing:-0.02em;color:#000;">stack10</span>
+            </div>
+            <div class="event-label" style="font-size:10px;">AI Event 2026</div>
+            <div class="event-title">Deploy AI That<br>Actually Works</div>
+            <div class="event-sub" style="font-size:13px;">Real systems. Real data. Real outcomes.</div>
+          </div>
+          <div class="right-block">
+            <div class="stat-pill">87% <span>never reach prod</span></div>
+            <div class="stat-pill">We fix that.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+/* Animated Strip - Baseten-style continuous horizontal scroll */
+.animated-strip {
+  width: 100%; position: relative; overflow: hidden;
+  height: 80px;
+  pointer-events: none;
+}
+.animated-strip .strip-track {
+  display: flex;
+  width: max-content;
+  animation: strip-scroll 30s linear infinite;
+}
+.animated-strip .strip-track.reverse {
+  animation: strip-scroll-reverse 35s linear infinite;
+}
+.animated-strip .strip-track.slow {
+  animation-duration: 40s;
+}
+.animated-strip .strip-block {
+  flex-shrink: 0;
+  height: 20px;
+  border-radius: 3px;
+  transform: skewX(-12deg);
+}
+/* Colors matching Stack10 brand */
+.sb-green { background: var(--green); }
+.sb-green-dk { background: #55D468; }
+.sb-green-t { background: rgba(108,228,124,0.3); }
+.sb-lavender { background: var(--green-100, #D5F5DC); }
+.sb-lav-t { background: rgba(213,245,220,0.4); }
+.sb-coral { background: var(--cream-dark, #EDE5D8); }
+.sb-cream-t { background: rgba(245,240,232,0.6); }
+.sb-white { background: rgba(255,255,255,0.5); }
+.sb-dark { background: rgba(0,0,0,0.08); }
+
+@keyframes strip-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes strip-scroll-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@media (max-width: 768px) {
+  .animated-strip { height: 56px; }
+  .animated-strip .strip-block { height: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-strip .strip-track { animation: none; }
+}

@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stack10 — Brand Palette Review</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Manrope', sans-serif; background: #000; color: #fff; }
+    .section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+    .section-title { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #6CE47C; margin-bottom: 12px; }
+    .section-heading { font-size: 40px; font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
+    .section-sub { font-size: 16px; color: #9CA3AF; max-width: 640px; line-height: 1.6; margin-bottom: 48px; }
+
+    /* Divider */
+    .divider { border: none; border-top: 1px solid #1F2937; margin: 0 40px; max-width: 1200px; }
+
+    /* ===== PALETTE COMPARISON ===== */
+    .palette-row { display: flex; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; }
+    .palette-row-label { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #6B7280; margin-bottom: 12px; }
+    .swatch { width: 100px; border-radius: 12px; overflow: hidden; }
+    .swatch-color { height: 80px; }
+    .swatch-info { padding: 8px; background: #111827; }
+    .swatch-name { font-size: 11px; font-weight: 600; color: #fff; }
+    .swatch-hex { font-size: 10px; color: #6B7280; font-family: 'JetBrains Mono', monospace; }
+    .swatch-kill { position: relative; }
+    .swatch-kill::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(255,0,0,0.15) 8px, rgba(255,0,0,0.15) 10px); border-radius: 12px; pointer-events: none; }
+    .swatch-kill .swatch-color { opacity: 0.4; }
+    .badge-keep { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; background: #6CE47C; color: #000; padding: 2px 6px; border-radius: 4px; margin-top: 4px; }
+    .badge-remove { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; background: #EF4444; color: #fff; padding: 2px 6px; border-radius: 4px; margin-top: 4px; }
+
+    /* ===== CARD COMPARISON ===== */
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 48px; }
+    .compare-col-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; padding: 6px 12px; border-radius: 6px; display: inline-block; }
+    .label-before { background: #7F1D1D; color: #FCA5A5; }
+    .label-after { background: #064E3B; color: #6EE7B7; }
+    .demo-card { border-radius: 16px; padding: 32px; min-height: 200px; }
+    .demo-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .demo-card p { font-size: 14px; line-height: 1.6; opacity: 0.7; }
+    .demo-card .step { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; opacity: 0.5; }
+    .demo-card .price { font-size: 14px; font-weight: 600; margin-top: 12px; font-family: 'JetBrains Mono', monospace; }
+
+    /* ===== HERO MOCKUPS ===== */
+    .hero-mock { border-radius: 16px; overflow: hidden; margin-bottom: 24px; }
+    .hero-mock-inner { padding: 48px 40px; min-height: 320px; display: flex; flex-direction: column; justify-content: center; }
+    .hero-mock h2 { font-size: 36px; font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
+    .hero-mock p { font-size: 15px; line-height: 1.6; max-width: 480px; }
+    .hero-mock .btn { display: inline-block; padding: 12px 24px; border-radius: 100px; font-size: 14px; font-weight: 600; margin-top: 20px; text-decoration: none; }
+    .hero-mock .stats-row { display: flex; gap: 32px; margin-top: 32px; }
+    .hero-mock .stat-num { font-size: 28px; font-weight: 800; }
+    .hero-mock .stat-label { font-size: 12px; opacity: 0.6; }
+
+    /* ===== BENTO GRID MOCKUP ===== */
+    .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+    .bento-item { border-radius: 16px; padding: 28px; min-height: 180px; display: flex; flex-direction: column; justify-content: space-between; }
+    .bento-item.span-2 { grid-column: span 2; }
+    .bento-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .bento-item p { font-size: 13px; line-height: 1.5; opacity: 0.7; }
+    .bento-item .big-number { font-size: 48px; font-weight: 800; line-height: 1; }
+
+    /* ===== SOCIAL MEDIA MOCKUPS ===== */
+    .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .social-card { border-radius: 16px; overflow: hidden; aspect-ratio: 4/5; display: flex; flex-direction: column; }
+    .social-top { flex: 1; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; }
+    .social-bottom { padding: 20px 28px; }
+    .social-logo { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .social-logo svg { width: 20px; height: 20px; }
+    .social-card h3 { font-size: 22px; font-weight: 800; line-height: 1.2; }
+    .social-card .tagline { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+
+    /* ===== CTA SECTION MOCKUP ===== */
+    .cta-mock { border-radius: 16px; padding: 64px 48px; text-align: center; margin-bottom: 48px; }
+    .cta-mock h2 { font-size: 36px; font-weight: 800; margin-bottom: 12px; }
+    .cta-mock p { font-size: 16px; opacity: 0.6; margin-bottom: 24px; }
+    .cta-mock .btn { display: inline-block; padding: 14px 32px; border-radius: 100px; font-size: 15px; font-weight: 700; text-decoration: none; }
+
+    /* ===== NAV MOCKUP ===== */
+    .nav-mock { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; border-radius: 12px; margin-bottom: 16px; }
+    .nav-mock-logo { font-size: 16px; font-weight: 800; display: flex; align-items: center; gap: 6px; }
+    .nav-mock-links { display: flex; gap: 24px; font-size: 13px; font-weight: 500; }
+    .nav-mock-links span { opacity: 0.6; cursor: default; }
+    .nav-mock-cta { padding: 8px 18px; border-radius: 100px; font-size: 13px; font-weight: 600; text-decoration: none; }
+
+    /* ===== REFERENCE STRIP ===== */
+    .ref-strip { display: flex; gap: 16px; overflow: hidden; margin-bottom: 48px; }
+    .ref-item { min-width: 200px; text-align: center; }
+    .ref-item img { width: 40px; height: 40px; border-radius: 8px; margin: 0 auto 8px; }
+    .ref-item-name { font-size: 12px; font-weight: 600; }
+    .ref-item-palette { display: flex; gap: 4px; justify-content: center; margin-top: 6px; }
+    .ref-dot { width: 16px; height: 16px; border-radius: 50%; }
+
+    @media (max-width: 768px) {
+      .compare-grid { grid-template-columns: 1fr; }
+      .bento-grid { grid-template-columns: 1fr; }
+      .bento-item.span-2 { grid-column: span 1; }
+      .social-grid { grid-template-columns: 1fr; }
+      .section-heading { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<div class="section" style="padding-bottom: 40px;">
+  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 40px;">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="4" fill="#6CE47C"/><path d="M7 12l3 3 7-7" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span style="font-size: 13px; font-weight: 600; color: #6B7280;">STACK10 BRAND PALETTE REVIEW</span>
+  </div>
+  <h1 style="font-size: 48px; font-weight: 800; line-height: 1.1; max-width: 700px;">Less colour.<br>More authority.</h1>
+  <p style="font-size: 18px; color: #9CA3AF; max-width: 600px; margin-top: 16px; line-height: 1.6;">Refined design system for Stack10. Core: Black + White + Green (#6CE47C). Supporting: Cream + Grey scales. Semantic: Error, Warning, Success, Info. Social accents: Mint + Lime only. Six pastels removed. Full token architecture with scales for every colour family.</p>
+</div>
+
+<hr class="divider">
+
+<!-- ==================== 1. PALETTE COMPARISON ==================== -->
+<div class="section">
+  <div class="section-title">01 &mdash; Palette</div>
+  <div class="section-heading">Refined Design System</div>
+  <div class="section-sub">Core palette confirmed. Green and Cream now have proper scales for hover/border/text states. Six off-brand pastels removed from CSS. Semantic system colours added for enterprise UI.</div>
+
+  <div class="palette-row-label">Core &mdash; Primary (website + all touchpoints)</div>
+  <div class="palette-row">
+    <div class="swatch"><div class="swatch-color" style="background:#FFFFFF; border: 1px solid #333;"></div><div class="swatch-info"><div class="swatch-name">White</div><div class="swatch-hex">#FFFFFF</div><span class="badge-keep">Core</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#000000;"></div><div class="swatch-info"><div class="swatch-name">Black</div><div class="swatch-hex">#000000</div><span class="badge-keep">Core</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#6CE47C;"></div><div class="swatch-info"><div class="swatch-name">Green</div><div class="swatch-hex">#6CE47C</div><span class="badge-keep">Core</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#55D468;"></div><div class="swatch-info"><div class="swatch-name">Green Dark</div><div class="swatch-hex">#55D468</div><span class="badge-keep">Core</span></div></div>
+  </div>
+
+  <div class="palette-row-label">Green Scale &mdash; Full token range for accent, buttons, text</div>
+  <div class="palette-row">
+    <div class="swatch"><div class="swatch-color" style="background:#EEFCF1;"></div><div class="swatch-info"><div class="swatch-name">Green 50</div><div class="swatch-hex">#EEFCF1</div><span class="badge-keep">New</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#D5F5DC;"></div><div class="swatch-info"><div class="swatch-name">Green 100</div><div class="swatch-hex">#D5F5DC</div><span class="badge-keep">New</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#96E9A6;"></div><div class="swatch-info"><div class="swatch-name">Green 300</div><div class="swatch-hex">#96E9A6</div><span class="badge-keep">New</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#2EAD45;"></div><div class="swatch-info"><div class="swatch-name">Green 700</div><div class="swatch-hex">#2EAD45</div><span class="badge-keep">New</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#1A7A2E;"></div><div class="swatch-info"><div class="swatch-name">Green 900</div><div class="swatch-hex">#1A7A2E</div><span class="badge-keep">New</span></div></div>
+  </div>
+
+  <div class="palette-row-label">Cream Scale &mdash; Warm neutral for hero, sections, cards</div>
+  <div class="palette-row">
+    <div class="swatch"><div class="swatch-color" style="background:#FAF8F5;"></div><div class="swatch-info"><div class="swatch-name">Cream 50</div><div class="swatch-hex">#FAF8F5</div><span class="badge-keep">New</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#F5F0E8;"></div><div class="swatch-info"><div class="swatch-name">Cream</div><div class="swatch-hex">#F5F0E8</div><span class="badge-keep">Keep</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#EDE5D8;"></div><div class="swatch-info"><div class="swatch-name">Cream Dark</div><div class="swatch-hex">#EDE5D8</div><span class="badge-keep">Keep</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#DDD3C3;"></div><div class="swatch-info"><div class="swatch-name">Cream 300</div><div class="swatch-hex">#DDD3C3</div><span class="badge-keep">New</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#B8A88F;"></div><div class="swatch-info"><div class="swatch-name">Cream 500</div><div class="swatch-hex">#B8A88F</div><span class="badge-keep">New</span></div></div>
+  </div>
+
+  <div class="palette-row-label">Grey &mdash; Neutral Scale</div>
+  <div class="palette-row">
+    <div class="swatch"><div class="swatch-color" style="background:#F9FAFB;"></div><div class="swatch-info"><div class="swatch-name">Grey 50</div><div class="swatch-hex">#F9FAFB</div><span class="badge-keep">Keep</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#F3F4F6;"></div><div class="swatch-info"><div class="swatch-name">Grey 100</div><div class="swatch-hex">#F3F4F6</div><span class="badge-keep">Keep</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#E5E7EB;"></div><div class="swatch-info"><div class="swatch-name">Grey 200</div><div class="swatch-hex">#E5E7EB</div><span class="badge-keep">Keep</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#6B7280;"></div><div class="swatch-info"><div class="swatch-name">Grey 500</div><div class="swatch-hex">#6B7280</div><span class="badge-keep">Keep</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#111827;"></div><div class="swatch-info"><div class="swatch-name">Grey 900</div><div class="swatch-hex">#111827</div><span class="badge-keep">Keep</span></div></div>
+  </div>
+
+  <div class="palette-row-label">Semantic &mdash; System States (enterprise UI)</div>
+  <div class="palette-row">
+    <div class="swatch"><div class="swatch-color" style="background:#DC2626;"></div><div class="swatch-info"><div class="swatch-name">Error</div><div class="swatch-hex">#DC2626</div><span class="badge-keep">New</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#D97706;"></div><div class="swatch-info"><div class="swatch-name">Warning</div><div class="swatch-hex">#D97706</div><span class="badge-keep">New</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#059669;"></div><div class="swatch-info"><div class="swatch-name">Success</div><div class="swatch-hex">#059669</div><span class="badge-keep">New</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#2563EB;"></div><div class="swatch-info"><div class="swatch-name">Info</div><div class="swatch-hex">#2563EB</div><span class="badge-keep">New</span></div></div>
+  </div>
+
+  <div class="palette-row-label">Accent Colours &mdash; CTA banners + social media backgrounds</div>
+  <div class="palette-row">
+    <div class="swatch"><div class="swatch-color" style="background:#91EDE0;"></div><div class="swatch-info"><div class="swatch-name">Mint</div><div class="swatch-hex">#91EDE0</div><span class="badge-keep">Keep</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#E1FF73;"></div><div class="swatch-info"><div class="swatch-name">Lime</div><div class="swatch-hex">#E1FF73</div><span class="badge-keep">Keep</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#FDE68A;"></div><div class="swatch-info"><div class="swatch-name">Sand</div><div class="swatch-hex">#FDE68A</div><span class="badge-keep">New</span></div></div>
+  </div>
+
+
+  <div style="margin-top: 40px; padding: 24px; background: #111827; border-radius: 12px; border: 1px solid #1F2937;">
+    <div style="font-size: 13px; font-weight: 700; color: #6CE47C; margin-bottom: 8px;">USAGE RULES</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;">
+      <div>
+        <div style="font-size: 14px; font-weight: 600; margin-bottom: 4px;">Website</div>
+        <div style="font-size: 13px; color: #9CA3AF; line-height: 1.5;">Core palette only: Black, White, Green scale, Grey scale, Cream scale. No mint or lime on the website.</div>
+      </div>
+      <div>
+        <div style="font-size: 14px; font-weight: 600; margin-bottom: 4px;">Social Media</div>
+        <div style="font-size: 13px; color: #9CA3AF; line-height: 1.5;">Core palette + Mint, Lime, Sand for CTA banners and social media. Always paired with black text.</div>
+      </div>
+      <div>
+        <div style="font-size: 14px; font-weight: 600; margin-bottom: 4px;">Green Text Rule</div>
+        <div style="font-size: 13px; color: #9CA3AF; line-height: 1.5;">Brand green (#6CE47C) for dark backgrounds and large decorative numbers only. Use --green-900 (#1A7A2E) for text on light backgrounds (WCAG 4.5:1).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ==================== 2. CARD COMPARISON ==================== -->
+<div class="section">
+  <div class="section-title">02 &mdash; Cards</div>
+  <div class="section-heading">4-Colour Card System</div>
+  <div class="section-sub">Four distinct card colours: Green, Green-100, Cream, Black. Each is clearly distinguishable.</div>
+
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+    <div class="demo-card" style="background: #6CE47C; color: #000;">
+      <div class="step" style="color: #1A7A2E;">Step 01</div>
+      <h3>Discover</h3>
+      <p>Find your highest-value AI opportunities in 2 weeks</p>
+      <div class="price">From $25,000</div>
+    </div>
+    <div class="demo-card" style="background: #D5F5DC; color: #000;">
+      <div class="step" style="color: #1A7A2E;">Step 02</div>
+      <h3>Audit</h3>
+      <p>Deep-dive with process mining, working prototype, and production roadmap</p>
+      <div class="price">From $75,000</div>
+    </div>
+    <div class="demo-card" style="background: #EDE5D8; color: #000;">
+      <div class="step" style="color: #6B7280;">Step 03</div>
+      <h3>Map</h3>
+      <p>Map your real processes with data, not assumptions</p>
+      <div class="price">From $25,000</div>
+    </div>
+    <div class="demo-card" style="background: #000; color: #fff;">
+      <div class="step" style="color: #6CE47C;">Step 04</div>
+      <h3>One</h3>
+      <p>Ongoing AI engineering, measured in output</p>
+      <div class="price" style="color: #6CE47C;">$50k/mo</div>
+    </div>
+  </div>
+
+</div>
+
+<hr class="divider">
+
+<!-- ==================== 3. BENTO GRID ==================== -->
+<div class="section">
+  <div class="section-title">03 &mdash; Bento Grid</div>
+  <div class="section-heading">Stats & Features</div>
+  <div class="section-sub">Bento grids using the 4-colour card system: Green, Green-100, Cream, Black. Each card is visually distinct.</div>
+
+  <div class="palette-row-label">Refined Bento</div>
+  <div class="bento-grid">
+    <div class="bento-item span-2" style="background: #D5F5DC; color: #000;">
+      <div><h4>Enterprise Clients</h4><p>Across financial services, PE, and government</p></div>
+      <div class="big-number">4+</div>
+    </div>
+    <div class="bento-item" style="background: #6CE47C; color: #000;">
+      <h4>Efficiency Gains</h4>
+      <div class="big-number">$2M+</div>
+    </div>
+    <div class="bento-item" style="background: #F5F0E8; color: #000;">
+      <h4>Weeks to Production</h4>
+      <div class="big-number">6</div>
+    </div>
+    <div class="bento-item span-2" style="background: #000; color: #fff; border: 1px solid #1F2937;">
+      <div><h4>Production Ready</h4><p style="color: #9CA3AF;">Not pilots. Not POCs. Real systems in real operations.</p></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ==================== 4. HERO SECTIONS ==================== -->
+<div class="section">
+  <div class="section-title">04 &mdash; Hero Sections</div>
+  <div class="section-heading">Three Hero Variants</div>
+  <div class="section-sub">Four variants using the refined palette. The cream hero matches your current homepage warmth.</div>
+
+  <!-- Hero A: Cream (current homepage feel) -->
+  <div class="hero-mock" style="background: #F5F0E8;">
+    <div class="hero-mock-inner">
+      <p style="font-size: 12px; font-weight: 700; letter-spacing: 2px; color: #000; margin-bottom: 12px; opacity: 0.4;">ENTERPRISE AI</p>
+      <h2 style="color: #000;">AI transformation measured in production, not promises.</h2>
+      <p style="color: #6B7280;">We help financial services, private equity, and government organisations ship AI into production.</p>
+      <div>
+        <a class="btn" style="background: #000; color: #fff;">Book a Discovery Call</a>
+        <a class="btn" style="border: 1px solid #D1D5DB; color: #000; margin-left: 12px;">See Our Approach</a>
+      </div>
+      <div class="stats-row">
+        <div><div class="stat-num" style="color: #6CE47C;">4+</div><div class="stat-label" style="color: #6B7280;">Enterprise Clients</div></div>
+        <div><div class="stat-num" style="color: #6CE47C;">$2M+</div><div class="stat-label" style="color: #6B7280;">Efficiency Gains</div></div>
+        <div><div class="stat-num" style="color: #6CE47C;">6</div><div class="stat-label" style="color: #6B7280;">Weeks to Production</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero B: Dark -->
+  <div class="hero-mock" style="background: #000; border: 1px solid #1F2937;">
+    <div class="hero-mock-inner">
+      <p style="font-size: 12px; font-weight: 700; letter-spacing: 2px; color: #6CE47C; margin-bottom: 12px;">ENTERPRISE AI</p>
+      <h2 style="color: #fff;">AI transformation measured in production, not promises.</h2>
+      <p style="color: #9CA3AF;">We help financial services, private equity, and government organisations ship AI into production.</p>
+      <div>
+        <a class="btn" style="background: #6CE47C; color: #000;">Book a Discovery Call</a>
+        <a class="btn" style="border: 1px solid #374151; color: #fff; margin-left: 12px;">See Our Approach</a>
+      </div>
+      <div class="stats-row">
+        <div><div class="stat-num" style="color: #fff;">4+</div><div class="stat-label" style="color: #6B7280;">Enterprise Clients</div></div>
+        <div><div class="stat-num" style="color: #fff;">$2M+</div><div class="stat-label" style="color: #6B7280;">Efficiency Gains</div></div>
+        <div><div class="stat-num" style="color: #fff;">6</div><div class="stat-label" style="color: #6B7280;">Weeks to Production</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero C: White -->
+  <div class="hero-mock" style="background: #fff; border: 1px solid #E5E7EB;">
+    <div class="hero-mock-inner">
+      <p style="font-size: 12px; font-weight: 700; letter-spacing: 2px; color: #6CE47C; margin-bottom: 12px;">ENTERPRISE AI</p>
+      <h2 style="color: #000;">AI transformation measured in production, not promises.</h2>
+      <p style="color: #6B7280;">We help financial services, private equity, and government organisations ship AI into production.</p>
+      <div>
+        <a class="btn" style="background: #000; color: #fff;">Book a Discovery Call</a>
+        <a class="btn" style="border: 1px solid #E5E7EB; color: #000; margin-left: 12px;">See Our Approach</a>
+      </div>
+      <div class="stats-row">
+        <div><div class="stat-num" style="color: #000;">4+</div><div class="stat-label" style="color: #6B7280;">Enterprise Clients</div></div>
+        <div><div class="stat-num" style="color: #000;">$2M+</div><div class="stat-label" style="color: #6B7280;">Efficiency Gains</div></div>
+        <div><div class="stat-num" style="color: #000;">6</div><div class="stat-label" style="color: #6B7280;">Weeks to Production</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero D: Green accent strip -->
+  <div class="hero-mock" style="background: #000; border: 1px solid #1F2937; overflow: hidden;">
+    <div style="height: 4px; background: #6CE47C;"></div>
+    <div class="hero-mock-inner">
+      <p style="font-size: 12px; font-weight: 700; letter-spacing: 2px; color: #6CE47C; margin-bottom: 12px;">STACK DISCOVER</p>
+      <h2 style="color: #fff;">Find your highest-ROI AI opportunities in 2 weeks.</h2>
+      <p style="color: #9CA3AF;">A fixed-price discovery sprint that maps your operations and surfaces the use cases that matter.</p>
+      <div>
+        <a class="btn" style="background: #6CE47C; color: #000;">Start Discovery &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ==================== 5. SOCIAL MEDIA MOCKUPS ==================== -->
+<div class="section">
+  <div class="section-title">05 &mdash; Social Media</div>
+  <div class="section-heading">Refined Social Posts</div>
+  <div class="section-sub">Core posts use Black + White + Green. Mint and Lime give you variety for social feeds without breaking the system. Always paired with black text and logo.</div>
+
+  <div class="palette-row-label" style="margin-bottom: 16px;">Core Social Posts &mdash; Black / White / Green</div>
+  <div class="social-grid" style="margin-bottom: 48px;">
+    <!-- Card 1: Black/Green split (like Social Media 8) -->
+    <div class="social-card">
+      <div class="social-top" style="background: #000; color: #fff;">
+        <div class="social-logo">
+          <svg viewBox="0 0 20 20" fill="white"><rect x="2" y="6" width="8" height="4" rx="1" transform="rotate(-20 6 8)"/><rect x="6" y="10" width="8" height="4" rx="1" transform="rotate(-20 10 12)"/></svg>
+          stack10
+        </div>
+        <div>
+          <h3>Building AI Systems Enterprise Teams Can Rely On</h3>
+          <div class="tagline" style="color: #9CA3AF;">Operate with confidence, and scale over time.</div>
+        </div>
+      </div>
+      <div class="social-bottom" style="background: #6CE47C; color: #000; display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; gap: -8px; align-items: center;">
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: #333; border: 2px solid #6CE47C;"></div>
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: #555; border: 2px solid #6CE47C; margin-left: -8px;"></div>
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: #777; border: 2px solid #6CE47C; margin-left: -8px;"></div>
+        </div>
+        <div style="font-size: 32px; font-weight: 800;">4.7<span style="font-size: 18px;">&#9733;</span></div>
+      </div>
+    </div>
+
+    <!-- Card 2: Full dark with green stat -->
+    <div class="social-card" style="background: #111827; color: #fff;">
+      <div class="social-top">
+        <div class="social-logo">
+          <svg viewBox="0 0 20 20" fill="white"><rect x="2" y="6" width="8" height="4" rx="1" transform="rotate(-20 6 8)"/><rect x="6" y="10" width="8" height="4" rx="1" transform="rotate(-20 10 12)"/></svg>
+          stack10
+        </div>
+        <div>
+          <div style="font-size: 56px; font-weight: 800; color: #6CE47C; line-height: 1;">$2M+</div>
+          <div style="font-size: 14px; color: #9CA3AF; margin-top: 8px;">in efficiency gains delivered to enterprise clients</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: White minimal -->
+    <div class="social-card" style="background: #fff; color: #000; border: 1px solid #E5E7EB;">
+      <div class="social-top">
+        <div class="social-logo" style="color: #000;">
+          <svg viewBox="0 0 20 20" fill="black"><rect x="2" y="6" width="8" height="4" rx="1" transform="rotate(-20 6 8)"/><rect x="6" y="10" width="8" height="4" rx="1" transform="rotate(-20 10 12)"/></svg>
+          stack10
+        </div>
+        <div>
+          <h3>AI transformation measured in production, not promises.</h3>
+          <div class="tagline" style="color: #6B7280;">Strategy. Engineering. Operations. One integrated team.</div>
+        </div>
+      </div>
+      <div class="social-bottom" style="background: #F9FAFB; border-top: 1px solid #E5E7EB;">
+        <div style="font-size: 13px; font-weight: 700;">Learn more &rarr;</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="palette-row-label" style="margin-bottom: 16px;">Social Variety Posts &mdash; Mint, Lime &amp; Sand</div>
+  <div class="social-grid">
+    <!-- Card 4: Mint -->
+    <div class="social-card" style="background: #91EDE0; color: #000;">
+      <div class="social-top">
+        <div class="social-logo" style="color: #000;">
+          <svg viewBox="0 0 20 20" fill="black"><rect x="2" y="6" width="8" height="4" rx="1" transform="rotate(-20 6 8)"/><rect x="6" y="10" width="8" height="4" rx="1" transform="rotate(-20 10 12)"/></svg>
+          stack10
+        </div>
+        <div>
+          <h3>Still Running AI Experiments Instead Of Real Systems?</h3>
+          <div class="tagline" style="color: rgba(0,0,0,0.5);">Let us turn your AI initiatives into production-ready systems so your teams can focus on running the business.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5: Lime -->
+    <div class="social-card" style="background: #E1FF73; color: #000;">
+      <div class="social-top">
+        <div class="social-logo" style="color: #000;">
+          <svg viewBox="0 0 20 20" fill="black"><rect x="2" y="6" width="8" height="4" rx="1" transform="rotate(-20 6 8)"/><rect x="6" y="10" width="8" height="4" rx="1" transform="rotate(-20 10 12)"/></svg>
+          stack10
+        </div>
+        <div>
+          <h3>Keep AI Outcomes Clear</h3>
+          <div class="tagline" style="color: rgba(0,0,0,0.5);">Most AI efforts fail long before they reach production. We fix that.</div>
+        </div>
+      </div>
+      <div class="social-bottom" style="background: rgba(0,0,0,0.08);">
+        <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 600;">
+          <span>Follow for more</span>
+          <span>Swipe &rarr;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6: Sand -->
+    <div class="social-card" style="background: #FDE68A; color: #000;">
+      <div class="social-top">
+        <div class="social-logo" style="color: #000;">
+          <svg viewBox="0 0 20 20" fill="black"><rect x="2" y="6" width="8" height="4" rx="1" transform="rotate(-20 6 8)"/><rect x="6" y="10" width="8" height="4" rx="1" transform="rotate(-20 10 12)"/></svg>
+          stack10
+        </div>
+        <div>
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 2px; color: rgba(0,0,0,0.4); margin-bottom: 8px;">STACK DISCOVER</div>
+          <h3>Find your top AI opportunities in 2 weeks.</h3>
+          <div class="tagline" style="color: rgba(0,0,0,0.5);">Fixed-price. Data-driven. No fluff.</div>
+        </div>
+      </div>
+      <div class="social-bottom" style="background: #000; color: #fff;">
+        <div style="font-size: 13px; font-weight: 700;">Book a Discovery Call &rarr;</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ==================== 6. CTA SECTIONS ==================== -->
+<div class="section">
+  <div class="section-title">06 &mdash; CTA Sections</div>
+  <div class="section-heading">Call-to-Action Variants</div>
+  <div class="section-sub">Core CTAs use green or dark. Accent CTAs use mint, lime, and sand — rotated across pages for visual variety.</div>
+
+  <div class="palette-row-label" style="margin-bottom: 12px;">Core &mdash; Green + Dark</div>
+  <div class="cta-mock" style="background: #6CE47C; color: #000; margin-bottom: 16px;">
+    <h2>Ready to ship AI into production?</h2>
+    <p style="color: rgba(0,0,0,0.6);">Book a free discovery call and we'll show you where AI can drive the most impact.</p>
+    <a class="btn" style="background: #000; color: #fff;">Book a Discovery Call &rarr;</a>
+  </div>
+
+  <div class="cta-mock" style="background: #111827; color: #fff; border: 1px solid #1F2937; margin-bottom: 48px;">
+    <h2>Ready to ship AI into production?</h2>
+    <p style="color: #9CA3AF;">Book a free discovery call and we'll show you where AI can drive the most impact.</p>
+    <a class="btn" style="background: #6CE47C; color: #000;">Book a Discovery Call &rarr;</a>
+  </div>
+
+  <div class="palette-row-label" style="margin-bottom: 12px;">Accent &mdash; Mint, Lime, Sand (rotated per page)</div>
+  <div class="cta-mock" style="background: #91EDE0; color: #000; margin-bottom: 16px;">
+    <h2>Ready to work differently?</h2>
+    <p style="color: rgba(0,0,0,0.5);">Book a call and see what execution-first AI transformation looks like.</p>
+    <a class="btn" style="background: #000; color: #fff;">Book a Call &rarr;</a>
+  </div>
+
+  <div class="cta-mock" style="background: #E1FF73; color: #000; margin-bottom: 16px;">
+    <h2>See the methodology in action</h2>
+    <p style="color: rgba(0,0,0,0.5);">Book a discovery call and we'll walk you through exactly how it works.</p>
+    <a class="btn" style="background: #000; color: #fff;">Book a Discovery Call &rarr;</a>
+  </div>
+
+  <div class="cta-mock" style="background: #FDE68A; color: #000;">
+    <h2>Prove AI works on your data before you scale</h2>
+    <p style="color: rgba(0,0,0,0.5);">Book Stack Audit and get a working prototype in 6-8 weeks.</p>
+    <a class="btn" style="background: #000; color: #fff;">Book Stack Audit &rarr;</a>
+  </div>
+
+  <div style="margin-top: 24px; padding: 20px; background: #111827; border-radius: 12px; border: 1px solid #1F2937;">
+    <div style="font-size: 13px; font-weight: 700; color: #6CE47C; margin-bottom: 8px;">PAGE DISTRIBUTION</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; font-size: 12px; color: #9CA3AF; line-height: 1.6;">
+      <div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#91EDE0;margin-right:6px;"></span>Mint &mdash; About, Industries, Stack Map</div>
+      <div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#E1FF73;margin-right:6px;"></span>Lime &mdash; How We Work, Stack Discover, Stack One</div>
+      <div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#FDE68A;margin-right:6px;"></span>Sand &mdash; AI Transformation, Stack Audit</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ==================== 7. NAV VARIANTS ==================== -->
+<div class="section">
+  <div class="section-title">07 &mdash; Navigation</div>
+  <div class="section-heading">Nav Bar Variants</div>
+
+  <div class="nav-mock" style="background: #fff; border: 1px solid #E5E7EB;">
+    <div class="nav-mock-logo" style="color: #000;">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="black"><rect x="2" y="6" width="8" height="4" rx="1" transform="rotate(-20 6 8)"/><rect x="6" y="10" width="8" height="4" rx="1" transform="rotate(-20 10 12)"/></svg>
+      stack10
+    </div>
+    <div class="nav-mock-links" style="color: #000;"><span>AI Transformation</span><span>How We Work</span><span>Services</span><span>Industries</span><span>About</span></div>
+    <a class="nav-mock-cta" style="background: #000; color: #fff;">Book a Call</a>
+  </div>
+
+  <div class="nav-mock" style="background: #000; border: 1px solid #1F2937;">
+    <div class="nav-mock-logo" style="color: #fff;">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="white"><rect x="2" y="6" width="8" height="4" rx="1" transform="rotate(-20 6 8)"/><rect x="6" y="10" width="8" height="4" rx="1" transform="rotate(-20 10 12)"/></svg>
+      stack10
+    </div>
+    <div class="nav-mock-links" style="color: #fff;"><span>AI Transformation</span><span>How We Work</span><span>Services</span><span>Industries</span><span>About</span></div>
+    <a class="nav-mock-cta" style="background: #6CE47C; color: #000;">Book a Call</a>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ==================== 8. DESIGN TOKEN SYSTEM ==================== -->
+<div class="section">
+  <div class="section-title">08 &mdash; Design Tokens</div>
+  <div class="section-heading">Full Colour System</div>
+  <div class="section-sub">Every colour you need, with proper scales for hover states, borders, backgrounds, and text. Includes semantic system states for enterprise UI. No more inventing colours on the fly.</div>
+
+  <!-- GREEN SCALE -->
+  <div class="palette-row-label">Green &mdash; Brand Accent (CTAs, highlights, data viz)</div>
+  <div style="display: flex; gap: 4px; margin-bottom: 8px; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 80px;">
+      <div style="height: 56px; background: #EEFCF1; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">50</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#EEFCF1</div>
+        <div style="color: #4B5563; margin-top: 2px;">bg-subtle</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 80px;">
+      <div style="height: 56px; background: #D5F5DC; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">100</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#D5F5DC</div>
+        <div style="color: #4B5563; margin-top: 2px;">badge-bg</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 80px;">
+      <div style="height: 56px; background: #96E9A6; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">300</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#96E9A6</div>
+        <div style="color: #4B5563; margin-top: 2px;">border</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 80px; position: relative;">
+      <div style="height: 56px; background: #6CE47C; border-radius: 8px 8px 0 0;"></div>
+      <div style="position: absolute; top: 4px; right: 4px; background: #000; color: #6CE47C; font-size: 8px; font-weight: 700; padding: 2px 5px; border-radius: 4px; letter-spacing: 1px;">PRIMARY</div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">500</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#6CE47C</div>
+        <div style="color: #4B5563; margin-top: 2px;">btn, accent</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 80px;">
+      <div style="height: 56px; background: #55D468; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">600</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#55D468</div>
+        <div style="color: #4B5563; margin-top: 2px;">btn:hover</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 80px;">
+      <div style="height: 56px; background: #2EAD45; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">700</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#2EAD45</div>
+        <div style="color: #4B5563; margin-top: 2px;">btn:active</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 80px;">
+      <div style="height: 56px; background: #1A7A2E; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">900</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#1A7A2E</div>
+        <div style="color: #4B5563; margin-top: 2px;">dark text</div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-bottom: 40px;"></div>
+
+  <!-- GREY SCALE -->
+  <div class="palette-row-label">Grey &mdash; Neutral System (text, borders, surfaces)</div>
+  <div style="display: flex; gap: 4px; margin-bottom: 8px; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 72px;">
+      <div style="height: 48px; background: #FFFFFF; border-radius: 8px 8px 0 0; border: 1px solid #333; border-bottom: none;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">White</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#FFFFFF</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 72px;">
+      <div style="height: 48px; background: #F9FAFB; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">50</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#F9FAFB</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 72px;">
+      <div style="height: 48px; background: #F3F4F6; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">100</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#F3F4F6</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 72px;">
+      <div style="height: 48px; background: #E5E7EB; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">200</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#E5E7EB</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 72px;">
+      <div style="height: 48px; background: #D1D5DB; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">300</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#D1D5DB</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 72px;">
+      <div style="height: 48px; background: #9CA3AF; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">400</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#9CA3AF</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 72px;">
+      <div style="height: 48px; background: #6B7280; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">500</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#6B7280</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 72px;">
+      <div style="height: 48px; background: #4B5563; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">600</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#4B5563</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 72px;">
+      <div style="height: 48px; background: #374151; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">700</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#374151</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 72px;">
+      <div style="height: 48px; background: #1F2937; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">800</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#1F2937</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 72px;">
+      <div style="height: 48px; background: #111827; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px; border-top: 1px solid #374151;">
+        <div style="font-weight: 600;">900</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#111827</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 72px;">
+      <div style="height: 48px; background: #000000; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px; border-top: 1px solid #374151;">
+        <div style="font-weight: 600;">Black</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#000000</div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-bottom: 40px;"></div>
+
+  <!-- CREAM SCALE -->
+  <div class="palette-row-label">Cream &mdash; Warm Neutral (hero, sections, warmth)</div>
+  <div style="display: flex; gap: 4px; margin-bottom: 8px; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #FAF8F5; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">50</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#FAF8F5</div>
+        <div style="color: #4B5563; margin-top: 2px;">subtle bg</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px; position: relative;">
+      <div style="height: 56px; background: #F5F0E8; border-radius: 8px 8px 0 0;"></div>
+      <div style="position: absolute; top: 4px; right: 4px; background: #000; color: #F5F0E8; font-size: 8px; font-weight: 700; padding: 2px 5px; border-radius: 4px; letter-spacing: 1px;">HERO</div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">100</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#F5F0E8</div>
+        <div style="color: #4B5563; margin-top: 2px;">hero, sections</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #EDE5D8; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">200</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#EDE5D8</div>
+        <div style="color: #4B5563; margin-top: 2px;">cards, hover</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #DDD3C3; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">300</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#DDD3C3</div>
+        <div style="color: #4B5563; margin-top: 2px;">borders</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #B8A88F; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">500</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#B8A88F</div>
+        <div style="color: #4B5563; margin-top: 2px;">muted text</div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-bottom: 40px;"></div>
+
+  <!-- MINT SCALE -->
+  <div class="palette-row-label">Mint &mdash; Social Accent (social media backgrounds)</div>
+  <div style="display: flex; gap: 4px; margin-bottom: 8px; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #E0FAF5; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">50</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#E0FAF5</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #B8F0E6; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">200</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#B8F0E6</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px; position: relative;">
+      <div style="height: 56px; background: #91EDE0; border-radius: 8px 8px 0 0;"></div>
+      <div style="position: absolute; top: 4px; right: 4px; background: #000; color: #91EDE0; font-size: 8px; font-weight: 700; padding: 2px 5px; border-radius: 4px; letter-spacing: 1px;">BASE</div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">400</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#91EDE0</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #5DDBC8; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">600</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#5DDBC8</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #2BA897; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">800</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#2BA897</div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-bottom: 40px;"></div>
+
+  <!-- SEMANTIC SYSTEM STATES -->
+  <div class="palette-row-label">Semantic &mdash; System States (error, warning, success, info)</div>
+  <div style="display: flex; gap: 4px; margin-bottom: 8px; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #DC2626; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">Error</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#DC2626</div>
+        <div style="color: #4B5563; margin-top: 2px;">destructive</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #FEF2F2; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">Error Light</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#FEF2F2</div>
+        <div style="color: #4B5563; margin-top: 2px;">error bg</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #D97706; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">Warning</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#D97706</div>
+        <div style="color: #4B5563; margin-top: 2px;">caution</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #FFFBEB; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">Warning Light</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#FFFBEB</div>
+        <div style="color: #4B5563; margin-top: 2px;">warning bg</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #059669; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">Success</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#059669</div>
+        <div style="color: #4B5563; margin-top: 2px;">confirm</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #ECFDF5; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">Success Light</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#ECFDF5</div>
+        <div style="color: #4B5563; margin-top: 2px;">success bg</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #2563EB; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">Info</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#2563EB</div>
+        <div style="color: #4B5563; margin-top: 2px;">informational</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #EFF6FF; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">Info Light</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#EFF6FF</div>
+        <div style="color: #4B5563; margin-top: 2px;">info bg</div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-bottom: 40px;"></div>
+
+  <!-- LIME SCALE -->
+  <div class="palette-row-label">Lime &mdash; Social Accent (social media backgrounds)</div>
+  <div style="display: flex; gap: 4px; margin-bottom: 8px; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #F5FFDC; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">50</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#F5FFDC</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #ECFFB3; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">200</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#ECFFB3</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px; position: relative;">
+      <div style="height: 56px; background: #E1FF73; border-radius: 8px 8px 0 0;"></div>
+      <div style="position: absolute; top: 4px; right: 4px; background: #000; color: #E1FF73; font-size: 8px; font-weight: 700; padding: 2px 5px; border-radius: 4px; letter-spacing: 1px;">BASE</div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">400</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#E1FF73</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #C4E840; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">600</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#C4E840</div>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 100px;">
+      <div style="height: 56px; background: #8FB520; border-radius: 8px 8px 0 0;"></div>
+      <div style="padding: 6px; background: #111827; border-radius: 0 0 8px 8px; font-size: 10px;">
+        <div style="font-weight: 600;">800</div>
+        <div style="color: #6B7280; font-family: 'JetBrains Mono', monospace;">#8FB520</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ==================== 9. SEMANTIC TOKENS ==================== -->
+<div class="section">
+  <div class="section-title">09 &mdash; Semantic Tokens</div>
+  <div class="section-heading">How Colours Map to UI</div>
+  <div class="section-sub">Primitive colours become semantic tokens. Designers and devs reference the semantic name, not the hex.</div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px;">
+    <!-- Light mode -->
+    <div style="background: #fff; border-radius: 16px; padding: 24px; color: #000; border: 1px solid #E5E7EB;">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 2px; color: #6B7280; margin-bottom: 16px;">LIGHT MODE</div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #F3F4F6;">
+          <span style="font-weight: 600;">--bg-primary</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #FFFFFF; border: 1px solid #E5E7EB;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#FFFFFF</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #F3F4F6;">
+          <span style="font-weight: 600;">--bg-secondary</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #F5F0E8;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#F5F0E8</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #F3F4F6;">
+          <span style="font-weight: 600;">--bg-tertiary</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #F9FAFB;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#F9FAFB</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #F3F4F6;">
+          <span style="font-weight: 600;">--text-primary</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #000000;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#000000</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #F3F4F6;">
+          <span style="font-weight: 600;">--text-secondary</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #6B7280;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#6B7280</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #F3F4F6;">
+          <span style="font-weight: 600;">--border</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #E5E7EB;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#E5E7EB</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #F3F4F6;">
+          <span style="font-weight: 600;">--accent</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #6CE47C;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#6CE47C</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #F3F4F6;">
+          <span style="font-weight: 600;">--accent-text</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #1A7A2E;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#1A7A2E</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #F3F4F6;">
+          <span style="font-weight: 600;">--error</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #DC2626;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#DC2626</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #F3F4F6;">
+          <span style="font-weight: 600;">--warning</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #D97706;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#D97706</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0;">
+          <span style="font-weight: 600;">--success</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #059669;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#059669</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dark mode -->
+    <div style="background: #000; border-radius: 16px; padding: 24px; color: #fff; border: 1px solid #1F2937;">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 2px; color: #6B7280; margin-bottom: 16px;">DARK MODE</div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #1F2937;">
+          <span style="font-weight: 600;">--bg-primary</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #000000;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#000000</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #1F2937;">
+          <span style="font-weight: 600;">--bg-secondary</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #111827;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#111827</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #1F2937;">
+          <span style="font-weight: 600;">--bg-tertiary</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #1F2937;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#1F2937</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #1F2937;">
+          <span style="font-weight: 600;">--text-primary</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #FFFFFF; border: 1px solid #374151;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#FFFFFF</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #1F2937;">
+          <span style="font-weight: 600;">--text-secondary</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #9CA3AF;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#9CA3AF</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #1F2937;">
+          <span style="font-weight: 600;">--border</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #1F2937;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#1F2937</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #1F2937;">
+          <span style="font-weight: 600;">--accent</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #6CE47C;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#6CE47C</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #1F2937;">
+          <span style="font-weight: 600;">--accent-text</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #96E9A6;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#96E9A6</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #1F2937;">
+          <span style="font-weight: 600;">--error</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #EF4444;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#EF4444</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #1F2937;">
+          <span style="font-weight: 600;">--warning</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #FBBF24;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#FBBF24</span></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0;">
+          <span style="font-weight: 600;">--success</span>
+          <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 20px; height: 20px; border-radius: 4px; background: #34D399;"></div><span style="font-family: 'JetBrains Mono', monospace; color: #6B7280;">#34D399</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ==================== 10. COLOUR HIERARCHY ==================== -->
+<div class="section" style="padding-bottom: 120px;">
+  <div class="section-title">10 &mdash; The System</div>
+  <div class="section-heading">Colour Hierarchy</div>
+  <div class="section-sub">Where each colour lives. Website stays disciplined. Semantic colours serve system states. Social gets room to breathe.</div>
+
+  <div style="display: flex; gap: 4px; border-radius: 12px; overflow: hidden; height: 64px; max-width: 700px; margin-bottom: 32px;">
+    <div style="flex: 5; background: #000; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 13px; font-weight: 700;">50% Black / White</div>
+    <div style="flex: 2; background: #F5F0E8; display: flex; align-items: center; justify-content: center; color: #000; font-size: 13px; font-weight: 700;">20% Cream / Grey</div>
+    <div style="flex: 1.5; background: #6CE47C; display: flex; align-items: center; justify-content: center; color: #000; font-size: 12px; font-weight: 700;">15% Green</div>
+    <div style="flex: 1; background: linear-gradient(135deg, #DC2626, #D97706, #059669, #2563EB); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 10px; font-weight: 700; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">Semantic</div>
+    <div style="flex: 0.5; background: linear-gradient(90deg, #91EDE0, #E1FF73, #FDE68A); display: flex; align-items: center; justify-content: center; color: #000; font-size: 9px; font-weight: 700;">Social</div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 40px;">
+    <!-- Website -->
+    <div style="background: #111827; border-radius: 12px; padding: 20px; border: 1px solid #1F2937;">
+      <div style="font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #6CE47C; margin-bottom: 12px;">WEBSITE</div>
+      <div style="display: flex; gap: 4px; margin-bottom: 12px;">
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #000;"></div>
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #fff; border: 1px solid #374151;"></div>
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #6CE47C;"></div>
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #F5F0E8;"></div>
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #6B7280;"></div>
+      </div>
+      <div style="font-size: 12px; color: #9CA3AF; line-height: 1.5;">Core only. No mint. No lime. Cream for hero and warm sections.</div>
+    </div>
+    <!-- Social -->
+    <div style="background: #111827; border-radius: 12px; padding: 20px; border: 1px solid #1F2937;">
+      <div style="font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #91EDE0; margin-bottom: 12px;">SOCIAL MEDIA</div>
+      <div style="display: flex; gap: 4px; margin-bottom: 12px;">
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #000;"></div>
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #fff; border: 1px solid #374151;"></div>
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #6CE47C;"></div>
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #F5F0E8;"></div>
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #91EDE0;"></div>
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #E1FF73;"></div>
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #FDE68A;"></div>
+      </div>
+      <div style="font-size: 12px; color: #9CA3AF; line-height: 1.5;">Core + Mint + Lime + Sand for CTA banners and social backgrounds. Always black text.</div>
+    </div>
+    <!-- Print -->
+    <div style="background: #111827; border-radius: 12px; padding: 20px; border: 1px solid #1F2937;">
+      <div style="font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #6B7280; margin-bottom: 12px;">PRINT / COLLATERAL</div>
+      <div style="display: flex; gap: 4px; margin-bottom: 12px;">
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #000;"></div>
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #fff; border: 1px solid #374151;"></div>
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #6CE47C;"></div>
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #F5F0E8;"></div>
+      </div>
+      <div style="font-size: 12px; color: #9CA3AF; line-height: 1.5;">Core + Cream only. Business cards, letterheads, decks. Maximum restraint.</div>
+    </div>
+  </div>
+
+  <!-- CSS Output -->
+  <div style="background: #0D1117; border-radius: 12px; padding: 24px; border: 1px solid #1F2937; font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.8; color: #E6EDF3; overflow-x: auto;">
+    <div style="color: #6B7280; margin-bottom: 8px;">/* Stack10 Design Tokens — CSS Custom Properties */</div>
+    <div style="color: #6B7280;">:root {</div>
+    <div style="color: #6B7280; margin-top: 4px;">&nbsp;&nbsp;/* Core */</div>
+    <div>&nbsp;&nbsp;--white: <span style="color: #A5D6FF;">#FFFFFF</span>;</div>
+    <div>&nbsp;&nbsp;--black: <span style="color: #A5D6FF;">#000000</span>;</div>
+    <div style="color: #6B7280; margin-top: 8px;">&nbsp;&nbsp;/* Green — Brand Accent */</div>
+    <div>&nbsp;&nbsp;--green-50: <span style="color: #A5D6FF;">#EEFCF1</span>;</div>
+    <div>&nbsp;&nbsp;--green-100: <span style="color: #A5D6FF;">#D5F5DC</span>;</div>
+    <div>&nbsp;&nbsp;--green-300: <span style="color: #A5D6FF;">#96E9A6</span>;</div>
+    <div>&nbsp;&nbsp;--green: <span style="color: #A5D6FF;">#6CE47C</span>; <span style="color: #6B7280;">/* primary accent */</span></div>
+    <div>&nbsp;&nbsp;--green-dark: <span style="color: #A5D6FF;">#55D468</span>; <span style="color: #6B7280;">/* hover */</span></div>
+    <div>&nbsp;&nbsp;--green-700: <span style="color: #A5D6FF;">#2EAD45</span>; <span style="color: #6B7280;">/* active */</span></div>
+    <div>&nbsp;&nbsp;--green-900: <span style="color: #A5D6FF;">#1A7A2E</span>; <span style="color: #6B7280;">/* text on light bg */</span></div>
+    <div style="color: #6B7280; margin-top: 8px;">&nbsp;&nbsp;/* Grey — Neutral System */</div>
+    <div>&nbsp;&nbsp;--grey-50: <span style="color: #A5D6FF;">#F9FAFB</span>;</div>
+    <div>&nbsp;&nbsp;--grey-100: <span style="color: #A5D6FF;">#F3F4F6</span>;</div>
+    <div>&nbsp;&nbsp;--grey-200: <span style="color: #A5D6FF;">#E5E7EB</span>;</div>
+    <div>&nbsp;&nbsp;--grey-300: <span style="color: #A5D6FF;">#D1D5DB</span>;</div>
+    <div>&nbsp;&nbsp;--grey-400: <span style="color: #A5D6FF;">#9CA3AF</span>;</div>
+    <div>&nbsp;&nbsp;--grey-500: <span style="color: #A5D6FF;">#6B7280</span>;</div>
+    <div>&nbsp;&nbsp;--grey-600: <span style="color: #A5D6FF;">#4B5563</span>;</div>
+    <div>&nbsp;&nbsp;--grey-700: <span style="color: #A5D6FF;">#374151</span>;</div>
+    <div>&nbsp;&nbsp;--grey-800: <span style="color: #A5D6FF;">#1F2937</span>;</div>
+    <div>&nbsp;&nbsp;--grey-900: <span style="color: #A5D6FF;">#111827</span>;</div>
+    <div style="color: #6B7280; margin-top: 8px;">&nbsp;&nbsp;/* Cream — Warm Neutral */</div>
+    <div>&nbsp;&nbsp;--cream-50: <span style="color: #A5D6FF;">#FAF8F5</span>;</div>
+    <div>&nbsp;&nbsp;--cream: <span style="color: #A5D6FF;">#F5F0E8</span>;</div>
+    <div>&nbsp;&nbsp;--cream-dark: <span style="color: #A5D6FF;">#EDE5D8</span>;</div>
+    <div>&nbsp;&nbsp;--cream-300: <span style="color: #A5D6FF;">#DDD3C3</span>;</div>
+    <div>&nbsp;&nbsp;--cream-500: <span style="color: #A5D6FF;">#B8A88F</span>;</div>
+    <div style="color: #6B7280; margin-top: 8px;">&nbsp;&nbsp;/* Accent Colours (CTA banners + social media) */</div>
+    <div>&nbsp;&nbsp;--mint: <span style="color: #A5D6FF;">#91EDE0</span>;</div>
+    <div>&nbsp;&nbsp;--lime: <span style="color: #A5D6FF;">#E1FF73</span>;</div>
+    <div>&nbsp;&nbsp;--sand: <span style="color: #A5D6FF;">#FDE68A</span>;</div>
+    <div style="color: #6B7280; margin-top: 8px;">&nbsp;&nbsp;/* Semantic — System States */</div>
+    <div>&nbsp;&nbsp;--error: <span style="color: #A5D6FF;">#DC2626</span>;</div>
+    <div>&nbsp;&nbsp;--error-light: <span style="color: #A5D6FF;">#FEF2F2</span>;</div>
+    <div>&nbsp;&nbsp;--warning: <span style="color: #A5D6FF;">#D97706</span>;</div>
+    <div>&nbsp;&nbsp;--warning-light: <span style="color: #A5D6FF;">#FFFBEB</span>;</div>
+    <div>&nbsp;&nbsp;--success: <span style="color: #A5D6FF;">#059669</span>;</div>
+    <div>&nbsp;&nbsp;--success-light: <span style="color: #A5D6FF;">#ECFDF5</span>;</div>
+    <div>&nbsp;&nbsp;--info: <span style="color: #A5D6FF;">#2563EB</span>;</div>
+    <div>&nbsp;&nbsp;--info-light: <span style="color: #A5D6FF;">#EFF6FF</span>;</div>
+    <div style="color: #6B7280;">}</div>
+  </div>
+</div>
+
+</body>
+</html>
