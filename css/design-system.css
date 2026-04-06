@@ -1171,7 +1171,7 @@ body {
 }
 
 .hero-dark .section-label { color: var(--green-400); }
-.hero-dark .section-desc { color: var(--gray-400); }
+.hero-dark .hero-subtitle { color: var(--gray-400); }
 
 .hero-title {
   font-size: clamp(2.5rem, 6vw, var(--text-h1));
