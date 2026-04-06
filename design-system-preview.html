@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stack 10 — Design System Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/design-system.css">
+<style>
+  .pg { max-width: 1280px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+  .sec { padding: 3rem 0; border-bottom: 1px solid var(--border); }
+  .sec:last-child { border-bottom: none; }
+  .sl { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-foreground); margin-bottom: 0.25rem; }
+  .sh { font-size: 1.875rem; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 0.5rem; }
+  .sd { color: var(--muted-foreground); font-size: 0.875rem; margin-bottom: 1.5rem; max-width: 640px; }
+  .g { display: grid; gap: 0.75rem; }
+  .g2 { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+  .g3 { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+  .g4 { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+  .g6 { grid-template-columns: repeat(6, 1fr); }
+  .sw { border-radius: var(--radius-lg); padding: 1.25rem; min-height: 90px; display: flex; flex-direction: column; justify-content: flex-end; gap: 0.25rem; }
+  .sw-n { font-weight: 600; font-size: 0.8125rem; }
+  .sw-v { font-family: var(--font-mono); font-size: 0.6875rem; opacity: 0.7; }
+  .row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+  .code { font-family: var(--font-mono); font-size: 0.75rem; background: var(--muted); padding: 0.125rem 0.375rem; border-radius: var(--radius-sm); }
+  .divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
+  .subsec { color: var(--muted-foreground); font-size: 0.8125rem; font-weight: 600; margin-bottom: 0.5rem; margin-top: 1.5rem; }
+  .subsec:first-child { margin-top: 0; }
+  .theme-toggle { position: fixed; top: 1rem; right: 1rem; z-index: 100; }
+  @media (max-width: 768px) { .g6 { grid-template-columns: repeat(3, 1fr); } }
+</style>
+</head>
+<body>
+
+<div class="theme-toggle">
+  <button class="btn btn-outline btn-sm" onclick="toggleTheme()" id="theme-btn">Toggle Light Mode</button>
+  <script>
+    if (!window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.getElementById('theme-btn').textContent = 'Toggle Dark Mode';
+    }
+  </script>
+</div>
+
+<div class="pg">
+
+<!-- Header -->
+<div style="text-align: center; padding: 3rem 0 2rem;">
+  <h1 class="h2">Stack 10 Design System</h1>
+  <p style="color: var(--muted-foreground); font-size: 0.875rem;">Three-layer token architecture: <span class="code">Primitive → Semantic → Component</span></p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 01. GREEN SCALE -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">01</div>
+  <div class="sh">Green Scale</div>
+  <div class="sd">Primitive layer. 10-step green scale. Never used directly — semantic tokens reference them.</div>
+  <div class="g" style="grid-template-columns: repeat(10, 1fr);">
+    <div class="sw" style="background: var(--green-50); color: var(--gray-900);"><div class="sw-n">50</div></div>
+    <div class="sw" style="background: var(--green-100); color: var(--gray-900);"><div class="sw-n">100</div></div>
+    <div class="sw" style="background: var(--green-200); color: var(--gray-900);"><div class="sw-n">200</div></div>
+    <div class="sw" style="background: var(--green-300); color: var(--gray-900);"><div class="sw-n">300</div></div>
+    <div class="sw" style="background: var(--green-400); color: var(--gray-950);"><div class="sw-n">400</div></div>
+    <div class="sw" style="background: var(--green-500); color: var(--gray-950);"><div class="sw-n">500</div></div>
+    <div class="sw" style="background: var(--green-600); color: var(--gray-0);"><div class="sw-n">600</div></div>
+    <div class="sw" style="background: var(--green-700); color: var(--gray-0);"><div class="sw-n">700</div></div>
+    <div class="sw" style="background: var(--green-800); color: var(--gray-0);"><div class="sw-n">800</div></div>
+    <div class="sw" style="background: var(--green-900); color: var(--gray-0);"><div class="sw-n">900</div></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 02. GRAY SCALE -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">02</div>
+  <div class="sh">Gray Scale</div>
+  <div class="sd">True gray — no blue or slate undertone. Pure neutrals for a black/white/green brand.</div>
+  <div class="g" style="grid-template-columns: repeat(13, 1fr);">
+    <div class="sw" style="background: var(--gray-0); color: var(--gray-900); border: 1px solid var(--gray-200);"><div class="sw-n">0</div></div>
+    <div class="sw" style="background: var(--gray-50); color: var(--gray-900);"><div class="sw-n">50</div></div>
+    <div class="sw" style="background: var(--gray-100); color: var(--gray-900);"><div class="sw-n">100</div></div>
+    <div class="sw" style="background: var(--gray-200); color: var(--gray-900);"><div class="sw-n">200</div></div>
+    <div class="sw" style="background: var(--gray-300); color: var(--gray-900);"><div class="sw-n">300</div></div>
+    <div class="sw" style="background: var(--gray-400); color: var(--gray-0);"><div class="sw-n">400</div></div>
+    <div class="sw" style="background: var(--gray-500); color: var(--gray-0);"><div class="sw-n">500</div></div>
+    <div class="sw" style="background: var(--gray-600); color: var(--gray-0);"><div class="sw-n">600</div></div>
+    <div class="sw" style="background: var(--gray-700); color: var(--gray-0);"><div class="sw-n">700</div></div>
+    <div class="sw" style="background: var(--gray-800); color: var(--gray-0);"><div class="sw-n">800</div></div>
+    <div class="sw" style="background: var(--gray-900); color: var(--gray-0);"><div class="sw-n">900</div></div>
+    <div class="sw" style="background: var(--gray-950); color: var(--gray-0);"><div class="sw-n">950</div></div>
+    <div class="sw" style="background: var(--gray-1000); color: var(--gray-0);"><div class="sw-n">1000</div></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 03. STATUS PRIMITIVES -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">03</div>
+  <div class="sh">Status Primitives</div>
+  <div class="sd">Raw status colors. Each has a light variant (500) for light mode and a dark variant (400) for dark mode.</div>
+  <div class="g g4">
+    <div class="sw" style="background: var(--red-500); color: var(--gray-0);"><div class="sw-n">Red 500</div><div class="sw-v">Destructive</div></div>
+    <div class="sw" style="background: var(--red-400); color: var(--gray-0);"><div class="sw-n">Red 400</div><div class="sw-v">Destructive (dark)</div></div>
+    <div class="sw" style="background: var(--teal-500); color: var(--gray-950);"><div class="sw-n">Teal 500</div><div class="sw-v">Success</div></div>
+    <div class="sw" style="background: var(--teal-400); color: var(--gray-950);"><div class="sw-n">Teal 400</div><div class="sw-v">Success (dark)</div></div>
+    <div class="sw" style="background: var(--orange-500); color: var(--gray-950);"><div class="sw-n">Orange 500</div><div class="sw-v">Warning</div></div>
+    <div class="sw" style="background: var(--blue-500); color: var(--gray-0);"><div class="sw-n">Blue 500</div><div class="sw-v">Info</div></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 04. SEMANTIC COLORS -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">04</div>
+  <div class="sh">Semantic Colors</div>
+  <div class="sd">Purpose-based tokens that reference primitives. These swap automatically in dark mode.</div>
+
+  <div class="subsec">Interactive</div>
+  <div class="g g4">
+    <div class="sw" style="background: var(--primary); color: var(--primary-foreground);"><div class="sw-n">Primary</div><div class="sw-v">CTA / buttons</div></div>
+    <div class="sw" style="background: var(--primary-hover); color: var(--primary-foreground);"><div class="sw-n">Primary Hover</div><div class="sw-v">Button hover</div></div>
+    <div class="sw" style="background: var(--background); color: var(--primary-text); border: 1px solid var(--border);"><div class="sw-n">Primary Text</div><div class="sw-v">Green on surface</div></div>
+    <div class="sw" style="background: var(--secondary); color: var(--secondary-foreground);"><div class="sw-n">Secondary</div><div class="sw-v">Subtle fills</div></div>
+    <div class="sw" style="background: var(--accent); color: var(--accent-foreground);"><div class="sw-n">Accent</div><div class="sw-v">Hover highlight</div></div>
+    <div class="sw" style="background: var(--muted); color: var(--muted-foreground);"><div class="sw-n">Muted</div><div class="sw-v">Disabled / subtle</div></div>
+  </div>
+
+  <div class="subsec">Status</div>
+  <div class="g g4">
+    <div class="sw" style="background: var(--destructive); color: var(--destructive-foreground);"><div class="sw-n">Destructive</div><div class="sw-v">Error / delete</div></div>
+    <div class="sw" style="background: var(--success); color: var(--success-foreground);"><div class="sw-n">Success</div><div class="sw-v">Teal</div></div>
+    <div class="sw" style="background: var(--warning); color: var(--warning-foreground);"><div class="sw-n">Warning</div><div class="sw-v">Orange</div></div>
+    <div class="sw" style="background: var(--info); color: var(--info-foreground);"><div class="sw-n">Info</div><div class="sw-v">Blue</div></div>
+  </div>
+
+  <div class="subsec">Surfaces</div>
+  <div class="g g4">
+    <div class="sw" style="background: var(--background); color: var(--foreground); border: 1px solid var(--border);"><div class="sw-n">Background</div><div class="sw-v">Page bg</div></div>
+    <div class="sw" style="background: var(--foreground); color: var(--background);"><div class="sw-n">Foreground</div><div class="sw-v">Default text</div></div>
+    <div class="sw" style="background: var(--card); color: var(--card-foreground); border: 1px solid var(--border);"><div class="sw-n">Card</div><div class="sw-v">Card bg</div></div>
+    <div class="sw" style="background: var(--popover); color: var(--popover-foreground); border: 1px solid var(--border);"><div class="sw-n">Popover</div><div class="sw-v">Dropdown bg</div></div>
+  </div>
+
+  <div class="subsec">UI Chrome</div>
+  <div class="row">
+    <div style="width: 140px; height: 48px; border: 2px solid var(--border); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 0.75rem;">--border</div>
+    <div style="width: 140px; height: 48px; border: 2px solid var(--input); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 0.75rem;">--input</div>
+    <div style="width: 140px; height: 48px; border: 2px solid var(--ring); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 0.75rem;">--ring</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 05. CARD PALETTE -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">05</div>
+  <div class="sh">Card Palette</div>
+  <div class="sd">Six pastels with hues spread around the wheel (50, 85, 95, 150, 185, 280). Each clearly distinguishable.</div>
+
+  <div class="subsec">Swatches</div>
+  <div class="g g6" style="margin-bottom: 2rem;">
+    <div class="sw" style="background: var(--card-green); color: var(--card-text); min-height: 120px;"><div class="sw-n">Green</div><div class="sw-v">H:150</div></div>
+    <div class="sw" style="background: var(--card-mint); color: var(--card-text); min-height: 120px;"><div class="sw-n">Mint</div><div class="sw-v">H:185</div></div>
+    <div class="sw" style="background: var(--card-lavender); color: var(--card-text); min-height: 120px;"><div class="sw-n">Lavender</div><div class="sw-v">H:280</div></div>
+    <div class="sw" style="background: var(--card-peach); color: var(--card-text); min-height: 120px;"><div class="sw-n">Peach</div><div class="sw-v">H:50</div></div>
+    <div class="sw" style="background: var(--card-sand); color: var(--card-text); min-height: 120px;"><div class="sw-n">Sand</div><div class="sw-v">H:85</div></div>
+    <div class="sw" style="background: var(--card-cream); color: var(--card-text); min-height: 120px;"><div class="sw-n">Cream</div><div class="sw-v">H:95</div></div>
+  </div>
+
+  <div class="subsec">Text on Cards — WCAG AA Validated</div>
+  <div class="sd">Two text tokens: <span class="code">--card-text</span> (headings/body) and <span class="code">--card-text-muted</span> (captions). Both pass AA on all 6 backgrounds.</div>
+  <div class="g g6">
+    <div style="background: var(--card-green); border-radius: var(--radius-lg); padding: 1.25rem;">
+      <div style="color: var(--card-text); font-weight: 700; font-size: 1.125rem; margin-bottom: 0.25rem;">Heading</div>
+      <div style="color: var(--card-text); font-size: 0.875rem; margin-bottom: 0.5rem;">Body text on the card.</div>
+      <div style="color: var(--card-text-muted); font-size: 0.75rem;">Muted caption text</div>
+    </div>
+    <div style="background: var(--card-mint); border-radius: var(--radius-lg); padding: 1.25rem;">
+      <div style="color: var(--card-text); font-weight: 700; font-size: 1.125rem; margin-bottom: 0.25rem;">Heading</div>
+      <div style="color: var(--card-text); font-size: 0.875rem; margin-bottom: 0.5rem;">Body text on the card.</div>
+      <div style="color: var(--card-text-muted); font-size: 0.75rem;">Muted caption text</div>
+    </div>
+    <div style="background: var(--card-lavender); border-radius: var(--radius-lg); padding: 1.25rem;">
+      <div style="color: var(--card-text); font-weight: 700; font-size: 1.125rem; margin-bottom: 0.25rem;">Heading</div>
+      <div style="color: var(--card-text); font-size: 0.875rem; margin-bottom: 0.5rem;">Body text on the card.</div>
+      <div style="color: var(--card-text-muted); font-size: 0.75rem;">Muted caption text</div>
+    </div>
+    <div style="background: var(--card-peach); border-radius: var(--radius-lg); padding: 1.25rem;">
+      <div style="color: var(--card-text); font-weight: 700; font-size: 1.125rem; margin-bottom: 0.25rem;">Heading</div>
+      <div style="color: var(--card-text); font-size: 0.875rem; margin-bottom: 0.5rem;">Body text on the card.</div>
+      <div style="color: var(--card-text-muted); font-size: 0.75rem;">Muted caption text</div>
+    </div>
+    <div style="background: var(--card-sand); border-radius: var(--radius-lg); padding: 1.25rem;">
+      <div style="color: var(--card-text); font-weight: 700; font-size: 1.125rem; margin-bottom: 0.25rem;">Heading</div>
+      <div style="color: var(--card-text); font-size: 0.875rem; margin-bottom: 0.5rem;">Body text on the card.</div>
+      <div style="color: var(--card-text-muted); font-size: 0.75rem;">Muted caption text</div>
+    </div>
+    <div style="background: var(--card-cream); border-radius: var(--radius-lg); padding: 1.25rem;">
+      <div style="color: var(--card-text); font-weight: 700; font-size: 1.125rem; margin-bottom: 0.25rem;">Heading</div>
+      <div style="color: var(--card-text); font-size: 0.875rem; margin-bottom: 0.5rem;">Body text on the card.</div>
+      <div style="color: var(--card-text-muted); font-size: 0.75rem;">Muted caption text</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 06. CHART COLORS -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">06</div>
+  <div class="sh">Chart Series</div>
+  <div class="sd">Staggered luminance for colorblind accessibility. Values shift in dark mode.</div>
+  <div class="row">
+    <div style="width: 64px; height: 64px; border-radius: var(--radius-md); background: var(--chart-1); display: flex; align-items: center; justify-content: center; color: var(--gray-950); font-size: 0.75rem; font-weight: 600;">1</div>
+    <div style="width: 64px; height: 64px; border-radius: var(--radius-md); background: var(--chart-2); display: flex; align-items: center; justify-content: center; color: var(--gray-0); font-size: 0.75rem; font-weight: 600;">2</div>
+    <div style="width: 64px; height: 64px; border-radius: var(--radius-md); background: var(--chart-3); display: flex; align-items: center; justify-content: center; color: var(--gray-950); font-size: 0.75rem; font-weight: 600;">3</div>
+    <div style="width: 64px; height: 64px; border-radius: var(--radius-md); background: var(--chart-4); display: flex; align-items: center; justify-content: center; color: var(--gray-0); font-size: 0.75rem; font-weight: 600;">4</div>
+    <div style="width: 64px; height: 64px; border-radius: var(--radius-md); background: var(--chart-5); display: flex; align-items: center; justify-content: center; color: var(--gray-950); font-size: 0.75rem; font-weight: 600;">5</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 07. TYPOGRAPHY -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">07</div>
+  <div class="sh">Typography</div>
+  <div class="sd">Manrope, geometric sans-serif. Body weight 500 (medium) to compensate for lighter rendering.</div>
+
+  <div class="subsec">Type Scale</div>
+  <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+    <div><span class="code" style="display: inline-block; width: 80px;">H1</span> <span class="h1" style="font-size: clamp(2.25rem, 5vw, 4rem);">The future is now</span></div>
+    <div><span class="code" style="display: inline-block; width: 80px;">H2</span> <span class="h2" style="font-size: clamp(1.875rem, 4vw, 2.5rem);">Section headline</span></div>
+    <div><span class="code" style="display: inline-block; width: 80px;">H3</span> <span class="h3" style="font-size: clamp(1.5rem, 3vw, 2rem);">Sub-section title</span></div>
+    <div><span class="code" style="display: inline-block; width: 80px;">H4</span> <span class="h4">Card title</span></div>
+    <div><span class="code" style="display: inline-block; width: 80px;">H5</span> <span class="h5">Small heading</span></div>
+    <div><span class="code" style="display: inline-block; width: 80px;">H6</span> <span class="h6">Label heading</span></div>
+    <div class="divider"></div>
+    <div><span class="code" style="display: inline-block; width: 80px;">P1</span> <span class="p1">Primary body text at 18px medium weight with relaxed line height.</span></div>
+    <div><span class="code" style="display: inline-block; width: 80px;">P2</span> <span class="p2">Secondary body text at 16px for supporting content.</span></div>
+    <div><span class="code" style="display: inline-block; width: 80px;">Caption</span> <span class="caption">Caption text for labels and help text.</span></div>
+    <div><span class="code" style="display: inline-block; width: 80px;">Overline</span> <span class="overline">Category label</span></div>
+    <div><span class="code" style="display: inline-block; width: 80px;">Mono</span> <span style="font-family: var(--font-mono); font-size: 0.875rem;">const result = await deploy();</span></div>
+  </div>
+
+  <div class="subsec">Font Weights</div>
+  <div class="row" style="gap: 2rem;">
+    <span style="font-weight: 300;">Light 300</span>
+    <span style="font-weight: 400;">Regular 400</span>
+    <span style="font-weight: 500;">Medium 500</span>
+    <span style="font-weight: 600;">Semibold 600</span>
+    <span style="font-weight: 700;">Bold 700</span>
+    <span style="font-weight: 800;">ExtraBold 800</span>
+  </div>
+
+  <div class="subsec">Prose</div>
+  <p class="prose p2" style="color: var(--muted-foreground);">This paragraph uses the <span class="code">.prose</span> class which caps width at 65 characters for optimal readability. Long lines of text become difficult to read, and this constraint prevents that problem in body content areas.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 08. SPACING -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">08</div>
+  <div class="sh">Spacing Scale</div>
+  <div class="sd">4px base grid. Primitives from <span class="code">--space-1</span> (4px) to <span class="code">--space-24</span> (96px).</div>
+  <div class="row" style="align-items: flex-end;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+      <div style="width: var(--space-1); height: 32px; background: var(--primary); border-radius: 2px;"></div>
+      <span class="code">1</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+      <div style="width: var(--space-2); height: 32px; background: var(--primary); border-radius: 2px;"></div>
+      <span class="code">2</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+      <div style="width: var(--space-3); height: 32px; background: var(--primary); border-radius: 2px;"></div>
+      <span class="code">3</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+      <div style="width: var(--space-4); height: 32px; background: var(--primary); border-radius: 2px;"></div>
+      <span class="code">4</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+      <div style="width: var(--space-6); height: 32px; background: var(--primary); border-radius: 2px;"></div>
+      <span class="code">6</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+      <div style="width: var(--space-8); height: 32px; background: var(--primary); border-radius: 2px;"></div>
+      <span class="code">8</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+      <div style="width: var(--space-12); height: 32px; background: var(--primary); border-radius: 2px;"></div>
+      <span class="code">12</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+      <div style="width: var(--space-16); height: 32px; background: var(--primary); border-radius: 2px;"></div>
+      <span class="code">16</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+      <div style="width: var(--space-24); height: 32px; background: var(--primary); border-radius: 2px;"></div>
+      <span class="code">24</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 09. RADIUS -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">09</div>
+  <div class="sh">Border Radius</div>
+  <div class="sd">Geometric feel. 6px base.</div>
+  <div class="row">
+    <div style="width: 64px; height: 64px; border: 2px solid var(--border); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center;"><span class="code">sm</span></div>
+    <div style="width: 64px; height: 64px; border: 2px solid var(--border); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;"><span class="code">md</span></div>
+    <div style="width: 64px; height: 64px; border: 2px solid var(--border); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;"><span class="code">lg</span></div>
+    <div style="width: 64px; height: 64px; border: 2px solid var(--border); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center;"><span class="code">xl</span></div>
+    <div style="width: 64px; height: 64px; border: 2px solid var(--border); border-radius: var(--radius-2xl); display: flex; align-items: center; justify-content: center;"><span class="code">2xl</span></div>
+    <div style="width: 64px; height: 64px; border: 2px solid var(--border); border-radius: 9999px; display: flex; align-items: center; justify-content: center;"><span class="code">full</span></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 10. SHADOWS -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">10</div>
+  <div class="sh">Shadows</div>
+  <div class="sd">Minimal. Border-based depth preferred.</div>
+  <div class="row" style="gap: 2rem;">
+    <div style="width: 120px; height: 80px; background: var(--card); border-radius: var(--radius-lg); box-shadow: var(--shadow-xs); display: flex; align-items: center; justify-content: center;"><span class="code">xs</span></div>
+    <div style="width: 120px; height: 80px; background: var(--card); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; align-items: center; justify-content: center;"><span class="code">md</span></div>
+    <div style="width: 120px; height: 80px; background: var(--card); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); display: flex; align-items: center; justify-content: center;"><span class="code">lg</span></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 11. BUTTONS -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">11</div>
+  <div class="sh">Buttons</div>
+  <div class="sd">Component-layer tokens: <span class="code">--btn-bg</span>, <span class="code">--btn-hover-bg</span>. Override per-component without touching global primary.</div>
+
+  <div class="subsec">Variants</div>
+  <div class="row" style="margin-bottom: 1.5rem;">
+    <button class="btn btn-primary">Primary</button>
+    <button class="btn btn-outline">Outline</button>
+    <button class="btn btn-secondary">Secondary</button>
+    <button class="btn btn-ghost">Ghost</button>
+    <button class="btn btn-destructive">Destructive</button>
+    <button class="btn btn-link">Link Button</button>
+  </div>
+
+  <div class="subsec">Sizes</div>
+  <div class="row" style="margin-bottom: 1.5rem;">
+    <button class="btn btn-primary btn-sm">Small</button>
+    <button class="btn btn-primary">Default</button>
+    <button class="btn btn-primary btn-lg">Large</button>
+    <button class="btn btn-primary btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+  </div>
+
+  <div class="subsec">States</div>
+  <div class="row" style="margin-bottom: 1rem;">
+    <button class="btn btn-primary">Default</button>
+    <button class="btn btn-primary" disabled>Disabled</button>
+    <button class="btn btn-primary" id="focus-demo">Click for Focus Ring</button>
+  </div>
+  <p class="caption" style="color: var(--muted-foreground);">Hover any button to see hover state. Tab or click "Focus Ring" button to see <span class="code">--focus-ring-color</span>. Disabled uses <span class="code">--disabled-opacity: 0.5</span>.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 12. BADGES -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">12</div>
+  <div class="sh">Badges</div>
+  <div class="sd">All status variants use semantic tokens — no hardcoded colors.</div>
+  <div class="row">
+    <span class="badge badge-default">Default</span>
+    <span class="badge badge-secondary">Secondary</span>
+    <span class="badge badge-outline">Outline</span>
+    <span class="badge badge-destructive">Destructive</span>
+    <span class="badge badge-success">Success</span>
+    <span class="badge badge-warning">Warning</span>
+    <span class="badge badge-info">Info</span>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 13. CARDS -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">13</div>
+  <div class="sh">Cards</div>
+  <div class="sd">Default card uses component tokens. Marketing variants use the 6-card pastel system.</div>
+
+  <div class="subsec">Default &amp; Clickable</div>
+  <div class="g g2" style="margin-bottom: 1.5rem;">
+    <div class="card">
+      <div class="h5" style="margin-bottom: 0.5rem;">Default Card</div>
+      <p class="p2" style="color: var(--muted-foreground);">Uses <span class="code">--card-bg</span>, <span class="code">--card-border</span>, <span class="code">--card-radius</span>, <span class="code">--card-padding</span>.</p>
+    </div>
+    <div class="card card-clickable">
+      <div class="h5" style="margin-bottom: 0.5rem;">Clickable Card</div>
+      <p class="p2" style="color: var(--muted-foreground);">Hover to see green border via <span class="code">--card-hover-border</span>.</p>
+    </div>
+  </div>
+
+  <div class="subsec">Marketing Variants</div>
+  <div class="g g6">
+    <div class="card card-green" style="min-height: 120px;"><div class="h6">Green</div><p class="caption card-text-muted">Brand primary</p></div>
+    <div class="card card-mint" style="min-height: 120px;"><div class="h6">Mint</div><p class="caption card-text-muted">Cool teal</p></div>
+    <div class="card card-lavender" style="min-height: 120px;"><div class="h6">Lavender</div><p class="caption card-text-muted">Soft purple</p></div>
+    <div class="card card-peach" style="min-height: 120px;"><div class="h6">Peach</div><p class="caption card-text-muted">Warm pink</p></div>
+    <div class="card card-sand" style="min-height: 120px;"><div class="h6">Sand</div><p class="caption card-text-muted">Warm neutral</p></div>
+    <div class="card card-cream" style="min-height: 120px;"><div class="h6">Cream</div><p class="caption card-text-muted">Off-white</p></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 14. FORM INPUTS -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">14</div>
+  <div class="sh">Form Inputs</div>
+  <div class="sd">Component tokens: <span class="code">--input-bg</span>, <span class="code">--input-border</span>, <span class="code">--input-focus-ring</span>, <span class="code">--input-error</span>.</div>
+  <div class="g g2">
+    <div>
+      <label class="label" style="display: block; margin-bottom: 0.375rem;">Default</label>
+      <input class="input" type="email" placeholder="you@company.com">
+      <p class="help-text" style="margin-top: 0.25rem;">Click to see focus ring.</p>
+    </div>
+    <div>
+      <label class="label" style="display: block; margin-bottom: 0.375rem;">Error State</label>
+      <input class="input input-error" type="text" value="bad input">
+      <p class="help-text" style="margin-top: 0.25rem; color: var(--destructive);">This field is required.</p>
+    </div>
+    <div>
+      <label class="label" style="display: block; margin-bottom: 0.375rem;">Disabled</label>
+      <input class="input" type="text" value="Cannot edit" disabled>
+      <p class="help-text" style="margin-top: 0.25rem;">Uses <span class="code">--disabled-opacity</span>.</p>
+    </div>
+    <div>
+      <label class="label" style="display: block; margin-bottom: 0.375rem;">With Placeholder</label>
+      <input class="input" type="text" placeholder="Placeholder uses --muted-foreground">
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 15. NAVIGATION -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">15</div>
+  <div class="sh">Navigation</div>
+  <div class="sd">Full navigation system: sticky header with backdrop blur, mega-menu dropdowns, mobile overlay. Modelled on baseten.co.</div>
+
+  <div class="subsec">Header Bar (sticky, frosted glass)</div>
+  <div style="position: relative; border: 1px solid var(--border); border-radius: var(--radius-xl); overflow: hidden; margin-bottom: 1.5rem;">
+    <!-- Simulated page content behind the nav -->
+    <div style="height: 200px; padding: 5rem 2rem 2rem; background: linear-gradient(var(--muted), var(--background));">
+      <p class="p2" style="color: var(--muted-foreground); text-align: center;">Page content scrolls behind the frosted header</p>
+    </div>
+    <!-- The nav header -->
+    <div class="nav-header scrolled" style="position: absolute; top: 0; left: 0; right: 0; border-radius: var(--radius-xl) var(--radius-xl) 0 0;">
+      <div class="nav-inner">
+        <div style="font-weight: 800; font-size: 1.125rem;">Stack10</div>
+        <div style="display: flex; align-items: center; gap: var(--space-1);">
+          <div class="nav-dropdown-trigger">
+            <a href="#" class="nav-link" onclick="event.preventDefault()">
+              Platform
+              <svg class="nav-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <div class="nav-dropdown">
+              <div class="nav-dropdown-panel" style="width: 480px;">
+                <div class="nav-dropdown-grid nav-dropdown-grid-2">
+                  <a href="#" class="nav-dropdown-item" onclick="event.preventDefault()">
+                    <div class="nav-dropdown-item-title">Platform Overview</div>
+                    <div class="nav-dropdown-item-desc">Our AI operating system approach</div>
+                  </a>
+                  <a href="#" class="nav-dropdown-item" onclick="event.preventDefault()">
+                    <div class="nav-dropdown-item-title">AI Transformation</div>
+                    <div class="nav-dropdown-item-desc">Why execution beats strategy</div>
+                  </a>
+                  <a href="#" class="nav-dropdown-item" onclick="event.preventDefault()">
+                    <div class="nav-dropdown-item-title">How We Work</div>
+                    <div class="nav-dropdown-item-desc">5-stage delivery methodology</div>
+                  </a>
+                  <a href="#" class="nav-dropdown-item" onclick="event.preventDefault()">
+                    <div class="nav-dropdown-item-title">Trust Center</div>
+                    <div class="nav-dropdown-item-desc">Security &amp; compliance</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nav-dropdown-trigger">
+            <a href="#" class="nav-link" onclick="event.preventDefault()">
+              Solutions
+              <svg class="nav-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <div class="nav-dropdown">
+              <div class="nav-dropdown-panel" style="width: 560px;">
+                <div class="nav-dropdown-grid nav-dropdown-grid-2" style="gap: 2rem;">
+                  <div>
+                    <div class="nav-dropdown-category">Services</div>
+                    <div style="display: flex; flex-direction: column; gap: 2px;">
+                      <a href="#" class="nav-dropdown-item" onclick="event.preventDefault()">
+                        <div class="nav-dropdown-item-title">Stack Discover</div>
+                        <div class="nav-dropdown-item-desc">AI opportunity discovery</div>
+                      </a>
+                      <a href="#" class="nav-dropdown-item" onclick="event.preventDefault()">
+                        <div class="nav-dropdown-item-title">Stack Audit</div>
+                        <div class="nav-dropdown-item-desc">Deep-dive audit + prototype</div>
+                      </a>
+                      <a href="#" class="nav-dropdown-item" onclick="event.preventDefault()">
+                        <div class="nav-dropdown-item-title">Stack One</div>
+                        <div class="nav-dropdown-item-desc">Ongoing AI engineering</div>
+                      </a>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="nav-dropdown-category">Industries</div>
+                    <div style="display: flex; flex-direction: column; gap: 2px;">
+                      <a href="#" class="nav-dropdown-item" onclick="event.preventDefault()">
+                        <div class="nav-dropdown-item-title">Financial Services</div>
+                      </a>
+                      <a href="#" class="nav-dropdown-item" onclick="event.preventDefault()">
+                        <div class="nav-dropdown-item-title">Government</div>
+                      </a>
+                      <a href="#" class="nav-dropdown-item" onclick="event.preventDefault()">
+                        <div class="nav-dropdown-item-title">Healthcare</div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="nav-link" onclick="event.preventDefault()">Resources</a>
+          <a href="#" class="nav-link" onclick="event.preventDefault()">Pricing</a>
+        </div>
+        <div class="nav-actions">
+          <button class="btn btn-primary btn-sm">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsec">Nav Link States</div>
+  <div class="row" style="margin-bottom: 1.5rem;">
+    <a href="#" class="nav-link" onclick="event.preventDefault()">Default</a>
+    <a href="#" class="nav-link nav-link-active" onclick="event.preventDefault()">Active</a>
+    <a href="#" class="nav-link" onclick="event.preventDefault()">Hover me</a>
+  </div>
+
+  <div class="subsec">Dropdown Item States</div>
+  <div class="sd">Full-width row highlight with green-tinted background. Title turns primary green on hover — like baseten.</div>
+  <div style="max-width: 480px; background: var(--nav-dropdown-bg); border: 1px solid var(--nav-dropdown-border); border-radius: var(--nav-dropdown-radius); padding: var(--nav-dropdown-padding);">
+    <div class="nav-dropdown-category">Inference Stack</div>
+    <a href="#" class="nav-dropdown-item" onclick="event.preventDefault()">
+      <div class="nav-dropdown-item-title">Model Runtimes</div>
+    </a>
+    <a href="#" class="nav-dropdown-item" onclick="event.preventDefault()" style="background: var(--nav-dropdown-item-hover-bg);">
+      <div class="nav-dropdown-item-title" style="color: var(--nav-dropdown-item-title-hover-fg);">Infrastructure</div>
+    </a>
+    <a href="#" class="nav-dropdown-item" onclick="event.preventDefault()">
+      <div class="nav-dropdown-item-title">Multi-cloud Capacity Management</div>
+    </a>
+  </div>
+
+  <div class="subsec">Text Selection</div>
+  <div class="sd">Select any text on this page — highlight uses <span class="code">::selection</span> with the brand primary green and dark foreground.</div>
+  <p class="p1" style="max-width: 640px;">Try selecting this text. The highlight should be the Stack 10 brand green, not the browser default blue. This applies globally across all text on the site.</p>
+
+  <div class="subsec">Mobile Menu (overlay)</div>
+  <div style="max-width: 375px; border: 1px solid var(--border); border-radius: var(--radius-xl); overflow: hidden; height: 360px; position: relative;">
+    <div style="background: var(--nav-mobile-bg); padding: 1.5rem; height: 100%;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <div style="font-weight: 800; font-size: 1.125rem;">Stack10</div>
+        <button class="nav-hamburger">
+          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <a href="#" class="nav-mobile-link" onclick="event.preventDefault()">Platform</a>
+      <a href="#" class="nav-mobile-link" onclick="event.preventDefault()">Solutions</a>
+      <a href="#" class="nav-mobile-link" onclick="event.preventDefault()">Resources</a>
+      <a href="#" class="nav-mobile-link" onclick="event.preventDefault()">Pricing</a>
+      <a href="#" class="nav-mobile-link" onclick="event.preventDefault()">Company</a>
+      <div style="margin-top: 1.5rem;">
+        <button class="btn btn-primary" style="width: 100%;">Get Started</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- 16. SKELETON / LOADING -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">16</div>
+  <div class="sh">Skeleton / Loading</div>
+  <div class="sd">Uses <span class="code">--muted</span> background with pulse animation.</div>
+  <div class="card" style="max-width: 400px;">
+    <div class="skeleton" style="height: 1.25rem; width: 60%; margin-bottom: 0.75rem;"></div>
+    <div class="skeleton" style="height: 0.875rem; width: 100%; margin-bottom: 0.5rem;"></div>
+    <div class="skeleton" style="height: 0.875rem; width: 80%; margin-bottom: 0.5rem;"></div>
+    <div class="skeleton" style="height: 0.875rem; width: 90%;"></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 17. ANIMATIONS -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">17</div>
+  <div class="sh">Animations</div>
+  <div class="sd">Motion tokens: <span class="code">--duration-fast</span> (100ms), <span class="code">--duration-normal</span> (200ms), <span class="code">--duration-slow</span> (350ms). Easing: <span class="code">--ease-in</span>, <span class="code">--ease-out</span>, <span class="code">--ease-in-out</span>.</div>
+
+  <div class="subsec">Fade Up (with stagger)</div>
+  <div class="row" id="anim-up" style="margin-bottom: 1rem;">
+    <div class="card animate-fade-up delay-1" style="width: 100px; text-align: center;"><div class="h6">1</div></div>
+    <div class="card animate-fade-up delay-2" style="width: 100px; text-align: center;"><div class="h6">2</div></div>
+    <div class="card animate-fade-up delay-3" style="width: 100px; text-align: center;"><div class="h6">3</div></div>
+    <div class="card animate-fade-up delay-4" style="width: 100px; text-align: center;"><div class="h6">4</div></div>
+    <div class="card animate-fade-up delay-5" style="width: 100px; text-align: center;"><div class="h6">5</div></div>
+  </div>
+
+  <div class="subsec">Fade Down</div>
+  <div class="row" id="anim-down" style="margin-bottom: 1rem;">
+    <div class="card animate-fade-down delay-1" style="width: 100px; text-align: center;"><div class="h6">1</div></div>
+    <div class="card animate-fade-down delay-2" style="width: 100px; text-align: center;"><div class="h6">2</div></div>
+    <div class="card animate-fade-down delay-3" style="width: 100px; text-align: center;"><div class="h6">3</div></div>
+  </div>
+
+  <button class="btn btn-outline btn-sm" onclick="replayAnim()">Replay All</button>
+</div>
+
+<!-- ============================================================ -->
+<!-- 18. GRADIENT LINE -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">18</div>
+  <div class="sh">Decorative</div>
+  <div class="sd">Header/footer gradient line. Shifts from border color (light) to green glow (dark).</div>
+  <div style="padding: 2rem 0;">
+    <div class="gradient-line"></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 19. Z-INDEX -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">19</div>
+  <div class="sh">Z-Index Hierarchy</div>
+  <div class="sd">Layering system for overlapping elements.</div>
+  <div style="display: flex; gap: 0.5rem; align-items: flex-end; height: 180px;">
+    <div style="background: var(--muted); border: 1px solid var(--border); border-radius: var(--radius-md); width: 100px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem;">Base: 0</div>
+    <div style="background: var(--secondary); border: 1px solid var(--border); border-radius: var(--radius-md); width: 100px; height: 70px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem;">Sticky: 40</div>
+    <div style="background: var(--accent); border: 1px solid var(--border); border-radius: var(--radius-md); width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem;">Dropdown: 50</div>
+    <div style="background: var(--primary); color: var(--primary-foreground); border-radius: var(--radius-md); width: 100px; height: 130px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem;">Modal: 50</div>
+    <div style="background: var(--primary); color: var(--primary-foreground); border-radius: var(--radius-md); width: 100px; height: 160px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem;">Toast: 100</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 20. TOKEN ARCHITECTURE -->
+<!-- ============================================================ -->
+<div class="sec">
+  <div class="sl">20</div>
+  <div class="sh">Token Architecture</div>
+  <div class="sd">How the three layers connect. Change a primitive, the entire system updates.</div>
+  <div style="font-family: var(--font-mono); font-size: 0.8125rem; background: var(--muted); padding: 1.5rem; border-radius: var(--radius-lg); line-height: 1.8; overflow-x: auto;">
+    <div style="color: var(--muted-foreground);">/* Layer 1: Primitive */</div>
+    <div>--green-500: oklch(0.76 0.21 150);</div>
+    <br>
+    <div style="color: var(--muted-foreground);">/* Layer 2: Semantic — references primitive */</div>
+    <div>--primary: var(--green-500);</div>
+    <div>--ring: var(--green-500);</div>
+    <br>
+    <div style="color: var(--muted-foreground);">/* Layer 3: Component — references semantic */</div>
+    <div>--btn-bg: var(--primary);</div>
+    <div>--btn-hover-bg: var(--primary-hover);</div>
+    <div>--focus-ring-color: var(--ring);</div>
+    <br>
+    <div style="color: var(--muted-foreground);">/* Component class uses component token */</div>
+    <div>.btn-primary { background: var(--btn-bg); }</div>
+    <div>.btn-primary:hover { background: var(--btn-hover-bg); }</div>
+    <div>.btn:focus-visible { box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color); }</div>
+  </div>
+</div>
+
+</div>
+
+<script>
+// Detect initial theme
+(function() {
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (prefersDark) {
+    document.documentElement.classList.add('dark');
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})();
+
+function toggleTheme() {
+  const html = document.documentElement;
+  const isCurrentlyDark = html.getAttribute('data-theme') === 'dark' ||
+    (!html.hasAttribute('data-theme') && html.classList.contains('dark'));
+
+  if (isCurrentlyDark) {
+    // Switch to light
+    html.classList.remove('dark');
+    html.setAttribute('data-theme', 'light');
+    document.getElementById('theme-btn').textContent = 'Toggle Dark Mode';
+  } else {
+    // Switch to dark
+    html.classList.add('dark');
+    html.setAttribute('data-theme', 'dark');
+    document.getElementById('theme-btn').textContent = 'Toggle Light Mode';
+  }
+}
+
+function replayAnim() {
+  document.querySelectorAll('#anim-up .card, #anim-down .card').forEach(c => {
+    c.style.animation = 'none';
+    c.offsetHeight;
+    c.style.animation = '';
+  });
+}
+
+document.getElementById('focus-demo').addEventListener('click', function() {
+  this.focus();
+});
+</script>
+</body>
+</html>
