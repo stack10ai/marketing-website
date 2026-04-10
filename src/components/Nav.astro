@@ -1,0 +1,100 @@
+<nav class="nav-header">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a href="/" class="nav-logo">
+      <img src="/logo-light.svg" alt="Stack10" class="logo-light" width="120" height="30">
+      <img src="/logo-dark.svg" alt="Stack10" class="logo-dark" width="120" height="30">
+    </a>
+
+    <!-- Desktop Nav — add menu items here -->
+    <div class="desktop-nav">
+    </div>
+
+    <!-- CTA + Hamburger -->
+    <div class="nav-actions">
+      <a href="/get-started/" class="btn btn-primary btn-sm desktop-cta">Get Started</a>
+      <button class="nav-hamburger hamburger" aria-label="Open menu">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu — add mobile links here -->
+<div class="nav-mobile-overlay mobile-menu">
+  <div class="mobile-menu-header">
+    <a href="/">
+      <img src="/logo-light.svg" alt="Stack10" class="logo-light" width="120" height="30">
+      <img src="/logo-dark.svg" alt="Stack10" class="logo-dark" width="120" height="30">
+    </a>
+    <button class="nav-hamburger mobile-close" aria-label="Close menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+  <div class="mobile-menu-cta">
+    <a href="/get-started/" class="btn btn-primary mobile-cta-btn">Get Started</a>
+  </div>
+</div>
+
+<style>
+  /* Nav logo */
+  .nav-logo { flex-shrink: 0; }
+
+  /* Desktop nav visibility */
+  .desktop-nav {
+    display: none;
+    align-items: center;
+    gap: var(--space-1);
+  }
+
+  .desktop-cta { display: none; }
+
+  @media (min-width: 1024px) {
+    .desktop-nav { display: flex !important; }
+    .desktop-cta { display: inline-flex !important; }
+    .hamburger { display: none !important; }
+  }
+
+  /* Nav link button reset */
+  .nav-link {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Dropdown panel widths */
+  .nav-dropdown-panel--xs { width: 280px; }
+  .nav-dropdown-panel--sm { width: 320px; }
+  .nav-dropdown-panel--md { width: 480px; }
+  .nav-dropdown-panel--lg { width: 560px; }
+  .nav-dropdown-grid--wide { column-gap: var(--space-10); }
+
+  /* Accent link in dropdown */
+  .nav-dropdown-item-title--accent {
+    color: var(--primary-text);
+  }
+
+  /* Logo visibility — controlled by JS based on theme */
+  .logo-dark { display: none; }
+
+  /* Mobile menu header */
+  .mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-8);
+  }
+
+  /* Mobile CTA */
+  .mobile-menu-cta {
+    margin-top: var(--space-8);
+  }
+
+  .mobile-cta-btn {
+    width: 100%;
+  }
+</style>

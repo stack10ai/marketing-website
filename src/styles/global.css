@@ -1,0 +1,6 @@
+/* Design system tokens are loaded via <link> in the layout head.
+   This file is for Astro-specific global styles only. */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
