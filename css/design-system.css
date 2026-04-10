@@ -644,12 +644,13 @@ body {
   line-height: var(--leading-caption);
 }
 
-.overline {
+.eyebrow {
   font-size: var(--text-overline);
   font-weight: var(--weight-overline);
   line-height: var(--leading-overline);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .prose {
@@ -1338,10 +1339,18 @@ body {
 
 /* Dark stat bar variant */
 .stat-bar-dark {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  text-align: center;
   background-color: var(--gray-950);
   color: var(--gray-50);
   border-radius: var(--radius-xl);
   padding: var(--space-12) var(--space-8);
+}
+
+@media (max-width: 767px) {
+  .stat-bar-dark { grid-template-columns: repeat(2, 1fr); }
 }
 
 .stat-bar-dark .stat-value { color: var(--green-400); }

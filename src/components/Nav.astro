@@ -6,8 +6,75 @@
       <img src="/logo-dark.svg" alt="Stack10" class="logo-dark" width="120" height="30">
     </a>
 
-    <!-- Desktop Nav — add menu items here -->
+    <!-- Desktop Nav -->
     <div class="desktop-nav">
+
+      <!-- Platform -->
+      <div class="nav-dropdown-trigger">
+        <button class="nav-link">Platform <svg class="nav-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+        <div class="nav-dropdown">
+          <div class="nav-dropdown-panel nav-dropdown-panel--md">
+            <div class="nav-dropdown-grid nav-dropdown-grid-2">
+              <a href="/platform/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Platform Overview</div><div class="nav-dropdown-item-desc">Our AI operating system approach</div></a>
+              <a href="/ai-transformation/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">AI Transformation</div><div class="nav-dropdown-item-desc">Why execution beats strategy</div></a>
+              <a href="/how-we-work/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">How We Work</div><div class="nav-dropdown-item-desc">5-stage delivery methodology</div></a>
+              <a href="/trust/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Trust Center</div><div class="nav-dropdown-item-desc">Security &amp; compliance</div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solutions -->
+      <div class="nav-dropdown-trigger">
+        <button class="nav-link">Solutions <svg class="nav-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+        <div class="nav-dropdown">
+          <div class="nav-dropdown-panel nav-dropdown-panel--lg">
+            <div class="nav-dropdown-grid nav-dropdown-grid-2 nav-dropdown-grid--wide">
+              <div>
+                <div class="nav-dropdown-category">Services</div>
+                <a href="/services/stack-discover/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Stack Discover</div><div class="nav-dropdown-item-desc">AI opportunity discovery</div></a>
+                <a href="/services/stack-audit/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Stack Audit</div><div class="nav-dropdown-item-desc">Deep-dive audit + prototype</div></a>
+                <a href="/services/stack-one/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Stack One</div><div class="nav-dropdown-item-desc">Ongoing AI engineering</div></a>
+                <a href="/services/stack-map/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Stack Map</div><div class="nav-dropdown-item-desc">Process intelligence quickstart</div></a>
+                <a href="/services/stack-e2e/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Stack E2E</div><div class="nav-dropdown-item-desc">End-to-end process map</div></a>
+              </div>
+              <div>
+                <div class="nav-dropdown-category">Industries</div>
+                <a href="/industries/financial-services/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Financial Services</div></a>
+                <a href="/industries/government/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Government</div></a>
+                <a href="/industries/healthcare/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Healthcare</div></a>
+                <a href="/industries/manufacturing/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Manufacturing</div></a>
+                <a href="/industries/" class="nav-dropdown-item"><div class="nav-dropdown-item-title nav-dropdown-item-title--accent">View all industries &rarr;</div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resources -->
+      <div class="nav-dropdown-trigger">
+        <button class="nav-link">Resources <svg class="nav-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+        <div class="nav-dropdown">
+          <div class="nav-dropdown-panel nav-dropdown-panel--sm">
+            <a href="/insights/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Insights</div><div class="nav-dropdown-item-desc">Articles, guides, and research</div></a>
+            <a href="/customers/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Customer Stories</div><div class="nav-dropdown-item-desc">Real results from real operations</div></a>
+            <a href="/blog/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Blog</div><div class="nav-dropdown-item-desc">Latest thinking on enterprise AI</div></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Company -->
+      <div class="nav-dropdown-trigger">
+        <button class="nav-link">Company <svg class="nav-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+        <div class="nav-dropdown">
+          <div class="nav-dropdown-panel nav-dropdown-panel--xs">
+            <a href="/about/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">About</div><div class="nav-dropdown-item-desc">Our story and mission</div></a>
+            <a href="/partners/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Partners</div></a>
+            <a href="/careers/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Careers</div></a>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- CTA + Hamburger -->
@@ -22,7 +89,7 @@
   </div>
 </nav>
 
-<!-- Mobile Menu — add mobile links here -->
+<!-- Mobile Menu -->
 <div class="nav-mobile-overlay mobile-menu">
   <div class="mobile-menu-header">
     <a href="/">
@@ -35,6 +102,13 @@
       </svg>
     </button>
   </div>
+  <a href="/platform/" class="nav-mobile-link">Platform</a>
+  <a href="/services/stack-discover/" class="nav-mobile-link">Services</a>
+  <a href="/industries/" class="nav-mobile-link">Industries</a>
+  <a href="/insights/" class="nav-mobile-link">Insights</a>
+  <a href="/customers/" class="nav-mobile-link">Customers</a>
+  <a href="/about/" class="nav-mobile-link">About</a>
+  <a href="/contact/" class="nav-mobile-link">Contact</a>
   <div class="mobile-menu-cta">
     <a href="/get-started/" class="btn btn-primary mobile-cta-btn">Get Started</a>
   </div>
