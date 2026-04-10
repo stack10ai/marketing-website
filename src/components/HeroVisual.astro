@@ -1,307 +1,254 @@
-<!-- Animated terminal mockup + floating stat chips for the hero -->
+<!-- Hero illustration — brand SVG shapes with floating animations -->
 
-<div class="hv-wrap">
+<div class="hv-scene" role="img" aria-label="Stack10 AI infrastructure illustration">
+  <div class="hv-glow" aria-hidden="true"></div>
+
+  <!-- Central sphere -->
+  <img src="/illustrations/sphere.svg" alt="" class="hv-sphere" />
+
+  <!-- Satellite shapes -->
+  <img src="/illustrations/cube.svg" alt="" class="hv-sat hv-sat--cube" />
+  <img src="/illustrations/diamond.svg" alt="" class="hv-sat hv-sat--diamond" />
+  <img src="/illustrations/octagon-plate.svg" alt="" class="hv-sat hv-sat--octagon" />
+
+  <!-- Dashed connection lines -->
+  <svg class="hv-lines" viewBox="0 0 520 520" fill="none" aria-hidden="true">
+    <line x1="195" y1="195" x2="105" y2="105" stroke="oklch(0.76 0.21 150)" stroke-width="1" opacity="0.3" stroke-dasharray="4 4">
+      <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="2s" repeatCount="indefinite" />
+    </line>
+    <line x1="330" y1="200" x2="420" y2="115" stroke="oklch(0.76 0.21 150)" stroke-width="1" opacity="0.3" stroke-dasharray="4 4">
+      <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="2.5s" repeatCount="indefinite" />
+    </line>
+    <line x1="310" y1="340" x2="390" y2="400" stroke="oklch(0.76 0.21 150)" stroke-width="1" opacity="0.3" stroke-dasharray="4 4">
+      <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="2.2s" repeatCount="indefinite" />
+    </line>
+  </svg>
+
+  <!-- Data flow particles traveling along paths -->
+  <div class="hv-particle hv-particle--1"></div>
+  <div class="hv-particle hv-particle--2"></div>
+  <div class="hv-particle hv-particle--3"></div>
+  <div class="hv-particle hv-particle--4"></div>
 
   <!-- Floating stat chips -->
-  <div class="hv-chip hv-chip--tl" aria-hidden="true">
+  <div class="hv-chip hv-chip--tl">
     <span class="hv-chip-dot"></span>
     <span>73% faster delivery</span>
   </div>
-  <div class="hv-chip hv-chip--br" aria-hidden="true">
+  <div class="hv-chip hv-chip--br">
     <span class="hv-chip-dot"></span>
-    <span>$2.1M avg. client savings</span>
+    <span>12 wk to production</span>
   </div>
-
-  <!-- Glow behind terminal -->
-  <div class="hv-glow" aria-hidden="true"></div>
-
-  <!-- Terminal window -->
-  <div class="hv-terminal" role="img" aria-label="Stack10 AI pipeline demo">
-    <div class="hv-terminal-bar">
-      <span class="hv-dot hv-dot--red"></span>
-      <span class="hv-dot hv-dot--yellow"></span>
-      <span class="hv-dot hv-dot--green"></span>
-      <span class="hv-terminal-title">stack10 — ai pipeline</span>
-    </div>
-    <div class="hv-terminal-body">
-      <div class="hv-line hv-line--1">
-        <span class="hv-prompt">$</span>
-        <span> stack10 analyze <span class="hv-accent">accounts-payable</span></span>
-      </div>
-      <div class="hv-line hv-line--2">
-        <span class="hv-arrow">›</span>
-        <span> Scanning 847 process variants<span class="hv-ellipsis">...</span></span>
-      </div>
-      <div class="hv-line hv-line--3">
-        <span class="hv-check">✓</span>
-        <span class="hv-success"> 12 high-value AI opportunities found</span>
-      </div>
-      <div class="hv-line hv-line--4">
-        <span class="hv-check">✓</span>
-        <span class="hv-success"> ROI projection: <strong>$2.4M / year</strong></span>
-      </div>
-      <div class="hv-line hv-line--5">
-        <span class="hv-arrow">›</span>
-        <span> Building production roadmap<span class="hv-ellipsis">...</span></span>
-      </div>
-      <div class="hv-line hv-line--6">
-        <span class="hv-check">✓</span>
-        <span class="hv-success"> Deployment ready — <strong>12 weeks</strong></span>
-      </div>
-      <div class="hv-line hv-line--7 hv-cursor-line">
-        <span class="hv-prompt">$</span>
-        <span class="hv-cursor"></span>
-      </div>
-    </div>
-    <div class="hv-terminal-footer">
-      <div class="hv-progress-track">
-        <div class="hv-progress-fill"></div>
-      </div>
-      <div class="hv-progress-labels">
-        <span>Pilot</span>
-        <span class="hv-accent">Production</span>
-      </div>
-    </div>
-  </div>
-
 </div>
 
 <style>
-  .hv-wrap {
+  .hv-scene {
     position: relative;
     width: 100%;
     max-width: 520px;
+    aspect-ratio: 1;
     margin: 0 auto;
   }
 
-  /* ── Glow ─────────────────────────────────────────────────── */
+  /* ── Glow ───────────────────────────────────────────────────── */
   .hv-glow {
     position: absolute;
-    inset: -40px;
-    background: radial-gradient(ellipse at 50% 50%, oklch(0.760 0.210 150 / 0.15) 0%, transparent 70%);
+    inset: 5%;
+    background: radial-gradient(
+      ellipse 60% 60% at 50% 45%,
+      oklch(0.76 0.21 150 / 0.14) 0%,
+      oklch(0.76 0.21 150 / 0.04) 50%,
+      transparent 70%
+    );
     pointer-events: none;
-    z-index: 0;
   }
 
-  /* ── Terminal shell ───────────────────────────────────────── */
-  .hv-terminal {
-    position: relative;
+  /* ── Central sphere ────────────────────────────────────────── */
+  .hv-sphere {
+    position: absolute;
+    width: 52%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    filter: drop-shadow(0 0 30px oklch(0.76 0.21 150 / 0.25));
+    animation: sphere-float 6s ease-in-out infinite;
+  }
+
+  @keyframes sphere-float {
+    0%, 100% { transform: translate(-50%, -50%); }
+    50% { transform: translate(-50%, calc(-50% - 10px)); }
+  }
+
+  /* ── Satellites ────────────────────────────────────────────── */
+  .hv-sat {
+    position: absolute;
     z-index: 1;
-    background: var(--gray-950);
-    border: 1px solid oklch(0.35 0.02 150);
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-    box-shadow:
-      0 0 0 1px oklch(0.760 0.210 150 / 0.08),
-      0 24px 64px -12px rgb(0 0 0 / 0.5),
-      0 8px 24px -4px rgb(0 0 0 / 0.3);
+    filter: drop-shadow(0 4px 12px oklch(0.76 0.21 150 / 0.12));
   }
 
-  /* ── Title bar ────────────────────────────────────────────── */
-  .hv-terminal-bar {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-3) var(--space-4);
-    background: oklch(0.18 0.008 150);
-    border-bottom: 1px solid oklch(0.28 0.01 150);
+  .hv-sat--cube {
+    width: 20%;
+    top: 4%;
+    left: 6%;
+    animation: float-1 5s ease-in-out infinite;
   }
 
-  .hv-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-  .hv-dot--red    { background: #ff5f57; }
-  .hv-dot--yellow { background: #febc2e; }
-  .hv-dot--green  { background: #28c840; }
-
-  .hv-terminal-title {
-    margin-left: var(--space-2);
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: oklch(0.55 0.01 150);
-    letter-spacing: 0.05em;
+  .hv-sat--diamond {
+    width: 18%;
+    top: 3%;
+    right: 10%;
+    animation: float-2 6s ease-in-out 0.5s infinite;
   }
 
-  /* ── Terminal body ────────────────────────────────────────── */
-  .hv-terminal-body {
-    padding: var(--space-6);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-    font-family: var(--font-mono);
-    font-size: 13px;
-    line-height: 1.5;
+  .hv-sat--octagon {
+    width: 22%;
+    bottom: 6%;
+    right: 6%;
+    animation: float-3 5.5s ease-in-out 1s infinite;
   }
 
-  .hv-line {
-    display: flex;
-    gap: var(--space-2);
-    opacity: 0;
-    transform: translateY(4px);
-    animation: line-in 0.3s ease forwards;
+  @keyframes float-1 {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(2deg); }
+  }
+  @keyframes float-2 {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(-2deg); }
+  }
+  @keyframes float-3 {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-9px) rotate(1.5deg); }
   }
 
-  .hv-line--1 { animation-delay: 0.4s; }
-  .hv-line--2 { animation-delay: 1.0s; }
-  .hv-line--3 { animation-delay: 1.9s; }
-  .hv-line--4 { animation-delay: 2.5s; }
-  .hv-line--5 { animation-delay: 3.2s; }
-  .hv-line--6 { animation-delay: 4.1s; }
-  .hv-line--7 { animation-delay: 4.8s; }
-
-  @keyframes line-in {
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .hv-prompt { color: oklch(0.55 0.01 150); }
-  .hv-arrow  { color: oklch(0.55 0.01 150); }
-  .hv-check  { color: var(--green-400); }
-  .hv-accent { color: var(--green-400); }
-  .hv-success { color: oklch(0.85 0 0); }
-  .hv-success strong { color: var(--green-400); font-weight: var(--weight-700); }
-
-  /* Default line text colour */
-  .hv-line span:not([class]) { color: oklch(0.72 0 0); }
-  .hv-line > span:last-child { color: oklch(0.72 0 0); }
-
-  /* Ellipsis pulse */
-  .hv-ellipsis {
-    animation: ellipsis-pulse 1.2s ease-in-out infinite;
-    color: oklch(0.50 0 0);
-  }
-  @keyframes ellipsis-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  /* Cursor blink */
-  .hv-cursor {
-    display: inline-block;
-    width: 8px;
-    height: 14px;
-    background: var(--green-400);
-    border-radius: 1px;
-    vertical-align: middle;
-    animation: cursor-blink 1s step-end infinite;
-    opacity: 0;
-    animation-delay: 4.9s;
-  }
-  @keyframes cursor-blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
-
-  /* ── Progress footer ──────────────────────────────────────── */
-  .hv-terminal-footer {
-    padding: var(--space-4) var(--space-6);
-    border-top: 1px solid oklch(0.22 0.01 150);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-
-  .hv-progress-track {
-    height: 4px;
-    background: oklch(0.28 0.01 150);
-    border-radius: var(--radius-full);
-    overflow: hidden;
-  }
-
-  .hv-progress-fill {
+  /* ── Connection lines ──────────────────────────────────────── */
+  .hv-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
     height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, var(--green-600), var(--green-400));
-    border-radius: var(--radius-full);
-    animation: progress-fill 2s ease forwards;
-    animation-delay: 4.2s;
-    box-shadow: 0 0 8px oklch(0.760 0.210 150 / 0.6);
-  }
-  @keyframes progress-fill {
-    to { width: 88%; }
+    z-index: 1;
+    pointer-events: none;
   }
 
-  .hv-progress-labels {
-    display: flex;
-    justify-content: space-between;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: oklch(0.45 0 0);
+  /* ── Data particles ────────────────────────────────────────── */
+  .hv-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: oklch(0.813 0.219 150);
+    box-shadow: 0 0 8px oklch(0.76 0.21 150 / 0.7);
+    z-index: 3;
   }
 
-  /* ── Floating stat chips ──────────────────────────────────── */
+  .hv-particle--1 {
+    top: 24%; left: 32%;
+    animation: p-to-center-tl 3s ease-in-out 1s infinite;
+  }
+  .hv-particle--2 {
+    top: 22%; right: 32%;
+    animation: p-to-center-tr 3.5s ease-in-out 1.5s infinite;
+  }
+  .hv-particle--3 {
+    bottom: 28%; right: 28%;
+    animation: p-to-center-br 4s ease-in-out 0.5s infinite;
+  }
+  .hv-particle--4 {
+    bottom: 30%; left: 30%;
+    animation: p-to-center-bl 3.2s ease-in-out 2s infinite;
+  }
+
+  @keyframes p-to-center-tl {
+    0% { transform: translate(0, 0); opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { transform: translate(50px, 45px); opacity: 0; }
+  }
+  @keyframes p-to-center-tr {
+    0% { transform: translate(0, 0); opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { transform: translate(-45px, 50px); opacity: 0; }
+  }
+  @keyframes p-to-center-br {
+    0% { transform: translate(0, 0); opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { transform: translate(-50px, -40px); opacity: 0; }
+  }
+  @keyframes p-to-center-bl {
+    0% { transform: translate(0, 0); opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { transform: translate(45px, -45px); opacity: 0; }
+  }
+
+  /* ── Stat chips ────────────────────────────────────────────── */
   .hv-chip {
     position: absolute;
-    z-index: 2;
+    z-index: 5;
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    background: var(--gray-0);
+    background: var(--background);
     border: 1px solid var(--border);
     border-radius: var(--radius-full);
-    padding: var(--space-2) var(--space-4);
+    padding: var(--space-1) var(--space-4) var(--space-1) var(--space-3);
     font-size: 12px;
     font-weight: var(--weight-600);
-    color: var(--gray-900);
+    color: var(--foreground);
     box-shadow: var(--shadow-md);
     white-space: nowrap;
     opacity: 0;
-    animation: chip-in 0.5s ease forwards;
   }
 
   .hv-chip--tl {
-    top: -18px;
-    left: -24px;
-    animation-delay: 2.2s;
-    animation-name: chip-in-left;
+    top: 20%;
+    left: -5%;
+    animation: chip-left 0.5s ease 1.5s forwards, chip-bob 4s ease-in-out 2s infinite;
   }
   .hv-chip--br {
-    bottom: -18px;
-    right: -24px;
-    animation-delay: 4.4s;
-    animation-name: chip-in-right;
+    bottom: 18%;
+    right: -5%;
+    animation: chip-right 0.5s ease 2s forwards, chip-bob-rev 4s ease-in-out 2.5s infinite;
   }
 
-  @keyframes chip-in-left {
-    from { opacity: 0; transform: translateX(-10px); }
-    to   { opacity: 1; transform: translateX(0); }
+  @keyframes chip-left {
+    from { opacity: 0; transform: translateX(-8px); }
+    to { opacity: 1; transform: translateX(0); }
   }
-  @keyframes chip-in-right {
-    from { opacity: 0; transform: translateX(10px); }
-    to   { opacity: 1; transform: translateX(0); }
+  @keyframes chip-right {
+    from { opacity: 0; transform: translateX(8px); }
+    to { opacity: 1; transform: translateX(0); }
   }
-
-  /* Chip float animation after appearing */
-  .hv-chip--tl { animation: chip-in-left 0.5s ease 2.2s forwards, chip-float 4s ease-in-out 2.7s infinite; }
-  .hv-chip--br { animation: chip-in-right 0.5s ease 4.4s forwards, chip-float-rev 4s ease-in-out 4.9s infinite; }
-
-  @keyframes chip-float {
+  @keyframes chip-bob {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+    50% { transform: translateY(-5px); }
   }
-  @keyframes chip-float-rev {
+  @keyframes chip-bob-rev {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(6px); }
+    50% { transform: translateY(5px); }
   }
 
   .hv-chip-dot {
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: var(--green-500);
     flex-shrink: 0;
-    box-shadow: 0 0 6px oklch(0.760 0.210 150 / 0.7);
+    box-shadow: 0 0 6px oklch(0.76 0.21 150 / 0.6);
     animation: dot-pulse 2s ease-in-out infinite;
   }
+
   @keyframes dot-pulse {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+    50% { opacity: 0.4; }
   }
 
-  /* ── Responsive ───────────────────────────────────────────── */
+  /* ── Responsive ────────────────────────────────────────────── */
   @media (max-width: 1023px) {
     .hv-chip { display: none; }
+    .hv-scene { max-width: 340px; }
   }
 </style>

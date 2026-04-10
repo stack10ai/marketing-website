@@ -54,19 +54,22 @@
   --orange-500: oklch(0.750 0.180 55);
   --blue-500:   oklch(0.600 0.180 260);
 
-  /* -- Card Palette (pastel family, lightness 0.94-0.96, chroma 0.015-0.045)
-        Hues spread: 50, 85, 95, 150, 185, 280 — all distinguishable -- */
-  --palette-green:    oklch(0.950 0.045 150);
-  --palette-mint:     oklch(0.945 0.040 185);
-  --palette-lavender: oklch(0.945 0.035 280);
-  --palette-sand:     oklch(0.955 0.025 85);
-  --palette-peach:    oklch(0.950 0.035 50);
-  --palette-cream:    oklch(0.965 0.015 95);
+  /* -- Card System (brand-guidelines-visual.html §10 + accent palette)
+        Core: Green, Green-100, Cream, Black
+        Accents: Mint, Lime, Sand -- */
+  --palette-green:     oklch(0.850 0.140 150);
+  --palette-green-100: oklch(0.940 0.050 150);
+  --palette-cream:     oklch(0.950 0.020 85);
+  --palette-black:     oklch(0.145 0 0);
+  --palette-mint:      oklch(0.920 0.060 180);
+  --palette-lime:      oklch(0.930 0.100 120);
+  --palette-sand:      oklch(0.930 0.040 85);
 
-  /* -- Card Text (WCAG AA validated against all card backgrounds)
-        Dark text for light cards — consistent across the palette -- */
+  /* -- Card Text (WCAG AA validated against card backgrounds) -- */
   --palette-text:         oklch(0.205 0 0);
   --palette-text-muted:   oklch(0.400 0 0);
+  --palette-text-light:   oklch(0.985 0 0);
+  --palette-text-light-muted: oklch(0.650 0 0);
 
   /* -- Typography Primitives -- */
   --font-sans: "Manrope", system-ui, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -137,15 +140,15 @@
   --primary-text:       var(--green-700);
 
   /* -- Secondary -- */
-  --secondary:            var(--green-100);
+  --secondary:            var(--gray-100);
   --secondary-foreground: var(--gray-900);
 
   /* -- Accent -- */
-  --accent:            var(--green-200);
+  --accent:            var(--gray-100);
   --accent-foreground: var(--gray-900);
 
   /* -- Muted -- */
-  --muted:            var(--green-50);
+  --muted:            oklch(0.975 0.006 85);
   --muted-foreground: var(--gray-500);
 
   /* -- Destructive -- */
@@ -173,21 +176,27 @@
   --popover-foreground: var(--gray-950);
 
   /* -- UI Chrome -- */
-  --border: oklch(0.922 0.008 150);
-  --input:  oklch(0.870 0.012 150);
+  --border: var(--gray-200);
+  --input:  var(--gray-300);
   --ring:   var(--green-500);
 
-  /* -- Card System (6 pastel cards, hues spread across wheel) -- */
-  --card-green:    var(--palette-green);
-  --card-mint:     var(--palette-mint);
-  --card-lavender: var(--palette-lavender);
-  --card-sand:     var(--palette-sand);
-  --card-peach:    var(--palette-peach);
-  --card-cream:    var(--palette-cream);
+  /* -- Card System (brand-guidelines-visual.html §10 + accents) -- */
+  --card-green:     var(--palette-green);
+  --card-green-100: var(--palette-green-100);
+  --card-cream:     var(--palette-cream);
+  --card-black:     var(--palette-black);
+  --card-mint:      var(--palette-mint);
+  --card-lime:      var(--palette-lime);
+  --card-sand:      var(--palette-sand);
 
-  /* Card text — validated for WCAG AA on all 6 card backgrounds */
-  --card-text:       var(--palette-text);
-  --card-text-muted: var(--palette-text-muted);
+  /* -- Surface accents (for section backgrounds) -- */
+  --surface-sand:   oklch(0.960 0.020 85);
+
+  /* Card text — WCAG AA validated */
+  --card-text:             var(--palette-text);
+  --card-text-muted:       var(--palette-text-muted);
+  --card-text-light:       var(--palette-text-light);
+  --card-text-light-muted: var(--palette-text-light-muted);
 
   /* -- Chart Series -- */
   --chart-1: var(--green-500);
@@ -253,8 +262,8 @@
   --nav-border:          transparent;
   --nav-border-scroll:   var(--border);
   --nav-fg:              var(--gray-700);
-  --nav-hover-fg:        var(--primary);
-  --nav-active-fg:       var(--primary);
+  --nav-hover-fg:        var(--primary-text);
+  --nav-active-fg:       var(--primary-text);
   --nav-dropdown-bg:     var(--background);
   --nav-dropdown-border: var(--border);
   --nav-dropdown-shadow: var(--shadow-3);
@@ -408,10 +417,10 @@
   --btn-border:       transparent;
   --btn-shadow:       var(--shadow-xs);
   --btn-radius:       var(--radius-md);
-  --btn-font-size:    var(--size-sm);
+  --btn-font-size:    var(--size-base);
   --btn-font-weight:  var(--weight-500);
-  --btn-height:       2.25rem;
-  --btn-px:           var(--space-4);
+  --btn-height:       2.5rem;
+  --btn-px:           var(--space-5);
   --btn-py:           var(--space-2);
 
   /* -- Input -- */
@@ -429,7 +438,7 @@
   --card-bg:          var(--card);
   --card-fg:          var(--card-foreground);
   --card-border:      var(--border);
-  --card-radius:      var(--radius-lg);
+  --card-radius:      var(--radius-xl);
   --card-padding:     var(--spacing-card);
   --card-hover-border: oklch(from var(--primary) l c h / 0.5);
 
@@ -446,7 +455,7 @@
   --nav-blur:            20px;
   --nav-max-width:       75rem;
   --nav-px:              var(--space-6);
-  --nav-font-size:       var(--size-sm);
+  --nav-font-size:       var(--size-base);
   --nav-font-weight:     var(--weight-500);
   --nav-active-weight:   var(--weight-600);
   --nav-link-px:         var(--space-3);
@@ -454,7 +463,7 @@
   --nav-dropdown-radius: var(--radius-12);
   --nav-dropdown-padding: var(--space-6);
   --nav-dropdown-item-radius: var(--radius-6);
-  --nav-dropdown-category-size: 10px;
+  --nav-dropdown-category-size: var(--size-xs);
   --nav-dropdown-category-tracking: 3px;
   --nav-mobile-z:        999;
 }
@@ -537,7 +546,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *:not(.accent-block), *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -645,7 +654,7 @@ body {
 }
 
 .eyebrow {
-  font-size: var(--text-overline);
+  font-size: var(--text-caption);
   font-weight: var(--weight-overline);
   line-height: var(--leading-overline);
   letter-spacing: 0.1em;
@@ -695,8 +704,8 @@ body {
   pointer-events: none;
 }
 
-.btn-sm  { height: 2rem; padding: 0.375rem 0.75rem; font-size: var(--size-xs); }
-.btn-lg  { height: 2.5rem; padding: 0.5rem 2rem; }
+.btn-sm  { height: 2.25rem; padding: 0.375rem 1rem; font-size: var(--size-sm); }
+.btn-lg  { height: 2.75rem; padding: 0.625rem 2rem; }
 .btn-icon { height: var(--btn-height); width: var(--btn-height); padding: 0; }
 
 .btn-primary {
@@ -786,20 +795,57 @@ body {
 
 .card-clickable {
   cursor: pointer;
-  transition: border-color var(--duration-normal) var(--ease-out);
+  transition: border-color var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
 }
-.card-clickable:hover { border-color: var(--card-hover-border); }
+.card-clickable:hover {
+  border-color: var(--card-hover-border);
+  box-shadow: var(--shadow-md);
+}
 
-/* Marketing card variants (6 pastel cards) */
-.card-green    { background-color: var(--card-green); color: var(--card-text); border-color: transparent; }
-.card-mint     { background-color: var(--card-mint); color: var(--card-text); border-color: transparent; }
-.card-lavender { background-color: var(--card-lavender); color: var(--card-text); border-color: transparent; }
-.card-sand     { background-color: var(--card-sand); color: var(--card-text); border-color: transparent; }
-.card-peach    { background-color: var(--card-peach); color: var(--card-text); border-color: transparent; }
-.card-cream    { background-color: var(--card-cream); color: var(--card-text); border-color: transparent; }
+/* Card System (brand-guidelines-visual.html §10 + accents) */
+.card-green     { background-color: var(--card-green); color: var(--card-text); border-color: transparent; }
+.card-green-100 { background-color: var(--card-green-100); color: var(--card-text); border-color: transparent; }
+.card-cream     { background-color: var(--card-cream); color: var(--card-text); border-color: transparent; }
+.card-black     { background-color: var(--card-black); color: var(--card-text-light); border-color: oklch(1 0 0 / 0.15); }
+.card-mint      { background-color: var(--card-mint); color: var(--card-text); border-color: transparent; }
+.card-lime      { background-color: var(--card-lime); color: var(--card-text); border-color: transparent; }
+.card-sand      { background-color: var(--card-sand); color: var(--card-text); border-color: transparent; }
 
-/* Card text utilities — use inside any card variant */
+/* Card text utilities */
 .card-text-muted { color: var(--card-text-muted); }
+.card-black .card-text-muted { color: var(--card-text-light-muted); }
+
+/* Contextual hover borders per card colour */
+.card-green.card-clickable:hover     { border-color: oklch(0.75 0.16 150); }
+.card-green-100.card-clickable:hover { border-color: oklch(0.85 0.10 150); }
+.card-cream.card-clickable:hover     { border-color: oklch(0.85 0.04 85); }
+.card-black.card-clickable:hover     { border-color: oklch(1 0 0 / 0.30); }
+.card-mint.card-clickable:hover      { border-color: oklch(0.82 0.08 180); }
+.card-lime.card-clickable:hover      { border-color: oklch(0.83 0.12 120); }
+.card-sand.card-clickable:hover      { border-color: oklch(0.83 0.06 85); }
+
+/* Section background — Sand */
+.section-sand { background-color: var(--surface-sand); }
+
+/* Text colors for accent cards (ensure proper contrast on tinted backgrounds) */
+.card-mint .feature-title,
+.card-lime .feature-title,
+.card-sand .feature-title { color: var(--card-text); }
+
+.card-mint .feature-desc,
+.card-lime .feature-desc,
+.card-sand .feature-desc { color: var(--card-text-muted); }
+
+.card-mint .eyebrow,
+.card-lime .eyebrow,
+.card-sand .eyebrow { color: var(--card-text-muted); }
+
+.card-mint .feature-checklist,
+.card-lime .feature-checklist { color: var(--card-text-muted); }
+
+.card-mint .feature-checklist li::before,
+.card-lime .feature-checklist li::before { color: var(--card-text); }
 
 /* -- Form Inputs -------------------------------------------- */
 
@@ -979,7 +1025,7 @@ body {
 }
 
 .nav-dropdown-item-desc {
-  font-size: var(--size-xs);
+  font-size: var(--size-sm);
   color: var(--nav-dropdown-item-desc-fg);
   margin-top: 2px;
 }
@@ -1129,9 +1175,9 @@ body {
 
 .section-label {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: var(--size-base);
   font-weight: var(--weight-700);
-  letter-spacing: 3px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--primary-text);
   margin-bottom: var(--space-4);
@@ -1185,7 +1231,7 @@ body {
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2vw, var(--text-p1));
+  font-size: clamp(1.125rem, 2vw, var(--text-p1));
   font-weight: var(--weight-p1);
   line-height: var(--leading-p1);
   color: var(--muted-foreground);
@@ -1332,7 +1378,7 @@ body {
 }
 
 .stat-label {
-  font-size: var(--text-caption);
+  font-size: var(--text-p2);
   font-weight: var(--weight-500);
   color: var(--muted-foreground);
 }
@@ -1361,8 +1407,15 @@ body {
 .cta-section {
   background-color: var(--gray-950);
   color: var(--gray-50);
-  padding: var(--space-20) var(--space-6);
+  padding: var(--spacing-section) var(--space-6);
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .cta-section {
+    padding-top: var(--spacing-section-lg);
+    padding-bottom: var(--spacing-section-lg);
+  }
 }
 
 .cta-title {
@@ -1394,19 +1447,20 @@ body {
 
 /* Light CTA variant */
 .cta-section-light {
-  background-color: var(--card-green);
-  color: var(--card-text);
+  background-color: var(--gray-50);
+  color: var(--foreground);
 }
 
-.cta-section-light .cta-desc { color: var(--card-text-muted); }
+.cta-section-light .cta-desc { color: var(--muted-foreground); }
 
 /* -- Testimonial -------------------------------------------- */
 
 .testimonial {
+  padding: var(--space-8);
+  background: var(--background);
+  border: 1px solid var(--border);
   border-left: 3px solid var(--primary);
-  padding-left: var(--space-8);
-  padding-top: var(--space-2);
-  padding-bottom: var(--space-2);
+  border-radius: var(--radius-xl);
 }
 
 .testimonial-quote {
@@ -1423,7 +1477,7 @@ body {
 }
 
 .testimonial-role {
-  font-size: var(--text-caption);
+  font-size: var(--text-p2);
   color: var(--muted-foreground);
 }
 
@@ -1442,8 +1496,16 @@ body {
 
 .trust-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-6);
+}
+
+@media (max-width: 1023px) {
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 767px) {
+  .trust-grid { grid-template-columns: 1fr; }
 }
 
 .trust-item {
@@ -1451,9 +1513,10 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: var(--space-6);
+  padding: var(--space-8);
+  background-color: var(--background);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   gap: var(--space-3);
 }
 
@@ -1464,13 +1527,14 @@ body {
 }
 
 .trust-label {
-  font-size: var(--text-caption);
-  font-weight: var(--weight-600);
+  font-size: var(--text-p2);
+  font-weight: var(--weight-700);
 }
 
 .trust-desc {
-  font-size: var(--text-overline);
+  font-size: var(--text-caption);
   color: var(--muted-foreground);
+  line-height: 1.5;
 }
 
 /* -- Timeline ----------------------------------------------- */
@@ -1621,7 +1685,7 @@ body {
 }
 
 .footer-heading {
-  font-size: var(--text-caption);
+  font-size: var(--text-p2);
   font-weight: var(--weight-600);
   color: var(--gray-200);
   margin-bottom: var(--space-4);

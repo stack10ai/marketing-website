@@ -13,6 +13,7 @@ import HeroVisual from '../components/HeroVisual.astro';
   <section class="hero hero-split">
     <div class="hero-dot-grid" aria-hidden="true"></div>
     <div class="hero-content">
+      <div class="section-label">Enterprise AI Consulting</div>
       <h1 class="hero-title hero-title-left">
         AI transformation measured in production,&nbsp;not&nbsp;promises.
       </h1>
@@ -20,8 +21,11 @@ import HeroVisual from '../components/HeroVisual.astro';
         We help financial services, private equity, and government organisations ship AI into production — with a clear plan, measurable outcomes, and ongoing operational support.
       </p>
       <div class="hero-actions hero-actions-left">
-        <a href="/get-started/" class="btn btn-primary btn-lg">Get Started &nearr;</a>
-        <a href="/how-we-work/" class="btn btn-outline btn-lg">See Our Approach &rarr;</a>
+        <a href="/get-started/" class="btn btn-primary btn-lg">
+          Get Started
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+        <a href="/how-we-work/" class="btn btn-outline btn-lg">See Our Approach</a>
       </div>
     </div>
     <div class="hero-visual-col">
@@ -33,16 +37,43 @@ import HeroVisual from '../components/HeroVisual.astro';
   <div class="logo-bar">
     <div class="logo-bar-label">Trusted by enterprises across financial services and government</div>
     <div class="logo-bar-grid">
-      <div class="logo-bar-item logo-placeholder" style="width:100px;"></div>
-      <div class="logo-bar-item logo-placeholder" style="width:120px;"></div>
-      <div class="logo-bar-item logo-placeholder" style="width:90px;"></div>
-      <div class="logo-bar-item logo-placeholder" style="width:110px;"></div>
-      <div class="logo-bar-item logo-placeholder" style="width:100px;"></div>
+      <div class="logo-bar-item" aria-hidden="true">
+        <img src="/logo-light.svg" alt="" class="logo-bar-logo logo-light" />
+        <img src="/logo-dark.svg" alt="" class="logo-bar-logo logo-dark" />
+      </div>
+      <div class="logo-bar-item" aria-hidden="true">
+        <img src="/logo-light.svg" alt="" class="logo-bar-logo logo-light" />
+        <img src="/logo-dark.svg" alt="" class="logo-bar-logo logo-dark" />
+      </div>
+      <div class="logo-bar-item" aria-hidden="true">
+        <img src="/logo-light.svg" alt="" class="logo-bar-logo logo-light" />
+        <img src="/logo-dark.svg" alt="" class="logo-bar-logo logo-dark" />
+      </div>
+      <div class="logo-bar-item" aria-hidden="true">
+        <img src="/logo-light.svg" alt="" class="logo-bar-logo logo-light" />
+        <img src="/logo-dark.svg" alt="" class="logo-bar-logo logo-dark" />
+      </div>
+      <div class="logo-bar-item" aria-hidden="true">
+        <img src="/logo-light.svg" alt="" class="logo-bar-logo logo-light" />
+        <img src="/logo-dark.svg" alt="" class="logo-bar-logo logo-dark" />
+      </div>
     </div>
   </div>
 
   <!-- ── STATS ─────────────────────────────────────────────────── -->
-  <section class="section">
+  <section class="section section-stats section-with-accents">
+    <div class="floating-accents" aria-hidden="true">
+      <div class="accent-block accent-a1"></div>
+      <div class="accent-block accent-a2"></div>
+      <div class="accent-block accent-a3"></div>
+      <div class="accent-block accent-a4"></div>
+      <div class="accent-block accent-a5"></div>
+      <div class="accent-block accent-a6"></div>
+      <div class="accent-block accent-a7"></div>
+      <div class="accent-block accent-a8"></div>
+      <div class="accent-block accent-a9"></div>
+      <div class="accent-block accent-a10"></div>
+    </div>
     <div class="container">
       <div class="stat-bar-dark" data-reveal-stagger>
         <div class="stat-item" data-reveal-child>
@@ -65,218 +96,241 @@ import HeroVisual from '../components/HeroVisual.astro';
     </div>
   </section>
 
-  <!-- ── THE STACK10 APPROACH ──────────────────────────────────── -->
-  <section class="section section-green">
-    <div class="container">
-      <div class="section-header" data-reveal>
-        <div class="section-label muted-label">The Stack10 Approach</div>
-        <h2 class="section-title muted-title">From discovery to production in weeks, not years.</h2>
-        <p class="section-desc muted-desc">Five standalone products. Choose what you need — start anywhere.</p>
-      </div>
-      <div class="timeline" data-reveal-stagger>
-        <div class="timeline-step" data-reveal-child>
-          <div class="timeline-number">1</div>
-          <div class="timeline-title muted-title">Stack Discover</div>
-          <div class="timeline-desc muted-desc">Find your highest-value AI opportunities in 2 weeks. Structured assessment, ROI-ranked roadmap, executive-ready business cases.</div>
-        </div>
-        <div class="timeline-step" data-reveal-child>
-          <div class="timeline-number">2</div>
-          <div class="timeline-title muted-title">Stack Audit</div>
-          <div class="timeline-desc muted-desc">Deep-dive into your top AI opportunity. Process mining, working prototype, production-ready roadmap.</div>
-        </div>
-        <div class="timeline-step" data-reveal-child>
-          <div class="timeline-number">3</div>
-          <div class="timeline-title muted-title">Stack One</div>
-          <div class="timeline-desc muted-desc">Dedicated AI engineering capacity embedded in your org. Output-based delivery of AI projects, continuously.</div>
-        </div>
-        <div class="timeline-step" data-reveal-child>
-          <div class="timeline-number">4</div>
-          <div class="timeline-title muted-title">Stack Map</div>
-          <div class="timeline-desc muted-desc">Process intelligence quickstart. Rapid process mining focused on implementing a specific tool or solution.</div>
-        </div>
-        <div class="timeline-step" data-reveal-child>
-          <div class="timeline-number">5</div>
-          <div class="timeline-title muted-title">Stack E2E</div>
-          <div class="timeline-desc muted-desc">End-to-end organisational process map. Complete visibility across every function, every workflow, every handoff.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SERVICES ──────────────────────────────────────────────── -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header" data-reveal>
-        <div class="section-label">Everything you need</div>
-        <h2 class="section-title">Two product families. One clear path.</h2>
-      </div>
-
-      <div class="feature-grid feature-grid-2 services-intro" data-reveal-stagger>
-        <div class="card card-mint feature-card" data-reveal-child>
-          <div class="eyebrow card-text-muted">AI Roadmap &amp; Engineering</div>
-          <h3 class="feature-title">From "where do we start?" to production AI.</h3>
-          <p class="feature-desc card-text-muted">Our AI products take you from opportunity identification to production systems.</p>
-          <ul class="feature-checklist">
-            <li>Map your AI landscape, rank by ROI</li>
-            <li>Validate with process mining + working prototype</li>
-            <li>Ship continuously with embedded AI engineers</li>
-          </ul>
-        </div>
-        <div class="card card-lavender feature-card" data-reveal-child>
-          <div class="eyebrow card-text-muted">Process Intelligence</div>
-          <h3 class="feature-title">See every process. Fix what matters.</h3>
-          <p class="feature-desc card-text-muted">Complete visibility — from a single workflow to your entire organisation.</p>
-          <ul class="feature-checklist">
-            <li>Quickstart: mine one process, implement a tool</li>
-            <li>Full org: every function, every workflow, every handoff</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="feature-grid feature-grid-3" data-reveal-stagger>
-        <a href="/services/stack-discover/" class="card card-clickable feature-card" data-reveal-child>
-          <h4 class="feature-title">Stack Discover</h4>
-          <p class="feature-desc">AI opportunity assessment, prioritised roadmap with ROI, executive-ready business cases.</p>
-          <div class="feature-cta">2 weeks &middot; Fixed price &rarr;</div>
-        </a>
-        <a href="/services/stack-audit/" class="card card-clickable feature-card" data-reveal-child>
-          <h4 class="feature-title">Stack Audit</h4>
-          <p class="feature-desc">Process mining analysis, working AI prototype, production roadmap.</p>
-          <div class="feature-cta">4–6 weeks &middot; Fixed price &rarr;</div>
-        </a>
-        <a href="/services/stack-one/" class="card card-clickable feature-card" data-reveal-child>
-          <h4 class="feature-title">Stack One</h4>
-          <p class="feature-desc">Dedicated AI engineering team, output-based delivery, continuous deployment.</p>
-          <div class="feature-cta">Ongoing &middot; Per story point &rarr;</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── RESULTS + TESTIMONIAL ─────────────────────────────────── -->
-  <section class="section section-muted">
-    <div class="container">
-      <div class="section-header" data-reveal>
-        <div class="section-label">Real outcomes</div>
-        <h2 class="section-title">Real results from real operations.</h2>
-      </div>
-      <div class="results-layout">
-        <div class="results-stats" data-reveal-stagger>
-          <div class="result-item" data-reveal-child>
-            <div class="stat-value">73%</div>
-            <div class="stat-label">Reduction in manual processing time</div>
-          </div>
-          <div class="result-item" data-reveal-child>
-            <div class="stat-value">12wk</div>
-            <div class="stat-label">Average time to production</div>
-          </div>
-          <div class="result-item" data-reveal-child>
-            <div class="stat-value">$2.1M</div>
-            <div class="stat-label">Client efficiency gains (annual)</div>
-          </div>
-        </div>
-        <div data-reveal>
-          <div class="testimonial">
-            <p class="testimonial-quote">"Stack10 turned our AI strategy from a PowerPoint into a production system in under 3 months."</p>
-            <div class="testimonial-author">Senior Executive</div>
-            <div class="testimonial-role">Enterprise Financial Services Client</div>
-          </div>
-          <a href="/customers/" class="btn btn-link" style="margin-top: var(--space-6); display: inline-flex;">Read customer stories &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── DIFFERENTIATORS ───────────────────────────────────────── -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header" data-reveal>
-        <div class="section-label">Built differently</div>
-        <h2 class="section-title">Every engagement ends with working software in production.</h2>
-        <p class="section-desc">Zero slide decks. Zero theoretical frameworks. Real systems, real outcomes, real accountability.</p>
-      </div>
-      <div class="feature-grid feature-grid-3" data-reveal-stagger>
-        <div class="card card-sand feature-card" data-reveal-child>
-          <h4 class="feature-title">Built for regulated industries</h4>
-          <p class="feature-desc card-text-muted">Financial services, government, private equity, healthcare — we understand compliance, governance, and the stakes of getting it wrong.</p>
-        </div>
-        <div class="card card-peach feature-card" data-reveal-child>
-          <h4 class="feature-title">Output-based, not time-based</h4>
-          <p class="feature-desc card-text-muted">You pay for outcomes delivered, not hours billed. No bench warmers, no time-and-materials surprises.</p>
-        </div>
-        <div class="card card-cream feature-card" data-reveal-child>
-          <h4 class="feature-title">Weeks, not months</h4>
-          <p class="feature-desc card-text-muted">We deliver production systems in the time it takes traditional consultants to schedule a workshop.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── INDUSTRIES ────────────────────────────────────────────── -->
-  <section class="section section-muted">
-    <div class="container">
-      <div class="section-header" data-reveal>
-        <div class="section-label">Industries</div>
-        <h2 class="section-title">Deep expertise where it matters.</h2>
-      </div>
-      <div class="feature-grid feature-grid-4" data-reveal-stagger>
-        <a href="/industries/financial-services/" class="card card-mint card-clickable feature-card" data-reveal-child>
-          <h4 class="feature-title">Financial Services</h4>
-          <p class="feature-desc card-text-muted">Risk, compliance, operations</p>
-        </a>
-        <a href="/industries/government/" class="card card-lavender card-clickable feature-card" data-reveal-child>
-          <h4 class="feature-title">Government</h4>
-          <p class="feature-desc card-text-muted">Sovereign, secure, Australian-built</p>
-        </a>
-        <a href="/industries/healthcare/" class="card card-sand card-clickable feature-card" data-reveal-child>
-          <h4 class="feature-title">Healthcare</h4>
-          <p class="feature-desc card-text-muted">Hospitals, insurers, aged care</p>
-        </a>
-        <a href="/industries/manufacturing/" class="card card-peach card-clickable feature-card" data-reveal-child>
-          <h4 class="feature-title">Manufacturing</h4>
-          <p class="feature-desc card-text-muted">SAP, predictive, Industry 4.0</p>
-        </a>
-        <a href="/industries/professional-services/" class="card card-cream card-clickable feature-card" data-reveal-child>
-          <h4 class="feature-title">Professional Services</h4>
-          <p class="feature-desc card-text-muted">Law, accounting, consulting</p>
-        </a>
-        <a href="/industries/retail/" class="card card-green card-clickable feature-card" data-reveal-child>
-          <h4 class="feature-title">Retail</h4>
-          <p class="feature-desc card-text-muted">Omnichannel, supply chain</p>
-        </a>
-        <a href="/industries/logistics/" class="card card-mint card-clickable feature-card" data-reveal-child>
-          <h4 class="feature-title">Logistics</h4>
-          <p class="feature-desc card-text-muted">Route, demand, warehouse AI</p>
-        </a>
-        <a href="/industries/media-entertainment/" class="card card-lavender card-clickable feature-card" data-reveal-child>
-          <h4 class="feature-title">Media &amp; Entertainment</h4>
-          <p class="feature-desc card-text-muted">Content, audience, production</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── TRUST ─────────────────────────────────────────────────── -->
-  <section class="section">
+  <!-- ── SERVICES — two product families ────────────────────── -->
+  <section class="section section-services">
     <div class="container">
       <div class="section-header section-header-center" data-reveal>
-        <div class="section-label">Trust &amp; Compliance</div>
-        <h2 class="section-title">Enterprise-grade security built into every engagement.</h2>
+        <div class="section-label">What we do</div>
+        <h2 class="section-title section-title-center">Two product families. One outcome: AI in production.</h2>
+      </div>
+
+      <div class="services-duo" data-reveal-stagger>
+        <div class="services-duo-card" data-reveal-child>
+          <div class="services-duo-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2L18 6V14L10 18L2 14V6L10 2Z" stroke-linejoin="round"/><path d="M10 18V10"/><path d="M18 6L10 10L2 6"/></svg>
+          </div>
+          <h3 class="services-duo-title">AI Roadmap & Engineering</h3>
+          <ul class="services-duo-list">
+            <li>AI opportunity assessment & ROI ranking</li>
+            <li>Working prototypes on your real data</li>
+            <li>Production deployment & continuous delivery</li>
+          </ul>
+        </div>
+        <div class="services-duo-card" data-reveal-child>
+          <div class="services-duo-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3 class="services-duo-title">Process Intelligence</h3>
+          <ul class="services-duo-list">
+            <li>Process mining & bottleneck analysis</li>
+            <li>End-to-end organisational process mapping</li>
+            <li>Post-deployment impact measurement</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE STACK10 APPROACH — horizontal timeline ────────────── -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header section-header-center" data-reveal>
+        <div class="section-label">The Stack10 Approach</div>
+        <h2 class="section-title section-title-center">From discovery to production in weeks, not years.</h2>
+        <p class="section-desc section-desc-center">Five standalone products. Choose what you need — start anywhere.</p>
+      </div>
+
+      <div class="timeline" data-reveal>
+        <div class="timeline-steps">
+          <div class="timeline-step">
+            <div class="timeline-dot">1</div>
+            <h3 class="timeline-title">Stack Discover</h3>
+            <p class="timeline-desc">Find your highest-value AI opportunities in 2 weeks.</p>
+            <div class="timeline-meta">2 weeks &middot; $25K</div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-dot">2</div>
+            <h3 class="timeline-title">Stack Audit</h3>
+            <p class="timeline-desc">Deep-dive: process mining, prototype, production roadmap.</p>
+            <div class="timeline-meta">6-8 weeks &middot; $75K</div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-dot">3</div>
+            <h3 class="timeline-title">Stack One</h3>
+            <p class="timeline-desc">Dedicated AI engineering capacity embedded in your org.</p>
+            <div class="timeline-meta">Ongoing &middot; $50K/mo</div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-dot">4</div>
+            <h3 class="timeline-title">Stack Map</h3>
+            <p class="timeline-desc">Rapid process mining to implement a specific tool or solution.</p>
+            <div class="timeline-meta">1 month &middot; $25K</div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-dot">5</div>
+            <h3 class="timeline-title">Stack E2E</h3>
+            <p class="timeline-desc">End-to-end process map across every function and workflow.</p>
+            <div class="timeline-meta">Custom scope</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RESULTS ──────────────────────────────────────────────── -->
+  <section class="section section-outcomes">
+    <div class="container">
+      <div class="section-header section-header-center" data-reveal>
+        <div class="section-label">Real outcomes</div>
+        <h2 class="section-title section-title-center">Real results from real operations.</h2>
+      </div>
+
+      <div class="outcomes-row" data-reveal-stagger>
+        <div class="outcomes-stat" data-reveal-child>
+          <div class="outcomes-stat-value">73%</div>
+          <div class="outcomes-stat-label">Reduction in processing time</div>
+        </div>
+        <div class="outcomes-stat" data-reveal-child>
+          <div class="outcomes-stat-value">12wk</div>
+          <div class="outcomes-stat-label">Average time to production</div>
+        </div>
+        <div class="outcomes-stat" data-reveal-child>
+          <div class="outcomes-stat-value">$2.1M</div>
+          <div class="outcomes-stat-label">Client efficiency gains (annual)</div>
+        </div>
+      </div>
+
+      <blockquote class="outcomes-testimonial" data-reveal>
+        <p>&ldquo;Stack10 turned our AI strategy from a PowerPoint into a production system in under 3 months.&rdquo;</p>
+        <footer>
+          <strong>Senior Executive</strong> &mdash; Enterprise Financial Services Client
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ── DIFFERENTIATORS — green bar markers, NOT cards ────────── -->
+  <section class="section section-muted">
+    <div class="container">
+      <div class="section-header section-header-center" data-reveal>
+        <div class="section-label">Built differently</div>
+        <h2 class="section-title section-title-center">Every engagement ends with working software in production.</h2>
+        <p class="section-desc section-desc-center">Zero slide decks. Zero theoretical frameworks. Real systems, real outcomes, real accountability.</p>
+      </div>
+      <div class="diff-list" data-reveal-stagger>
+        <div class="diff-item" data-reveal-child>
+          <div class="diff-bar" aria-hidden="true"></div>
+          <div>
+            <h4 class="diff-title">Built for regulated industries</h4>
+            <p class="diff-desc">Financial services, government, private equity, healthcare — we understand compliance, governance, and the stakes of getting it wrong.</p>
+          </div>
+        </div>
+        <div class="diff-item" data-reveal-child>
+          <div class="diff-bar" aria-hidden="true"></div>
+          <div>
+            <h4 class="diff-title">Output-based, not time-based</h4>
+            <p class="diff-desc">You pay for outcomes delivered, not hours billed. No bench warmers, no time-and-materials surprises.</p>
+          </div>
+        </div>
+        <div class="diff-item" data-reveal-child>
+          <div class="diff-bar" aria-hidden="true"></div>
+          <div>
+            <h4 class="diff-title">Weeks, not months</h4>
+            <p class="diff-desc">We deliver production systems in the time it takes traditional consultants to schedule a workshop.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INDUSTRIES — compact cards ─────────────────────────────── -->
+  <section class="section section-industries">
+    <div class="industry-bg-grid" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header section-header-center" data-reveal>
+        <div class="section-label">Industries</div>
+        <h2 class="section-title section-title-center">Deep expertise where it matters.</h2>
+      </div>
+      <div class="industry-grid" data-reveal-stagger>
+        <a href="/industries/financial-services/" class="industry-card" data-reveal-child>
+          <div class="industry-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M8 10v11M12 10v11M16 10v11M20 10v11"/></svg>
+          </div>
+          <h4 class="industry-title">Financial Services</h4>
+          <p class="industry-desc">Risk, compliance, operations</p>
+        </a>
+        <a href="/industries/government/" class="industry-card" data-reveal-child>
+          <div class="industry-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4 class="industry-title">Government</h4>
+          <p class="industry-desc">Sovereign, secure, Australian-built</p>
+        </a>
+        <a href="/industries/healthcare/" class="industry-card" data-reveal-child>
+          <div class="industry-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h4 class="industry-title">Healthcare</h4>
+          <p class="industry-desc">Hospitals, insurers, aged care</p>
+        </a>
+        <a href="/industries/professional-services/" class="industry-card" data-reveal-child>
+          <div class="industry-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <h4 class="industry-title">Professional Services</h4>
+          <p class="industry-desc">Law, accounting, consulting</p>
+        </a>
+        <a href="/industries/manufacturing/" class="industry-card" data-reveal-child>
+          <div class="industry-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M6 20V10l4-6v6l4-6v6l4-6v16"/></svg>
+          </div>
+          <h4 class="industry-title">Manufacturing</h4>
+          <p class="industry-desc">SAP, predictive, Industry 4.0</p>
+        </a>
+        <a href="/industries/logistics/" class="industry-card" data-reveal-child>
+          <div class="industry-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+          </div>
+          <h4 class="industry-title">Logistics</h4>
+          <p class="industry-desc">Route, demand, warehouse AI</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TRUST — with icons ─────────────────────────────────────── -->
+  <section class="section section-muted">
+    <div class="container">
+      <div class="section-header section-header-center" data-reveal>
+        <div class="section-label">Trust & Compliance</div>
+        <h2 class="section-title section-title-center">Enterprise-grade security built into every engagement.</h2>
       </div>
       <div class="trust-grid" data-reveal-stagger>
         <div class="trust-item" data-reveal-child>
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
           <div class="trust-label">SOC 2 Type II</div>
           <div class="trust-desc">Audited controls for security, availability, and confidentiality</div>
         </div>
         <div class="trust-item" data-reveal-child>
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
           <div class="trust-label">ISO 27001</div>
           <div class="trust-desc">Information security management system certification</div>
         </div>
         <div class="trust-item" data-reveal-child>
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
           <div class="trust-label">Australian Sovereign</div>
-          <div class="trust-desc">Data stays in Australia. Team in Perth &amp; Sydney.</div>
+          <div class="trust-desc">Data stays in Australia. Team in Perth & Sydney.</div>
         </div>
         <div class="trust-item" data-reveal-child>
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="12" cy="16" r="1"/></svg>
+          </div>
           <div class="trust-label">IRAP Assessed</div>
           <div class="trust-desc">Government-grade security for sensitive workloads</div>
         </div>
@@ -284,41 +338,65 @@ import HeroVisual from '../components/HeroVisual.astro';
     </div>
   </section>
 
-  <!-- ── CTA ───────────────────────────────────────────────────── -->
-  <section class="cta-section" data-reveal>
+  <!-- ── CTA — soft green background ──────────────────────────── -->
+  <section class="cta-section cta-soft section-with-accents" data-reveal>
+    <div class="floating-accents" aria-hidden="true">
+      <div class="accent-block accent-c1"></div>
+      <div class="accent-block accent-c2"></div>
+      <div class="accent-block accent-c3"></div>
+      <div class="accent-block accent-c4"></div>
+      <div class="accent-block accent-c5"></div>
+      <div class="accent-block accent-c6"></div>
+      <div class="accent-block accent-c7"></div>
+      <div class="accent-block accent-c8"></div>
+      <div class="accent-block accent-c9"></div>
+      <div class="accent-block accent-c10"></div>
+      <div class="accent-block accent-c11"></div>
+      <div class="accent-block accent-c12"></div>
+      <div class="accent-block accent-c13"></div>
+      <div class="accent-block accent-c14"></div>
+    </div>
+    <div class="section-label">Contact Us</div>
     <h2 class="cta-title">Ready to move AI from pilot to production?</h2>
     <p class="cta-desc">Book a free discovery call. We'll assess your AI readiness and identify your highest-value opportunities.</p>
     <div class="cta-actions">
-      <a href="/get-started/" class="btn btn-primary btn-lg">Get Started &nearr;</a>
-      <a href="mailto:hello@stack10.ai" class="btn btn-outline btn-lg cta-email-btn">Email Us</a>
+      <a href="/get-started/" class="btn btn-primary btn-lg cta-btn-dark">
+        Get Started
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+      <a href="mailto:hello@stack10.ai" class="btn btn-outline btn-lg">Email Us</a>
     </div>
-    <p class="caption cta-footnote">Or email us at hello@stack10.ai</p>
+    <p class="caption cta-footnote-green">Or email us at hello@stack10.ai</p>
   </section>
 
 </BaseLayout>
 
 <style>
-  /* Hero */
-  .hero { background: var(--card-cream); }
+  /* ── Hero — clean white with dot grid + split layout ─────── */
+  .hero { background: var(--background); }
 
   .hero-split {
-    min-height: 90vh;
+    min-height: 70vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: var(--space-16);
-    padding: var(--space-20) var(--space-16);
+    gap: var(--space-20);
+    max-width: var(--container-max, 81rem);
+    margin: 0 auto;
+    padding: var(--space-12) var(--space-8);
     text-align: left;
     position: relative;
     overflow: hidden;
   }
 
-  /* Dot grid background */
   .hero-dot-grid {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle, oklch(0.760 0.210 150 / 0.18) 1px, transparent 1px);
-    background-size: 28px 28px;
+    background-image:
+      linear-gradient(oklch(0.760 0.210 150 / 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.760 0.210 150 / 0.12) 1px, transparent 1px),
+      radial-gradient(circle, oklch(0.760 0.210 150 / 0.22) 1px, transparent 1px);
+    background-size: 64px 64px, 64px 64px, 32px 32px;
     pointer-events: none;
     mask-image: radial-gradient(ellipse 80% 80% at 60% 50%, black 40%, transparent 100%);
   }
@@ -334,92 +412,557 @@ import HeroVisual from '../components/HeroVisual.astro';
     padding: var(--space-8) 0;
   }
 
-  /* Override centred defaults for split layout */
+  /* Hero label spacing */
+  .hero-content .section-label {
+    margin-bottom: var(--space-6);
+  }
+
   .hero-title-left {
     text-align: left;
     max-width: 600px;
     margin-bottom: var(--space-6);
   }
+
   .hero-subtitle-left {
     text-align: left;
     margin-bottom: var(--space-10);
   }
+
   .hero-actions-left {
     justify-content: flex-start;
+  }
+
+  .hero-actions .btn-outline {
+    background-color: var(--background);
+  }
+
+  /* Button arrow alignment */
+  .btn svg {
+    flex-shrink: 0;
+    vertical-align: middle;
   }
 
   @media (max-width: 1023px) {
     .hero-split {
       grid-template-columns: 1fr;
       text-align: center;
-      padding: var(--space-16) var(--space-6);
+      padding: var(--space-12) var(--space-6);
       min-height: auto;
     }
+    .hero-content .section-label { text-align: center; }
     .hero-title-left,
     .hero-subtitle-left { text-align: center; max-width: 100%; }
-    .hero-actions-left  { justify-content: center; }
-    .hero-visual-col    { display: none; }
+    .hero-actions-left { justify-content: center; }
+    .hero-visual-col { display: none; }
     .hero-dot-grid { mask-image: none; }
   }
-  .section-green { background: var(--card-green); }
+
+  @media (max-width: 480px) {
+    .hero-title-left {
+      font-size: clamp(1.75rem, 8vw, 2.5rem);
+    }
+  }
+
+  /* ── Section variants ──────────────────────────────────────── */
+  .section-dark {
+    background: var(--gray-950);
+    color: var(--gray-50);
+  }
+
+  .section-dark .section-label { color: var(--green-400); }
+  .section-dark .section-title { color: var(--gray-50); }
+  .section-dark .section-desc { color: var(--gray-400); }
+
   .section-muted { background: var(--muted); }
 
-  .muted-label { color: var(--card-text-muted); }
-  .muted-title { color: var(--card-text); }
-  .muted-desc  { color: var(--card-text-muted); }
-
-  .logo-placeholder {
-    height: 28px;
-    background: var(--muted);
-    border-radius: var(--radius-sm);
-  }
-
-  .services-intro { margin-bottom: var(--space-6); }
-
-  .feature-checklist {
-    list-style: none;
-    padding: 0;
-    margin-top: var(--space-4);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-    color: var(--card-text-muted);
-    font-size: var(--text-caption);
-  }
-  .feature-checklist li::before {
-    content: "✓ ";
-    font-weight: var(--weight-700);
-  }
-
-  .feature-cta {
-    margin-top: var(--space-4);
-    font-size: var(--text-caption);
-    font-weight: var(--weight-600);
-    color: var(--primary-text);
-  }
-
   .section-header-center { text-align: center; }
-  .section-header-center .section-title {
+
+  .section-title-center {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+  }
+
+  .section-desc-center {
     margin-left: auto;
     margin-right: auto;
   }
 
-  .results-layout {
+  /* ── Services — duo cards ──────────────────────────────────── */
+  .services-duo {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-10);
-    align-items: center;
+    gap: var(--space-6);
   }
-  .results-stats {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-8);
-  }
-
-  .cta-email-btn { border-color: var(--gray-700); color: var(--gray-200); }
-  .cta-footnote  { color: var(--gray-600); margin-top: var(--space-6); }
 
   @media (max-width: 767px) {
-    .results-layout { grid-template-columns: 1fr; }
+    .services-duo { grid-template-columns: 1fr; }
+  }
+
+  .services-duo-card {
+    padding: var(--space-8);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: var(--background);
+  }
+
+  .services-duo-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green-50);
+    border-radius: var(--radius-lg);
+    color: var(--primary-text);
+    margin-bottom: var(--space-4);
+  }
+
+  .services-duo-title {
+    font-size: var(--text-h5);
+    font-weight: var(--weight-600);
+    color: var(--foreground);
+    margin-bottom: var(--space-5);
+  }
+
+  .services-duo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .services-duo-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-p2);
+    color: var(--muted-foreground);
+    line-height: 1.4;
+  }
+
+  .services-duo-list li::before {
+    content: "";
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary-text);
+  }
+
+  /* ── Timeline (approach section) ──────────────────────────── */
+  .section-dark .timeline {
+    margin-top: calc(-1 * var(--space-4));
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 0;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .timeline-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-4);
+    position: relative;
+    background-image: linear-gradient(oklch(1 0 0 / 0.15), oklch(1 0 0 / 0.15));
+    background-size: 100% 1px;
+    background-position: 0 15px;
+    background-repeat: no-repeat;
+  }
+
+  .timeline-step {
+    text-align: center;
+    padding-bottom: 0;
+  }
+
+  .timeline-dot {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green-400);
+    color: var(--gray-950);
+    border-radius: var(--radius-full);
+    font-size: var(--size-sm);
+    font-weight: var(--weight-700);
+    margin: 0 auto var(--space-4);
+    position: relative;
+    z-index: 1;
+  }
+
+  .timeline-title {
+    font-size: var(--text-p1);
+    font-weight: var(--weight-600);
+    color: var(--gray-50);
+    margin-bottom: var(--space-2);
+  }
+
+  .timeline-desc {
+    font-size: var(--text-p2);
+    color: var(--gray-400);
+    line-height: 1.5;
+    margin-bottom: var(--space-3);
+  }
+
+  .timeline-meta {
+    font-family: var(--font-mono);
+    font-size: var(--size-sm);
+    font-weight: var(--weight-600);
+    color: var(--green-400);
+  }
+
+  @media (max-width: 1023px) {
+    .timeline-steps { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 767px) {
+    .timeline-steps {
+      grid-template-columns: 1fr 1fr;
+      background-image: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .timeline-steps {
+      grid-template-columns: 1fr;
+      background-image: none;
+    }
+  }
+
+  /* ── Differentiators — green bar markers ────────────────────── */
+  .diff-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .diff-item {
+    display: flex;
+    gap: var(--space-5);
+    align-items: flex-start;
+  }
+
+  .diff-bar {
+    flex-shrink: 0;
+    width: 4px;
+    align-self: stretch;
+    background: var(--green-500);
+    border-radius: var(--radius-full);
+  }
+
+  .diff-title {
+    font-size: var(--text-p1);
+    font-weight: var(--weight-600);
+    color: var(--foreground);
+    margin-bottom: var(--space-1);
+  }
+
+  .diff-desc {
+    font-size: var(--text-p2);
+    color: var(--muted-foreground);
+    line-height: 1.5;
+  }
+
+  /* ── Stats / Services spacing ─────────────────────────────── */
+  .section-stats {
+    padding-bottom: var(--space-6);
+  }
+
+  .section-services {
+    padding-top: var(--space-6);
+  }
+
+  /* ── Outcomes — dark section with stats row + testimonial ──── */
+  .section-outcomes {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
+  }
+
+  .outcomes-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+    margin-bottom: var(--space-10);
+    text-align: center;
+  }
+
+  .outcomes-stat-value {
+    font-size: var(--size-4xl);
+    font-weight: var(--weight-800);
+    color: var(--primary-text);
+    line-height: 1;
+    margin-bottom: var(--space-2);
+  }
+
+  .outcomes-stat-label {
+    font-size: var(--text-p2);
+    color: var(--muted-foreground);
+    line-height: 1.4;
+  }
+
+  .outcomes-testimonial {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--border);
+  }
+
+  .outcomes-testimonial p {
+    font-size: var(--text-h5);
+    font-weight: var(--weight-500);
+    color: var(--foreground);
+    line-height: 1.5;
+    margin-bottom: var(--space-4);
+    font-style: italic;
+  }
+
+  .outcomes-testimonial footer {
+    font-size: var(--text-caption);
+    color: var(--muted-foreground);
+  }
+
+  .outcomes-testimonial footer strong {
+    color: var(--foreground);
+  }
+
+  @media (max-width: 640px) {
+    .outcomes-row { grid-template-columns: 1fr; gap: var(--space-6); }
+  }
+
+  /* ── Industries section bg ────────────────────────────────── */
+  .section-industries {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .industry-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(oklch(0.760 0.210 150 / 0.18) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.760 0.210 150 / 0.18) 1px, transparent 1px),
+      radial-gradient(circle, oklch(0.760 0.210 150 / 0.30) 1px, transparent 1px);
+    background-size: 64px 64px, 64px 64px, 32px 32px;
+    pointer-events: none;
+    mask-image: linear-gradient(90deg, black 0%, transparent 30%, transparent 70%, black 100%);
+    -webkit-mask-image: linear-gradient(90deg, black 0%, transparent 30%, transparent 70%, black 100%);
+  }
+
+  /* ── Industry cards ────────────────────────────────────────── */
+  .industry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 1023px) {
+    .industry-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 767px) {
+    .industry-grid { grid-template-columns: 1fr; }
+  }
+
+  .industry-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-6);
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    color: var(--foreground);
+    transition: border-color var(--duration-normal) var(--ease-out),
+                box-shadow var(--duration-normal) var(--ease-out);
+  }
+
+  .industry-card:hover {
+    border-color: oklch(0.76 0.21 150 / 0.5);
+    box-shadow: var(--shadow-md);
+  }
+
+  .industry-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green-50);
+    border-radius: var(--radius-lg);
+    color: var(--primary-text);
+  }
+
+  .industry-title {
+    font-size: var(--text-p2);
+    font-weight: var(--weight-600);
+  }
+
+  .industry-desc {
+    font-size: var(--text-caption);
+    color: var(--muted-foreground);
+  }
+
+  /* ── Trust items with icons ─────────────────────────────────── */
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+  }
+
+  @media (max-width: 767px) {
+    .trust-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .trust-item {
+    text-align: center;
+    padding: var(--space-6);
+  }
+
+  .trust-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green-50);
+    border-radius: var(--radius-lg);
+    color: var(--primary-text);
+    margin: 0 auto var(--space-4);
+  }
+
+  .trust-label {
+    font-size: var(--text-p2);
+    font-weight: var(--weight-700);
+    color: var(--foreground);
+    margin-bottom: var(--space-1);
+  }
+
+  .trust-desc {
+    font-size: var(--text-caption);
+    color: var(--muted-foreground);
+    line-height: 1.4;
+  }
+
+  /* ── CTA — white variant ──────────────────────────────────── */
+  .cta-soft {
+    background: var(--background);
+    color: var(--foreground);
+    border-top: 1px solid var(--border);
+  }
+
+  .cta-soft .cta-title {
+    color: var(--foreground);
+  }
+
+  .cta-soft .cta-desc {
+    color: var(--muted-foreground);
+  }
+
+  .cta-btn-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .cta-footnote-green {
+    color: var(--muted-foreground);
+    margin-top: var(--space-6);
+  }
+
+  /* ── Logo bar muted logos ───────────────────────────────────── */
+  .logo-bar-logo {
+    height: 24px;
+    width: auto;
+    opacity: 0.3;
+    filter: grayscale(100%);
+  }
+
+  /* ── Floating accent blocks (Baseten-style) ─────────────────── */
+  .section-with-accents {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .floating-accents {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .section-with-accents .container,
+  .section-with-accents .cta-title,
+  .section-with-accents .cta-desc,
+  .section-with-accents .cta-actions,
+  .section-with-accents .cta-footnote-green,
+  .section-with-accents .section-label {
+    position: relative;
+    z-index: 1;
+  }
+
+  .accent-block {
+    position: absolute;
+    border-radius: 3px;
+  }
+
+  /* Accent blocks: mint, lime, sand, lavender — sides only, uniform 20px height
+     Left side blocks at 5%, 15%, 25%, 45%, 65%, 75%, 85%, 95%
+     Right side blocks at 10%, 20%, 40%, 55%, 70%, 80%, 90% — staggered from left */
+
+  /* ── Section A (Stats / after logo bar) ─── */
+  .accent-a1  { width: 120px; height: 20px; background: oklch(0.85 0.10 170 / 0.35); top: 5%;  left: -20px;  animation: drift-right 10s ease-in-out infinite alternate; }
+  .accent-a2  { width: 50px;  height: 20px; background: oklch(0.82 0.08 280 / 0.28); top: 15%; right: 0;     animation: drift-left 13s ease-in-out infinite alternate; }
+  .accent-a3  { width: 80px;  height: 20px; background: oklch(0.88 0.06 85 / 0.40);  top: 30%; left: 2%;     animation: drift-right 12s ease-in-out infinite alternate; }
+  .accent-a4  { width: 60px;  height: 20px; background: oklch(0.80 0.14 150 / 0.30); top: 42%; right: 3%;    animation: drift-left 15s ease-in-out infinite alternate; }
+  .accent-a5  { width: 40px;  height: 20px; background: oklch(0.85 0.10 170 / 0.30); top: 55%; left: 0;      animation: drift-right 9s ease-in-out infinite alternate; }
+  .accent-a6  { width: 100px; height: 20px; background: oklch(0.88 0.06 85 / 0.35);  top: 65%; right: -15px; animation: drift-left 14s ease-in-out infinite alternate; }
+  .accent-a7  { width: 70px;  height: 20px; background: oklch(0.82 0.08 280 / 0.25); top: 78%; left: 3%;     animation: drift-right 11s ease-in-out infinite alternate; }
+  .accent-a8  { width: 30px;  height: 20px; background: oklch(0.80 0.14 150 / 0.28); top: 78%; right: 5%;    animation: drift-left 8s ease-in-out infinite alternate; }
+  .accent-a9  { width: 110px; height: 20px; background: oklch(0.85 0.10 170 / 0.28); bottom: 5%; left: -10px; animation: drift-right 16s ease-in-out infinite alternate; }
+  .accent-a10 { width: 55px;  height: 20px; background: oklch(0.88 0.06 85 / 0.32);  bottom: 5%; right: 2%;  animation: drift-left 12s ease-in-out infinite alternate; }
+
+  /* ── Section C (CTA / pre-footer) — extra blocks for impact ─── */
+  .accent-c1  { width: 160px; height: 20px; background: oklch(0.85 0.10 170 / 0.35); top: 3%;  left: -60px;  animation: drift-right 10s ease-in-out infinite alternate; }
+  .accent-c2  { width: 60px;  height: 20px; background: oklch(0.80 0.14 150 / 0.30); top: 3%;  right: -20px; animation: drift-left 8s ease-in-out infinite alternate; }
+  .accent-c3  { width: 100px; height: 20px; background: oklch(0.88 0.06 85 / 0.40);  top: 14%; left: 2%;     animation: drift-right 12s ease-in-out infinite alternate; }
+  .accent-c4  { width: 40px;  height: 20px; background: oklch(0.82 0.08 280 / 0.28); top: 14%; right: 4%;    animation: drift-left 14s ease-in-out infinite alternate; }
+  .accent-c5  { width: 130px; height: 20px; background: oklch(0.85 0.10 170 / 0.30); top: 26%; right: -40px; animation: drift-left 9s ease-in-out infinite alternate; }
+  .accent-c6  { width: 50px;  height: 20px; background: oklch(0.80 0.14 150 / 0.32); top: 26%; left: -10px;  animation: drift-right 13s ease-in-out infinite alternate; }
+  .accent-c7  { width: 90px;  height: 20px; background: oklch(0.88 0.06 85 / 0.38);  top: 40%; left: -30px;  animation: drift-right 7s ease-in-out infinite alternate; }
+  .accent-c8  { width: 70px;  height: 20px; background: oklch(0.82 0.08 280 / 0.25); top: 40%; right: 1%;    animation: drift-left 11s ease-in-out infinite alternate; }
+  .accent-c9  { width: 120px; height: 20px; background: oklch(0.85 0.10 170 / 0.32); top: 55%; right: -50px; animation: drift-left 10s ease-in-out infinite alternate; }
+  .accent-c10 { width: 45px;  height: 20px; background: oklch(0.80 0.14 150 / 0.28); top: 55%; left: 3%;     animation: drift-right 15s ease-in-out infinite alternate; }
+  .accent-c11 { width: 80px;  height: 20px; background: oklch(0.88 0.06 85 / 0.35);  top: 68%; left: -20px;  animation: drift-right 8s ease-in-out infinite alternate; }
+  .accent-c12 { width: 55px;  height: 20px; background: oklch(0.82 0.08 280 / 0.22); top: 68%; right: 2%;    animation: drift-left 12s ease-in-out infinite alternate; }
+  .accent-c13 { width: 140px; height: 20px; background: oklch(0.85 0.10 170 / 0.30); top: 82%; left: -40px;  animation: drift-right 11s ease-in-out infinite alternate; }
+  .accent-c14 { width: 100px; height: 20px; background: oklch(0.88 0.06 85 / 0.35);  bottom: 3%; right: -30px; animation: drift-left 9s ease-in-out infinite alternate; }
+
+  @keyframes drift-right {
+    0%   { transform: translateX(-200px); }
+    100% { transform: translateX(200px); }
+  }
+
+  @keyframes drift-left {
+    0%   { transform: translateX(200px); }
+    100% { transform: translateX(-200px); }
+  }
+
+  @media (max-width: 767px) {
+    .floating-accents { display: none; }
   }
 </style>
