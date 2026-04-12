@@ -185,64 +185,87 @@ import HeroVisual from '../components/HeroVisual.astro';
     </div>
   </section>
 
-  <!-- ── SERVICES — four cards ─────────────────────────────────── -->
+  <!-- ── SERVICES ─────────────────────────────────────────────── -->
   <section class="section section-services">
     <div class="container">
       <div class="section-header section-header-center" data-reveal>
         <div class="section-label">Our services</div>
-        <h2 class="section-title section-title-center">Start where you are. Scale where you need to go.</h2>
-        <p class="section-desc section-desc-center">Every Stack10 engagement is fixed-fee and designed to deliver a concrete output — not a relationship designed to drag. Start at any stage.</p>
+        <h2 class="section-title section-title-center">Three products. A clear progression.</h2>
+        <p class="section-desc section-desc-center">Understand your business. Prove AI works. Build continuously. Every engagement is fixed-fee with a concrete output — not a relationship designed to drag.</p>
       </div>
 
-      <div class="services-grid" data-reveal-stagger>
-
-        <!-- Stack Discover -->
-        <div class="service-card" data-reveal-child>
-          <div class="service-header">
+      <!-- ── Stack Discover — full width featured card ── -->
+      <div class="discover-card" data-reveal>
+        <div class="discover-card-header">
+          <div class="discover-card-title-group">
             <div class="service-icon" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
             </div>
-            <span class="service-duration">2 weeks</span>
+            <div>
+              <h3 class="discover-card-name">Stack Discover</h3>
+              <p class="discover-card-tagline">The intelligence layer. Understand your business before building anything on it.</p>
+            </div>
           </div>
-          <h3 class="service-title">Stack Discover</h3>
-          <p class="service-desc">You suspect AI could improve your workflows but you're not sure where to start — or whether the investment is justified. Stack Discover gives you a structured, evidence-based answer with a prioritised roadmap and a clear Go/No-Go recommendation.</p>
-          <ul class="service-deliverables">
-            <li>5–10 prioritised AI use cases mapped to real operational inefficiencies</li>
-            <li>Tech stack and data readiness assessment</li>
-            <li>Go/No-Go recommendation with executive summary</li>
-            <li>Brief for any subsequent engagement</li>
-          </ul>
-          <div class="service-footer">
-            <p class="service-for">Best for: Operations and Technology leaders who need validation before committing budget</p>
-            <a href="/services/discover/" class="btn btn-link">Explore Stack Discover
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-            </a>
-          </div>
+          <a href="/services/discover/" class="btn btn-outline btn-sm">Explore Stack Discover
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
         </div>
 
-        <!-- Stack Map -->
-        <div class="service-card" data-reveal-child>
-          <div class="service-header">
-            <div class="service-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l6-3 6 3 6-3v13l-6 3-6-3-6 3V7z"/><path d="M9 4v13M15 7v13"/></svg>
+        <p class="discover-card-desc">Stack Discover covers the full discovery spectrum — stakeholder and executive surveys and interviews, process mapping, and live process intelligence powered by Keystone Intelligence. Three engagement types let you go as deep as your situation demands.</p>
+
+        <div class="discover-engagements" data-reveal-stagger>
+
+          <!-- Signal -->
+          <div class="engagement-card" data-reveal-child>
+            <div class="engagement-header">
+              <span class="engagement-name">Signal</span>
+              <span class="engagement-duration">2 weeks</span>
             </div>
-            <span class="service-duration">1 month</span>
+            <p class="engagement-desc">Structured stakeholder and executive surveys and interviews across key functions. You leave with a clear signal: where AI moves the needle and whether it's worth pursuing.</p>
+            <ul class="engagement-list">
+              <li>Stakeholder and executive surveys and interviews</li>
+              <li>AI opportunity identification and prioritisation</li>
+              <li>Data and technology readiness assessment</li>
+              <li>Go/No-Go recommendation with executive summary</li>
+            </ul>
           </div>
-          <h3 class="service-title">Stack Map</h3>
-          <p class="service-desc">AI built on processes you don't fully understand will amplify your problems, not solve them. Stack Map establishes the foundation: a live, operational process intelligence platform configured to your environment and driven by real system data.</p>
-          <ul class="service-deliverables">
-            <li>Configured process intelligence platform (Celonis, SAP Signavio, Apromore or equivalent)</li>
-            <li>Process modelling and mining capability</li>
-            <li>Cross-functional process collaboration hub</li>
-            <li>Foundation for AI opportunity identification grounded in real data</li>
-          </ul>
-          <div class="service-footer">
-            <p class="service-for">Best for: IT and Operations leaders who need process visibility before committing to AI transformation</p>
-            <a href="/services/map/" class="btn btn-link">Explore Stack Map
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-            </a>
+
+          <!-- Blueprint -->
+          <div class="engagement-card" data-reveal-child>
+            <div class="engagement-header">
+              <span class="engagement-name">Blueprint</span>
+              <span class="engagement-duration">4 weeks</span>
+            </div>
+            <p class="engagement-desc">Everything in Signal, plus structured process mapping across targeted workflows. You leave with a blueprint: a detailed process map and AI roadmap defensible in any board conversation.</p>
+            <ul class="engagement-list">
+              <li>All Signal outputs</li>
+              <li>AS-IS process maps across targeted workflows</li>
+              <li>Bottleneck and inefficiency analysis</li>
+              <li>Detailed AI roadmap with quantified ROI projections</li>
+            </ul>
           </div>
+
+          <!-- Intelligence -->
+          <div class="engagement-card engagement-card-featured" data-reveal-child>
+            <div class="engagement-header">
+              <span class="engagement-name">Intelligence</span>
+              <span class="engagement-duration engagement-duration-featured">4–8 weeks</span>
+            </div>
+            <p class="engagement-desc">Everything in Blueprint, plus a live process intelligence platform powered by Keystone Intelligence — running against your actual system data, not interviews or assumptions. The platform stays with you after the engagement ends.</p>
+            <ul class="engagement-list">
+              <li>All Blueprint outputs</li>
+              <li>Live process intelligence platform (Celonis, SAP Signavio, Apromore or equivalent)</li>
+              <li>Process mining from real system data</li>
+              <li>Ongoing process monitoring capability</li>
+              <li>Quantified baseline for post-deployment ROI validation</li>
+            </ul>
+          </div>
+
         </div>
+      </div>
+
+      <!-- ── Stack Audit + Stack One — side by side ── -->
+      <div class="services-lower" data-reveal-stagger>
 
         <!-- Stack Audit -->
         <div class="service-card" data-reveal-child>
@@ -253,17 +276,16 @@ import HeroVisual from '../components/HeroVisual.astro';
             <span class="service-duration">6–8 weeks</span>
           </div>
           <h3 class="service-title">Stack Audit</h3>
-          <p class="service-desc">A full deep-dive into one end-to-end process with a working AI prototype built on your real data. Not a proof-of-concept in isolation — a system that demonstrates what production deployment actually looks like in your environment.</p>
+          <p class="service-desc">Takes your highest-value opportunity from Stack Discover and builds a working AI prototype on your real production data — deployed into your actual environment, not a sandbox. The bridge between discovery and continuous delivery.</p>
           <ul class="service-deliverables">
-            <li>AS-IS process map derived from actual system data — not interviews</li>
-            <li>Bottleneck and inefficiency analysis with quantified impact</li>
-            <li>Working AI prototype on your real production data</li>
+            <li>Working AI prototype deployed on real production data</li>
+            <li>Bottleneck analysis with quantified impact</li>
             <li>Prioritised opportunity register with ROI projections</li>
             <li>Technical architecture and development backlog</li>
-            <li>Executive briefing and board-ready business case</li>
+            <li>Board-ready business case</li>
           </ul>
           <div class="service-footer">
-            <p class="service-for">Best for: COOs, VPs of Operations and Process Excellence leaders who need data-driven proof before a full build</p>
+            <p class="service-for">Best for: COOs and Process Excellence leaders who need working proof before committing full build budget</p>
             <a href="/services/audit/" class="btn btn-link">Explore Stack Audit
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
             </a>
@@ -279,17 +301,17 @@ import HeroVisual from '../components/HeroVisual.astro';
             <span class="service-duration service-duration-featured">Ongoing</span>
           </div>
           <h3 class="service-title">Stack One</h3>
-          <p class="service-desc">Once opportunities are validated, Stack One delivers them. A dedicated pod of senior AI engineers, architects, and QA working against a guaranteed story point commitment — without the hiring, onboarding, and management overhead of building an internal team.</p>
+          <p class="service-desc">The execution engine. A dedicated pod of senior AI engineers, architects, and QA working against a guaranteed story point commitment. Priced on output, not headcount. Full IP transfer on everything built.</p>
           <ul class="service-deliverables">
             <li>Dedicated pod: senior AI engineers, Solutions Architect, QA</li>
             <li>Guaranteed story point output — measurable, contractual delivery</li>
-            <li>Production AI systems deployed and integrated into your existing stack</li>
+            <li>Production AI systems integrated into your existing stack</li>
             <li>Full IP transfer — all code, models, and documentation are yours</li>
-            <li>Post-deployment ROI validation via continuous process monitoring</li>
+            <li>Post-deployment ROI validation via process monitoring</li>
             <li>Scale your commitment as your roadmap expands</li>
           </ul>
           <div class="service-footer">
-            <p class="service-for">Best for: CTOs and Heads of Engineering who have validated AI opportunities but lack senior talent to execute at pace</p>
+            <p class="service-for">Best for: CTOs and Heads of Engineering who have validated opportunities but lack senior talent to execute at pace</p>
             <a href="/services/one/" class="btn btn-link">Explore Stack One
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
             </a>
@@ -775,19 +797,177 @@ import HeroVisual from '../components/HeroVisual.astro';
     letter-spacing: 0.02em;
   }
 
-  /* ── Services — 4-card grid ────────────────────────────────── */
+  /* ── Services ──────────────────────────────────────────────── */
   .section-services {
     padding-top: var(--space-16);
   }
 
-  .services-grid {
+  /* ── Stack Discover — featured full-width card ── */
+  .discover-card {
+    border: 1px solid oklch(0.76 0.21 150 / 0.3);
+    border-radius: var(--radius-xl);
+    background: var(--green-50);
+    padding: var(--space-8);
+    margin-bottom: var(--space-6);
+  }
+
+  .dark .discover-card,
+  [data-theme="dark"] .discover-card {
+    background: oklch(0.20 0.015 150);
+    border-color: oklch(0.76 0.21 150 / 0.25);
+  }
+
+  .discover-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-6);
+    margin-bottom: var(--space-5);
+  }
+
+  @media (max-width: 640px) {
+    .discover-card-header { flex-direction: column; gap: var(--space-4); }
+  }
+
+  .discover-card-title-group {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+
+  .discover-card-name {
+    font-size: var(--text-h4);
+    font-weight: var(--weight-600);
+    color: var(--foreground);
+    margin-bottom: var(--space-1);
+  }
+
+  .discover-card-tagline {
+    font-size: var(--text-p2);
+    color: var(--muted-foreground);
+    margin: 0;
+  }
+
+  .discover-card-desc {
+    font-size: var(--text-p2);
+    color: var(--muted-foreground);
+    line-height: 1.6;
+    max-width: 800px;
+    margin-bottom: var(--space-8);
+    padding-bottom: var(--space-8);
+    border-bottom: 1px solid oklch(0.76 0.21 150 / 0.2);
+  }
+
+  /* ── Engagement type cards ── */
+  .discover-engagements {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+
+  @media (max-width: 1023px) {
+    .discover-engagements { grid-template-columns: 1fr; }
+  }
+
+  .engagement-card {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    transition: border-color var(--dur-200) ease-out,
+                box-shadow var(--dur-200) ease-out;
+  }
+
+  .engagement-card:hover {
+    border-color: oklch(0.76 0.21 150 / 0.4);
+    box-shadow: var(--shadow-1);
+  }
+
+  .engagement-card-featured {
+    border-color: oklch(0.76 0.21 150 / 0.4);
+    background: var(--background);
+  }
+
+  .engagement-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+  }
+
+  .engagement-name {
+    font-size: var(--text-p1);
+    font-weight: var(--weight-700);
+    color: var(--foreground);
+    letter-spacing: -0.01em;
+  }
+
+  .engagement-duration {
+    font-family: var(--font-mono);
+    font-size: var(--size-xs);
+    font-weight: var(--weight-600);
+    color: var(--muted-foreground);
+    background: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 2px var(--space-3);
+    white-space: nowrap;
+  }
+
+  .engagement-duration-featured {
+    color: var(--primary-text);
+    background: oklch(0.813 0.219 150 / 0.12);
+    border-color: oklch(0.76 0.21 150 / 0.3);
+  }
+
+  .engagement-desc {
+    font-size: var(--text-p2);
+    color: var(--muted-foreground);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .engagement-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    flex: 1;
+  }
+
+  .engagement-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--size-sm);
+    color: var(--muted-foreground);
+    line-height: 1.45;
+  }
+
+  .engagement-list li::before {
+    content: "";
+    flex-shrink: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--green-500);
+    margin-top: 7px;
+  }
+
+  /* ── Stack Audit + Stack One ── */
+  .services-lower {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-6);
   }
 
   @media (max-width: 767px) {
-    .services-grid { grid-template-columns: 1fr; }
+    .services-lower { grid-template-columns: 1fr; }
   }
 
   .service-card {

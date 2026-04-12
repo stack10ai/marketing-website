@@ -41,33 +41,54 @@ Stack10 operates in partnership with **Keystone Intelligence** (process mining a
 
 ## Products
 
-### Stack Discover — $25,000 (Fixed Fee)
-**Two-week discovery engagement.**  
-Stakeholder interviews, workflow observation, tech stack review, and a prioritised AI opportunity report. Low-risk entry point.
+Three products. A clear progression: understand your business, prove AI works, then build continuously.
 
-- **Outcomes:** 5–10 prioritised AI use cases with rough ROI, tech stack and data readiness assessment, Go/No-Go recommendation, executive summary
-- **Best for:** Operations or Technology leaders who suspect AI could improve workflows but need to validate before committing
+---
 
-### Stack Map — $25,000 (Fixed Fee)
-**One-month process intelligence platform deployment.**  
-Delivered by Keystone Intelligence. Establishes the process management foundation — live platform (SAP Signavio, Celonis, Apromore, or equivalent) configured and operational.
+### Stack Discover (Product Family)
 
-- **Outcomes:** Live process intelligence platform, process modelling and mining capability, collaboration hub, foundation for AI opportunity identification
-- **Best for:** Operations or IT leaders who need process visibility before investing in AI transformation
+The intelligence layer. Every tool for understanding how your organisation actually operates and where AI can move the needle — before a single line of code is written. Covers the full discovery spectrum: stakeholder and executive surveys and interviews, process mapping, and live process intelligence powered by Keystone Intelligence.
 
-### Stack Audit — $75,000 (Per Process, Fixed Fee)
-**Six to eight week deep-dive into one end-to-end process.**  
-Includes process mining (with Keystone Intelligence), bottleneck analysis, one working AI prototype on real data, opportunity register with ROI projections, and a technical roadmap. Process intelligence platform deployment included.
+Three engagement types — buyers select based on scope and depth needed:
 
-- **Outcomes:** AS-IS process map from actual system data, bottleneck analysis, working AI prototype, prioritised opportunity register with ROI projections, technical architecture and backlog, executive briefing
-- **Best for:** COOs, VPs of Operations, or Process Excellence leaders who want data-driven AI solutions with quantified ROI — not another PowerPoint
+#### Discover: Signal (Fixed Fee)
+**Two-week engagement. Human intelligence layer.**
+Structured stakeholder surveys and executive interviews across key functions. AI opportunity identification and prioritisation. Data and technology readiness assessment. You leave with a clear signal: where AI moves the needle and whether it's worth pursuing.
 
-### Stack One — $50,000/month (Subscription)
-**Monthly AI engineering subscription priced on story point output, not headcount.**  
-Stack10 staffs the pod to deliver — senior AI engineers, architects, and QA as needed. Full IP transfer. Scale by increasing monthly commitment.
+- **Outcomes:** Prioritised AI use cases with ROI estimates, stakeholder and executive survey findings, tech stack and data readiness assessment, Go/No-Go recommendation, executive summary
+- **Best for:** Leaders who need a fast, evidence-based answer before a board meeting or budget cycle
 
-- **Outcomes:** 500 guaranteed story points per year, production AI systems deployed, validated ROI, full IP transfer, Solutions Architect and QA support
-- **Best for:** CTOs or Heads of Engineering who have validated AI opportunities but lack in-house AI engineering talent to execute
+#### Discover: Blueprint (Fixed Fee)
+**Four-week engagement. Process mapping layer.**
+Everything in Signal, plus structured process mapping across targeted workflows. Deeper analysis of where work breaks down, where handoffs fail, and where AI fits. You leave with a blueprint: a detailed process map and AI roadmap you can take into any board conversation.
+
+- **Outcomes:** All Signal outputs, AS-IS process maps across targeted workflows, bottleneck and inefficiency analysis, detailed AI roadmap with phased implementation recommendations, quantified ROI projections
+- **Best for:** Leaders who need a thorough assessment and structured roadmap before committing to a build
+
+#### Discover: Intelligence (Fixed Fee)
+**Four to eight week engagement. Full process intelligence layer.**
+Everything in Blueprint, plus a live process intelligence platform configured to your environment and powered by Keystone Intelligence. Process mining runs against your actual system data — not interviews, not assumptions. The platform stays with you after the engagement ends, giving you ongoing visibility into how work flows and where AI opportunities emerge.
+
+- **Outcomes:** All Blueprint outputs, configured and operational process intelligence platform (Celonis, SAP Signavio, Apromore or equivalent), process mining from live system data, ongoing process monitoring capability, quantified baseline for post-deployment ROI validation
+- **Best for:** Leaders who need to understand their processes from system data — not just observation — before committing to AI transformation
+
+---
+
+### Stack Audit (Fixed Fee)
+**Six to eight week engagement. Proof of concept to production.**
+The bridge between discovery and continuous delivery. Stack Audit takes the highest-value opportunity identified in Stack Discover and builds a working AI prototype on your real production data — deployed into your actual environment, not a sandbox. Includes full process intelligence (Keystone Intelligence) if not already completed, bottleneck analysis, validated ROI model, and a complete technical roadmap for the full build.
+
+- **Outcomes:** Working AI prototype deployed on real data, AS-IS process map from system data, bottleneck analysis with quantified impact, prioritised opportunity register with ROI projections, technical architecture and development backlog, board-ready business case
+- **Best for:** COOs, VPs of Operations, and Process Excellence leaders who need working proof before committing full build budget
+
+---
+
+### Stack One (Subscription)
+**Ongoing. Dedicated AI engineering pod. Guaranteed story point output.**
+The execution engine. Once opportunities are validated — through Stack Discover and/or Stack Audit — Stack One delivers them continuously. A dedicated pod of senior AI engineers, architects, and QA working against a guaranteed story point commitment. Priced on output, not headcount. Full IP transfer on everything built.
+
+- **Outcomes:** Dedicated pod (senior AI engineers, Solutions Architect, QA), guaranteed story point output per year, production AI systems deployed and integrated, full IP transfer, post-deployment ROI validation via process monitoring, scalable commitment
+- **Best for:** CTOs and Heads of Engineering who have validated AI opportunities but lack the senior talent to execute at pace
 
 ---
 
