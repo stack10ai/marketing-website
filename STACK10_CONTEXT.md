@@ -41,54 +41,80 @@ Stack10 operates in partnership with **Keystone Intelligence** (process mining a
 
 ## Products
 
-Three products. A clear progression: understand your business, prove AI works, then build continuously.
+Three products. A clear progression: understand your business, build what matters, enable your team to use it.
+
+All engagements are custom-scoped and custom-priced. No fixed tiers are presented to clients. Stack10 assesses the situation on an initial call and proposes the right engagement scope, depth, and structure.
 
 ---
 
-### Stack Discover (Product Family)
+### Stack Discover
+**The intelligence layer.**
 
-The intelligence layer. Every tool for understanding how your organisation actually operates and where AI can move the needle — before a single line of code is written. Covers the full discovery spectrum: stakeholder and executive surveys and interviews, process mapping, and live process intelligence powered by Keystone Intelligence.
+We help organisations understand how they actually operate, where the inefficiencies live, and where AI can move the needle — before a single line of code is written.
 
-Three engagement types — buyers select based on scope and depth needed:
+Every Stack Discover engagement starts with a conversation. Based on what we find, we recommend the right scope. For some organisations that is **Signal** — a focused stakeholder and executive interview programme that delivers a clear AI opportunity map and Go/No-Go recommendation. For others it is **Blueprint** — a deeper engagement that adds structured process mapping and a detailed AI roadmap across targeted workflows. For organisations where process visibility is a prerequisite (SAP migration, regulatory compliance, failed automation), we recommend **Intelligence** — a full process mining deployment powered by Keystone Intelligence that extracts how the business actually operates from live system data, and leaves a configured platform running after the engagement ends.
 
-#### Discover: Signal (Fixed Fee)
-**Two-week engagement. Human intelligence layer.**
-Structured stakeholder surveys and executive interviews across key functions. AI opportunity identification and prioritisation. Data and technology readiness assessment. You leave with a clear signal: where AI moves the needle and whether it's worth pursuing.
+Process intelligence is available within Stack Discover but is not deployed for every engagement. It is recommended situationally — where interviews and observation alone are insufficient to establish ground truth.
 
-- **Outcomes:** Prioritised AI use cases with ROI estimates, stakeholder and executive survey findings, tech stack and data readiness assessment, Go/No-Go recommendation, executive summary
-- **Best for:** Leaders who need a fast, evidence-based answer before a board meeting or budget cycle
+**What a Stack Discover engagement can cover:**
+- Stakeholder and executive surveys and interviews
+- Process mapping and workflow analysis
+- AI opportunity identification and prioritisation
+- Data and technology readiness assessment
+- ROI modelling and business case development
+- AI Opportunity Workshops (facilitated exec-level sessions)
+- Process intelligence and mining — via Keystone Intelligence, recommended where process visibility is a prerequisite
 
-#### Discover: Blueprint (Fixed Fee)
-**Four-week engagement. Process mapping layer.**
-Everything in Signal, plus structured process mapping across targeted workflows. Deeper analysis of where work breaks down, where handoffs fail, and where AI fits. You leave with a blueprint: a detailed process map and AI roadmap you can take into any board conversation.
-
-- **Outcomes:** All Signal outputs, AS-IS process maps across targeted workflows, bottleneck and inefficiency analysis, detailed AI roadmap with phased implementation recommendations, quantified ROI projections
-- **Best for:** Leaders who need a thorough assessment and structured roadmap before committing to a build
-
-#### Discover: Intelligence (Fixed Fee)
-**Four to eight week engagement. Full process intelligence layer.**
-Everything in Blueprint, plus a live process intelligence platform configured to your environment and powered by Keystone Intelligence. Process mining runs against your actual system data — not interviews, not assumptions. The platform stays with you after the engagement ends, giving you ongoing visibility into how work flows and where AI opportunities emerge.
-
-- **Outcomes:** All Blueprint outputs, configured and operational process intelligence platform (Celonis, SAP Signavio, Apromore or equivalent), process mining from live system data, ongoing process monitoring capability, quantified baseline for post-deployment ROI validation
-- **Best for:** Leaders who need to understand their processes from system data — not just observation — before committing to AI transformation
+**Right for organisations where:**
+- The board is asking about AI and leadership doesn't have a defensible answer
+- There's a desire to act on AI but uncertainty about where to start
+- A previous AI pilot stalled and the root cause is unclear
+- Regulatory or operational pressure (APRA, AML/CTF, SAP migration) requires validated process understanding before any automation
 
 ---
 
-### Stack Audit (Fixed Fee)
-**Six to eight week engagement. Proof of concept to production.**
-The bridge between discovery and continuous delivery. Stack Audit takes the highest-value opportunity identified in Stack Discover and builds a working AI prototype on your real production data — deployed into your actual environment, not a sandbox. Includes full process intelligence (Keystone Intelligence) if not already completed, bottleneck analysis, validated ROI model, and a complete technical roadmap for the full build.
+### Stack Build
+**The execution layer.**
 
-- **Outcomes:** Working AI prototype deployed on real data, AS-IS process map from system data, bottleneck analysis with quantified impact, prioritised opportunity register with ROI projections, technical architecture and development backlog, board-ready business case
-- **Best for:** COOs, VPs of Operations, and Process Excellence leaders who need working proof before committing full build budget
+We design and build AI tools, products, and systems — on a foundation that has already been validated. From a focused **Proof of Concept** on real production data, to full **Product Development** spanning months of continuous delivery. The scope is defined together based on what needs to be built.
+
+Everything built is owned by the client. Full IP transfer on all code, models, and documentation. Senior engineers on every engagement — no bait-and-switch.
+
+**What Stack Build can deliver:**
+- Proof of Concept — a working AI system on real data, deployed in the client's environment
+- Internal AI tools and workflow automation
+- Agentic systems and autonomous process automation
+- Customer-facing AI products and features
+- Enterprise system integrations (SAP, Salesforce, Microsoft 365, legacy systems)
+- Data infrastructure and MLOps pipelines
+
+**Right for organisations where:**
+- There is a validated AI opportunity and a need for senior engineers to execute it
+- A proof of concept is needed to secure board approval for a full build
+- Internal AI engineering talent is unavailable or insufficient
+- An existing AI initiative has stalled and needs to be rescued or rebuilt
 
 ---
 
-### Stack One (Subscription)
-**Ongoing. Dedicated AI engineering pod. Guaranteed story point output.**
-The execution engine. Once opportunities are validated — through Stack Discover and/or Stack Audit — Stack One delivers them continuously. A dedicated pod of senior AI engineers, architects, and QA working against a guaranteed story point commitment. Priced on output, not headcount. Full IP transfer on everything built.
+### Stack Enable
+**The adoption layer.**
 
-- **Outcomes:** Dedicated pod (senior AI engineers, Solutions Architect, QA), guaranteed story point output per year, production AI systems deployed and integrated, full IP transfer, post-deployment ROI validation via process monitoring, scalable commitment
-- **Best for:** CTOs and Heads of Engineering who have validated AI opportunities but lack the senior talent to execute at pace
+We get teams actually using AI — not just aware of it. Every Stack Enable engagement is role-specific, hands-on, and measured. The output is not a certificate or a workshop summary. It is a team that demonstrably operates differently.
+
+Depending on the organisation's situation, an engagement might be an **Executive AI Briefing** — a focused session with the leadership team to establish strategic alignment and confidence. Or it might be a full **AI Adoption Program** — a 60 to 90 day structured programme that embeds AI into daily workflows by role and measures adoption at 30, 60, and 90 days. For organisations that want internal capability rather than ongoing dependency, the **AI Champions** programme builds a cohort of internal advocates who own and scale adoption without Stack10 in the room.
+
+**What Stack Enable can cover:**
+- Executive AI briefing and strategic alignment
+- AI Adoption Program — role-specific, hands-on, 90-day measured
+- AI Champions — building internal advocates by department
+- Custom AI playbooks by role and function
+- AI governance and responsible use policy
+
+**Right for organisations where:**
+- AI tools (Copilot, etc.) have been deployed but adoption is low
+- The leadership team lacks confidence or alignment on AI strategy and risk
+- AI needs to be embedded in daily workflows, not just demonstrated
+- A governance and responsible AI framework is required before proceeding
 
 ---
 
