@@ -22,7 +22,7 @@ import HeroVisual from '../components/HeroVisual.astro';
       </p>
       <div class="hero-actions hero-actions-left">
         <a href="/contact/" class="btn btn-primary btn-lg">
-          Book a Discovery Call
+          Get Started
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
         </a>
         <a href="/how-we-work/" class="btn btn-outline btn-lg">See Our Approach</a>
@@ -119,7 +119,7 @@ import HeroVisual from '../components/HeroVisual.astro';
   </section>
 
   <!-- ── SOLUTIONS ─────────────────────────────────────────────── -->
-  <section class="section section-dark">
+  <section class="section section-solutions">
     <div class="container">
       <div class="section-header section-header-center" data-reveal>
         <div class="section-label">Our solutions</div>
@@ -143,9 +143,9 @@ import HeroVisual from '../components/HeroVisual.astro';
           </span>
         </a>
 
-        <a href="/services/build/" class="solution-card solution-card-featured" data-reveal-child>
+        <a href="/services/build/" class="solution-card" data-reveal-child>
           <div class="solution-num">02</div>
-          <div class="solution-icon solution-icon-featured" aria-hidden="true">
+          <div class="solution-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
           <h3 class="solution-name">Stack Build</h3>
@@ -424,7 +424,7 @@ import HeroVisual from '../components/HeroVisual.astro';
     <p class="cta-desc">Book a 30-minute Discovery Call. We'll tell you whether Stack10 is the right fit for your situation — and if not, we'll tell you honestly who is.</p>
     <div class="cta-actions">
       <a href="/contact/" class="btn btn-primary btn-lg cta-btn-dark">
-        Book a Discovery Call
+        Get Started
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
       </a>
       <a href="mailto:hello@stack10.ai" class="btn btn-outline btn-lg">Email Us</a>
@@ -936,32 +936,26 @@ import HeroVisual from '../components/HeroVisual.astro';
     .solutions-grid { grid-template-columns: 1fr; }
   }
 
+  .section-solutions {
+    background: var(--muted);
+  }
+
   .solution-card {
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
     padding: var(--space-8);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid var(--border);
     border-radius: var(--radius-xl);
-    background: rgba(255,255,255,0.04);
+    background: var(--background);
     text-decoration: none;
     transition: border-color var(--dur-200) ease-out,
-                background var(--dur-200) ease-out;
+                box-shadow var(--dur-200) ease-out;
   }
 
   .solution-card:hover {
     border-color: oklch(0.76 0.21 150 / 0.5);
-    background: rgba(255,255,255,0.07);
-  }
-
-  .solution-card-featured {
-    border-color: oklch(0.76 0.21 150 / 0.45);
-    background: oklch(0.20 0.015 150);
-  }
-
-  .solution-card-featured:hover {
-    border-color: var(--primary);
-    background: oklch(0.22 0.02 150);
+    box-shadow: var(--shadow-2);
   }
 
   .solution-num {
@@ -983,14 +977,10 @@ import HeroVisual from '../components/HeroVisual.astro';
     color: var(--primary);
   }
 
-  .solution-icon-featured {
-    background: oklch(0.76 0.21 150 / 0.22);
-  }
-
   .solution-name {
     font-size: var(--size-xl);
     font-weight: var(--weight-700);
-    color: var(--gray-0);
+    color: var(--foreground);
     letter-spacing: -0.02em;
     margin: 0;
   }
@@ -998,13 +988,13 @@ import HeroVisual from '../components/HeroVisual.astro';
   .solution-tagline {
     font-size: var(--size-sm);
     font-weight: var(--weight-500);
-    color: rgba(255,255,255,0.45);
+    color: var(--muted-foreground);
     margin: 0;
   }
 
   .solution-desc {
     font-size: var(--size-base);
-    color: rgba(255,255,255,0.6);
+    color: var(--muted-foreground);
     line-height: 1.6;
     margin: 0;
     flex: 1;
@@ -1016,7 +1006,7 @@ import HeroVisual from '../components/HeroVisual.astro';
     gap: var(--space-2);
     font-size: var(--size-sm);
     font-weight: var(--weight-600);
-    color: var(--primary);
+    color: var(--primary-text);
     margin-top: auto;
   }
 

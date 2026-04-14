@@ -96,14 +96,14 @@ Everything built is owned by the client. Full IP transfer on all code, models, a
 
 ---
 
-### Stack Enable
+### Stack Scale
 **The adoption layer.**
 
-We get teams actually using AI — not just aware of it. Every Stack Enable engagement is role-specific, hands-on, and measured. The output is not a certificate or a workshop summary. It is a team that demonstrably operates differently.
+We get teams actually using AI — not just aware of it. Every Stack Scale engagement is role-specific, hands-on, and measured. The output is not a certificate or a workshop summary. It is a team that demonstrably operates differently.
 
 Depending on the organisation's situation, an engagement might be an **Executive AI Briefing** — a focused session with the leadership team to establish strategic alignment and confidence. Or it might be a full **AI Adoption Program** — a 60 to 90 day structured programme that embeds AI into daily workflows by role and measures adoption at 30, 60, and 90 days. For organisations that want internal capability rather than ongoing dependency, the **AI Champions** programme builds a cohort of internal advocates who own and scale adoption without Stack10 in the room.
 
-**What Stack Enable can cover:**
+**What Stack Scale can cover:**
 - Executive AI briefing and strategic alignment
 - AI Adoption Program — role-specific, hands-on, 90-day measured
 - AI Champions — building internal advocates by department

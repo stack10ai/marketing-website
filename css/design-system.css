@@ -138,6 +138,7 @@
   --primary-foreground: var(--gray-950);
   --primary-hover:      var(--green-600);
   --primary-text:       var(--green-700);
+  --highlight:          var(--green-400); /* Vivid brand lime — stat numbers, accent labels */
 
   /* -- Secondary -- */
   --secondary:            var(--gray-100);
@@ -191,6 +192,9 @@
 
   /* -- Surface accents (for section backgrounds) -- */
   --surface-sand:   oklch(0.960 0.020 85);
+
+  /* -- Card hover (semi-transparent primary border) -- */
+  --card-hover-border: oklch(0.760 0.210 150 / 0.5);
 
   /* Card text — WCAG AA validated */
   --card-text:             var(--palette-text);
@@ -321,6 +325,9 @@
   --chart-4: oklch(0.70 0.18 310);
   --chart-5: oklch(0.75 0.14 200);
 
+  /* -- Card hover dark override -- */
+  --card-hover-border: oklch(0.813 0.219 150 / 0.5);
+
   /* Nav dark overrides */
   --nav-bg: rgb(20 20 20 / 0.85);
   --nav-border-scroll: oklch(0.35 0.01 150);
@@ -399,6 +406,9 @@
     --nav-dropdown-item-desc-fg: var(--gray-400);
     --nav-dropdown-category-fg: var(--gray-500);
     --nav-mobile-bg: var(--gray-950);
+
+    /* Card hover dark override */
+    --card-hover-border: oklch(0.813 0.219 150 / 0.5);
   }
 }
 
@@ -419,7 +429,7 @@
   --btn-radius:       var(--radius-md);
   --btn-font-size:    var(--size-base);
   --btn-font-weight:  var(--weight-500);
-  --btn-height:       2.5rem;
+  --btn-height:       2.75rem;
   --btn-px:           var(--space-5);
   --btn-py:           var(--space-2);
 
@@ -440,7 +450,6 @@
   --card-border:      var(--border);
   --card-radius:      var(--radius-xl);
   --card-padding:     var(--spacing-card);
-  --card-hover-border: oklch(from var(--primary) l c h / 0.5);
 
   /* -- Badge -- */
   --badge-radius:      var(--radius-md);
@@ -589,6 +598,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+code, pre, kbd, samp {
+  font-family: var(--font-mono);
+}
+
 
 /* ============================================================
    TYPOGRAPHY CLASSES
@@ -664,6 +677,26 @@ body {
 
 .prose {
   max-width: 65ch;
+}
+
+/* Label used as a small mono tag above a heading — e.g. "Interview & Survey-Led" */
+.approach-tag {
+  font-family: var(--font-mono);
+  font-size: var(--size-sm);
+  font-weight: var(--weight-700);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--primary-text);
+}
+
+/* Inline mono label for sub-sections inside cards — e.g. "How we work" */
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: var(--size-xs);
+  font-weight: var(--weight-700);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
 }
 
 
@@ -1004,6 +1037,7 @@ body {
 .nav-dropdown-item {
   display: block;
   padding: var(--space-3);
+  min-height: 44px;
   border-radius: var(--nav-dropdown-item-radius);
   text-decoration: none;
   transition: background var(--duration-fast) var(--ease-in-out);

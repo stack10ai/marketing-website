@@ -12,7 +12,7 @@ const lastUpdated = 'April 2025';
   <!-- ── HERO ──────────────────────────────────────────────────── -->
   <section class="legal-hero">
     <div class="container">
-      <span class="overline legal-hero-label">Legal</span>
+      <span class="badge badge-outline legal-hero-badge">Legal</span>
       <h1 class="legal-hero-title">Terms of Service</h1>
       <p class="legal-hero-meta">Last updated: {lastUpdated}</p>
     </div>
@@ -87,14 +87,14 @@ const lastUpdated = 'April 2025';
 <style>
   /* ── Hero ─────────────────────────────────────────────────────── */
   .legal-hero {
-    padding: var(--space-20) 0 var(--space-14);
+    padding: var(--space-20) 0 var(--space-16);
     border-bottom: 1px solid var(--border);
   }
 
-  .legal-hero-label {
-    display: block;
+  .legal-hero-badge {
     color: var(--primary);
-    margin-bottom: var(--space-3);
+    border-color: var(--primary);
+    margin-bottom: var(--space-4);
   }
 
   .legal-hero-title {
@@ -117,7 +117,7 @@ const lastUpdated = 'April 2025';
     grid-template-columns: 1fr 220px;
     gap: var(--space-16);
     align-items: start;
-    padding-top: var(--space-14);
+    padding-top: var(--space-16);
     padding-bottom: var(--space-20);
   }
 
