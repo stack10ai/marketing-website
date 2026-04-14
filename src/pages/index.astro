@@ -27,7 +27,7 @@ import HeroVisual from '../components/HeroVisual.astro';
         </a>
         <a href="/how-we-work/" class="btn btn-outline btn-lg">See Our Approach</a>
       </div>
-      <p class="hero-microcopy">Fixed-fee engagements &middot; Senior engineers only &middot; No retainer lock-in</p>
+      <p class="hero-microcopy">Custom-scoped engagements &middot; Senior engineers only &middot; No retainer lock-in</p>
     </div>
     <div class="hero-visual-col">
       <HeroVisual />
@@ -124,7 +124,7 @@ import HeroVisual from '../components/HeroVisual.astro';
       <div class="section-header section-header-center" data-reveal>
         <div class="section-label">Our solutions</div>
         <h2 class="section-title section-title-center">Three products. A clear progression.</h2>
-        <p class="section-desc section-desc-center">Choose where to start based on where you are. Every engagement is fixed-fee and custom-scoped — no retainers, no ambiguity.</p>
+        <p class="section-desc section-desc-center">Choose where to start based on where you are. Every engagement is custom-scoped — no retainers, no ambiguity.</p>
       </div>
 
       <div class="solutions-grid" data-reveal-stagger>
@@ -260,7 +260,7 @@ import HeroVisual from '../components/HeroVisual.astro';
           <div class="diff-bar" aria-hidden="true"></div>
           <div>
             <h4 class="diff-title">Every engagement proves value in 90 days or less</h4>
-            <p class="diff-desc">We're not here to start a multi-year relationship before delivering anything. Every fixed-fee engagement produces a concrete, measurable output in a defined timeframe — then we earn the right to do more.</p>
+            <p class="diff-desc">We're not here to start a multi-year relationship before delivering anything. Every engagement produces a concrete, measurable output in a defined timeframe — then we earn the right to do more.</p>
           </div>
         </div>
       </div>
@@ -429,7 +429,7 @@ import HeroVisual from '../components/HeroVisual.astro';
       </a>
       <a href="mailto:hello@stack10.ai" class="btn btn-outline btn-lg">Email Us</a>
     </div>
-    <p class="caption cta-footnote-green">No commitment required &middot; 30 minutes &middot; Fixed-fee engagements &middot; Senior engineers only</p>
+    <p class="caption cta-footnote-green">No commitment required &middot; 30 minutes &middot; Custom-scoped engagements &middot; Senior engineers only</p>
   </section>
 
 <script>
@@ -498,11 +498,177 @@ import HeroVisual from '../components/HeroVisual.astro';
     initBlocks('.problem-blocks');
   })();
 
+  // ── Count-up animation for case study metrics ────────────────
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    function parseValue(text) {
+      // Returns { prefix, number, suffix } e.g. "98%" → { prefix:'', number:98, suffix:'%' }
+      const m = text.trim().match(/^([^0-9]*)([0-9]+(?:\.[0-9]+)?)([^0-9]*)$/);
+      if (!m) return null;
+      return { prefix: m[1], number: parseFloat(m[2]), suffix: m[3] };
+    }
+
+    function animateCounter(el, duration) {
+      const parsed = parseValue(el.textContent);
+      if (!parsed) return;
+      const { prefix, number, suffix } = parsed;
+      const isInt = Number.isInteger(number);
+      const start = performance.now();
+
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease-out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = number * eased;
+        el.textContent = prefix + (isInt ? Math.round(current) : current.toFixed(1)) + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = prefix + (isInt ? number : number.toFixed(1)) + suffix;
+          el.classList.add('counted');
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        obs.unobserve(e.target);
+        e.target.querySelectorAll('[data-count-up-value]').forEach((el, i) => {
+          // Stagger each metric slightly
+          setTimeout(() => animateCounter(el, 1600), i * 250);
+        });
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('[data-count-up]').forEach(el => obs.observe(el));
+  })();
+
 </script>
 
 </BaseLayout>
 
 <style>
+  /* ── Scroll reveal system ───────────────────────────────────── */
+  @media (prefers-reduced-motion: no-preference) {
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    [data-reveal].revealed {
+      opacity: 1;
+      transform: none;
+    }
+    [data-reveal-child] {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    [data-reveal-child].revealed {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Gradient line draws left-to-right once parent is revealed */
+    [data-reveal] .gradient-line {
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+    }
+    [data-reveal].revealed .gradient-line {
+      transform: scaleX(1);
+    }
+
+    /* Diff-bars grow top-to-bottom as each item enters view */
+    [data-reveal-child] .diff-bar {
+      transform: scaleY(0);
+      transform-origin: top center;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+    }
+    [data-reveal-child].revealed .diff-bar {
+      transform: scaleY(1);
+    }
+  }
+
+  /* ── Hero text entrance ─────────────────────────────────────── */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-eyebrow {
+      animation: hero-enter 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+    }
+    .hero-title-left {
+      animation: hero-enter 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+    }
+    .hero-subtitle-left {
+      animation: hero-enter 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
+    }
+    .hero-actions-left {
+      animation: hero-enter 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.44s both;
+    }
+    .hero-microcopy {
+      animation: hero-enter 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+    }
+  }
+
+  @keyframes hero-enter {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* ── Card hover lifts ───────────────────────────────────────── */
+  .solution-card {
+    transition: border-color var(--dur-200) ease-out,
+                box-shadow var(--dur-200) ease-out,
+                transform var(--dur-200) ease-out;
+  }
+  .solution-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .industry-card {
+    transition: border-color var(--dur-200) ease-out,
+                box-shadow var(--dur-200) ease-out,
+                transform var(--dur-200) ease-out;
+  }
+  .industry-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .commitment-card {
+    transition: box-shadow var(--dur-200) ease-out,
+                transform var(--dur-200) ease-out;
+  }
+  .commitment-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-2);
+  }
+
+  /* ── CTA button pulse glow ──────────────────────────────────── */
+  @media (prefers-reduced-motion: no-preference) {
+    .cta-btn-dark {
+      animation: cta-pulse 3s ease-in-out 2s infinite;
+    }
+    @keyframes cta-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 oklch(0.760 0.210 150 / 0.45); }
+      50%       { box-shadow: 0 0 0 10px oklch(0.760 0.210 150 / 0); }
+    }
+  }
+
+  /* ── Count-up flash on completion ───────────────────────────── */
+  .case-study-metric-value.counted {
+    animation: metric-pop 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  @keyframes metric-pop {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.08); }
+    100% { transform: scale(1); }
+  }
+
   /* ── Commitments ────────────────────────────────────────────── */
   @keyframes grid-drift {
     0%   { background-position: 0 0; }
