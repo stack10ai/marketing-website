@@ -1070,11 +1070,15 @@ import HeroVisual from '../components/HeroVisual.astro';
 
   /* ── Differentiators ───────────────────────────────────────── */
   .diff-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-6);
-    max-width: 720px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6) var(--space-16);
+    max-width: 1000px;
     margin: 0 auto;
+  }
+
+  @media (max-width: 767px) {
+    .diff-list { grid-template-columns: 1fr; }
   }
 
   .diff-item {
@@ -1119,8 +1123,8 @@ import HeroVisual from '../components/HeroVisual.astro';
       radial-gradient(circle, oklch(0.760 0.210 150 / 0.30) 1px, transparent 1px);
     background-size: 64px 64px, 64px 64px, 32px 32px;
     pointer-events: none;
-    mask-image: linear-gradient(90deg, black 0%, transparent 30%, transparent 70%, black 100%);
-    -webkit-mask-image: linear-gradient(90deg, black 0%, transparent 30%, transparent 70%, black 100%);
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
   }
 
   /* ── Industry cards ────────────────────────────────────────── */
@@ -1224,9 +1228,18 @@ import HeroVisual from '../components/HeroVisual.astro';
 
   /* ── Case Studies ──────────────────────────────────────────── */
   .section-case-studies {
-    background: var(--background);
+    background: var(--gray-950);
     position: relative;
     overflow: hidden;
+  }
+
+  .section-case-studies .section-label {
+    color: var(--green-400);
+    border-color: oklch(0.76 0.21 150 / 0.3);
+  }
+
+  .section-case-studies .section-title {
+    color: var(--gray-50);
   }
 
   .section-case-studies::before {
@@ -1234,8 +1247,8 @@ import HeroVisual from '../components/HeroVisual.astro';
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(30, 231, 110, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(30, 231, 110, 0.04) 1px, transparent 1px);
+      linear-gradient(rgba(30, 231, 110, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(30, 231, 110, 0.07) 1px, transparent 1px);
     background-size: 48px 48px;
     pointer-events: none;
     z-index: 0;
@@ -1248,7 +1261,7 @@ import HeroVisual from '../components/HeroVisual.astro';
     right: -10%;
     width: 60%;
     height: 80%;
-    background: radial-gradient(ellipse at center, rgba(30, 231, 110, 0.07) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(30, 231, 110, 0.10) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
   }
@@ -1266,19 +1279,14 @@ import HeroVisual from '../components/HeroVisual.astro';
   }
 
   .case-study-card {
-    background: var(--gray-950, #0a0a0a);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: oklch(0.17 0.008 150);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-6);
     padding: var(--space-10) var(--space-12);
     display: grid;
     grid-template-columns: 3fr 2fr;
     gap: var(--space-16);
     align-items: center;
-  }
-
-  .dark .case-study-card {
-    background: var(--gray-900, #111);
-    border-color: rgba(255, 255, 255, 0.1);
   }
 
   .case-study-meta {
@@ -1408,9 +1416,9 @@ import HeroVisual from '../components/HeroVisual.astro';
 
   /* ── CTA ───────────────────────────────────────────────────── */
   .cta-soft {
-    background: var(--background);
+    background: oklch(0.760 0.210 150 / 0.05);
     color: var(--foreground);
-    border-top: 1px solid var(--border);
+    border-top: 1px solid oklch(0.760 0.210 150 / 0.18);
   }
 
   .cta-soft .cta-title {

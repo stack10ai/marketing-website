@@ -26,6 +26,7 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@astrojs/sitemap": "^3.7.2",
     "@types/pg": "^8.20.0"
   }
 }

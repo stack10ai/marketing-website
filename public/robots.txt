@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
 
-# Staging environment — block all indexing
+Sitemap: https://stack10.ai/sitemap-index.xml
