@@ -1,0 +1,613 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Data Engineering — Pipelines, MLOps & MCP Development | Stack10"
+  description="Improperly structured data is why most AI pilots fail. Stack10 builds the pipelines, MLOps infrastructure, and MCP servers that give your AI systems reliable, production-grade data."
+  canonicalUrl="https://stack10.ai/capabilities/data-engineering/"
+>
+
+  <!-- ── HERO ──────────────────────────────────────────────────── -->
+  <section class="svc-hero hero-dark">
+    <div class="container">
+      <div class="svc-hero-inner animate-fade-up">
+        <span class="section-label svc-hero-label">Capability — Data Engineering</span>
+        <h1 class="svc-hero-title">Bad data is why most AI projects fail. We fix that first.</h1>
+        <p class="svc-hero-subtitle">Reliable AI needs reliable data. We build the pipelines, infrastructure, and model context layers that give your AI systems clean, structured, production-grade data — from source system to inference.</p>
+        <div class="svc-hero-actions">
+          <a href="/contact/" class="btn btn-primary btn-lg">
+            Book a Discovery Call
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+          <a href="/services/build/" class="btn btn-outline btn-lg">See Stack Build</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT WE BUILD ─────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What we build</span>
+        <h2 class="section-title">The infrastructure that makes AI systems actually work.</h2>
+        <p class="section-desc">Every layer of the data stack — from raw source extraction to model-ready outputs — built to production standard and handed over to your team.</p>
+      </div>
+
+      <div class="cap-what-grid">
+
+        <div class="card cap-what-card">
+          <div class="cap-what-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3 class="cap-what-title">Data Pipelines</h3>
+          <p class="cap-what-desc">Batch and streaming pipelines that move data from source systems to AI-ready stores — reliably, observably, and on schedule. Designed for the volume and latency your use case actually requires.</p>
+        </div>
+
+        <div class="card cap-what-card">
+          <div class="cap-what-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+          </div>
+          <h3 class="cap-what-title">MLOps Infrastructure</h3>
+          <p class="cap-what-desc">Model training, versioning, deployment, and monitoring infrastructure so your models run consistently in production — not just on a laptop in a notebook.</p>
+        </div>
+
+        <div class="card cap-what-card cap-what-card--featured">
+          <div class="cap-what-icon cap-what-icon--featured" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.657 4.03 3 9 3s9-1.343 9-3V5"/><path d="M3 11v6c0 1.657 4.03 3 9 3s9-1.343 9-3v-6"/></svg>
+          </div>
+          <h3 class="cap-what-title">MCP Server Development</h3>
+          <p class="cap-what-desc">Model Context Protocol (MCP) servers that give AI agents structured, real-time, authorised access to your business data — the ERP, the CRM, the document store — without brittle custom integrations.</p>
+          <span class="cap-what-tag">Cutting edge</span>
+        </div>
+
+        <div class="card cap-what-card">
+          <div class="cap-what-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3 class="cap-what-title">Vector Databases &amp; RAG Architecture</h3>
+          <p class="cap-what-desc">Embeddings pipelines, vector stores, and retrieval-augmented generation infrastructure for AI systems that need to reason accurately over large internal knowledge bases.</p>
+        </div>
+
+        <div class="card cap-what-card">
+          <div class="cap-what-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="cap-what-title">Data Quality &amp; Observability</h3>
+          <p class="cap-what-desc">Monitoring, alerting, and data quality gates so your AI systems do not silently degrade when upstream data changes. Failures surface immediately — not in a compliance audit six months later.</p>
+        </div>
+
+        <div class="card cap-what-card">
+          <div class="cap-what-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          </div>
+          <h3 class="cap-what-title">Cloud Data Infrastructure</h3>
+          <p class="cap-what-desc">Architecture and implementation on AWS, Azure, or GCP — designed for the scale, latency, and compliance requirements of your environment. Including data residency where required.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MCP CALLOUT ───────────────────────────────────────────── -->
+  <section class="section section-muted">
+    <div class="container">
+      <div class="cap-mcp-inner">
+        <div class="cap-mcp-copy">
+          <span class="section-label">Model Context Protocol</span>
+          <h2 class="section-title">The smarter way to connect AI to your business data.</h2>
+          <p class="section-desc">Most AI integrations are brittle — a custom connector to each system, each one a point of failure. MCP (Model Context Protocol) is Anthropic's open standard for giving AI agents structured, authorised, real-time access to business data. One protocol. Every system. Stack10 is one of a small number of engineering firms actively building production MCP servers today.</p>
+          <p class="section-desc">If your AI systems need to work with live data from your ERP, CRM, or document store — rather than stale exports — MCP is the right architecture.</p>
+        </div>
+        <div class="cap-mcp-visual card">
+          <div class="cap-mcp-flow">
+            <div class="cap-mcp-node cap-mcp-node--ai">
+              <span class="cap-mcp-node-label">AI Agent</span>
+            </div>
+            <div class="cap-mcp-arrow">
+              <svg width="32" height="16" viewBox="0 0 32 16" fill="none" aria-hidden="true"><path d="M0 8h28M22 2l8 6-8 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="cap-mcp-arrow-label">MCP</span>
+            </div>
+            <div class="cap-mcp-systems">
+              <div class="cap-mcp-system">ERP</div>
+              <div class="cap-mcp-system">CRM</div>
+              <div class="cap-mcp-system">Documents</div>
+              <div class="cap-mcp-system">Databases</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RIGHT FOR YOU IF ──────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="svc-fit-grid">
+        <div class="svc-fit-copy">
+          <span class="section-label">Is this right for you?</span>
+          <h2 class="section-title">Data Engineering is the right engagement if&hellip;</h2>
+        </div>
+        <div class="card svc-fit-box">
+          <ul class="svc-fit-list">
+            <li class="svc-fit-item">
+              <svg class="svc-fit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Your AI model produces inconsistent outputs — and the root cause is inconsistent training data, not the model itself</span>
+            </li>
+            <li class="svc-fit-item">
+              <svg class="svc-fit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>You need AI agents to access live ERP or CRM data — and a brittle custom integration is not an acceptable answer</span>
+            </li>
+            <li class="svc-fit-item">
+              <svg class="svc-fit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>You want to build a semantic search or Q&amp;A system over your internal document library and current search is failing you</span>
+            </li>
+            <li class="svc-fit-item">
+              <svg class="svc-fit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Your ML pipeline runs locally but fails in production — and you need a data infrastructure that actually holds up at scale</span>
+            </li>
+            <li class="svc-fit-item">
+              <svg class="svc-fit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Data quality issues are creating compliance risk — and you need traceability and observability built into the stack before your next audit</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT'S DELIVERED ────────────────────────────────────── -->
+  <section class="section section-muted">
+    <div class="container">
+      <div class="cap-delivery">
+        <div class="cap-delivery-copy">
+          <span class="section-label">How it's delivered</span>
+          <h2 class="section-title">Every data system is built through the Stack Build Method.</h2>
+          <p class="section-desc">Story-point pricing agreed before work starts. Senior engineers only — no juniors on delivery. Security architecture and data residency defined in week one. Full IP transfer on completion.</p>
+          <div class="cap-delivery-links">
+            <a href="/services/build/" class="btn btn-primary">
+              See Stack Build
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/how-we-build/" class="btn btn-outline">
+              See the method
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="cap-delivery-stat card">
+          <div class="cap-delivery-stat-number">98%</div>
+          <p class="cap-delivery-stat-label">reduction in manual compliance processing — four interconnected AI systems built on a unified data layer, APRA-compliant and in production within ten weeks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ───────────────────────────────────────────────────── -->
+  <section class="section section-dark-block">
+    <div class="container">
+      <div class="svc-cta-inner">
+        <h2 class="svc-cta-title">Start with your data problem, not a solution assumption.</h2>
+        <p class="svc-cta-desc">A Discovery Call is sixty minutes. We will assess your current data stack, identify the gaps that are blocking your AI initiative, and tell you exactly what a first engagement would include.</p>
+        <div class="svc-cta-guarantees">
+          <span class="svc-cta-guarantee">Fixed fee — cost agreed before work starts</span>
+          <span class="svc-cta-guarantee">Senior engineers only — no juniors on delivery</span>
+          <span class="svc-cta-guarantee">Full IP transfer — everything built is yours</span>
+        </div>
+        <a href="/contact/" class="btn btn-primary btn-lg">
+          Book a Discovery Call
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RELATED ───────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="svc-related-header">
+        <span class="section-label">Related capabilities</span>
+        <h2 class="section-title">Data is the foundation, not the final product</h2>
+      </div>
+      <div class="svc-related-cards">
+        <a href="/capabilities/application-development/" class="card card-clickable svc-related-card">
+          <div class="svc-related-card-tag">
+            <span class="badge badge-secondary">Application Development</span>
+          </div>
+          <h3 class="svc-related-card-title">The application layer that consumes your data</h3>
+          <p class="svc-related-card-desc">Internal tools, customer-facing products, and conversational AI systems — the interfaces your users interact with, built on the data infrastructure you put in place.</p>
+          <span class="svc-related-card-link">
+            Learn about Application Development
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a href="/capabilities/systems-automation/" class="card card-clickable svc-related-card">
+          <div class="svc-related-card-tag">
+            <span class="badge badge-secondary">Systems Automation</span>
+          </div>
+          <h3 class="svc-related-card-title">Automated workflows that produce and consume your data</h3>
+          <p class="svc-related-card-desc">Agentic systems and enterprise integrations that write to and read from your data infrastructure — keeping systems in sync without manual intervention.</p>
+          <span class="svc-related-card-link">
+            Learn about Systems Automation
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ── Hero ─────────────────────────────────────────────────────── */
+  .svc-hero {
+    background: var(--gray-1000);
+    color: var(--gray-50);
+    padding: var(--space-24) 0 var(--space-20);
+    border-bottom: 1px solid var(--gray-800);
+  }
+
+  .svc-hero-inner { max-width: 56rem; }
+
+  .svc-hero-label {
+    color: var(--green-400);
+    border-color: oklch(0.76 0.21 150 / 0.3);
+    margin-bottom: var(--space-6);
+  }
+
+  .svc-hero-title {
+    font-size: clamp(2.25rem, 5.5vw, var(--size-6xl));
+    font-weight: var(--weight-800);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+    color: var(--gray-0);
+    margin-bottom: var(--space-6);
+  }
+
+  .svc-hero-subtitle {
+    font-size: clamp(1.125rem, 2vw, var(--size-xl));
+    font-weight: var(--weight-500);
+    color: var(--gray-400);
+    line-height: 1.65;
+    max-width: 44rem;
+    margin-bottom: var(--space-10);
+  }
+
+  .svc-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  /* ── What we build grid ───────────────────────────────────────── */
+  .cap-what-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  .cap-what-card {
+    padding: var(--space-7);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .cap-what-card--featured {
+    border-color: var(--primary);
+  }
+
+  .cap-what-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-12);
+    color: var(--primary-text);
+    flex-shrink: 0;
+  }
+
+  .cap-what-icon--featured {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  .cap-what-title {
+    font-size: var(--size-lg);
+    font-weight: var(--weight-700);
+    color: var(--foreground);
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .cap-what-desc {
+    font-size: var(--size-base);
+    color: var(--muted-foreground);
+    line-height: 1.65;
+    margin: 0;
+    flex: 1;
+  }
+
+  .cap-what-tag {
+    font-family: var(--font-mono);
+    font-size: var(--size-xs);
+    font-weight: var(--weight-700);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--primary-text);
+    margin-top: auto;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── MCP callout ──────────────────────────────────────────────── */
+  .section-muted { background: var(--muted); }
+
+  .cap-mcp-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+  }
+
+  .cap-mcp-copy {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .cap-mcp-visual {
+    padding: var(--space-8);
+  }
+
+  .cap-mcp-flow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .cap-mcp-node {
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-12);
+    flex-shrink: 0;
+  }
+
+  .cap-mcp-node--ai {
+    background: var(--primary);
+    border: 1px solid var(--primary);
+  }
+
+  .cap-mcp-node-label {
+    font-family: var(--font-mono);
+    font-size: var(--size-sm);
+    font-weight: var(--weight-700);
+    color: var(--primary-foreground);
+  }
+
+  .cap-mcp-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    flex-shrink: 0;
+    color: var(--primary-text);
+  }
+
+  .cap-mcp-arrow-label {
+    font-family: var(--font-mono);
+    font-size: var(--size-xs);
+    font-weight: var(--weight-700);
+    letter-spacing: 0.05em;
+    color: var(--primary-text);
+  }
+
+  .cap-mcp-systems {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    flex: 1;
+  }
+
+  .cap-mcp-system {
+    padding: var(--space-2) var(--space-4);
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-6);
+    font-family: var(--font-mono);
+    font-size: var(--size-sm);
+    font-weight: var(--weight-500);
+    color: var(--foreground);
+  }
+
+  /* ── Right for you ────────────────────────────────────────────── */
+  .svc-fit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: var(--space-16);
+    align-items: start;
+  }
+
+  .svc-fit-box { padding: var(--space-8); }
+
+  .svc-fit-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .svc-fit-item {
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+    font-size: var(--size-base);
+    color: var(--foreground);
+    line-height: 1.6;
+  }
+
+  .svc-fit-icon {
+    flex-shrink: 0;
+    color: var(--primary);
+    margin-top: 2px;
+  }
+
+  /* ── How it's delivered ───────────────────────────────────────── */
+  .cap-delivery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+  }
+
+  .cap-delivery-copy {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    align-items: flex-start;
+  }
+
+  .cap-delivery-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  .cap-delivery-stat {
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .cap-delivery-stat-number {
+    font-family: var(--font-mono);
+    font-size: var(--size-5xl);
+    font-weight: var(--weight-800);
+    color: var(--primary-text);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .cap-delivery-stat-label {
+    font-size: var(--size-base);
+    color: var(--muted-foreground);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── CTA band ─────────────────────────────────────────────────── */
+  .section-dark-block {
+    background: var(--gray-950);
+    color: var(--gray-50);
+  }
+
+  .svc-cta-inner { max-width: 48rem; }
+
+  .svc-cta-title {
+    font-size: clamp(1.75rem, 3.5vw, var(--size-4xl));
+    font-weight: var(--weight-700);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--gray-50);
+    margin-bottom: var(--space-4);
+    text-wrap: balance;
+  }
+
+  .svc-cta-desc {
+    font-size: var(--size-lg);
+    color: var(--gray-400);
+    line-height: 1.65;
+    margin-bottom: var(--space-8);
+  }
+
+  .svc-cta-guarantees {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-bottom: var(--space-8);
+  }
+
+  .svc-cta-guarantee {
+    font-size: var(--size-sm);
+    font-weight: var(--weight-500);
+    color: var(--gray-300);
+    font-family: var(--font-mono);
+    padding: var(--space-2) var(--space-4);
+    background: var(--gray-900);
+    border: 1px solid var(--gray-700);
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+  }
+
+  /* ── Related ─────────────────────────────────────────────────── */
+  .svc-related-header { margin-bottom: var(--space-8); }
+
+  .svc-related-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+    gap: var(--space-6);
+  }
+
+  .svc-related-card {
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    text-decoration: none;
+  }
+
+  .svc-related-card-tag { display: flex; }
+
+  .svc-related-card-title {
+    font-size: var(--size-xl);
+    font-weight: var(--weight-700);
+    color: var(--foreground);
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .svc-related-card-desc {
+    font-size: var(--size-base);
+    color: var(--muted-foreground);
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+  }
+
+  .svc-related-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--size-sm);
+    font-weight: var(--weight-600);
+    color: var(--primary-text);
+    text-decoration: none;
+    margin-top: auto;
+  }
+
+  /* ── Responsive ──────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .cap-what-grid { grid-template-columns: repeat(2, 1fr); }
+    .cap-mcp-inner { grid-template-columns: 1fr; gap: var(--space-8); }
+  }
+
+  @media (max-width: 768px) {
+    .svc-hero { padding: var(--space-16) 0 var(--space-12); }
+    .cap-what-grid { grid-template-columns: 1fr; }
+    .svc-fit-grid,
+    .cap-delivery { grid-template-columns: 1fr; gap: var(--space-8); }
+    .svc-cta-guarantees { flex-direction: column; }
+    .svc-cta-guarantee { white-space: normal; }
+    .cap-mcp-flow { flex-direction: column; align-items: flex-start; }
+    .cap-mcp-arrow { flex-direction: row; gap: var(--space-3); }
+    .cap-mcp-arrow svg { transform: rotate(90deg); }
+  }
+</style>

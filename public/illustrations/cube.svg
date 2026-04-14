@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Isometric cube — brand green tones -->
+
+  <!-- Top face (lightest) -->
+  <polygon points="100,22 172,62 100,102 28,62"
+    fill="#5cffa8" fill-opacity="0.85"
+    stroke="#1EE76E" stroke-opacity="0.5" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Right face (mid) -->
+  <polygon points="172,62 172,138 100,178 100,102"
+    fill="#1EE76E" fill-opacity="0.8"
+    stroke="#1EE76E" stroke-opacity="0.45" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Left face (darkest) -->
+  <polygon points="28,62 100,102 100,178 28,138"
+    fill="#0d8b44" fill-opacity="0.85"
+    stroke="#1EE76E" stroke-opacity="0.4" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Top face inner cross detail -->
+  <line x1="100" y1="22" x2="100" y2="102" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1"/>
+  <line x1="28" y1="62" x2="172" y2="62" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1"/>
+
+  <!-- Right face detail lines -->
+  <line x1="136" y1="82" x2="136" y2="158" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+  <line x1="172" y1="100" x2="100" y2="140" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+
+  <!-- Left face detail lines -->
+  <line x1="64" y1="82" x2="64" y2="158" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+  <line x1="28" y1="100" x2="100" y2="140" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+</svg>

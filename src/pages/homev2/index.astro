@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroVisual from '../components/HeroVisual.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroVisual from '../../components/HeroVisual.astro';
 ---
 
 <BaseLayout
@@ -15,13 +15,14 @@ import HeroVisual from '../components/HeroVisual.astro';
     <div class="hero-content">
       <div class="section-label hero-eyebrow">Enterprise AI Transformation · Australia</div>
       <h1 class="hero-title hero-title-left">
-        Your Trusted AI Transformation&nbsp;Partner
+        Your board wants AI&nbsp;results.
+        Your consultant delivered&nbsp;a&nbsp;deck.
       </h1>
       <p class="hero-subtitle hero-subtitle-left">
-        We help enterprises set and execute their AI strategy across their products, processes, and people.
+        Stack10 designs, builds, and deploys production AI systems for Australian mid-market enterprises — measured in story points and validated ROI, not strategy slides.
       </p>
       <div class="hero-actions hero-actions-left">
-        <a href="/contact/" class="btn btn-primary btn-lg">
+        <a href="/get-started/" class="btn btn-primary btn-lg">
           Book a Discovery Call
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
         </a>
@@ -34,72 +35,85 @@ import HeroVisual from '../components/HeroVisual.astro';
     </div>
   </section>
 
-  <!-- ── PROBLEM ───────────────────────────────────────────────── -->
-  <section class="section section-problem">
-    <div class="problem-blocks" aria-hidden="true">
-      <div class="blocks-row">
-        <div class="bk-group">
-          <span class="bk bk-lavender" data-row="1" data-zone="left"  style="width:240px"></span>
-          <span class="bk bk-peach"    data-row="1" data-zone="left"  style="width:90px"></span>
-        </div>
-        <div class="bk-group">
-          <span class="bk bk-mint"     data-row="1" data-zone="right" style="width:200px"></span>
-          <span class="bk bk-sand"     data-row="1" data-zone="right" style="width:110px"></span>
-          <span class="bk bk-cream"    data-row="1" data-zone="right" style="width:70px"></span>
-        </div>
+  <!-- ── LOGO BAR ──────────────────────────────────────────────── -->
+  <div class="logo-bar">
+    <div class="logo-bar-label">Trusted by enterprises across financial services, logistics and government</div>
+    <div class="logo-bar-grid">
+      <div class="logo-bar-item" aria-hidden="true">
+        <img src="/logo-light.svg" alt="" class="logo-bar-logo logo-light" />
+        <img src="/logo-dark.svg" alt="" class="logo-bar-logo logo-dark" />
       </div>
-      <div class="blocks-row">
-        <div class="bk-group">
-          <span class="bk bk-solid-dark" data-row="2" data-zone="left"  style="width:180px"></span>
-          <span class="bk bk-cream"      data-row="2" data-zone="left"  style="width:130px"></span>
-          <span class="bk bk-pale"       data-row="2" data-zone="left"  style="width:60px"></span>
-        </div>
-        <div class="bk-group">
-          <span class="bk bk-lavender"   data-row="2" data-zone="right" style="width:260px"></span>
-          <span class="bk bk-peach"      data-row="2" data-zone="right" style="width:90px"></span>
-        </div>
+      <div class="logo-bar-item" aria-hidden="true">
+        <img src="/logo-light.svg" alt="" class="logo-bar-logo logo-light" />
+        <img src="/logo-dark.svg" alt="" class="logo-bar-logo logo-dark" />
       </div>
-      <div class="blocks-row">
-        <div class="bk-group">
-          <span class="bk bk-mint"     data-row="3" data-zone="left"  style="width:280px"></span>
-          <span class="bk bk-grey"     data-row="3" data-zone="left"  style="width:50px"></span>
-        </div>
-        <div class="bk-group">
-          <span class="bk bk-sand"     data-row="3" data-zone="right" style="width:160px"></span>
-          <span class="bk bk-pale"     data-row="3" data-zone="right" style="width:120px"></span>
-          <span class="bk bk-lavender" data-row="3" data-zone="right" style="width:60px"></span>
-        </div>
+      <div class="logo-bar-item" aria-hidden="true">
+        <img src="/logo-light.svg" alt="" class="logo-bar-logo logo-light" />
+        <img src="/logo-dark.svg" alt="" class="logo-bar-logo logo-dark" />
       </div>
-      <div class="blocks-row">
-        <div class="bk-group">
-          <span class="bk bk-peach"    data-row="4" data-zone="left"  style="width:170px"></span>
-          <span class="bk bk-mint"     data-row="4" data-zone="left"  style="width:100px"></span>
-          <span class="bk bk-cream"    data-row="4" data-zone="left"  style="width:80px"></span>
+      <div class="logo-bar-item" aria-hidden="true">
+        <img src="/logo-light.svg" alt="" class="logo-bar-logo logo-light" />
+        <img src="/logo-dark.svg" alt="" class="logo-bar-logo logo-dark" />
+      </div>
+      <div class="logo-bar-item" aria-hidden="true">
+        <img src="/logo-light.svg" alt="" class="logo-bar-logo logo-light" />
+        <img src="/logo-dark.svg" alt="" class="logo-bar-logo logo-dark" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STATS ─────────────────────────────────────────────────── -->
+  <section class="section section-stats section-with-accents">
+    <div class="floating-accents" aria-hidden="true">
+      <div class="accent-block accent-a1"></div>
+      <div class="accent-block accent-a2"></div>
+      <div class="accent-block accent-a3"></div>
+      <div class="accent-block accent-a4"></div>
+      <div class="accent-block accent-a5"></div>
+      <div class="accent-block accent-a6"></div>
+      <div class="accent-block accent-a7"></div>
+      <div class="accent-block accent-a8"></div>
+      <div class="accent-block accent-a9"></div>
+      <div class="accent-block accent-a10"></div>
+    </div>
+    <div class="container">
+      <div class="stat-bar-dark" data-reveal-stagger>
+        <div class="stat-item" data-reveal-child>
+          <div class="stat-value">95%</div>
+          <div class="stat-label">of AI pilots fail before reaching production (MIT)</div>
         </div>
-        <div class="bk-group">
-          <span class="bk bk-lavender" data-row="4" data-zone="right" style="width:220px"></span>
-          <span class="bk bk-sand"     data-row="4" data-zone="right" style="width:80px"></span>
+        <div class="stat-item" data-reveal-child>
+          <div class="stat-value">18mo</div>
+          <div class="stat-label">Average pilot-to-production timeline (industry)</div>
+        </div>
+        <div class="stat-item" data-reveal-child>
+          <div class="stat-value">12wk</div>
+          <div class="stat-label">Stack10 average: strategy to working system</div>
+        </div>
+        <div class="stat-item" data-reveal-child>
+          <div class="stat-value">67%</div>
+          <div class="stat-label">More output than comparable in-house AI teams</div>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- ── PROBLEM ───────────────────────────────────────────────── -->
+  <section class="section section-problem">
     <div class="container">
       <div class="problem-split" data-reveal>
         <div class="problem-copy">
-          <div class="section-label">The Problem</div>
-          <h2 class="section-title">The end of traditional consulting.</h2>
-          <div class="gradient-line"></div>
-          <p class="p1">In 1926, McKinsey invented traditional management consulting.<br><strong>In 2025, Stack10 is reinventing it.</strong></p>
-          <p class="p2">The major firms still sell theoretical roadmaps, multi-year &ldquo;Digital Transformations,&rdquo; and 200-page decks engineered to maximise billable hours, not business value.</p>
-          <p class="p2 problem-body-2">The board approves the budget. A senior partner presents the vision. Juniors do the work. Six months later you are left with a strategy deck you can&rsquo;t execute, a pilot stuck in review, and a proposal for the next engagement to fix the first one.</p>
-          <p class="p2">And if they do finally ship &mdash; AI will be built on the same broken processes the deck was built on &mdash; it doesn&rsquo;t fix your operations and automates dysfunction at scale.</p>
-          <p class="p1 problem-transition">This is why we built Stack10.</p>
+          <div class="section-label">The problem with AI consulting</div>
+          <h2 class="section-title">Traditional firms have a billing problem. You're paying for it.</h2>
+          <p class="p1">Legacy consultancies have built their business model around complexity. Senior partners pitch. Juniors deliver. Multi-year roadmaps gather dust. Two-hundred-page decks justify the invoice.</p>
+          <p class="p2 problem-body-2">And when the AI pilot stalls? They sell you the next engagement to fix the last one. Worse: when AI is built on broken processes, it doesn't fix your operations — it automates the dysfunction at scale.</p>
         </div>
         <div class="problem-cards" data-reveal-stagger>
           <div class="problem-card" data-reveal-child>
             <div class="problem-card-icon" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
             </div>
-            <p class="problem-card-quote">&ldquo;The board approved a $300K AI investment. 12 months later: a strategy deck and a stalled proof-of-concept.&rdquo;</p>
+            <p class="problem-card-quote">&ldquo;The board approved $200K for AI. Twelve months later: a deck and a stalled proof-of-concept.&rdquo;</p>
           </div>
           <div class="problem-card" data-reveal-child>
             <div class="problem-card-icon" aria-hidden="true">
@@ -118,104 +132,201 @@ import HeroVisual from '../components/HeroVisual.astro';
     </div>
   </section>
 
-  <!-- ── SOLUTIONS ─────────────────────────────────────────────── -->
+  <!-- ── HOW IT WORKS — 3-phase ────────────────────────────────── -->
   <section class="section section-dark">
     <div class="container">
       <div class="section-header section-header-center" data-reveal>
-        <div class="section-label">Our solutions</div>
-        <h2 class="section-title section-title-center">Three products. A clear progression.</h2>
-        <p class="section-desc section-desc-center">Choose where to start based on where you are. Every engagement is fixed-fee and custom-scoped — no retainers, no ambiguity.</p>
+        <div class="section-label">How it works</div>
+        <h2 class="section-title section-title-center">We replaced advisory with execution and validation.</h2>
+        <p class="section-desc section-desc-center">Transformation is measured in working code deployed on optimised processes — not presentations. Choose where to start, based on where you are.</p>
       </div>
 
-      <div class="solutions-grid" data-reveal-stagger>
+      <div class="phases" data-reveal-stagger>
 
-        <a href="/services/discover/" class="solution-card" data-reveal-child>
-          <div class="solution-num">01</div>
-          <div class="solution-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <div class="phase-card" data-reveal-child>
+          <div class="phase-num">01</div>
+          <h3 class="phase-title">Discover &amp; Architect</h3>
+          <p class="phase-desc">Surface real AI opportunities from your actual operational data. Stakeholder interviews, process intelligence, and tech stack review combine into a prioritised backlog tied to provable ROI — not assumptions.</p>
+          <div class="phase-tags">
+            <span class="phase-tag">Stack Discover</span>
+            <span class="phase-tag">Stack Map</span>
+            <span class="phase-tag">Stack Audit</span>
           </div>
-          <h3 class="solution-name">Stack Discover</h3>
-          <p class="solution-tagline">The intelligence layer</p>
-          <p class="solution-desc">Surface real AI opportunities from your operational data before a line of code is written.</p>
-          <span class="solution-link">
-            Explore
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-          </span>
-        </a>
+        </div>
 
-        <a href="/services/build/" class="solution-card solution-card-featured" data-reveal-child>
-          <div class="solution-num">02</div>
-          <div class="solution-icon solution-icon-featured" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <h3 class="solution-name">Stack Build</h3>
-          <p class="solution-tagline">The execution layer</p>
-          <p class="solution-desc">Senior AI engineers ship production systems on story points. Full IP transfer. No retainer.</p>
-          <span class="solution-link">
-            Explore
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-          </span>
-        </a>
+        <div class="phase-connector" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
 
-        <a href="/services/scale/" class="solution-card" data-reveal-child>
-          <div class="solution-num">03</div>
-          <div class="solution-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div class="phase-card" data-reveal-child>
+          <div class="phase-num">02</div>
+          <h3 class="phase-title">Build &amp; Deploy</h3>
+          <p class="phase-desc">Senior AI engineers ship production systems priced on story points — not hours. Integrated with your existing stack. Every sprint delivers working software, not work-in-progress reports.</p>
+          <div class="phase-tags">
+            <span class="phase-tag">Stack One</span>
           </div>
-          <h3 class="solution-name">Stack Scale</h3>
-          <p class="solution-tagline">The scaling layer</p>
-          <p class="solution-desc">Embed AI into daily workflows by role. Measured at 30, 60, and 90 days — not slide decks.</p>
-          <span class="solution-link">
-            Explore
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-          </span>
-        </a>
+        </div>
+
+        <div class="phase-connector" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+
+        <div class="phase-card" data-reveal-child>
+          <div class="phase-num">03</div>
+          <h3 class="phase-title">Validate &amp; Scale</h3>
+          <p class="phase-desc">Post-deployment process mining confirms real impact against your pre-build baseline. We surface unintended consequences early, benchmark continuously, and build your scaling playbook. Dashboards, not decks.</p>
+          <div class="phase-tags">
+            <span class="phase-tag">Stack One</span>
+            <span class="phase-tag">Stack Map</span>
+          </div>
+        </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ── CASE STUDIES ─────────────────────────────────────────── -->
-  <section class="section section-case-studies">
+  <!-- ── SERVICES ─────────────────────────────────────────────── -->
+  <section class="section section-services">
     <div class="container">
-      <div class="section-header" data-reveal>
-        <div class="section-label">Case Studies</div>
-        <h2 class="section-title">AI that ships. Results that prove it.</h2>
+      <div class="section-header section-header-center" data-reveal>
+        <div class="section-label">Our services</div>
+        <h2 class="section-title section-title-center">Three products. A clear progression.</h2>
+        <p class="section-desc section-desc-center">Every engagement is custom-scoped to your situation. We assess what you need on an initial call and propose the right structure — no menus, no tiers to navigate.</p>
       </div>
 
-      <div class="case-study-list" data-reveal-stagger>
+      <div class="products-grid" data-reveal-stagger>
 
-        <!-- Case Study: Smile Partners -->
-        <article class="case-study-card" data-reveal-child>
-          <div class="case-study-story">
-            <div class="case-study-meta">
-              <span class="case-study-industry">Healthcare</span>
-              <span class="case-study-sep" aria-hidden="true">·</span>
-              <span class="case-study-product">Stack Build</span>
+        <!-- Stack Discover -->
+        <div class="product-card" data-reveal-child>
+          <div class="product-card-top">
+            <div class="product-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
             </div>
-            <h3 class="case-study-headline">From manual reporting to instant AI intelligence — across 50 practices and $111M in production</h3>
-            <p class="case-study-desc">A PE-backed healthcare group's analytics team was entirely dedicated to pulling reports across 50 practices, 311,000 patient records, and 130 KPIs. Stack10 deployed four interconnected AI systems — a plain-English intelligence layer, an autonomous WHS compliance agent, a cross-entity Xero reconciliation tool, and an automated procurement workflow. Leaders now get answers in seconds. Quarterly compliance work dropped from 80 hours to under one.</p>
-            <div class="case-study-footer">
-              <span class="case-study-client">PE-backed Healthcare Group</span>
-              <a href="/case-studies/smile-partners/" class="case-study-link">
-                Read case study
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-              </a>
-            </div>
+            <span class="product-label">Discover</span>
           </div>
-          <div class="case-study-outcome" data-count-up>
-            <div class="case-study-metric">
-              <span class="case-study-metric-value" data-count-up-value>98%</span>
-              <span class="case-study-metric-label">reduction in compliance processing time</span>
-            </div>
-            <div class="case-study-metric">
-              <span class="case-study-metric-value" data-count-up-value>50</span>
-              <span class="case-study-metric-label">practices connected across 8 states</span>
-            </div>
+          <h3 class="product-name">Stack Discover</h3>
+          <p class="product-tagline">The intelligence layer.</p>
+          <p class="product-desc">Every engagement starts with a conversation. Based on what we find, we recommend the right scope — from <strong>Signal</strong>, a focused stakeholder and executive interview programme, to <strong>Intelligence</strong>, a full process mining deployment powered by Keystone Intelligence that surfaces how your business actually operates from live system data.</p>
+          <ul class="product-capabilities">
+            <li>Stakeholder and executive surveys and interviews</li>
+            <li>Process mapping and workflow analysis</li>
+            <li>AI opportunity identification and prioritisation</li>
+            <li>Data and technology readiness assessment</li>
+            <li>ROI modelling and business case development</li>
+            <li>Process intelligence and mining — recommended where process visibility is a prerequisite</li>
+          </ul>
+          <div class="product-fit">
+            <p class="product-fit-label">Right for you if</p>
+            <ul class="product-fit-list">
+              <li>Your board wants an AI strategy and you don't have a defensible answer yet</li>
+              <li>You want to understand your processes before automating them</li>
+              <li>A previous AI pilot stalled and you need to understand why</li>
+              <li>Regulatory or operational pressure requires validated process understanding</li>
+            </ul>
           </div>
-        </article>
+          <a href="/services/discover/" class="btn btn-outline btn-sm product-cta">Explore Stack Discover
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <!-- Stack Build -->
+        <div class="product-card product-card-featured" data-reveal-child>
+          <div class="product-card-top">
+            <div class="product-icon product-icon-featured" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <span class="product-label">Build</span>
+          </div>
+          <h3 class="product-name">Stack Build</h3>
+          <p class="product-tagline">The execution layer.</p>
+          <p class="product-desc">From a focused <strong>Proof of Concept</strong> on real production data to full <strong>Product Development</strong> over months of continuous delivery — we design and build AI tools, products, and systems on a foundation that's already been validated. Everything built is yours. Full IP transfer, senior engineers, no exceptions.</p>
+          <ul class="product-capabilities">
+            <li>Proof of concept — working AI system on real data, deployed in your environment</li>
+            <li>Internal AI tools and workflow automation</li>
+            <li>Agentic systems and autonomous process automation</li>
+            <li>Customer-facing AI products and features</li>
+            <li>Enterprise system integrations — SAP, Salesforce, Microsoft, legacy</li>
+            <li>Data infrastructure and MLOps</li>
+          </ul>
+          <div class="product-fit">
+            <p class="product-fit-label">Right for you if</p>
+            <ul class="product-fit-list">
+              <li>You have a validated AI opportunity and need engineers to execute it</li>
+              <li>You need a proof of concept to secure board approval</li>
+              <li>Internal AI talent is unavailable or insufficient</li>
+              <li>An existing AI initiative has stalled and needs to be rescued</li>
+            </ul>
+          </div>
+          <a href="/services/build/" class="btn btn-primary btn-sm product-cta">Explore Stack Build
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <!-- Stack Enable -->
+        <div class="product-card" data-reveal-child>
+          <div class="product-card-top">
+            <div class="product-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <span class="product-label">Enable</span>
+          </div>
+          <h3 class="product-name">Stack Enable</h3>
+          <p class="product-tagline">The adoption layer.</p>
+          <p class="product-desc">From an <strong>Executive AI Briefing</strong> that aligns leadership in half a day, to a full <strong>AI Adoption Program</strong> that embeds AI into daily workflows by role and measures adoption at 30, 60, and 90 days. The output is not a certificate — it's a team that demonstrably operates differently.</p>
+          <ul class="product-capabilities">
+            <li>Executive AI briefing and strategic alignment</li>
+            <li>AI Adoption Program — role-specific, hands-on, 90-day measured</li>
+            <li>AI Champions — internal advocates built by department</li>
+            <li>Custom AI playbooks by role and function</li>
+            <li>AI governance and responsible use policy</li>
+          </ul>
+          <div class="product-fit">
+            <p class="product-fit-label">Right for you if</p>
+            <ul class="product-fit-list">
+              <li>AI tools are deployed but adoption is low</li>
+              <li>Leadership lacks alignment on AI strategy or risk</li>
+              <li>You need AI embedded in daily workflows, not just demonstrated</li>
+              <li>A governance framework is required before you can proceed</li>
+            </ul>
+          </div>
+          <a href="/services/enable/" class="btn btn-outline btn-sm product-cta">Explore Stack Enable
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+        </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ── RESULTS ──────────────────────────────────────────────── -->
+  <section class="section section-outcomes">
+    <div class="container">
+      <div class="section-header section-header-center" data-reveal>
+        <div class="section-label">Real outcomes</div>
+        <h2 class="section-title section-title-center">What clients say after we ship.</h2>
+      </div>
+
+      <div class="outcomes-row" data-reveal-stagger>
+        <div class="outcomes-stat" data-reveal-child>
+          <div class="outcomes-stat-value">73%</div>
+          <div class="outcomes-stat-label">Reduction in processing time</div>
+        </div>
+        <div class="outcomes-stat" data-reveal-child>
+          <div class="outcomes-stat-value">12wk</div>
+          <div class="outcomes-stat-label">Average time to production</div>
+        </div>
+        <div class="outcomes-stat" data-reveal-child>
+          <div class="outcomes-stat-value">$2.1M</div>
+          <div class="outcomes-stat-label">Client efficiency gains (annual)</div>
+        </div>
+      </div>
+
+      <blockquote class="outcomes-testimonial" data-reveal>
+        <p>&ldquo;Stack10 turned our AI strategy from a PowerPoint into a production system in under 3 months.&rdquo;</p>
+        <footer>
+          <strong>Senior Executive</strong> &mdash; Enterprise Financial Services Client
+        </footer>
+      </blockquote>
     </div>
   </section>
 
@@ -322,81 +433,42 @@ import HeroVisual from '../components/HeroVisual.astro';
     </div>
   </section>
 
-  <!-- ── COMMITMENTS ─────────────────────────────────────────── -->
-  <section class="section section-commitments">
-    <div class="commitments-bg-grid" aria-hidden="true"></div>
-    <div class="commitments-blocks" aria-hidden="true">
-      <div class="blocks-row">
-        <div class="bk-group">
-          <span class="bk bk-mint"        data-row="1" data-zone="left"  style="width:220px"></span>
-          <span class="bk bk-lavender"    data-row="1" data-zone="left"  style="width:80px"></span>
-        </div>
-        <div class="bk-group">
-          <span class="bk bk-peach"       data-row="1" data-zone="right" style="width:160px"></span>
-          <span class="bk bk-cream"       data-row="1" data-zone="right" style="width:110px"></span>
-        </div>
-      </div>
-      <div class="blocks-row">
-        <div class="bk-group">
-          <span class="bk bk-solid-green" data-row="2" data-zone="left"  style="width:280px"></span>
-          <span class="bk bk-sand"        data-row="2" data-zone="left"  style="width:70px"></span>
-        </div>
-        <div class="bk-group">
-          <span class="bk bk-pale"        data-row="2" data-zone="right" style="width:180px"></span>
-          <span class="bk bk-grey"        data-row="2" data-zone="right" style="width:130px"></span>
-        </div>
-      </div>
-      <div class="blocks-row">
-        <div class="bk-group">
-          <span class="bk bk-lavender"    data-row="3" data-zone="left"  style="width:200px"></span>
-          <span class="bk bk-peach"       data-row="3" data-zone="left"  style="width:80px"></span>
-        </div>
-        <div class="bk-group">
-          <span class="bk bk-mint"        data-row="3" data-zone="right" style="width:150px"></span>
-          <span class="bk bk-cream"       data-row="3" data-zone="right" style="width:160px"></span>
-        </div>
-      </div>
-    </div>
+  <!-- ── TRUST ─────────────────────────────────────────────────── -->
+  <section class="section section-muted">
     <div class="container">
-      <div class="section-header" data-reveal>
-        <div class="section-label">How we protect you</div>
-        <h2 class="section-title">Data misuse. Vendor lock-in. Broken processes. Unproven tools. These are the silent killers of AI investment.</h2>
-        <p class="section-desc">We've built our entire engagement model around preventing them.</p>
+      <div class="section-header section-header-center" data-reveal>
+        <div class="section-label">Trust &amp; Compliance</div>
+        <h2 class="section-title section-title-center">Enterprise-grade security built into every engagement.</h2>
       </div>
-      <div class="commitments-grid" data-reveal-stagger>
-
-        <div class="card commitment-card" data-reveal-child>
-          <div class="commitment-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <div class="trust-grid" data-reveal-stagger>
+        <div class="trust-item" data-reveal-child>
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
           </div>
-          <h4 class="commitment-title">We read the terms. You shouldn't have to.</h4>
-          <p class="commitment-desc">Every major AI platform has data training clauses most businesses never see. We check every integration so your data doesn't feed someone else's model.</p>
+          <div class="trust-label">SOC 2 Type II</div>
+          <div class="trust-desc">Audited controls for security, availability, and confidentiality</div>
         </div>
-
-        <div class="card commitment-card" data-reveal-child>
-          <div class="commitment-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <div class="trust-item" data-reveal-child>
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           </div>
-          <h4 class="commitment-title">When we leave, so does our invoice. Nothing else.</h4>
-          <p class="commitment-desc">Everything we custom-build is yours — code, models, documentation. No lock-in, no ongoing fees.</p>
+          <div class="trust-label">ISO 27001</div>
+          <div class="trust-desc">Information security management system certification</div>
         </div>
-
-        <div class="card commitment-card" data-reveal-child>
-          <div class="commitment-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div class="trust-item" data-reveal-child>
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
           </div>
-          <h4 class="commitment-title">We don't automate broken processes.</h4>
-          <p class="commitment-desc">AI built on a flawed process doesn't fix the problem — it accelerates it. We validate what's underneath before we write a line of code.</p>
+          <div class="trust-label">Australian Sovereign</div>
+          <div class="trust-desc">Data stays in Australia. Team in Perth &amp; Sydney.</div>
         </div>
-
-        <div class="card commitment-card" data-reveal-child>
-          <div class="commitment-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div class="trust-item" data-reveal-child>
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="12" cy="16" r="1"/></svg>
           </div>
-          <h4 class="commitment-title">We use what we recommend.</h4>
-          <p class="commitment-desc">We've tried and tested every tool so you don't have to — ensuring your AI investment makes it to production.</p>
+          <div class="trust-label">IRAP Assessed</div>
+          <div class="trust-desc">Government-grade security for sensitive workloads</div>
         </div>
-
       </div>
     </div>
   </section>
@@ -423,7 +495,7 @@ import HeroVisual from '../components/HeroVisual.astro';
     <h2 class="cta-title">Ready to stop piloting and start shipping?</h2>
     <p class="cta-desc">Book a 30-minute Discovery Call. We'll tell you whether Stack10 is the right fit for your situation — and if not, we'll tell you honestly who is.</p>
     <div class="cta-actions">
-      <a href="/contact/" class="btn btn-primary btn-lg cta-btn-dark">
+      <a href="/get-started/" class="btn btn-primary btn-lg cta-btn-dark">
         Book a Discovery Call
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
       </a>
@@ -432,200 +504,9 @@ import HeroVisual from '../components/HeroVisual.astro';
     <p class="caption cta-footnote-green">No commitment required &middot; 30 minutes &middot; Fixed-fee engagements &middot; Senior engineers only</p>
   </section>
 
-<script>
-  // Block stacking animation — scroll-triggered, never leaves blank state
-  (function () {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    function initBlocks(containerSelector) {
-      const container = document.querySelector(containerSelector);
-      if (!container) return;
-
-      const allBlocks = Array.from(container.querySelectorAll('.bk'));
-      if (!allBlocks.length) return;
-
-      const byRow = {};
-      allBlocks.forEach(block => {
-        const row  = block.dataset.row;
-        const zone = block.dataset.zone;
-        if (!byRow[row]) byRow[row] = { left: [], right: [] };
-        if (byRow[row][zone]) byRow[row][zone].push(block);
-      });
-
-      function showBlock(b) { b.style.transform = 'scaleX(1)'; b.style.opacity = '1'; }
-      function hideBlock(b) { b.style.transform = 'scaleX(0)'; b.style.opacity = '0'; }
-
-      function buildSelection() {
-        const selected = new Set();
-        Object.values(byRow).forEach(({ left, right }) => {
-          left.forEach(b  => { if (Math.random() < 0.75) selected.add(b); });
-          right.forEach(b => { if (Math.random() < 0.75) selected.add(b); });
-          // Always anchor at least one block per side — never an empty side
-          if (!left.some(b  => selected.has(b)) && left.length)  selected.add(left[0]);
-          if (!right.some(b => selected.has(b)) && right.length) selected.add(right[0]);
-        });
-        return [...selected].sort((a, b) => allBlocks.indexOf(a) - allBlocks.indexOf(b));
-      }
-
-      function runCycle(currentVisible, fast) {
-        const selected = buildSelection();
-        // First run: fast stagger (80ms) so blocks appear immediately on scroll-in
-        // Subsequent runs: natural stagger (280–430ms) for a relaxed cycling feel
-        const stagger = fast ? 80 : Math.random() * 150 + 280;
-        selected.forEach((block, i) => setTimeout(() => showBlock(block), i * stagger));
-
-        // Overlap: fade old cycle out while new blocks are already wiping in
-        // The 600ms gap prevents a fully-blank frame between cycles
-        const holdTime = selected.length * stagger + Math.random() * 3000 + 2500;
-        setTimeout(() => {
-          if (currentVisible) currentVisible.forEach(b => hideBlock(b));
-          setTimeout(() => runCycle(selected, false), 600);
-        }, holdTime);
-      }
-
-      // Fire only when the container enters the viewport
-      const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          runCycle(null, true); // fast=true: fills in immediately, no blank delay
-          observer.disconnect();
-        }
-      }, { threshold: 0.25 });
-
-      observer.observe(container);
-    }
-
-    initBlocks('.commitments-blocks');
-    initBlocks('.problem-blocks');
-  })();
-
-</script>
-
 </BaseLayout>
 
 <style>
-  /* ── Commitments ────────────────────────────────────────────── */
-  @keyframes grid-drift {
-    0%   { background-position: 0 0; }
-    100% { background-position: 28px 28px; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .commitments-bg-grid { animation: none !important; }
-  }
-
-  .section-commitments {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .commitments-bg-grid {
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle, oklch(0.760 0.210 150 / 0.12) 1px, transparent 1px);
-    background-size: 28px 28px;
-    pointer-events: none;
-    animation: grid-drift 8s linear infinite;
-  }
-
-  .commitments-blocks {
-    width: 100%;
-    margin-bottom: var(--space-10);
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .commitments-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-4);
-    margin-top: var(--space-10);
-    position: relative;
-  }
-
-  .commitment-card {
-    padding: var(--space-8);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-    border-left: 3px solid var(--primary);
-  }
-
-  .commitment-icon {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: oklch(0.760 0.210 150 / 0.12);
-    border-radius: var(--radius-3);
-    color: var(--primary);
-    flex-shrink: 0;
-  }
-
-  .commitment-title {
-    font-size: var(--size-lg);
-    font-weight: var(--weight-700);
-    color: var(--foreground);
-    line-height: 1.3;
-    margin: 0;
-  }
-
-  .commitment-desc {
-    font-size: var(--size-base);
-    color: var(--muted-foreground);
-    line-height: 1.7;
-    margin: 0;
-  }
-
-  @media (max-width: 768px) {
-    .commitments-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  /* ── Block divider ──────────────────────────────────────────── */
-  .blocks-divider {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .blocks-row {
-    display: flex;
-    justify-content: space-between;
-    height: 22px;
-  }
-
-  .bk-group {
-    display: flex;
-    gap: 4px;
-  }
-
-  .bk {
-    height: 100%;
-    flex-shrink: 0;
-    opacity: 0;
-    transform: scaleX(0);
-    transform-origin: left center;
-    transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
-  }
-
-  /* Solid — ~10% of blocks */
-  .bk-solid-dark  { background: var(--green-800); }
-  .bk-solid-green { background: var(--primary); }
-
-  /* Pastel — ~90% of blocks, from design system palette */
-  .bk-mint     { background: var(--palette-mint); }
-  .bk-lavender { background: var(--palette-lavender); }
-  .bk-sand     { background: var(--palette-sand); }
-  .bk-peach    { background: var(--palette-peach); }
-  .bk-cream    { background: var(--palette-cream); }
-  .bk-pale     { background: var(--palette-green); }
-  .bk-grey     { background: var(--gray-100); }
-
   /* ── Hero — clean white with dot grid + split layout ─────── */
   .hero { background: var(--background); }
 
@@ -755,18 +636,8 @@ import HeroVisual from '../components/HeroVisual.astro';
 
   /* ── Problem section ───────────────────────────────────────── */
   .section-problem {
-    padding-top: 0;
+    padding-top: var(--space-16);
     padding-bottom: var(--space-16);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .problem-blocks {
-    width: 100%;
-    margin-bottom: var(--space-10);
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
   }
 
   .problem-split {
@@ -782,34 +653,18 @@ import HeroVisual from '../components/HeroVisual.astro';
 
   .problem-copy .section-title {
     max-width: 480px;
-    margin-bottom: 0;
-  }
-
-  .problem-copy .gradient-line {
-    margin: var(--space-6) 0;
-  }
-
-  .problem-copy .p1,
-  .problem-copy .p2 {
-    margin-top: var(--space-5);
   }
 
   .problem-body-2 {
-    color: var(--foreground);
+    color: var(--muted-foreground);
     margin-top: var(--space-5);
-  }
-
-  .problem-transition {
-    margin-top: var(--space-8);
-    font-weight: var(--weight-700);
-    color: var(--foreground);
   }
 
   .problem-cards {
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
-    align-self: center;
+    padding-top: var(--space-10);
   }
 
   @media (max-width: 1023px) {
@@ -923,100 +778,183 @@ import HeroVisual from '../components/HeroVisual.astro';
     padding-top: var(--space-16);
   }
 
-  /* ── Solutions grid ─────────────────────────────────────────── */
-  .solutions-grid {
+  /* ── Product cards — three equal columns ── */
+  .products-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
     align-items: stretch;
-    margin-top: var(--space-10);
   }
 
-  @media (max-width: 767px) {
-    .solutions-grid { grid-template-columns: 1fr; }
+  @media (max-width: 1023px) {
+    .products-grid { grid-template-columns: 1fr; }
   }
 
-  .solution-card {
+  .product-card {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-5);
     padding: var(--space-8);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid var(--border);
     border-radius: var(--radius-xl);
-    background: rgba(255,255,255,0.04);
-    text-decoration: none;
+    background: var(--background);
     transition: border-color var(--dur-200) ease-out,
-                background var(--dur-200) ease-out;
+                box-shadow var(--dur-200) ease-out;
   }
 
-  .solution-card:hover {
-    border-color: oklch(0.76 0.21 150 / 0.5);
-    background: rgba(255,255,255,0.07);
+  .product-card:hover {
+    border-color: oklch(0.76 0.21 150 / 0.4);
+    box-shadow: var(--shadow-2);
   }
 
-  .solution-card-featured {
-    border-color: oklch(0.76 0.21 150 / 0.45);
+  .product-card-featured {
+    border-color: oklch(0.76 0.21 150 / 0.4);
+    background: var(--green-50);
+  }
+
+  .dark .product-card-featured,
+  [data-theme="dark"] .product-card-featured {
     background: oklch(0.20 0.015 150);
+    border-color: oklch(0.76 0.21 150 / 0.35);
   }
 
-  .solution-card-featured:hover {
-    border-color: var(--primary);
-    background: oklch(0.22 0.02 150);
+  .product-card-top {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
   }
 
-  .solution-num {
+  .product-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green-50);
+    border-radius: var(--radius-lg);
+    color: var(--primary-text);
+  }
+
+  .product-icon-featured {
+    background: oklch(0.813 0.219 150 / 0.2);
+  }
+
+  .product-label {
     font-family: var(--font-mono);
     font-size: var(--size-xs);
     font-weight: var(--weight-700);
     letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--primary-text);
   }
 
-  .solution-icon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: oklch(0.76 0.21 150 / 0.12);
-    border-radius: var(--radius-lg);
-    color: var(--primary);
-  }
-
-  .solution-icon-featured {
-    background: oklch(0.76 0.21 150 / 0.22);
-  }
-
-  .solution-name {
-    font-size: var(--size-xl);
+  .product-name {
+    font-size: var(--text-h4);
     font-weight: var(--weight-700);
-    color: var(--gray-0);
+    color: var(--foreground);
     letter-spacing: -0.02em;
     margin: 0;
   }
 
-  .solution-tagline {
-    font-size: var(--size-sm);
-    font-weight: var(--weight-500);
-    color: rgba(255,255,255,0.45);
+  .product-tagline {
+    font-size: var(--text-p2);
+    font-weight: var(--weight-600);
+    color: var(--muted-foreground);
     margin: 0;
   }
 
-  .solution-desc {
-    font-size: var(--size-base);
-    color: rgba(255,255,255,0.6);
-    line-height: 1.6;
+  .product-desc {
+    font-size: var(--text-p2);
+    color: var(--muted-foreground);
+    line-height: 1.65;
     margin: 0;
+    padding-bottom: var(--space-5);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .product-desc strong {
+    color: var(--foreground);
+    font-weight: var(--weight-600);
+  }
+
+  .product-capabilities {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
     flex: 1;
   }
 
-  .solution-link {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
+  .product-capabilities li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
     font-size: var(--size-sm);
+    color: var(--muted-foreground);
+    line-height: 1.5;
+  }
+
+  .product-capabilities li::before {
+    content: "";
+    flex-shrink: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--green-500);
+    margin-top: 7px;
+  }
+
+  .product-fit {
+    padding: var(--space-5);
+    background: var(--muted);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+  }
+
+  .product-card-featured .product-fit {
+    background: oklch(0.813 0.219 150 / 0.08);
+    border-color: oklch(0.76 0.21 150 / 0.2);
+  }
+
+  .product-fit-label {
+    font-size: var(--size-xs);
+    font-weight: var(--weight-700);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted-foreground);
+    margin-bottom: var(--space-3);
+  }
+
+  .product-fit-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .product-fit-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: var(--size-xs);
+    color: var(--muted-foreground);
+    line-height: 1.5;
+  }
+
+  .product-fit-list li::before {
+    content: "→";
+    flex-shrink: 0;
+    color: var(--primary-text);
     font-weight: var(--weight-600);
-    color: var(--primary);
+  }
+
+  .product-cta {
+    align-self: flex-start;
     margin-top: auto;
   }
 
@@ -1230,190 +1168,6 @@ import HeroVisual from '../components/HeroVisual.astro';
     font-size: var(--text-caption);
     color: var(--muted-foreground);
     line-height: 1.4;
-  }
-
-  /* ── Case Studies ──────────────────────────────────────────── */
-  .section-case-studies {
-    background: var(--background);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .section-case-studies::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(30, 231, 110, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(30, 231, 110, 0.04) 1px, transparent 1px);
-    background-size: 48px 48px;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .section-case-studies::after {
-    content: '';
-    position: absolute;
-    top: -20%;
-    right: -10%;
-    width: 60%;
-    height: 80%;
-    background: radial-gradient(ellipse at center, rgba(30, 231, 110, 0.07) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .section-case-studies .container {
-    position: relative;
-    z-index: 1;
-  }
-
-  .case-study-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-6);
-    margin-top: var(--space-12);
-  }
-
-  .case-study-card {
-    background: var(--gray-950, #0a0a0a);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: var(--radius-6);
-    padding: var(--space-10) var(--space-12);
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: var(--space-16);
-    align-items: center;
-  }
-
-  .dark .case-study-card {
-    background: var(--gray-900, #111);
-    border-color: rgba(255, 255, 255, 0.1);
-  }
-
-  .case-study-meta {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    margin-bottom: var(--space-4);
-  }
-
-  .case-study-industry,
-  .case-study-product {
-    font-size: var(--size-xs);
-    font-weight: var(--weight-600);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--primary);
-  }
-
-  .case-study-sep {
-    color: rgba(255, 255, 255, 0.3);
-    font-size: var(--size-xs);
-  }
-
-  .case-study-headline {
-    color: var(--gray-0, #fff);
-    font-size: var(--size-2xl);
-    font-weight: var(--weight-700);
-    line-height: 1.25;
-    margin-bottom: var(--space-4);
-  }
-
-  .case-study-desc {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: var(--size-base);
-    line-height: 1.7;
-    margin-bottom: var(--space-8);
-  }
-
-  .case-study-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .case-study-client {
-    font-size: var(--size-sm);
-    font-weight: var(--weight-600);
-    color: rgba(255, 255, 255, 0.85);
-  }
-
-  .case-study-link {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-1);
-    font-size: var(--size-sm);
-    font-weight: var(--weight-600);
-    color: var(--primary);
-    text-decoration: none;
-    transition: opacity var(--dur-100) ease;
-  }
-
-  .case-study-link:hover {
-    opacity: 0.8;
-  }
-
-  .case-study-outcome {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-8);
-    padding-left: var(--space-12);
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .case-study-metric {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
-  }
-
-  .case-study-metric-value {
-    font-size: var(--size-5xl);
-    font-weight: var(--weight-800);
-    color: var(--primary);
-    line-height: 1;
-    font-family: var(--font-mono, monospace);
-    letter-spacing: -0.02em;
-  }
-
-  .case-study-metric-label {
-    font-size: var(--size-sm);
-    color: rgba(255, 255, 255, 0.45);
-    font-weight: var(--weight-500);
-    line-height: 1.4;
-  }
-
-  @media (max-width: 1023px) {
-    .case-study-card {
-      grid-template-columns: 1fr;
-      padding: var(--space-8);
-      gap: var(--space-8);
-    }
-
-    .case-study-outcome {
-      padding-left: 0;
-      border-left: none;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: var(--space-8);
-      flex-direction: row;
-      gap: var(--space-10);
-    }
-
-    .case-study-metric-value {
-      font-size: var(--size-4xl);
-    }
-  }
-
-  @media (max-width: 479px) {
-    .case-study-headline {
-      font-size: var(--size-xl);
-    }
-
-    .case-study-outcome {
-      flex-direction: column;
-      gap: var(--space-6);
-    }
   }
 
   /* ── CTA ───────────────────────────────────────────────────── */
