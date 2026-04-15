@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/node": "^9.5.5",
     "@astrojs/react": "^4.2.1",
+    "@astrojs/sitemap": "^3.7.2",
     "@astrojs/tailwind": "^6.0.2",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
@@ -26,7 +27,6 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^3.7.2",
     "@types/pg": "^8.20.0"
   }
 }
