@@ -90,10 +90,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
       dbTimeout,
     ]);
   } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err);
-    console.error('[contact] DB insert failed:', msg);
-    // Temporarily surface DB error for diagnostics — remove after confirmed working
-    return json({ error: 'DB insert failed', detail: msg }, 500);
+    console.error('[contact] DB insert failed:', err);
   }
 
   // ── Fire webhook (non-blocking — does not delay the response) ──
