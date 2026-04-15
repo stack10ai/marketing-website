@@ -15,7 +15,7 @@ const {
   title,
   description = 'Stack10 delivers enterprise AI transformation measured in production, not promises.',
   canonicalUrl,
-  ogImage = 'https://stack10-assets.syd1.digitaloceanspaces.com/brand/logo-files/svg/logo-1.svg',
+  ogImage = 'https://stack10.ai/android-chrome-512x512.png',
 } = Astro.props;
 ---
 
@@ -28,6 +28,7 @@ const {
   <title>{title}</title>
   {canonicalUrl && <link rel="canonical" href={canonicalUrl}>}
   <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -38,6 +39,7 @@ const {
   <meta property="og:image" content={ogImage}>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Stack10">
+  {canonicalUrl && <meta property="og:url" content={canonicalUrl}>}
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -108,7 +110,7 @@ const {
 </head>
 <body>
 
-  <AnnouncementBar text="Stack Discover — Find your top AI opportunities in 2 weeks" />
+  <AnnouncementBar text="Stack Discover — Find your top AI opportunities in 2 weeks" linkHref="/services/discover/" linkText="Learn more →" />
 
   <Nav />
 

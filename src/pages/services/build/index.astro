@@ -13,7 +13,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <div class="container">
       <div class="svc-hero-inner animate-fade-up">
         <span class="section-label svc-hero-label">Stack Build</span>
-        <h1 class="svc-hero-title">Ship production AI without hiring a team or waiting a year.</h1>
+        <h1 class="svc-hero-title">Ship production AI without hiring a team or burning another budget cycle.</h1>
         <p class="svc-hero-subtitle">Senior AI engineers on your project from day one. Story-point pricing — you know exactly what you're getting before a line of code is written. Full IP transfer when we're done.</p>
         <div class="svc-hero-actions">
           <a href="/contact/" class="btn btn-primary btn-lg">
@@ -40,14 +40,14 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
           <div class="svc-diff-versus">
             <span class="svc-diff-label">vs. Big 4 &amp; Traditional Consultants</span>
           </div>
-          <p class="svc-diff-statement">We ship working code, not decks. Every sprint closes with deployed software — not a strategy document, not a roadmap, not a recommendations slide.</p>
+          <p class="svc-diff-statement">Every sprint closes with deployed software — not a strategy document, not a roadmap, not a recommendations slide.</p>
         </div>
 
         <div class="card svc-diff-card">
           <div class="svc-diff-versus">
             <span class="svc-diff-label">vs. Offshore Dev Shops</span>
           </div>
-          <p class="svc-diff-statement">Senior engineers only — no juniors on delivery, ever. And before we build anything, we validate that what we're building is actually the right thing to build.</p>
+          <p class="svc-diff-statement">Senior engineers only — no juniors on delivery, ever. Before a line of code is written, we validate the problem, the architecture, and the expected outcome.</p>
         </div>
 
         <div class="card svc-diff-card">
@@ -137,9 +137,9 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <div class="container">
       <div class="svc-method-inner">
         <div class="svc-method-copy">
-          <span class="section-label">The Stack Build Method</span>
+          <span class="section-label">How we build</span>
           <h2 class="section-title">Four phases. Every engagement. No exceptions.</h2>
-          <p class="section-desc">Speed and security are not trade-offs — they are the result of a process engineered to remove the specific bottlenecks that stall AI projects. Story points locked before day one. Senior engineers only. Security architecture defined in week one, not week seven.</p>
+          <p class="section-desc">Most AI projects stall because architecture is treated as an afterthought. We lock it first. Speed and security are not trade-offs — they are the result of a process engineered to remove the specific bottlenecks that slow down AI delivery. Story points locked before day one. Senior engineers only. Security architecture defined in week one, not week seven.</p>
           <a href="/how-we-build/" class="btn btn-outline">
             See exactly how we build
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -174,6 +174,18 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
               <p class="svc-method-phase-weeks">Weeks 7–8</p>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- 30/60/90 accountability callout -->
+      <div class="svc-accountability">
+        <div class="svc-accountability-inner">
+          <span class="svc-accountability-label">The accountability framework</span>
+          <p class="svc-accountability-text">Every Stack Build engagement includes structured review checkpoints at day 30 (architecture locked and validated), day 60 (core build complete), and day 90 (production-ready handover). You always know where you stand — and so do we.</p>
+          <a href="/manifesto/" class="svc-accountability-link">
+            How the 30/60/90 framework works across all Stack10 engagements
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -259,9 +271,9 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <div class="container">
       <div class="svc-cta-inner">
         <h2 class="svc-cta-title">Wondering whether we can actually deliver?</h2>
-        <p class="svc-cta-desc">Fair question. Our answer is a Proof of Concept: six to eight weeks, fixed fee, working software on your data in your environment. If it doesn't work, you haven't committed to anything more. Most clients who start with a POC are in Product Development within ninety days.</p>
+        <p class="svc-cta-desc">Fair question. Our answer is a Proof of Concept: six to eight weeks, working software on your data in your environment. If it doesn't work, you haven't committed to anything more. Most clients who start with a POC are in Product Development within ninety days.</p>
         <div class="svc-cta-guarantees">
-          <span class="svc-cta-guarantee">Fixed fee — cost agreed before work starts</span>
+          <span class="svc-cta-guarantee">Scope agreed before work starts</span>
           <span class="svc-cta-guarantee">Senior engineers only — no juniors on delivery</span>
           <span class="svc-cta-guarantee">Full IP transfer — everything built is yours</span>
         </div>
@@ -286,7 +298,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
             <span class="badge badge-secondary">Stack Discover</span>
           </div>
           <h3 class="svc-related-card-title">Not sure what to build yet?</h3>
-          <p class="svc-related-card-desc">Stack Discover surfaces the AI opportunities worth building before a line of code is written. Fixed-fee discovery in 2–4 weeks — so you arrive at Stack Build with a validated brief, not an assumption.</p>
+          <p class="svc-related-card-desc">Stack Discover surfaces the AI opportunities worth building before a line of code is written. Discovery in 2–4 weeks — so you arrive at Stack Build with a validated brief, not an assumption.</p>
           <span class="svc-related-card-link">
             Learn about Stack Discover
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -323,8 +335,6 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
   }
 
   .svc-hero-label {
-    color: var(--green-400);
-    border-color: oklch(0.76 0.21 150 / 0.3);
     margin-bottom: var(--space-6);
   }
 
@@ -351,6 +361,10 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-4);
+  }
+
+  .svc-hero-actions .btn-outline {
+    background-color: var(--background);
   }
 
   /* ── How we're different ──────────────────────────────────────── */
@@ -807,6 +821,55 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     color: var(--primary-text);
     text-decoration: none;
     margin-top: auto;
+  }
+
+  /* ── Accountability callout ──────────────────────────────────── */
+  .svc-accountability {
+    margin-top: var(--space-8);
+    border: 1px solid var(--primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6) var(--space-8);
+    background: oklch(0.97 0.03 150 / 0.4);
+  }
+
+  .dark .svc-accountability {
+    background: oklch(0.2 0.04 150 / 0.25);
+  }
+
+  .svc-accountability-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .svc-accountability-label {
+    font-family: var(--font-mono);
+    font-size: var(--size-xs);
+    font-weight: var(--weight-700);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--primary-text);
+  }
+
+  .svc-accountability-text {
+    font-size: var(--size-base);
+    color: var(--foreground);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .svc-accountability-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--size-sm);
+    font-weight: var(--weight-600);
+    color: var(--primary-text);
+    text-decoration: none;
+  }
+
+  .svc-accountability-link:hover {
+    text-decoration: underline;
   }
 
   /* ── Responsive ──────────────────────────────────────────────── */

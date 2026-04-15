@@ -254,7 +254,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <h2 class="svc-cta-title">See the method applied to your problem.</h2>
         <p class="svc-cta-desc">A Discovery Call is sixty minutes. We will map your use case against the Stack Build Method and tell you exactly where your current approach is losing time — whether you engage us or not.</p>
         <div class="svc-cta-guarantees">
-          <span class="svc-cta-guarantee">Fixed fee — cost agreed before work starts</span>
+          <span class="svc-cta-guarantee">Scope agreed before work starts</span>
           <span class="svc-cta-guarantee">Senior engineers only — no juniors on delivery</span>
           <span class="svc-cta-guarantee">Full IP transfer — everything built is yours</span>
         </div>
@@ -316,8 +316,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   }
 
   .svc-hero-label {
-    color: var(--green-400);
-    border-color: oklch(0.76 0.21 150 / 0.3);
     margin-bottom: var(--space-6);
   }
 
@@ -344,6 +342,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-4);
+  }
+
+  .svc-hero-actions .btn-outline {
+    background-color: var(--background);
   }
 
   /* ── Intro block ──────────────────────────────────────────────── */

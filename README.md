@@ -86,6 +86,189 @@ Financial Services, Government, Manufacturing, Healthcare, Logistics, Media & En
 | `main` | Production (`stack10.ai`) |
 | `staging` | Staging / preview (blocks indexing via `robots.txt`) |
 
+---
+
+## Lead Capture System
+
+The site has a server-side lead capture system backed by a DigitalOcean Managed PostgreSQL database (`stack10-db`, Sydney).
+
+### How it works
+
+1. Visitor fills in the contact form at `/contact`
+2. Client-side Zod validation runs first (instant feedback, no round-trip)
+3. On success, a `POST /api/contact` request is sent with JSON body
+4. Server validates, runs honeypot check, inserts into `website_leads` table
+5. Optionally fires a signed webhook to any destination you configure
+6. Success state shown in the form card
+
+### Database
+
+**Cluster:** `stack10-db` on DigitalOcean (Sydney / `syd1`)  
+**Database:** `defaultdb`  
+**Table:** `website_leads`
+
+| Column | Type | Notes |
+|---|---|---|
+| `id` | UUID | Primary key, auto-generated |
+| `created_at` | TIMESTAMPTZ | Auto-set to `NOW()` |
+| `name` | TEXT | Required |
+| `company` | TEXT | Required |
+| `role` | TEXT | Optional |
+| `email` | TEXT | Required, validated |
+| `phone` | TEXT | Optional |
+| `revenue` | TEXT | Optional enum |
+| `intent` | TEXT | Required enum |
+| `message` | TEXT | Required |
+| `source` | TEXT | Optional enum |
+| `ip_address` | TEXT | Captured server-side |
+| `user_agent` | TEXT | Captured server-side |
+| `webhook_sent_at` | TIMESTAMPTZ | Set after webhook delivery |
+| `webhook_status` | TEXT | HTTP status or error from webhook |
+
+### API Endpoints
+
+#### `POST /api/contact`
+
+Public. Accepts form submissions.
+
+**Request body (JSON):**
+```json
+{
+  "name": "Alex Chen",
+  "company": "Acme Corp",
+  "role": "CTO",
+  "email": "alex@acmecorp.com",
+  "phone": "+61 400 000 000",
+  "revenue": "50m-150m",
+  "intent": "ai-strategy",
+  "message": "We want to explore AI opportunities across our ops team.",
+  "source": "linkedin"
+}
+```
+
+**Responses:**
+| Status | Meaning |
+|---|---|
+| `200 { ok: true }` | Saved successfully |
+| `422 { error, fields }` | Validation failed — `fields` maps field names to error messages |
+| `429 { error }` | Rate limited (5 requests per IP per 15 min) |
+| `500 { error }` | Database error |
+
+---
+
+#### `GET /api/leads`
+
+Protected. Returns stored leads as JSON.
+
+**Authentication:** `Authorization: Bearer <LEADS_API_KEY>` header required.
+
+```bash
+curl https://stack10.ai/api/leads \
+  -H "Authorization: Bearer <your-api-key>"
+```
+
+**Query parameters:**
+
+| Param | Default | Description |
+|---|---|---|
+| `limit` | `100` | Max results (capped at 500) |
+| `offset` | `0` | Pagination offset |
+| `intent` | — | Filter by intent value |
+| `since` | — | Filter by `created_at >= ISO date` |
+
+**Example:**
+```bash
+# Last 50 AI strategy leads since January 2026
+curl "https://stack10.ai/api/leads?intent=ai-strategy&since=2026-01-01&limit=50" \
+  -H "Authorization: Bearer <your-api-key>"
+```
+
+**Response:**
+```json
+{
+  "total": 42,
+  "limit": 50,
+  "offset": 0,
+  "leads": [
+    {
+      "id": "uuid",
+      "created_at": "2026-04-14T10:00:00Z",
+      "name": "Alex Chen",
+      "company": "Acme Corp",
+      ...
+    }
+  ]
+}
+```
+
+### Webhook
+
+On every new lead, the server fires a `POST` request to `WEBHOOK_URL` (if set). Plug in Zapier, Make, a Slack app, your CRM, or any HTTP endpoint.
+
+**Payload:**
+```json
+{
+  "id": "uuid",
+  "created_at": "2026-04-14T10:00:00Z",
+  "name": "Alex Chen",
+  "company": "Acme Corp",
+  "role": "CTO",
+  "email": "alex@acmecorp.com",
+  "phone": "+61 400 000 000",
+  "revenue": "50m-150m",
+  "intent": "ai-strategy",
+  "message": "We want to explore...",
+  "source": "linkedin"
+}
+```
+
+**Signature verification (recommended):**
+
+Every webhook request includes an `X-Stack10-Signature: sha256=<hmac>` header. Verify it in your receiver:
+
+```javascript
+const crypto = require('crypto');
+
+function verifySignature(body, signature, secret) {
+  const expected = 'sha256=' + crypto
+    .createHmac('sha256', secret)
+    .update(body)
+    .digest('hex');
+  return crypto.timingSafeEqual(
+    Buffer.from(signature),
+    Buffer.from(expected)
+  );
+}
+```
+
+### Environment Variables
+
+Set these in DigitalOcean App Platform → your app → Settings → Environment Variables.
+
+| Variable | Required | Description |
+|---|---|---|
+| `DATABASE_URL` | Yes | PostgreSQL connection string with `?sslmode=require` |
+| `LEADS_API_KEY` | Yes | Secret bearer token for `GET /api/leads` |
+| `WEBHOOK_URL` | No | URL to POST new leads to |
+| `WEBHOOK_SECRET` | No | HMAC-SHA256 signing secret for webhook payloads |
+
+See `.env.example` for the format.
+
+### Security model
+
+| Layer | Mechanism |
+|---|---|
+| Bot filtering | Hidden honeypot field — bots fill it, submission silently dropped |
+| Rate limiting | 5 requests per IP per 15 minutes (in-memory sliding window) |
+| Input validation | Zod schema on both client and server — enum values, lengths, email format |
+| SQL injection | Parameterised queries only — no string interpolation |
+| Leads retrieval | Bearer token required — 401 if missing or wrong |
+| Webhook integrity | HMAC-SHA256 signature on every delivery |
+| Secrets | All credentials in env vars — never in source or client bundle |
+| DB credentials | Never sent to the browser — server-side only |
+
+---
+
 ## Website Archive
 
 The `website-archive/` directory contains the previous version of the site built with plain HTML, CSS, and vanilla JavaScript, preserved for reference.

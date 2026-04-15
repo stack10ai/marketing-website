@@ -8,7 +8,6 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://stack10.ai',
-  output: 'static',
   adapter: node({ mode: 'standalone' }),
   integrations: [react(), tailwind(), sitemap()],
 });

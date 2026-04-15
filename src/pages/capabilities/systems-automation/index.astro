@@ -178,7 +178,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
         <h2 class="svc-cta-title">Tell us what your team is doing manually that they shouldn't be.</h2>
         <p class="svc-cta-desc">A Discovery Call is sixty minutes. We will map the process, identify where automation can realistically replace manual work, and tell you exactly what a first engagement would include — before any commitment.</p>
         <div class="svc-cta-guarantees">
-          <span class="svc-cta-guarantee">Fixed fee — cost agreed before work starts</span>
+          <span class="svc-cta-guarantee">Scope agreed before work starts</span>
           <span class="svc-cta-guarantee">Senior engineers only — no juniors on delivery</span>
           <span class="svc-cta-guarantee">Full IP transfer — everything built is yours</span>
         </div>
@@ -238,8 +238,6 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
   .svc-hero-inner { max-width: 56rem; }
 
   .svc-hero-label {
-    color: var(--green-400);
-    border-color: oklch(0.76 0.21 150 / 0.3);
     margin-bottom: var(--space-6);
   }
 
@@ -266,6 +264,10 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-4);
+  }
+
+  .svc-hero-actions .btn-outline {
+    background-color: var(--background);
   }
 
   /* ── What we build grid ───────────────────────────────────────── */

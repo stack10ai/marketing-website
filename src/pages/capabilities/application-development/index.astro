@@ -13,7 +13,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <div class="container">
       <div class="svc-hero-inner animate-fade-up">
         <span class="section-label svc-hero-label">Capability — Application Development</span>
-        <h1 class="svc-hero-title">AI-powered applications built for production, not just the demo.</h1>
+        <h1 class="svc-hero-title">We build high quality applications built for production, not demos.</h1>
         <p class="svc-hero-subtitle">From internal tools that automate hours of daily work to customer-facing AI products that differentiate your offering — full-stack applications built on your data, deployed in your environment, and owned by you permanently.</p>
         <div class="svc-hero-actions">
           <a href="/contact/" class="btn btn-primary btn-lg">
@@ -31,8 +31,8 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <div class="container">
       <div class="section-header">
         <span class="section-label">What we build</span>
-        <h2 class="section-title">Six types of application. One delivery standard.</h2>
-        <p class="section-desc">Every application is production-ready from day one — not a prototype that needs rework before it can go live.</p>
+        <h2 class="section-title">Built for production, built for compliance. Whatever the use case.</h2>
+        <p class="section-desc">We build high-quality, production-ready software. No rework required.</p>
       </div>
 
       <div class="cap-what-grid">
@@ -134,12 +134,12 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
           <h2 class="section-title">Every application is built through the Stack Build Method.</h2>
           <p class="section-desc">Story-point pricing agreed before work starts. Senior engineers only — no juniors on delivery. Security architecture defined in week one. Full IP transfer on completion. The same four-phase process, every engagement.</p>
           <div class="cap-delivery-links">
-            <a href="/services/build/" class="btn btn-primary">
-              See Stack Build
+            <a href="/contact/" class="btn btn-primary">
+              Get Started
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <a href="/how-we-build/" class="btn btn-outline">
-              See the method
+            <a href="/services/build/" class="btn btn-outline">
+              See Stack Build
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
@@ -159,7 +159,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
         <h2 class="svc-cta-title">Tell us what you need built.</h2>
         <p class="svc-cta-desc">A Discovery Call is sixty minutes. We will scope the application, confirm feasibility on your data, and tell you exactly what a first engagement would include — before any commitment.</p>
         <div class="svc-cta-guarantees">
-          <span class="svc-cta-guarantee">Fixed fee — cost agreed before work starts</span>
+          <span class="svc-cta-guarantee">Scope agreed before work starts</span>
           <span class="svc-cta-guarantee">Senior engineers only — no juniors on delivery</span>
           <span class="svc-cta-guarantee">Full IP transfer — everything built is yours</span>
         </div>
@@ -221,8 +221,6 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
   }
 
   .svc-hero-label {
-    color: var(--green-400);
-    border-color: oklch(0.76 0.21 150 / 0.3);
     margin-bottom: var(--space-6);
   }
 
@@ -249,6 +247,10 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-4);
+  }
+
+  .svc-hero-actions .btn-outline {
+    background-color: var(--background);
   }
 
   /* ── What we build grid ───────────────────────────────────────── */
