@@ -104,13 +104,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
             <!-- Phone -->
             <div class="form-field">
-              <label class="label" for="cf-phone">Phone</label>
+              <label class="label" for="cf-phone">Phone <span class="required-mark" aria-hidden="true">*</span></label>
               <input
                 class="input"
                 type="tel"
                 id="cf-phone"
                 name="phone"
                 autocomplete="tel"
+                required
                 placeholder="+61 400 000 000"
               />
               <p class="help-text contact-field-error" id="cf-phone-error" role="alert"></p>
@@ -133,13 +134,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
             <!-- Role -->
             <div class="form-field">
-              <label class="label" for="cf-role">Role / Title</label>
+              <label class="label" for="cf-role">Role / Title <span class="required-mark" aria-hidden="true">*</span></label>
               <input
                 class="input"
                 type="text"
                 id="cf-role"
                 name="role"
                 autocomplete="organization-title"
+                required
                 placeholder="CTO"
               />
               <p class="help-text contact-field-error" id="cf-role-error" role="alert"></p>
@@ -147,9 +149,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
             <!-- Annual Revenue -->
             <div class="form-field">
-              <label class="label" for="cf-revenue">Annual Revenue</label>
+              <label class="label" for="cf-revenue">Annual Revenue <span class="required-mark" aria-hidden="true">*</span></label>
               <div class="select-wrapper">
-                <select class="input contact-select" id="cf-revenue" name="revenue">
+                <select class="input contact-select" id="cf-revenue" name="revenue" required>
                   <option value="">Select range</option>
                   <option value="under-50m">Under $50M</option>
                   <option value="50m-150m">$50M – $150M</option>
@@ -192,9 +194,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
             <!-- How did you hear about us? -->
             <div class="form-field">
-              <label class="label" for="cf-source">How did you hear about us?</label>
+              <label class="label" for="cf-source">How did you hear about us? <span class="required-mark" aria-hidden="true">*</span></label>
               <div class="select-wrapper">
-                <select class="input contact-select" id="cf-source" name="source">
+                <select class="input contact-select" id="cf-source" name="source" required>
                   <option value="">Select an option</option>
                   <option value="google">Google search</option>
                   <option value="linkedin">LinkedIn</option>
@@ -356,12 +358,21 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) {
         errors.email = 'Please enter a valid email address';
       }
+      if (!data.phone || !data.phone.trim()) {
+        errors.phone = 'Phone is required';
+      } else if (!/^[+\d\s\-().]+$/.test(data.phone.trim())) {
+        errors.phone = 'Please enter a valid phone number';
+      }
+      if (!data.role || !data.role.trim())
+        errors.role = 'Role / Title is required';
+      if (!data.revenue || data.revenue === '')
+        errors.revenue = 'Annual Revenue is required';
       if (!data.intent)
         errors.intent = 'Please select what you are looking for';
       if (!data.message || data.message.trim().length < 10)
         errors.message = 'Please tell us a bit more (at least 10 characters)';
-      if (data.phone && data.phone.trim() && !/^[+\d\s\-().]+$/.test(data.phone.trim()))
-        errors.phone = 'Please enter a valid phone number';
+      if (!data.source || data.source === '')
+        errors.source = 'Please tell us how you heard about us';
       return errors;
     }
 
