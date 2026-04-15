@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://stack10.ai/sitemap-index.xml
+Sitemap: https://www.stack10.ai/sitemap-index.xml
