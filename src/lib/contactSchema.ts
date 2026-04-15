@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 // Valid enum values — kept in sync with the form's <option> values
 const revenueValues = ['under-50m', '50m-150m', '150m-500m', '500m-plus', 'prefer-not'] as const;
-const intentValues = ['ai-strategy', 'ai-build', 'ai-enablement', 'data-infra', 'ai-audit', 'other'] as const;
+const validIntents = ['stack-discover', 'stack-build', 'stack-scale'] as const;
 const sourceValues = ['google', 'linkedin', 'word-of-mouth', 'conference', 'case-study', 'other'] as const;
 
 // Helper: treat empty strings as absent for optional fields
@@ -41,9 +41,13 @@ export const contactSchema = z.object({
     .transform((v) => (v === '' ? undefined : v))
     .optional(),
 
-  intent: z.enum(intentValues, {
-    errorMap: () => ({ message: 'Please select what you are looking for' }),
-  }),
+  intent: z
+    .string()
+    .min(1, 'Please select what you are looking for')
+    .refine(
+      (v) => v.split(',').every((s) => (validIntents as readonly string[]).includes(s.trim())),
+      'Please select what you are looking for'
+    ),
 
   message: z
     .string()
