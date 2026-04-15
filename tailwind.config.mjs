@@ -1,0 +1,52 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  darkMode: ['class', '[data-theme="dark"]'],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Manrope', 'system-ui', '-apple-system', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        mono: ['JetBrains Mono', 'ui-monospace', 'Cascadia Code', 'Fira Code', 'monospace'],
+      },
+      colors: {
+        green: {
+          50:  'var(--green-50)',
+          100: 'var(--green-100)',
+          200: 'var(--green-200)',
+          300: 'var(--green-300)',
+          400: 'var(--green-400)',
+          500: 'var(--green-500)',
+          600: 'var(--green-600)',
+          700: 'var(--green-700)',
+          800: 'var(--green-800)',
+          900: 'var(--green-900)',
+        },
+        gray: {
+          0:    'var(--gray-0)',
+          50:   'var(--gray-50)',
+          100:  'var(--gray-100)',
+          200:  'var(--gray-200)',
+          300:  'var(--gray-300)',
+          400:  'var(--gray-400)',
+          500:  'var(--gray-500)',
+          600:  'var(--gray-600)',
+          700:  'var(--gray-700)',
+          800:  'var(--gray-800)',
+          900:  'var(--gray-900)',
+          950:  'var(--gray-950)',
+          1000: 'var(--gray-1000)',
+        },
+        primary: 'var(--primary)',
+        'primary-foreground': 'var(--primary-foreground)',
+        'primary-hover': 'var(--primary-hover)',
+        'primary-text': 'var(--primary-text)',
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        border: 'var(--border)',
+        muted: 'var(--muted)',
+        'muted-foreground': 'var(--muted-foreground)',
+      },
+    },
+  },
+  plugins: [],
+};

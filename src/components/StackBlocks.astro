@@ -1,0 +1,126 @@
+---
+/**
+ * StackBlocks — signature brand animation.
+ * Clusters of rectangular blocks that stack on top of each other as you scroll.
+ * Place inside sections at varied positions using the `position` and `align` props.
+ *
+ * Props:
+ *   position: 'left' | 'right' | 'center-left' | 'center-right' — horizontal placement
+ *   offset:   string — CSS top/bottom offset (e.g. '15%', '2rem')
+ *   variant:  1-6 — different block arrangements
+ *   size:     'sm' | 'md' | 'lg' — overall scale
+ */
+interface Props {
+  position?: 'left' | 'right' | 'center-left' | 'center-right';
+  offset?: string;
+  variant?: 1 | 2 | 3 | 4 | 5 | 6;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { position = 'left', offset = '20%', variant = 1, size = 'md' } = Astro.props;
+
+const posMap = {
+  'left': 'left: 2%;',
+  'right': 'right: 2%;',
+  'center-left': 'left: 25%;',
+  'center-right': 'right: 25%;',
+};
+---
+
+<div
+  class={`stk-cluster stk-cluster--${size}`}
+  style={`${posMap[position]} top: ${offset};`}
+  data-stk-cluster
+>
+  {variant === 1 && (
+    <>
+      <div class="stk-block" style="width: 100%; background: var(--green-200);"></div>
+      <div class="stk-block" style="width: 85%; margin-left: 15%; background: var(--green-400);"></div>
+      <div class="stk-block" style="width: 70%; background: var(--green-600);"></div>
+    </>
+  )}
+  {variant === 2 && (
+    <>
+      <div class="stk-block" style="width: 90%; margin-left: 10%; background: var(--green-300);"></div>
+      <div class="stk-block" style="width: 100%; background: var(--green-500);"></div>
+      <div class="stk-block" style="width: 60%; margin-left: 20%; background: var(--green-200);"></div>
+      <div class="stk-block" style="width: 80%; background: var(--green-400);"></div>
+    </>
+  )}
+  {variant === 3 && (
+    <>
+      <div class="stk-block" style="width: 75%; background: var(--green-100);"></div>
+      <div class="stk-block" style="width: 100%; background: var(--green-500);"></div>
+    </>
+  )}
+  {variant === 4 && (
+    <>
+      <div class="stk-block" style="width: 100%; background: var(--green-400);"></div>
+      <div class="stk-block" style="width: 65%; margin-left: 35%; background: var(--green-200);"></div>
+      <div class="stk-block" style="width: 85%; margin-left: 5%; background: var(--green-600);"></div>
+    </>
+  )}
+  {variant === 5 && (
+    <>
+      <div class="stk-block" style="width: 80%; margin-left: 20%; background: var(--green-300);"></div>
+      <div class="stk-block" style="width: 100%; background: var(--green-100);"></div>
+      <div class="stk-block" style="width: 55%; background: var(--green-500);"></div>
+      <div class="stk-block" style="width: 90%; margin-left: 10%; background: var(--green-200);"></div>
+    </>
+  )}
+  {variant === 6 && (
+    <>
+      <div class="stk-block" style="width: 100%; background: var(--green-500);"></div>
+      <div class="stk-block" style="width: 70%; margin-left: 15%; background: var(--green-300);"></div>
+    </>
+  )}
+</div>
+
+<style>
+  .stk-cluster {
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    flex-direction: column-reverse; /* stack builds upward */
+    gap: 3px;
+    pointer-events: none;
+  }
+
+  /* Sizes */
+  .stk-cluster--sm { width: 60px; }
+  .stk-cluster--md { width: 90px; }
+  .stk-cluster--lg { width: 130px; }
+
+  .stk-block {
+    height: 10px;
+    border-radius: 2px;
+    opacity: 0;
+    transform: translateY(20px) scaleX(0.3);
+    transition:
+      opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+      transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .stk-cluster--sm .stk-block { height: 7px; }
+  .stk-cluster--lg .stk-block { height: 14px; }
+
+  /* Stagger: first block (bottom) animates first */
+  .stk-block:nth-child(1) { transition-delay: 0ms; }
+  .stk-block:nth-child(2) { transition-delay: 180ms; }
+  .stk-block:nth-child(3) { transition-delay: 360ms; }
+  .stk-block:nth-child(4) { transition-delay: 540ms; }
+
+  /* Revealed state */
+  .stk-cluster.stk-visible .stk-block {
+    opacity: 0.55;
+    transform: translateY(0) scaleX(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stk-block {
+      opacity: 0.55;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>

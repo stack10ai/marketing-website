@@ -1,0 +1,71 @@
+---
+interface Props {
+  text: string;
+  linkText?: string;
+  linkHref?: string;
+}
+
+const { text, linkText = 'Learn more →', linkHref = '/' } = Astro.props;
+---
+
+<div id="announcement-banner" class="announcement-banner">
+  <div class="announcement-inner container">
+    <span>{text}</span>
+    <a href={linkHref} class="announcement-link banner-link-sm">{linkText}</a>
+    <button class="banner-close" aria-label="Close announcement">&times;</button>
+  </div>
+</div>
+
+<style>
+  .announcement-banner {
+    background: var(--primary);
+    color: var(--primary-foreground);
+    position: relative;
+    z-index: 1001;
+  }
+
+  .announcement-inner {
+    padding-top: var(--space-1);
+    padding-bottom: var(--space-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    font-size: var(--size-sm);
+    font-weight: var(--weight-600);
+    min-height: 32px;
+  }
+
+  .announcement-link {
+    text-decoration: underline;
+    font-weight: 700;
+    display: none;
+  }
+
+  .banner-close {
+    position: absolute;
+    right: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: inherit;
+    opacity: 0.6;
+    cursor: pointer;
+    font-size: 1.125rem;
+    line-height: 1;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-close:hover {
+    opacity: 1;
+  }
+
+  @media (min-width: 640px) {
+    .banner-link-sm { display: inline !important; }
+  }
+</style>

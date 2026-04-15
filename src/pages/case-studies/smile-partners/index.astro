@@ -1,0 +1,929 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Case Study: PE-backed Healthcare Group — Stack10"
+  description="How Stack10 deployed four interconnected AI systems across a 50-practice, $111M healthcare group — eliminating manual reporting and automating compliance."
+  canonicalUrl="https://stack10.ai/case-studies/smile-partners/"
+>
+
+  <!-- ── CASE STUDY HERO ───────────────────────────────────────── -->
+  <section class="cs-hero">
+    <div class="container">
+      <div class="cs-hero-meta">
+        <span class="badge badge-secondary">Case Study</span>
+        <span class="badge badge-outline">Healthcare</span>
+        <span class="badge badge-outline">Stack Build</span>
+      </div>
+      <h1 class="cs-hero-title">
+        PE-backed healthcare group. 50 practices. $111M revenue. One AI partner.
+      </h1>
+      <p class="cs-hero-sub">Four interconnected AI systems deployed across operations, compliance, finance, and reporting — eliminating manual work and giving leadership instant access to their own data.</p>
+
+      <div class="cs-stats-bar" data-count-up>
+        <div class="cs-stat">
+          <span class="cs-stat-value" data-count-up-value>50</span>
+          <span class="cs-stat-label">Practices connected</span>
+        </div>
+        <div class="cs-stat">
+          <span class="cs-stat-value" data-count-up-value>300K+</span>
+          <span class="cs-stat-label">Patient records queryable</span>
+        </div>
+        <div class="cs-stat">
+          <span class="cs-stat-value" data-count-up-value>130</span>
+          <span class="cs-stat-label">KPIs tracked in real time</span>
+        </div>
+        <div class="cs-stat">
+          <span class="cs-stat-value" data-count-up-value>98%</span>
+          <span class="cs-stat-label">Reduction in compliance processing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BODY ─────────────────────────────────────────────────── -->
+  <div class="container cs-body">
+
+    <!-- Context -->
+    <section class="cs-section" data-reveal>
+      <h2 class="cs-section-title">The organisation and the problem</h2>
+      <p class="p1">A private equity-backed healthcare service organisation operating 50 practices across Australia and New Zealand — spanning WA, VIC, NSW, QLD, SA, NT and NZ.</p>
+      <p class="p2">Under PE ownership, the business was acquiring multiple practices per quarter. Each acquisition added a new legal entity, a new Xero account, a new practice management system instance, and new staff — all needing to report into head office. The result was a growing organisation with no unified view of itself.</p>
+      <p class="p2">The group had invested years building a data warehouse. Their finance team had spent significant effort pulling data from Xero, their procurement platform, and their practice management software into one place. But having the data wasn't the problem. Getting answers from it was.</p>
+      <div class="cs-callout">
+        <p class="cs-callout-text">The entire analytics team was dedicated to extracting reports. Every question — how is Practice A tracking on conversion? What's procurement spend vs production at Practice B? — required multiple full-time resources to pull data, build a spreadsheet, and deliver a report. At 50 practices, over 300,000 patient records, $111M in production and 130 KPIs to track, manual reporting was no longer viable.</p>
+      </div>
+    </section>
+
+    <!-- What Stack10 Built -->
+    <section class="cs-section cs-section-systems">
+      <h2 class="cs-section-title">What Stack10 built</h2>
+      <p class="p1">Four interconnected solutions — spanning Stack Discover and Stack Build — that fundamentally changed how the organisation operates.</p>
+
+      <!-- System 1 -->
+      <div class="cs-system" data-reveal>
+        <div class="cs-system-header">
+          <span class="cs-system-num">01</span>
+          <div>
+            <h3 class="cs-system-title">The Intelligence Layer</h3>
+            <p class="cs-system-tag">MCP Agent &middot; Plain-English Data Queries</p>
+          </div>
+        </div>
+        <p class="p2"><strong>The problem:</strong> Leadership couldn't get answers without waiting for someone to build a report.</p>
+        <p class="p2"><strong>What we built:</strong> An MCP (Model Context Protocol) server that sits directly on top of their data warehouse. For each database view, we created tools with pre-configured SQL queries that allow an AI agent to query the database in real time. Any leader can now ask a question in plain English and get an answer in seconds.</p>
+        <p class="cs-examples-label">Use cases it unlocked</p>
+        <div class="cs-examples-grid">
+          <div class="cs-example">
+            <p class="cs-example-label">Procurement vs production reporting</p>
+            <p class="cs-example-desc">Previously required a dedicated analyst to compile across multiple systems. Now: ask the agent, get an instant report — with drill-down into the exact line items driving any variance.</p>
+          </div>
+          <div class="cs-example">
+            <p class="cs-example-label">Doctor transition management</p>
+            <p class="cs-example-desc">Finding every affected patient, reading notes, and preparing a rebook list would traditionally take a week. The agent returned the full list in 2 minutes.</p>
+          </div>
+          <div class="cs-example">
+            <p class="cs-example-label">New patient conversion tracking</p>
+            <p class="cs-example-desc">Which practices were converting consultations into treatment plans — and which weren't. Used to take days of cross-referencing. Now instant, by practice, by region, or across the group.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- System 2 -->
+      <div class="cs-system" data-reveal>
+        <div class="cs-system-header">
+          <span class="cs-system-num">02</span>
+          <div>
+            <h3 class="cs-system-title">The Compliance Agent</h3>
+            <p class="cs-system-tag">WHS Automation &middot; Autonomous Document Management</p>
+          </div>
+        </div>
+        <p class="p2"><strong>The problem:</strong> Every chemical agent in every practice needs a current Safety Data Sheet. Compiling the chemical register quarterly was manual, error-prone, and scaled linearly with every acquisition.</p>
+        <p class="p2"><strong>What we built:</strong> An autonomous AI compliance agent that integrates with procurement order history, identifies hazardous materials, and autonomously searches, validates, and centralises safety documentation from manufacturer websites. When it can't find a document with high certainty, it flags it rather than guessing — the WHS team shifted from data entry to exception management.</p>
+        <div class="cs-before-after" data-reveal>
+          <div class="cs-ba-before">
+            <div class="cs-ba-header">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span class="cs-ba-label">Before</span>
+            </div>
+            <div class="cs-ba-metric" data-count-up-value>80 hours</div>
+            <ul class="cs-ba-list">
+              <li>Manual compilation every quarter</li>
+              <li>Scaled linearly with every acquisition</li>
+              <li>Error-prone, always behind</li>
+              <li>WHS team = full-time data entry</li>
+            </ul>
+          </div>
+          <div class="cs-ba-divider" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="cs-ba-after">
+            <div class="cs-ba-header">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span class="cs-ba-label">After</span>
+            </div>
+            <div class="cs-ba-metric" data-count-up-value>&lt;1 hour</div>
+            <ul class="cs-ba-list">
+              <li>Autonomous document retrieval</li>
+              <li>Scales instantly to new acquisitions</li>
+              <li>94% success rate, always current</li>
+              <li>WHS team = exception management only</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cs-metrics-inline">
+          <div class="cs-metric-inline">
+            <span class="cs-metric-inline-value" data-count-up-value>98%</span>
+            <span class="cs-metric-inline-label">Reduction in processing time</span>
+          </div>
+          <div class="cs-metric-inline">
+            <span class="cs-metric-inline-value" data-count-up-value>94%</span>
+            <span class="cs-metric-inline-label">Autonomous success rate</span>
+          </div>
+          <div class="cs-metric-inline">
+            <span class="cs-metric-inline-value" data-count-up-value>~$28K</span>
+            <span class="cs-metric-inline-label">Estimated annual labour savings</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- System 3 -->
+      <div class="cs-system" data-reveal>
+        <div class="cs-system-header">
+          <span class="cs-system-num">03</span>
+          <div>
+            <h3 class="cs-system-title">The Reconciliation Agent</h3>
+            <p class="cs-system-tag">Xero Integration &middot; AI Financial Classification</p>
+          </div>
+        </div>
+        <p class="p2"><strong>The problem:</strong> Across 16+ separate Xero entities, high-value consumable spend was buried in a generic account code. Group leadership couldn't answer basic questions: How much are we spending per supplier per practice? Are practices over-ordering?</p>
+        <p class="p2"><strong>What we built:</strong> A full-stack reconciliation application that connects to every Xero entity, pulls invoice line items, uses AI classification to identify high-value consumable purchases, and writes reclassification journal entries back to Xero — with human sign-off at every step. For the first time, the group has visibility into their largest consumable cost category, automatically, across all entities.</p>
+        <div class="cs-impact-note">
+          <span class="cs-impact-note-label">Outcome</span>
+          <p class="cs-impact-note-text">Group-wide visibility into their largest consumable cost category for the first time — creating direct leverage for supplier renegotiation across all 50 entities.</p>
+        </div>
+        <p class="cs-tech-note">FastAPI backend &middot; Next.js + Shadcn/ui frontend &middot; Multi-step AI pipeline (Haiku + Sonnet) &middot; Supplier learning database &middot; Full audit trail</p>
+      </div>
+
+      <!-- System 4 -->
+      <div class="cs-system" data-reveal>
+        <div class="cs-system-header">
+          <span class="cs-system-num">04</span>
+          <div>
+            <h3 class="cs-system-title">Procurement Compliance Workflow</h3>
+            <p class="cs-system-tag">Automated Reporting &middot; Regional Manager Workflow</p>
+          </div>
+        </div>
+        <p class="p2"><strong>The problem:</strong> Practice managers needed to act on their numbers, but Regional Managers were buried managing multiple practices — too many numbers to stay on top of and communicate downward.</p>
+        <p class="p2"><strong>What we built:</strong> An automated procurement reporting workflow. The system generates a spend report and sends it to the Regional Manager. The RM reviews in their email, provides feedback via text, and approves. The report — with the RM's recommendations — is then sent directly to the practice manager with actionable items attached. Instead of practices pulling their own reports, the data comes to them with specific actions. This workflow has become one of the primary tools driving procurement compliance across the group.</p>
+        <div class="cs-impact-note">
+          <span class="cs-impact-note-label">Outcome</span>
+          <p class="cs-impact-note-text">Procurement report compilation eliminated entirely. Regional Managers spend minutes reviewing, not hours compiling — and practice managers receive context and actions, not raw numbers.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Results -->
+    <section class="cs-section" data-reveal>
+      <h2 class="cs-section-title">Results across all four systems</h2>
+
+      <div class="cs-result-headlines">
+        <div class="cs-result-stat">
+          <span class="cs-result-value" data-count-up-value>316+</span>
+          <span class="cs-result-label">WHS hours saved annually</span>
+        </div>
+        <div class="cs-result-stat">
+          <span class="cs-result-value" data-count-up-value>2–3 FTE</span>
+          <span class="cs-result-label">Analytics capacity redeployed</span>
+        </div>
+        <div class="cs-result-stat">
+          <span class="cs-result-value" data-count-up-value>~$28K</span>
+          <span class="cs-result-label">Direct annual labour savings</span>
+        </div>
+        <div class="cs-result-stat">
+          <span class="cs-result-value" data-count-up-value>1 week<br>→ 2 min</span>
+          <span class="cs-result-label">Doctor transition workflows</span>
+        </div>
+      </div>
+
+      <div class="cs-results-table">
+        <div class="cs-results-row cs-results-row-header">
+          <span>What changed</span>
+          <span>Impact</span>
+        </div>
+        <div class="cs-results-row">
+          <span>Leadership report turnaround</span>
+          <span>Days → Seconds</span>
+        </div>
+        <div class="cs-results-row">
+          <span>Month-end close readiness check (50 entities)</span>
+          <span>Hours → Instant</span>
+        </div>
+        <div class="cs-results-row">
+          <span>Procurement report compilation per cycle</span>
+          <span>Eliminated</span>
+        </div>
+        <div class="cs-results-row">
+          <span>Chemical SKUs under autonomous management</span>
+          <span>1,200+</span>
+        </div>
+        <div class="cs-results-row">
+          <span>Consumable cost visibility across all entities</span>
+          <span>First time, group-wide</span>
+        </div>
+        <div class="cs-results-row">
+          <span>Supplier renegotiation leverage created</span>
+          <span>All 50 entities</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's Next -->
+    <section class="cs-section" data-reveal>
+      <h2 class="cs-section-title">What&rsquo;s next</h2>
+      <p class="p2">Based on the success of these projects, Stack10 is now working with the group&rsquo;s in-house development team to:</p>
+      <ul class="cs-next-list">
+        <li>Replace the legacy PowerBI dashboard with a v2 platform built on the same intelligence layer</li>
+        <li>Extend the MCP agent&rsquo;s capabilities deeper into practice-level operations — giving on-the-ground staff direct access to their own data</li>
+        <li>Scale the reconciliation and compliance architecture to absorb new acquisitions automatically</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <!-- ── CTA ──────────────────────────────────────────────────── -->
+  <section class="cs-cta">
+    <div class="container cs-cta-inner">
+      <h2 class="cs-cta-title">Ready to see what this looks like for your organisation?</h2>
+      <p class="cs-cta-desc">Book a 30-minute Discovery Call. We&rsquo;ll tell you whether Stack10 is the right fit — and if not, we&rsquo;ll tell you honestly who is.</p>
+      <div class="cs-cta-actions">
+        <a href="/contact/" class="btn btn-primary btn-lg">
+          Get Started
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+        <a href="/case-studies/" class="btn btn-outline btn-lg">View all case studies</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  // Count-up animation for all [data-count-up-value] elements.
+  // Triggers when the element scrolls into view via IntersectionObserver.
+  (function () {
+    var DURATION = 1400;
+
+    function easeOutCubic(t) {
+      return 1 - Math.pow(1 - t, 3);
+    }
+
+    function animateValue(el) {
+      var raw = el.textContent.trim();
+
+      // Skip complex values (multi-line content, en-dashes, arrows, FTE strings)
+      if (/[\n–→]/.test(raw)) {
+        return;
+      }
+
+      // Parse: optional prefix (~, <, $, combinations) + integer + optional suffix
+      var m = raw.match(/^([~<>$]*)(\d[\d,]*)(.*)$/);
+      if (!m) return;
+
+      var prefix = m[1];
+      var target = parseInt(m[2].replace(/,/g, ''), 10);
+      var suffix = m[3];
+
+      if (isNaN(target) || target === 0) return;
+
+      var start = performance.now();
+
+      function tick(now) {
+        var t = Math.min((now - start) / DURATION, 1);
+        var current = Math.round(easeOutCubic(t) * target);
+        el.textContent = prefix + current + suffix;
+        if (t < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = raw; // restore exact original (e.g. "300K+" not "300K+")
+        }
+      }
+
+      el.textContent = prefix + '0' + suffix;
+      requestAnimationFrame(tick);
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateValue(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    document.querySelectorAll('[data-count-up-value]').forEach(function (el) {
+      observer.observe(el);
+    });
+  })();
+</script>
+
+<style>
+  /* ── Page-scoped alpha tints ─────────────────────────────── */
+  :root {
+    --cs-green-tag-bg:        color-mix(in oklch, var(--green-500) 10%, transparent);
+    --cs-green-subtle-bg:     color-mix(in oklch, var(--green-500)  6%, transparent);
+    --cs-green-subtle-border: color-mix(in oklch, var(--green-500) 25%, transparent);
+    --cs-red-subtle-bg:       color-mix(in oklch, var(--destructive)  8%, transparent);
+    --cs-red-subtle-border:   color-mix(in oklch, var(--destructive) 22%, transparent);
+  }
+
+  /* ── Hero ─────────────────────────────────────────────────── */
+  .cs-hero {
+    background: var(--background);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-16) 0 var(--space-12);
+  }
+
+  .cs-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+    flex-wrap: wrap;
+  }
+
+  .cs-hero-title {
+    font-size: var(--size-4xl);
+    font-weight: var(--weight-800);
+    line-height: 1.15;
+    color: var(--foreground);
+    max-width: 52rem;
+    margin-bottom: var(--space-6);
+  }
+
+  .cs-hero-sub {
+    font-size: var(--size-lg);
+    color: var(--muted-foreground);
+    max-width: 56rem;
+    line-height: 1.7;
+    margin-bottom: var(--space-12);
+  }
+
+  .cs-stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-1);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-6);
+    overflow: hidden;
+  }
+
+  .cs-stat {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-6) var(--space-8);
+    background: var(--card);
+    border-right: 1px solid var(--border);
+  }
+
+  .cs-stat:last-child {
+    border-right: none;
+  }
+
+  .cs-stat-value {
+    font-size: var(--size-3xl);
+    font-weight: var(--weight-800);
+    color: var(--primary);
+    font-family: var(--font-mono, monospace);
+    line-height: 1;
+  }
+
+  .cs-stat-label {
+    font-size: var(--size-sm);
+    color: var(--muted-foreground);
+    font-weight: var(--weight-500);
+    line-height: 1.4;
+  }
+
+  /* ── Body ─────────────────────────────────────────────────── */
+  .cs-body {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+    max-width: 68rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cs-section {
+    margin-bottom: var(--space-16);
+  }
+
+  .cs-section-title {
+    font-size: var(--size-2xl);
+    font-weight: var(--weight-700);
+    color: var(--foreground);
+    margin-bottom: var(--space-6);
+  }
+
+  .cs-section .p1 {
+    margin-bottom: var(--space-5);
+    font-size: var(--size-lg);
+    color: var(--foreground);
+    line-height: 1.7;
+  }
+
+  .cs-section .p2 {
+    margin-bottom: var(--space-4);
+    color: var(--muted-foreground);
+    line-height: 1.7;
+  }
+
+  /* ── Callout ──────────────────────────────────────────────── */
+  .cs-callout {
+    border-left: 3px solid var(--primary);
+    padding: var(--space-5) var(--space-6);
+    background: var(--card);
+    border-radius: 0 var(--radius-4) var(--radius-4) 0;
+    margin-top: var(--space-6);
+  }
+
+  .cs-callout-text {
+    font-size: var(--size-base);
+    color: var(--foreground);
+    line-height: 1.7;
+    font-weight: var(--weight-500);
+    margin: 0;
+  }
+
+  /* ── Systems section ──────────────────────────────────────── */
+  .cs-section-systems .p1 {
+    margin-bottom: var(--space-10);
+  }
+
+  .cs-system {
+    padding-top: var(--space-10);
+    margin-bottom: var(--space-2);
+  }
+
+  .cs-system-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-5);
+    padding-bottom: var(--space-5);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: var(--space-6);
+  }
+
+  .cs-system-num {
+    font-size: var(--size-sm);
+    font-weight: var(--weight-800);
+    color: var(--highlight);
+    font-family: var(--font-mono);
+    padding-top: 3px;
+    flex-shrink: 0;
+  }
+
+  .cs-system-title {
+    font-size: var(--size-xl);
+    font-weight: var(--weight-700);
+    color: var(--foreground);
+    margin-bottom: var(--space-2);
+  }
+
+  .cs-system-tag {
+    font-family: var(--font-mono);
+    font-size: var(--size-sm);
+    font-weight: var(--weight-700);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary-text);
+    margin: 0;
+  }
+
+  .cs-system .p2 {
+    margin-bottom: var(--space-4);
+    color: var(--muted-foreground);
+    line-height: 1.7;
+  }
+
+  /* ── Examples grid ────────────────────────────────────────── */
+  .cs-examples-label {
+    font-size: var(--size-xs);
+    font-weight: var(--weight-700);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted-foreground);
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-4);
+  }
+
+  .cs-examples-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+
+  .cs-example {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-6);
+    padding: var(--space-5) var(--space-6);
+  }
+
+  .cs-example-label {
+    font-size: var(--size-sm);
+    font-weight: var(--weight-700);
+    color: var(--foreground);
+    margin-bottom: var(--space-2);
+  }
+
+  .cs-example-desc {
+    font-size: var(--size-sm);
+    color: var(--muted-foreground);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── Before / After ───────────────────────────────────────── */
+  .cs-before-after {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: var(--space-4);
+    align-items: center;
+    margin: var(--space-8) 0;
+  }
+
+  .cs-ba-before,
+  .cs-ba-after {
+    padding: var(--space-6);
+    border-radius: var(--radius-6);
+    border: 1px solid var(--border);
+  }
+
+  .cs-ba-before {
+    background: var(--cs-red-subtle-bg);
+    border-color: var(--cs-red-subtle-border);
+  }
+
+  .cs-ba-after {
+    background: var(--cs-green-subtle-bg);
+    border-color: var(--cs-green-subtle-border);
+  }
+
+  .cs-ba-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+  }
+
+  .cs-ba-before .cs-ba-header svg { color: var(--destructive); }
+  .cs-ba-after  .cs-ba-header svg { color: var(--primary); }
+
+  .cs-ba-label {
+    font-size: var(--size-xs);
+    font-weight: var(--weight-700);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted-foreground);
+  }
+
+  .cs-ba-metric {
+    font-size: var(--size-3xl);
+    font-weight: var(--weight-800);
+    font-family: var(--font-mono, monospace);
+    line-height: 1;
+    margin-bottom: var(--space-4);
+  }
+
+  .cs-ba-before .cs-ba-metric { color: var(--destructive); }
+  .cs-ba-after  .cs-ba-metric { color: var(--primary); }
+
+  .cs-ba-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: 0;
+    list-style: none;
+    margin: 0;
+  }
+
+  .cs-ba-list li {
+    font-size: var(--size-sm);
+    color: var(--muted-foreground);
+    line-height: 1.5;
+    padding-left: var(--space-4);
+    position: relative;
+  }
+
+  .cs-ba-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--border);
+  }
+
+  .cs-ba-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted-foreground);
+    flex-shrink: 0;
+  }
+
+  /* ── Inline Metrics ───────────────────────────────────────── */
+  .cs-metrics-inline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-6);
+  }
+
+  .cs-metric-inline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .cs-metric-inline-value {
+    font-size: var(--size-xl);
+    font-weight: var(--weight-800);
+    color: var(--highlight);
+    font-family: var(--font-mono);
+    line-height: 1;
+  }
+
+  .cs-metric-inline-label {
+    font-size: var(--size-xs);
+    color: var(--muted-foreground);
+    font-weight: var(--weight-500);
+    line-height: 1.4;
+  }
+
+  /* ── Impact Note (Systems 03 / 04) ───────────────────────── */
+  .cs-impact-note {
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+    padding: var(--space-5) var(--space-6);
+    background: var(--cs-green-subtle-bg);
+    border: 1px solid var(--cs-green-subtle-border);
+    border-radius: var(--radius-6);
+    margin: var(--space-6) 0;
+  }
+
+  .cs-impact-note-label {
+    font-size: var(--size-xs);
+    font-weight: var(--weight-700);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary);
+    white-space: nowrap;
+    padding-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .cs-impact-note-text {
+    font-size: var(--size-sm);
+    color: var(--foreground);
+    line-height: 1.6;
+    margin: 0;
+    font-weight: var(--weight-500);
+  }
+
+  /* ── Tech Note ────────────────────────────────────────────── */
+  .cs-tech-note {
+    font-size: var(--size-xs);
+    color: var(--muted-foreground);
+    font-family: var(--font-mono, monospace);
+    padding: var(--space-3) var(--space-4);
+    background: var(--muted);
+    border-radius: var(--radius-3);
+  }
+
+  /* ── Result Headlines ─────────────────────────────────────── */
+  .cs-result-headlines {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-1);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-6);
+    overflow: hidden;
+    margin-bottom: var(--space-8);
+  }
+
+  .cs-result-stat {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-6) var(--space-8);
+    background: var(--card);
+    border-right: 1px solid var(--border);
+  }
+
+  .cs-result-stat:last-child {
+    border-right: none;
+  }
+
+  .cs-result-value {
+    font-size: var(--size-2xl);
+    font-weight: var(--weight-800);
+    color: var(--highlight);
+    font-family: var(--font-mono);
+    line-height: 1.1;
+  }
+
+  .cs-result-label {
+    font-size: var(--size-sm);
+    color: var(--muted-foreground);
+    font-weight: var(--weight-500);
+    line-height: 1.4;
+  }
+
+  /* ── Results Table ────────────────────────────────────────── */
+  .cs-results-table {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-6);
+    overflow: hidden;
+  }
+
+  .cs-results-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-6);
+    padding: var(--space-4) var(--space-6);
+    border-bottom: 1px solid var(--border);
+    font-size: var(--size-sm);
+  }
+
+  .cs-results-row:last-child {
+    border-bottom: none;
+  }
+
+  .cs-results-row:nth-child(even) {
+    background: var(--card);
+  }
+
+  .cs-results-row-header {
+    background: var(--background) !important;
+    font-size: var(--size-xs);
+    font-weight: var(--weight-700);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted-foreground);
+  }
+
+  .cs-results-row span:first-child {
+    color: var(--muted-foreground);
+  }
+
+  .cs-results-row span:last-child {
+    font-weight: var(--weight-700);
+    color: var(--foreground);
+    font-family: var(--font-mono, monospace);
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  /* ── Next List ────────────────────────────────────────────── */
+  .cs-next-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+    padding-left: var(--space-6);
+  }
+
+  .cs-next-list li {
+    font-size: var(--size-base);
+    color: var(--foreground);
+    line-height: 1.6;
+  }
+
+  /* ── CTA ──────────────────────────────────────────────────── */
+  .cs-cta {
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    padding: var(--space-16) 0;
+  }
+
+  .cs-cta-inner {
+    max-width: 40rem;
+  }
+
+  .cs-cta-title {
+    font-size: var(--size-3xl);
+    font-weight: var(--weight-700);
+    color: var(--foreground);
+    margin-bottom: var(--space-4);
+    line-height: 1.25;
+  }
+
+  .cs-cta-desc {
+    font-size: var(--size-base);
+    color: var(--muted-foreground);
+    line-height: 1.7;
+    margin-bottom: var(--space-8);
+  }
+
+  .cs-cta-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  /* ── Responsive ───────────────────────────────────────────── */
+  @media (max-width: 1023px) {
+    .cs-examples-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .cs-result-headlines {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cs-result-stat {
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cs-result-stat:nth-child(2),
+    .cs-result-stat:nth-child(4) {
+      border-right: none;
+    }
+
+    .cs-result-stat:nth-child(3),
+    .cs-result-stat:nth-child(4) {
+      border-bottom: none;
+    }
+
+    .cs-before-after {
+      grid-template-columns: 1fr;
+    }
+
+    .cs-ba-divider {
+      transform: rotate(90deg);
+    }
+
+    .cs-stats-bar {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cs-stat {
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cs-stat:nth-child(2),
+    .cs-stat:nth-child(4) {
+      border-right: none;
+    }
+
+    .cs-stat:nth-child(3),
+    .cs-stat:nth-child(4) {
+      border-bottom: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .cs-hero-title {
+      font-size: var(--size-2xl);
+    }
+
+    .cs-stats-bar {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .cs-examples-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cs-metrics-inline {
+      grid-template-columns: 1fr;
+    }
+
+    .cs-result-headlines {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .cs-cta-title {
+      font-size: var(--size-2xl);
+    }
+
+    .cs-impact-note {
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+  }
+</style>

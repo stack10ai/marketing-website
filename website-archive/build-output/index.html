@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stack10 delivers enterprise AI transformation measured in production, not promises. Fixed-price discovery, process intelligence, and output-based engineering.">
+  <title>Stack10 — Enterprise AI Transformation | Strategy to Production</title>
+  <link rel="canonical" href="https://stack10.ai/">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://stack10-assets.syd1.digitaloceanspaces.com/brand/logo-files/favicon-32x32-and-16x16/32x32.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Stack10 — Enterprise AI Transformation | Strategy to Production">
+  <meta property="og:description" content="Stack10 delivers enterprise AI transformation measured in production, not promises.">
+  <meta property="og:image" content="https://stack10-assets.syd1.digitaloceanspaces.com/brand/logo-files/svg/logo-1.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://stack10.ai/">
+  <meta property="og:site_name" content="Stack10">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stack10 — Enterprise AI Transformation | Strategy to Production">
+  <meta name="twitter:description" content="Stack10 delivers enterprise AI transformation measured in production, not promises.">
+  <meta name="twitter:image" content="https://stack10-assets.syd1.digitaloceanspaces.com/brand/logo-files/svg/logo-1.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="sitemap" href="/sitemap-index.xml">
+
+  <style>
+    @media (min-width: 640px) { .banner-link-sm { display: inline !important; } }
+    @media (min-width: 1024px) {
+      .desktop-nav { display: flex !important; }
+      .desktop-cta { display: inline-flex !important; }
+      .hamburger { display: none !important; }
+    }
+    @media (max-width: 767px) {
+      .results-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== ANNOUNCEMENT BAR ========== -->
+  <div id="announcement-banner" style="background: var(--primary); color: var(--primary-foreground); position: relative; z-index: 1001;">
+    <div class="container" style="padding-top: var(--space-2); padding-bottom: var(--space-2); display: flex; align-items: center; justify-content: center; gap: var(--space-3); font-size: var(--text-caption); font-weight: var(--weight-600); min-height: 36px;">
+      <span>Stack Discover — Find your top AI opportunities in 2 weeks</span>
+      <a href="/services/stack-discover/" class="banner-link-sm" style="text-decoration: underline; font-weight: 700; display: none;">Learn more &rarr;</a>
+      <button class="banner-close" aria-label="Close announcement" style="position: absolute; right: var(--space-3); top: 50%; transform: translateY(-50%); background: none; border: none; color: inherit; opacity: 0.6; cursor: pointer; font-size: 1.125rem; line-height: 1;">&times;</button>
+    </div>
+  </div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav-header">
+    <div class="nav-inner">
+      <a href="/" style="flex-shrink: 0;">
+        <img src="/logo-light.svg" alt="Stack10" style="width: 120px;" class="logo-light">
+        <img src="/logo-dark.svg" alt="Stack10" style="width: 120px; display: none;" class="logo-dark">
+      </a>
+
+      <div style="display: none; align-items: center; gap: var(--space-1);" class="desktop-nav">
+        <!-- Platform -->
+        <div class="nav-dropdown-trigger">
+          <button class="nav-link" style="background: none; border: none; cursor: pointer;">Platform <svg class="nav-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown-panel" style="width: 480px;">
+              <div class="nav-dropdown-grid nav-dropdown-grid-2">
+                <a href="/platform/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Platform Overview</div><div class="nav-dropdown-item-desc">Our AI operating system approach</div></a>
+                <a href="/ai-transformation/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">AI Transformation</div><div class="nav-dropdown-item-desc">Why execution beats strategy</div></a>
+                <a href="/how-we-work/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">How We Work</div><div class="nav-dropdown-item-desc">5-stage delivery methodology</div></a>
+                <a href="/trust/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Trust Center</div><div class="nav-dropdown-item-desc">Security &amp; compliance</div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Solutions -->
+        <div class="nav-dropdown-trigger">
+          <button class="nav-link" style="background: none; border: none; cursor: pointer;">Solutions <svg class="nav-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown-panel" style="width: 560px;">
+              <div class="nav-dropdown-grid nav-dropdown-grid-2" style="column-gap: var(--space-10);">
+                <div>
+                  <div class="nav-dropdown-category">Services</div>
+                  <a href="/services/stack-discover/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Stack Discover</div><div class="nav-dropdown-item-desc">AI opportunity discovery</div></a>
+                  <a href="/services/stack-audit/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Stack Audit</div><div class="nav-dropdown-item-desc">Deep-dive audit + prototype</div></a>
+                  <a href="/services/stack-one/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Stack One</div><div class="nav-dropdown-item-desc">Ongoing AI engineering</div></a>
+                  <a href="/services/stack-map/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Stack Map</div><div class="nav-dropdown-item-desc">Process intelligence quickstart</div></a>
+                  <a href="/services/stack-e2e/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Stack E2E</div><div class="nav-dropdown-item-desc">End-to-end process map</div></a>
+                </div>
+                <div>
+                  <div class="nav-dropdown-category">Industries</div>
+                  <a href="/industries/financial-services/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Financial Services</div></a>
+                  <a href="/industries/government/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Government</div></a>
+                  <a href="/industries/healthcare/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Healthcare</div></a>
+                  <a href="/industries/manufacturing/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Manufacturing</div></a>
+                  <a href="/industries/" class="nav-dropdown-item"><div class="nav-dropdown-item-title" style="color: var(--primary-text);">View all industries &rarr;</div></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resources -->
+        <div class="nav-dropdown-trigger">
+          <button class="nav-link" style="background: none; border: none; cursor: pointer;">Resources <svg class="nav-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown-panel" style="width: 320px;">
+              <a href="/insights/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Insights</div><div class="nav-dropdown-item-desc">Articles, guides, and research</div></a>
+              <a href="/customers/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Customer Stories</div><div class="nav-dropdown-item-desc">Real results from real operations</div></a>
+              <a href="/blog/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Blog</div><div class="nav-dropdown-item-desc">Latest thinking on enterprise AI</div></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Company -->
+        <div class="nav-dropdown-trigger">
+          <button class="nav-link" style="background: none; border: none; cursor: pointer;">Company <svg class="nav-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown-panel" style="width: 280px;">
+              <a href="/about/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">About</div><div class="nav-dropdown-item-desc">Our story and mission</div></a>
+              <a href="/partners/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Partners</div></a>
+              <a href="/careers/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Careers</div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <a href="/get-started/" class="btn btn-primary btn-sm desktop-cta" style="display: none;">Get Started</a>
+        <button class="nav-hamburger hamburger" aria-label="Open menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav-mobile-overlay mobile-menu">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-8);">
+      <a href="/"><img src="/logo-light.svg" alt="Stack10" style="width: 120px;" class="logo-light"><img src="/logo-dark.svg" alt="Stack10" style="width: 120px; display: none;" class="logo-dark"></a>
+      <button class="nav-hamburger mobile-close" aria-label="Close menu">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <a href="/platform/" class="nav-mobile-link">Platform</a>
+    <a href="/services/stack-discover/" class="nav-mobile-link">Services</a>
+    <a href="/industries/" class="nav-mobile-link">Industries</a>
+    <a href="/insights/" class="nav-mobile-link">Insights</a>
+    <a href="/customers/" class="nav-mobile-link">Customers</a>
+    <a href="/about/" class="nav-mobile-link">About</a>
+    <a href="/contact/" class="nav-mobile-link">Contact</a>
+    <div style="margin-top: var(--space-8);"><a href="/get-started/" class="btn btn-primary" style="width: 100%;">Get Started</a></div>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" style="background: var(--card-cream);">
+    <div class="section-label">Enterprise AI Transformation</div>
+    <h1 class="hero-title">AI transformation measured in production, not promises.</h1>
+    <p class="hero-subtitle">We help financial services, private equity, and government organisations ship AI into production — with a clear plan, measurable outcomes, and ongoing operational support.</p>
+    <div class="hero-actions">
+      <a href="/get-started/" class="btn btn-primary btn-lg">Get Started <span aria-hidden="true">&nearr;</span></a>
+      <a href="/how-we-work/" class="btn btn-outline btn-lg">See Our Approach &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ========== LOGO BAR ========== -->
+  <div class="logo-bar">
+    <div class="logo-bar-label">Trusted by enterprises across financial services and government</div>
+    <div class="logo-bar-grid">
+      <div class="logo-bar-item" style="height: 28px; width: 100px; background: var(--muted); border-radius: var(--radius-sm);"></div>
+      <div class="logo-bar-item" style="height: 28px; width: 120px; background: var(--muted); border-radius: var(--radius-sm);"></div>
+      <div class="logo-bar-item" style="height: 28px; width: 90px; background: var(--muted); border-radius: var(--radius-sm);"></div>
+      <div class="logo-bar-item" style="height: 28px; width: 110px; background: var(--muted); border-radius: var(--radius-sm);"></div>
+      <div class="logo-bar-item" style="height: 28px; width: 100px; background: var(--muted); border-radius: var(--radius-sm);"></div>
+    </div>
+  </div>
+
+  <!-- ========== STATS ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="stat-bar-dark">
+        <div class="stat-item"><div class="stat-value">87%</div><div class="stat-label">of AI initiatives never reach production</div></div>
+        <div class="stat-item"><div class="stat-value">18mo</div><div class="stat-label">Average pilot to production (industry)</div></div>
+        <div class="stat-item"><div class="stat-value">12wk</div><div class="stat-label">Stack10 average: strategy to production</div></div>
+        <div class="stat-item"><div class="stat-value">73%</div><div class="stat-label">Reduction in processing time (clients)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== THE STACK10 APPROACH ========== -->
+  <section class="section" style="background: var(--card-green);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label" style="color: var(--card-text-muted);">The Stack10 Approach</div>
+        <h2 class="section-title" style="color: var(--card-text);">From discovery to production in weeks, not years.</h2>
+        <p class="section-desc" style="color: var(--card-text-muted);">Five standalone products. Choose what you need — start anywhere.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-step"><div class="timeline-number">1</div><div class="timeline-title" style="color: var(--card-text);">Stack Discover</div><div class="timeline-desc" style="color: var(--card-text-muted);">Find your highest-value AI opportunities in 2 weeks. Structured assessment, ROI-ranked roadmap, executive-ready business cases.</div></div>
+        <div class="timeline-step"><div class="timeline-number">2</div><div class="timeline-title" style="color: var(--card-text);">Stack Audit</div><div class="timeline-desc" style="color: var(--card-text-muted);">Deep-dive into your top AI opportunity. Process mining, working prototype, production-ready roadmap.</div></div>
+        <div class="timeline-step"><div class="timeline-number">3</div><div class="timeline-title" style="color: var(--card-text);">Stack One</div><div class="timeline-desc" style="color: var(--card-text-muted);">Dedicated AI engineering capacity embedded in your org. Output-based delivery of AI projects, continuously.</div></div>
+        <div class="timeline-step"><div class="timeline-number">4</div><div class="timeline-title" style="color: var(--card-text);">Stack Map</div><div class="timeline-desc" style="color: var(--card-text-muted);">Process intelligence quickstart. Rapid process mining focused on implementing a specific tool or solution.</div></div>
+        <div class="timeline-step"><div class="timeline-number">5</div><div class="timeline-title" style="color: var(--card-text);">Stack E2E</div><div class="timeline-desc" style="color: var(--card-text-muted);">End-to-end organisational process map. Complete visibility across every function, every workflow, every handoff.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Everything you need</div>
+        <h2 class="section-title">Two product families. One clear path.</h2>
+      </div>
+
+      <div class="feature-grid feature-grid-2" style="margin-bottom: var(--space-6);">
+        <div class="card card-mint feature-card">
+          <div class="overline" style="color: var(--card-text-muted); margin-bottom: var(--space-4);">AI Roadmap &amp; Engineering</div>
+          <h3 class="feature-title" style="color: var(--card-text);">From "where do we start?" to production AI.</h3>
+          <p class="feature-desc" style="color: var(--card-text-muted);">Our AI products take you from opportunity identification to production systems.</p>
+          <ul style="margin-top: var(--space-4); list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); color: var(--card-text-muted); font-size: var(--text-caption);">
+            <li>&#10003; Map your AI landscape, rank by ROI</li>
+            <li>&#10003; Validate with process mining + working prototype</li>
+            <li>&#10003; Ship continuously with embedded AI engineers</li>
+          </ul>
+        </div>
+        <div class="card card-lavender feature-card">
+          <div class="overline" style="color: var(--card-text-muted); margin-bottom: var(--space-4);">Process Intelligence</div>
+          <h3 class="feature-title" style="color: var(--card-text);">See every process. Fix what matters.</h3>
+          <p class="feature-desc" style="color: var(--card-text-muted);">Complete visibility — from a single workflow to your entire organisation.</p>
+          <ul style="margin-top: var(--space-4); list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); color: var(--card-text-muted); font-size: var(--text-caption);">
+            <li>&#10003; Quickstart: mine one process, implement a tool</li>
+            <li>&#10003; Full org: every function, every workflow, every handoff</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature-grid feature-grid-3">
+        <a href="/services/stack-discover/" class="card card-clickable feature-card" style="text-decoration: none; color: inherit;">
+          <h4 class="feature-title">Stack Discover</h4>
+          <p class="feature-desc">AI opportunity assessment, prioritised roadmap with ROI, executive-ready business cases.</p>
+          <div class="caption" style="color: var(--primary-text); margin-top: var(--space-4); font-weight: var(--weight-600);">2 weeks &middot; Fixed price &rarr;</div>
+        </a>
+        <a href="/services/stack-audit/" class="card card-clickable feature-card" style="text-decoration: none; color: inherit;">
+          <h4 class="feature-title">Stack Audit</h4>
+          <p class="feature-desc">Process mining analysis, working AI prototype, production roadmap.</p>
+          <div class="caption" style="color: var(--primary-text); margin-top: var(--space-4); font-weight: var(--weight-600);">4-6 weeks &middot; Fixed price &rarr;</div>
+        </a>
+        <a href="/services/stack-one/" class="card card-clickable feature-card" style="text-decoration: none; color: inherit;">
+          <h4 class="feature-title">Stack One</h4>
+          <p class="feature-desc">Dedicated AI engineering team, output-based delivery, continuous deployment.</p>
+          <div class="caption" style="color: var(--primary-text); margin-top: var(--space-4); font-weight: var(--weight-600);">Ongoing &middot; Per story point &rarr;</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RESULTS + TESTIMONIAL ========== -->
+  <section class="section" style="background: var(--muted);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Real outcomes</div>
+        <h2 class="section-title">Real results from real operations.</h2>
+      </div>
+      <div class="results-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-10); align-items: center;">
+        <div style="display: flex; flex-direction: column; gap: var(--space-8);">
+          <div><div class="stat-value" style="font-size: 3rem;">73%</div><div class="stat-label">Reduction in manual processing time</div></div>
+          <div><div class="stat-value" style="font-size: 3rem;">12wk</div><div class="stat-label">Average time to production</div></div>
+          <div><div class="stat-value" style="font-size: 3rem;">$2.1M</div><div class="stat-label">Client efficiency gains (annual)</div></div>
+        </div>
+        <div>
+          <div class="testimonial">
+            <p class="testimonial-quote">"Stack10 turned our AI strategy from a PowerPoint into a production system in under 3 months."</p>
+            <div class="testimonial-author">Senior Executive</div>
+            <div class="testimonial-role">Enterprise Financial Services Client</div>
+          </div>
+          <div style="margin-top: var(--space-6);"><a href="/customers/financial-services-transformation/" class="btn btn-link">Read the full story &rarr;</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DIFFERENTIATORS ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Built differently</div>
+        <h2 class="section-title">Every engagement ends with working software in production.</h2>
+        <p class="section-desc">Zero slide decks. Zero theoretical frameworks. Real systems, real outcomes, real accountability.</p>
+      </div>
+      <div class="feature-grid feature-grid-3">
+        <div class="card card-sand feature-card"><h4 class="feature-title" style="color: var(--card-text);">Built for regulated industries</h4><p class="feature-desc" style="color: var(--card-text-muted);">Financial services, government, private equity, healthcare — we understand compliance, governance, and the stakes of getting it wrong.</p></div>
+        <div class="card card-peach feature-card"><h4 class="feature-title" style="color: var(--card-text);">Output-based, not time-based</h4><p class="feature-desc" style="color: var(--card-text-muted);">You pay for outcomes delivered, not hours billed. No bench warmers, no time-and-materials surprises.</p></div>
+        <div class="card card-cream feature-card"><h4 class="feature-title" style="color: var(--card-text);">Weeks, not months</h4><p class="feature-desc" style="color: var(--card-text-muted);">We deliver production systems in the time it takes traditional consultants to schedule a workshop.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INDUSTRIES ========== -->
+  <section class="section" style="background: var(--muted);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Industries</div>
+        <h2 class="section-title">Deep expertise where it matters.</h2>
+      </div>
+      <div class="feature-grid feature-grid-4">
+        <a href="/industries/financial-services/" class="card card-clickable feature-card" style="text-decoration: none; color: inherit;"><h4 class="feature-title">Financial Services</h4><p class="feature-desc">Risk, compliance, operations</p></a>
+        <a href="/industries/government/" class="card card-clickable feature-card" style="text-decoration: none; color: inherit;"><h4 class="feature-title">Government</h4><p class="feature-desc">Sovereign, secure, Australian-built</p></a>
+        <a href="/industries/healthcare/" class="card card-clickable feature-card" style="text-decoration: none; color: inherit;"><h4 class="feature-title">Healthcare</h4><p class="feature-desc">Hospitals, insurers, aged care</p></a>
+        <a href="/industries/manufacturing/" class="card card-clickable feature-card" style="text-decoration: none; color: inherit;"><h4 class="feature-title">Manufacturing</h4><p class="feature-desc">SAP, predictive, Industry 4.0</p></a>
+        <a href="/industries/professional-services/" class="card card-clickable feature-card" style="text-decoration: none; color: inherit;"><h4 class="feature-title">Professional Services</h4><p class="feature-desc">Law, accounting, consulting</p></a>
+        <a href="/industries/retail/" class="card card-clickable feature-card" style="text-decoration: none; color: inherit;"><h4 class="feature-title">Retail</h4><p class="feature-desc">Omnichannel, supply chain</p></a>
+        <a href="/industries/logistics/" class="card card-clickable feature-card" style="text-decoration: none; color: inherit;"><h4 class="feature-title">Logistics</h4><p class="feature-desc">Route, demand, warehouse AI</p></a>
+        <a href="/industries/media-entertainment/" class="card card-clickable feature-card" style="text-decoration: none; color: inherit;"><h4 class="feature-title">Media &amp; Entertainment</h4><p class="feature-desc">Content, audience, production</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TRUST ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header" style="text-align: center;">
+        <div class="section-label">Trust &amp; Compliance</div>
+        <h2 class="section-title" style="margin-left: auto; margin-right: auto;">Enterprise-grade security built into every engagement.</h2>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-item"><div class="trust-label">SOC 2 Type II</div><div class="trust-desc">Audited controls for security, availability, and confidentiality</div></div>
+        <div class="trust-item"><div class="trust-label">ISO 27001</div><div class="trust-desc">Information security management system certification</div></div>
+        <div class="trust-item"><div class="trust-label">Australian Sovereign</div><div class="trust-desc">Data stays in Australia. Team in Perth &amp; Sydney.</div></div>
+        <div class="trust-item"><div class="trust-label">IRAP Assessed</div><div class="trust-desc">Government-grade security for sensitive workloads</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section">
+    <h2 class="cta-title">Ready to move AI from pilot to production?</h2>
+    <p class="cta-desc">Book a free discovery call. We'll assess your AI readiness and identify your highest-value opportunities.</p>
+    <div class="cta-actions">
+      <a href="/get-started/" class="btn btn-primary btn-lg">Get Started <span aria-hidden="true">&nearr;</span></a>
+      <a href="mailto:hello@stack10.ai" class="btn btn-outline btn-lg" style="border-color: var(--gray-700); color: var(--gray-200);">Email Us</a>
+    </div>
+    <p class="caption" style="color: var(--gray-600); margin-top: var(--space-6);">Or email us at hello@stack10.ai</p>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/logo-dark.svg" alt="Stack10" style="width: 100px;">
+        <p class="footer-brand-desc">Enterprise AI at every layer. We deliver AI transformation measured in production, not promises.</p>
+        <p class="caption" style="color: var(--gray-600);">Built in Perth &amp; Sydney, Australia</p>
+      </div>
+      <div><div class="footer-heading">Platform</div><div class="footer-links"><a href="/platform/" class="footer-link">Overview</a><a href="/ai-transformation/" class="footer-link">AI Transformation</a><a href="/how-we-work/" class="footer-link">How We Work</a><a href="/trust/" class="footer-link">Trust Center</a></div></div>
+      <div><div class="footer-heading">Services</div><div class="footer-links"><a href="/services/stack-discover/" class="footer-link">Stack Discover</a><a href="/services/stack-audit/" class="footer-link">Stack Audit</a><a href="/services/stack-one/" class="footer-link">Stack One</a><a href="/services/stack-map/" class="footer-link">Stack Map</a><a href="/services/stack-e2e/" class="footer-link">Stack E2E</a></div></div>
+      <div><div class="footer-heading">Resources</div><div class="footer-links"><a href="/insights/" class="footer-link">Insights</a><a href="/customers/" class="footer-link">Customer Stories</a><a href="/blog/" class="footer-link">Blog</a><a href="/industries/" class="footer-link">Industries</a></div></div>
+      <div><div class="footer-heading">Company</div><div class="footer-links"><a href="/about/" class="footer-link">About</a><a href="/partners/" class="footer-link">Partners</a><a href="/careers/" class="footer-link">Careers</a><a href="/contact/" class="footer-link">Contact</a></div></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copyright">&copy; 2026 Stack10 Pty Ltd. All rights reserved. ABN 12 345 678 901</div>
+      <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    // Force light mode
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.remove('dark');
+
+    // Announcement dismiss
+    document.querySelector('.banner-close')?.addEventListener('click', () => { document.getElementById('announcement-banner')?.remove(); });
+
+    // Mobile menu
+    document.querySelector('.hamburger')?.addEventListener('click', () => { document.querySelector('.mobile-menu')?.classList.add('open'); });
+    document.querySelector('.mobile-close')?.addEventListener('click', () => { document.querySelector('.mobile-menu')?.classList.remove('open'); });
+    document.querySelectorAll('.mobile-menu a').forEach(a => { a.addEventListener('click', () => { document.querySelector('.mobile-menu')?.classList.remove('open'); }); });
+
+    // Nav scroll
+    window.addEventListener('scroll', () => { const n = document.querySelector('.nav-header'); window.scrollY > 10 ? n?.classList.add('scrolled') : n?.classList.remove('scrolled'); });
+
+    // Fade-up on scroll
+    const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animate-fade-up'); obs.unobserve(e.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.section-header, .feature-card, .stat-item, .testimonial, .trust-item, .timeline-step').forEach(el => obs.observe(el));
+
+    // Light mode only — show light logos
+    document.querySelectorAll('.logo-dark').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.logo-light').forEach(el => el.style.display = 'block');
+  </script>
+
+  <!-- PostHog -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_placeholder',{api_host:'https://us.i.posthog.com', person_profiles: 'identified_only'});
+  </script>
+</body>
+</html>

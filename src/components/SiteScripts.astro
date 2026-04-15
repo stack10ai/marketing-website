@@ -1,0 +1,100 @@
+---
+/**
+ * Site-wide scripts: theme, mobile menu, nav scroll, scroll animations, PostHog.
+ * Drop this at the bottom of BaseLayout, before </body>.
+ */
+---
+
+<!-- Theme — runs immediately, before paint -->
+<script is:inline>
+  document.documentElement.setAttribute('data-theme', 'light');
+  document.documentElement.classList.remove('dark');
+</script>
+
+<!-- Everything else — waits for DOM -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // Announcement dismiss
+    document.querySelector('.banner-close')?.addEventListener('click', () => {
+      document.getElementById('announcement-banner')?.remove();
+    });
+
+    // Mobile menu
+    document.querySelector('.hamburger')?.addEventListener('click', () => {
+      document.querySelector('.mobile-menu')?.classList.add('open');
+    });
+    document.querySelector('.mobile-close')?.addEventListener('click', () => {
+      document.querySelector('.mobile-menu')?.classList.remove('open');
+    });
+    document.querySelectorAll('.mobile-menu a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.querySelector('.mobile-menu')?.classList.remove('open');
+      });
+    });
+
+    // Nav scroll shadow
+    window.addEventListener('scroll', () => {
+      const n = document.querySelector('.nav-header');
+      window.scrollY > 10 ? n?.classList.add('scrolled') : n?.classList.remove('scrolled');
+    }, { passive: true });
+
+    // Logo visibility
+    document.querySelectorAll('.logo-dark').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.logo-light').forEach(el => el.style.display = 'block');
+
+    // ── Scroll reveal ──────────────────────────────────────────
+    const reveal = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('revealed');
+          reveal.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => reveal.observe(el));
+
+    // ── Staggered children reveal ──────────────────────────────
+    const stagger = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const children = e.target.querySelectorAll('[data-reveal-child]');
+          children.forEach((child, i) => {
+            child.style.transitionDelay = `${i * 150}ms`;
+            child.classList.add('revealed');
+          });
+          stagger.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05 });
+
+    document.querySelectorAll('[data-reveal-stagger]').forEach(el => stagger.observe(el));
+
+    // ── Stack blocks (brand animation) ───────────────────────────
+    const stkClusters = document.querySelectorAll('[data-stk-cluster]');
+    const stkObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('stk-visible');
+          stkObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3, rootMargin: '0px 0px -40px 0px' });
+    stkClusters.forEach(el => stkObs.observe(el));
+
+    // ── Legacy fade-up (for non-homepage pages) ────────────────
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('animate-fade-up');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.section-header, .feature-card, .stat-item, .testimonial, .trust-item, .timeline-step, .fade-target').forEach(el => obs.observe(el));
+
+  });
+</script>
+

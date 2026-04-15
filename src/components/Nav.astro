@@ -1,0 +1,189 @@
+<nav class="nav-header">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a href="/" class="nav-logo">
+      <img src="/logo-light.svg" alt="Stack10" class="logo-light" width="120" height="30">
+      <img src="/logo-dark.svg" alt="Stack10" class="logo-dark" width="120" height="30">
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="desktop-nav">
+
+      <!-- Solutions -->
+      <div class="nav-dropdown-trigger">
+        <button class="nav-link"><span class="nav-link-flip"><span class="nav-link-flip-front">Solutions</span><span class="nav-link-flip-back" aria-hidden="true">Solutions</span></span> <svg class="nav-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+        <div class="nav-dropdown">
+          <div class="nav-dropdown-panel nav-dropdown-panel--lg">
+            <div class="nav-dropdown-grid nav-dropdown-grid-2">
+              <div>
+                <div class="nav-dropdown-category">Products</div>
+                <a href="/services/discover/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Stack Discover</div><div class="nav-dropdown-item-desc">AI opportunity discovery</div></a>
+                <a href="/services/build/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Stack Build</div><div class="nav-dropdown-item-desc">Production AI engineering</div></a>
+                <a href="/services/scale/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Stack Scale</div><div class="nav-dropdown-item-desc">AI adoption and enablement</div></a>
+              </div>
+              <div>
+                <div class="nav-dropdown-category">Capabilities</div>
+                <a href="/capabilities/application-development/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Application Development</div><div class="nav-dropdown-item-desc">AI-powered apps and internal tools</div></a>
+                <a href="/capabilities/data-engineering/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Data Engineering</div><div class="nav-dropdown-item-desc">Pipelines, MLOps, MCP development</div></a>
+                <a href="/capabilities/systems-automation/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Systems Automation</div><div class="nav-dropdown-item-desc">Integrations and agentic workflows</div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Studies -->
+      <a href="/case-studies/smile-partners/" class="nav-link"><span class="nav-link-flip"><span class="nav-link-flip-front">Case Studies</span><span class="nav-link-flip-back" aria-hidden="true">Case Studies</span></span></a>
+
+      <!-- FAQ -->
+      <a href="/#faq" class="nav-link"><span class="nav-link-flip"><span class="nav-link-flip-front">FAQ</span><span class="nav-link-flip-back" aria-hidden="true">FAQ</span></span></a>
+
+      <!-- Contact -->
+      <a href="/contact/" class="nav-link"><span class="nav-link-flip"><span class="nav-link-flip-front">Contact</span><span class="nav-link-flip-back" aria-hidden="true">Contact</span></span></a>
+
+    </div>
+
+    <!-- CTA + Hamburger -->
+    <div class="nav-actions">
+      <a href="/contact/" class="btn btn-primary btn-sm desktop-cta">Get Started</a>
+      <button class="nav-hamburger hamburger" aria-label="Open menu">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="nav-mobile-overlay mobile-menu">
+  <div class="mobile-menu-header">
+    <a href="/">
+      <img src="/logo-light.svg" alt="Stack10" class="logo-light" width="120" height="30">
+      <img src="/logo-dark.svg" alt="Stack10" class="logo-dark" width="120" height="30">
+    </a>
+    <button class="nav-hamburger mobile-close" aria-label="Close menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+  <div class="nav-mobile-category">Products</div>
+  <a href="/services/discover/" class="nav-mobile-link">Stack Discover</a>
+  <a href="/services/build/" class="nav-mobile-link">Stack Build</a>
+  <a href="/services/scale/" class="nav-mobile-link">Stack Scale</a>
+  <div class="nav-mobile-category">Capabilities</div>
+  <a href="/capabilities/application-development/" class="nav-mobile-link">Application Development</a>
+  <a href="/capabilities/data-engineering/" class="nav-mobile-link">Data Engineering</a>
+  <a href="/capabilities/systems-automation/" class="nav-mobile-link">Systems Automation</a>
+  <a href="/case-studies/smile-partners/" class="nav-mobile-link">Case Studies</a>
+  <a href="/#faq" class="nav-mobile-link">FAQ</a>
+  <a href="/contact/" class="nav-mobile-link">Contact</a>
+  <div class="mobile-menu-cta">
+    <a href="/contact/" class="btn btn-primary mobile-cta-btn">Get Started</a>
+  </div>
+</div>
+
+<style>
+  /* Nav logo */
+  .nav-logo { flex-shrink: 0; }
+
+  /* Desktop nav visibility */
+  .desktop-nav {
+    display: none;
+    align-items: center;
+    gap: var(--space-1);
+  }
+
+  .desktop-cta { display: none; }
+
+  @media (min-width: 1024px) {
+    .desktop-nav { display: flex !important; }
+    .desktop-cta { display: inline-flex !important; }
+    .hamburger { display: none !important; }
+  }
+
+  /* Nav link button reset */
+  .nav-link {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Text flip animation on nav trigger labels */
+  .nav-link-flip {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+
+  .nav-link-flip-front {
+    display: block;
+  }
+
+  .nav-link-flip-back {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* sitting one slot below, curved as if on the underside of a wheel */
+    transform: translateY(100%) perspective(400px) rotateX(-25deg);
+  }
+
+  /* Transition only on hover-in — no reverse animation when mouse leaves */
+  .nav-dropdown-trigger:hover .nav-link-flip-front {
+    /* slides up and curves over the top of the wheel */
+    transform: translateY(-100%) perspective(400px) rotateX(25deg);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-dropdown-trigger:hover .nav-link-flip-back {
+    transform: translateY(0) perspective(400px) rotateX(0deg);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Dropdown panel widths */
+  .nav-dropdown-panel--xs { width: 280px; }
+  .nav-dropdown-panel--sm { width: 320px; }
+  .nav-dropdown-panel--md { width: 480px; }
+  .nav-dropdown-panel--lg { width: 560px; }
+  .nav-dropdown-grid--wide { column-gap: var(--space-10); }
+
+  /* Accent link in dropdown */
+  .nav-dropdown-item-title--accent {
+    color: var(--primary-text);
+  }
+
+  /* Logo visibility — controlled by JS based on theme */
+  .logo-dark { display: none; }
+
+  /* Mobile menu header */
+  .mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-8);
+  }
+
+  /* Mobile category labels */
+  .nav-mobile-category {
+    font-family: var(--font-mono);
+    font-size: var(--size-xs);
+    font-weight: var(--weight-700);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    padding: var(--space-4) 0 var(--space-2);
+  }
+
+  /* Mobile CTA */
+  .mobile-menu-cta {
+    margin-top: var(--space-8);
+  }
+
+  .mobile-cta-btn {
+    width: 100%;
+  }
+</style>

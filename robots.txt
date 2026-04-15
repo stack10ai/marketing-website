@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /
-
-# Staging environment — block all indexing

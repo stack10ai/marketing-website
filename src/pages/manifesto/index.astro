@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Manifesto — Stack10"
+  description="We replaced the era of advisory with execution and validation. This is what we believe, and why it changes everything."
+  canonicalUrl="https://stack10.ai/manifesto/"
+>
+
+  <!-- ── HERO ──────────────────────────────────────────────────── -->
+  <section class="m-hero">
+    <div class="container">
+      <h1 class="m-hero-title">Manifesto</h1>
+    </div>
+  </section>
+
+  <!-- ── DOCUMENT ──────────────────────────────────────────────── -->
+  <div class="container m-doc">
+
+    <div class="m-body" data-reveal>
+
+      <p class="m-opening">The End of Traditional Consulting.</p>
+
+      <p class="m-tagline">In 1926, McKinsey invented traditional management consulting.<br>In 2025, Stack10 is reinventing it.</p>
+
+      <p>Legacy consulting firms have monetised complexity. For too long, they have sold theoretical roadmaps, static 200-page decks, and multi-year "Digital Transformations" designed to maximise <strong>billable hours, not business value</strong>. The result? Billions of dollars spent on strategy, yet recommended initiatives fail to be implemented because they are disconnected from operational and technical reality. Worse still: when AI solutions are built on broken processes, they simply <strong>automate dysfunction at scale</strong>.</p>
+
+      <p>We founded Stack10 to replace the era of Advisory with <strong>Execution and Validation</strong>. In the age of AI, transformation must be measured in <strong>working code deployed on optimised processes</strong> — not slides presented.</p>
+
+      <p>We run structured programmes — scoped at <strong>30, 60, or 90 days</strong> depending on depth — that surface high-impact AI use cases, build them on solid process foundations, and measure outcomes at every checkpoint. Three services, one accountability framework: <strong>Stack Discover</strong>, <strong>Stack Build</strong>, and <strong>Stack Scale</strong>.</p>
+
+      <h2 class="m-heading">How We Work</h2>
+
+      <h3 class="m-subheading">Stage 1 — Identify the Opportunity</h3>
+      <p>We conduct a deep analysis of your operations to map your business processes and uncover hidden inefficiencies that drive immediate commercial impact. We deploy <strong>process mining</strong> to reveal how work actually flows through your systems today — not how you think it flows, but what the data proves is happening. This eliminates guesswork and ensures AI solutions are built on <strong>process reality, not assumptions</strong>.</p>
+      <p class="m-deliverable"><strong>Deliverable:</strong> AI opportunity register mapped to data-proven process inefficiencies, with ROI projections grounded in actual operational behaviour.</p>
+
+      <h3 class="m-subheading">Stage 2 — Architect the Solution</h3>
+      <p>We architect strict, ROI-based AI solutions tailored directly to the opportunities identified in Stage 1. We convert findings into a <strong>precise engineering roadmap and backlog</strong> ready for execution — with clear success metrics tied to process improvements.</p>
+      <p class="m-deliverable"><strong>Deliverable:</strong> Technical architecture, solution design, and development backlog with clear success metrics tied to process improvements.</p>
+
+      <h3 class="m-subheading">Stage 3 — Execute the Roadmap</h3>
+      <p>We turn your AI strategy and roadmap into reality. We drive the execution, handling the full transformation across your people, processes, and technology. <strong>Every sprint closes with deployed software</strong> — not a strategy document, not a roadmap update. Working AI in production, integrated with your existing systems.</p>
+      <p class="m-deliverable"><strong>Deliverable:</strong> Working AI solutions deployed in production, integrated with your existing systems, and adopted by your teams.</p>
+
+      <h3 class="m-subheading">Stage 4 — Validate &amp; Measure</h3>
+      <p>Most AI transformations fail not at implementation, but at <strong>adoption and realisation</strong>. Organisations deploy AI solutions that either don't get used, get worked around, or create unintended consequences elsewhere in the process chain. We deploy process mining to track adoption, measure actual time savings against promised ROI, identify new bottlenecks created by the change, and prove whether the AI is delivering the value promised in Stage 1 — using the same methodology that established the baseline.</p>
+      <p class="m-deliverable"><strong>Deliverable:</strong> Live process mining dashboard showing real-time AI performance metrics, adoption rates, and validated ROI — updated continuously, not quarterly.</p>
+
+      <h3 class="m-subheading">Stage 5 — Optimise &amp; Scale</h3>
+      <p>AI performance degrades over time as business conditions change. What worked brilliantly in month one may be sub-optimal by month six. We establish a <strong>continuous process intelligence capability</strong>: ongoing benchmarking against baseline, identification of process deviations that signal where AI needs retraining, and data-driven identification of where successful implementations should be replicated across departments or regions. <strong>AI transformation isn't a project — it's a capability.</strong></p>
+      <p class="m-deliverable"><strong>Deliverable:</strong> Embedded process intelligence capability within your organisation, complete with trained personnel, ongoing monitoring dashboards, and quarterly optimisation recommendations backed by data.</p>
+
+      <h2 class="m-heading">Our Commitment</h2>
+
+      <p>We align our success entirely with yours. Legacy firms profit from long, drawn-out projects. We charge for <strong>output, not hours</strong> — story-point pricing on Build, fixed scopes on Discover and Scale. We reject the model where a Partner sells the project and a junior implements it. And we measure success by AI solutions running in your business, adopted by your team, and delivering <strong>ROI validated at 30, 60, and 90 days</strong>. Not promised impact — <strong>proven impact</strong>.</p>
+
+      <p>The firms billing you for strategy are not invested in your outcome. They are invested in the next engagement. We built Stack10 because enterprises deserve partners who <strong>write code, not reports</strong> — who measure ROI in production systems, not PowerPoint slides. That is the only version of AI transformation we know how to deliver.</p>
+
+    </div>
+
+    <div class="m-cta" data-reveal>
+      <p class="m-closing-question">Ready to see what this looks like in practice?</p>
+      <div class="m-closing-actions">
+        <a href="/services/discover/" class="btn btn-primary btn-lg">Start with Stack Discover</a>
+        <a href="/contact/" class="btn btn-outline btn-lg">Get in touch</a>
+      </div>
+    </div>
+
+  </div>
+
+</BaseLayout>
+
+<style>
+  /* ── Hero ────────────────────────────────────────────────────── */
+  .m-hero {
+    background: var(--gray-1000);
+    color: var(--gray-0);
+    padding: var(--space-20) 0 var(--space-16);
+    border-bottom: 1px solid var(--gray-800);
+  }
+
+  .m-hero-title {
+    font-size: var(--size-5xl);
+    font-weight: var(--weight-800);
+    line-height: 1.1;
+    color: var(--gray-0);
+    margin: 0;
+  }
+
+  /* ── Document ────────────────────────────────────────────────── */
+  .m-doc {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+    max-width: 52rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .m-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    margin-bottom: var(--space-16);
+  }
+
+  .m-opening {
+    font-size: var(--size-3xl);
+    font-weight: var(--weight-800);
+    color: var(--foreground);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  .m-tagline {
+    font-size: var(--size-lg);
+    font-weight: var(--weight-500);
+    color: var(--muted-foreground);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .m-body p {
+    font-size: var(--size-base);
+    color: var(--muted-foreground);
+    line-height: 1.85;
+    margin: 0;
+  }
+
+  .m-body p strong {
+    color: var(--foreground);
+    font-weight: var(--weight-600);
+  }
+
+  .m-heading {
+    font-size: var(--size-xl);
+    font-weight: var(--weight-700);
+    color: var(--foreground);
+    line-height: 1.3;
+    margin: var(--space-6) 0 0;
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--border);
+  }
+
+  .m-subheading {
+    font-size: var(--size-base);
+    font-weight: var(--weight-700);
+    color: var(--foreground);
+    line-height: 1.4;
+    margin: var(--space-2) 0 0;
+  }
+
+  .m-deliverable {
+    font-size: var(--size-sm);
+    color: var(--muted-foreground);
+    line-height: 1.7;
+    margin: 0;
+    padding-left: var(--space-4);
+    border-left: 2px solid var(--border);
+  }
+
+  .m-deliverable strong {
+    color: var(--foreground);
+    font-weight: var(--weight-600);
+  }
+
+  /* ── Closing ─────────────────────────────────────────────────── */
+  .m-cta {
+    border-top: 1px solid var(--border);
+    padding-top: var(--space-12);
+  }
+
+  .m-closing-question {
+    font-size: var(--size-2xl);
+    font-weight: var(--weight-700);
+    color: var(--foreground);
+    line-height: 1.3;
+    margin: 0 0 var(--space-8);
+  }
+
+  .m-closing-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  /* ── Responsive ──────────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .m-hero {
+      padding: var(--space-16) 0 var(--space-12);
+    }
+
+    .m-hero-title {
+      font-size: var(--size-3xl);
+    }
+
+    .m-opening {
+      font-size: var(--size-2xl);
+    }
+
+    .m-closing-question {
+      font-size: var(--size-xl);
+    }
+  }
+</style>

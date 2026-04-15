@@ -1,0 +1,927 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact — Stack10"
+  description="Talk to Stack10 about your AI transformation. No sales pitch, no retainer pressure — just a direct conversation about what's possible."
+  canonicalUrl="https://stack10.ai/contact/"
+>
+
+  <!-- ── MAIN CONTENT ─────────────────────────────────────────── -->
+  <section class="section contact-body">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT: CONTEXT ────────────────────────────────────────────── -->
+        <aside class="contact-context-col" data-reveal>
+
+          <span class="eyebrow contact-eyebrow">Get in touch</span>
+          <h1 class="h1 contact-h1">Ready to build?</h1>
+          <p class="p1 contact-sub">
+            Stay relevant. Get yourself on the cutting edge of AI.
+          </p>
+
+          <!-- Value props -->
+          <div class="context-block">
+            <ul class="expect-list">
+              <li class="expect-item">
+                <span class="expect-check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <span class="p2">Learn how top enterprises are building and executing their AI strategy.</span>
+              </li>
+              <li class="expect-item">
+                <span class="expect-check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <span class="p2">Get access to top technical talent.</span>
+              </li>
+              <li class="expect-item">
+                <span class="expect-check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <span class="p2">Partner with us to achieve your business goals.</span>
+              </li>
+            </ul>
+          </div>
+
+
+        </aside><!-- /contact-context-col -->
+
+        <!-- RIGHT: FORM ──────────────────────────────────────────────── -->
+        <div class="contact-form-col" data-reveal>
+
+          <!-- Form state: default -->
+          <form
+            id="contact-form"
+            class="contact-form"
+            method="POST"
+            action="/api/contact"
+            novalidate
+          >
+
+            <!-- Name -->
+            <div class="form-field">
+              <label class="label" for="cf-name">Name <span class="required-mark" aria-hidden="true">*</span></label>
+              <input
+                class="input"
+                type="text"
+                id="cf-name"
+                name="name"
+                autocomplete="name"
+                required
+                placeholder="Alex Chen"
+              />
+              <p class="help-text contact-field-error" id="cf-name-error" role="alert"></p>
+            </div>
+
+            <!-- Email -->
+            <div class="form-field">
+              <label class="label" for="cf-email">Email <span class="required-mark" aria-hidden="true">*</span></label>
+              <input
+                class="input"
+                type="email"
+                id="cf-email"
+                name="email"
+                autocomplete="email"
+                required
+                placeholder="alex@acmecorp.com"
+              />
+              <p class="help-text contact-field-error" id="cf-email-error" role="alert"></p>
+            </div>
+
+            <!-- Phone -->
+            <div class="form-field">
+              <label class="label" for="cf-phone">Phone</label>
+              <input
+                class="input"
+                type="tel"
+                id="cf-phone"
+                name="phone"
+                autocomplete="tel"
+                placeholder="+61 400 000 000"
+              />
+              <p class="help-text contact-field-error" id="cf-phone-error" role="alert"></p>
+            </div>
+
+            <!-- Company -->
+            <div class="form-field">
+              <label class="label" for="cf-company">Company <span class="required-mark" aria-hidden="true">*</span></label>
+              <input
+                class="input"
+                type="text"
+                id="cf-company"
+                name="company"
+                autocomplete="organization"
+                required
+                placeholder="Acme Corp"
+              />
+              <p class="help-text contact-field-error" id="cf-company-error" role="alert"></p>
+            </div>
+
+            <!-- Role -->
+            <div class="form-field">
+              <label class="label" for="cf-role">Role / Title</label>
+              <input
+                class="input"
+                type="text"
+                id="cf-role"
+                name="role"
+                autocomplete="organization-title"
+                placeholder="CTO"
+              />
+              <p class="help-text contact-field-error" id="cf-role-error" role="alert"></p>
+            </div>
+
+            <!-- Annual Revenue -->
+            <div class="form-field">
+              <label class="label" for="cf-revenue">Annual Revenue</label>
+              <div class="select-wrapper">
+                <select class="input contact-select" id="cf-revenue" name="revenue">
+                  <option value="">Select range</option>
+                  <option value="under-50m">Under $50M</option>
+                  <option value="50m-150m">$50M – $150M</option>
+                  <option value="150m-500m">$150M – $500M</option>
+                  <option value="500m-plus">$500M+</option>
+                  <option value="prefer-not">Prefer not to say</option>
+                </select>
+                <svg class="select-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <p class="help-text contact-field-error" id="cf-revenue-error" role="alert"></p>
+            </div>
+
+            <!-- Services -->
+            <div class="form-field">
+              <label class="label">Which services are you interested in? <span class="required-mark" aria-hidden="true">*</span></label>
+              <div class="service-btns" role="group" aria-label="Select services">
+                <button type="button" class="service-btn" data-value="stack-discover">Stack Discover</button>
+                <button type="button" class="service-btn" data-value="stack-build">Stack Build</button>
+                <button type="button" class="service-btn" data-value="stack-scale">Stack Scale</button>
+              </div>
+              <input type="hidden" id="cf-intent" name="intent" />
+              <p class="help-text contact-field-error" id="cf-intent-error" role="alert"></p>
+            </div>
+
+            <!-- Message -->
+            <div class="form-field">
+              <label class="label" for="cf-message">Describe how we can support your business? <span class="required-mark" aria-hidden="true">*</span></label>
+              <textarea
+                class="input contact-textarea"
+                id="cf-message"
+                name="message"
+                rows="5"
+                required
+                placeholder="Tell us about the problem, what you've tried, and where you're stuck."
+              ></textarea>
+              <p class="help-text contact-field-error" id="cf-message-error" role="alert"></p>
+            </div>
+
+            <!-- How did you hear about us? -->
+            <div class="form-field">
+              <label class="label" for="cf-source">How did you hear about us?</label>
+              <div class="select-wrapper">
+                <select class="input contact-select" id="cf-source" name="source">
+                  <option value="">Select an option</option>
+                  <option value="google">Google search</option>
+                  <option value="linkedin">LinkedIn</option>
+                  <option value="word-of-mouth">Word of mouth</option>
+                  <option value="conference">Conference or event</option>
+                  <option value="case-study">Case study</option>
+                  <option value="other">Other</option>
+                </select>
+                <svg class="select-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <p class="help-text contact-field-error" id="cf-source-error" role="alert"></p>
+            </div>
+
+            <!-- Honeypot: hidden from humans, bots fill it — submission silently dropped server-side -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="cf-website">Website</label>
+              <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg contact-submit">
+              Submit
+            </button>
+
+          </form>
+
+          <!-- Form state: success -->
+          <div id="contact-success" class="contact-success" hidden>
+            <div class="success-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="h4 success-heading">We've got it.</h3>
+            <p class="p2 success-body">
+              We'll be in touch within one business day.
+            </p>
+          </div>
+
+        </div><!-- /contact-form-col -->
+
+      </div><!-- /contact-grid -->
+    </div>
+  </section>
+
+  <!-- ── SEPARATOR ────────────────────────────────────────────── -->
+  <div class="container">
+    <div class="gradient-line" aria-hidden="true"></div>
+  </div>
+
+  <!-- ── NOT READY YET ────────────────────────────────────────── -->
+  <section class="section contact-alt" data-reveal>
+    <div class="container">
+      <h2 class="h4 contact-alt-heading">Want to see the work first?</h2>
+      <div class="contact-alt-cards">
+
+        <a href="/case-studies/smile-partners/" class="card card-clickable contact-alt-card">
+          <div class="contact-alt-card-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="h5 contact-alt-card-title">See what shipped</h3>
+            <p class="p2 contact-alt-card-desc">Four AI systems. $111M healthcare group. Twelve weeks from first contact to production.</p>
+          </div>
+          <svg class="contact-alt-card-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 17L17 7"/><path d="M7 7h10v10"/>
+          </svg>
+        </a>
+
+        <a href="/#solutions" class="card card-clickable contact-alt-card">
+          <div class="contact-alt-card-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+              <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="h5 contact-alt-card-title">See how we engage</h3>
+            <p class="p2 contact-alt-card-desc">Fixed scope. Fixed price. Three ways to start — from a 2-week discovery to a dedicated AI squad.</p>
+          </div>
+          <svg class="contact-alt-card-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 17L17 7"/><path d="M7 7h10v10"/>
+          </svg>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+
+<!-- ── CLIENT-SIDE FORM STATE ──────────────────────────────── -->
+<script is:inline>
+  (function () {
+    var form = document.getElementById('contact-form');
+    var success = document.getElementById('contact-success');
+    if (!form || !success) return;
+
+    var errorEls = {
+      name:    document.getElementById('cf-name-error'),
+      company: document.getElementById('cf-company-error'),
+      role:    document.getElementById('cf-role-error'),
+      email:   document.getElementById('cf-email-error'),
+      phone:   document.getElementById('cf-phone-error'),
+      revenue: document.getElementById('cf-revenue-error'),
+      intent:  document.getElementById('cf-intent-error'),
+      message: document.getElementById('cf-message-error'),
+      source:  document.getElementById('cf-source-error'),
+    };
+
+    function clearErrors() {
+      Object.keys(errorEls).forEach(function (k) {
+        var el = errorEls[k];
+        if (el) el.textContent = '';
+      });
+      form.querySelectorAll('.input').forEach(function (f) {
+        f.classList.remove('input-error');
+      });
+      var serviceBtnsEl = form.querySelector('.service-btns');
+      if (serviceBtnsEl) serviceBtnsEl.classList.remove('service-btns-error');
+    }
+
+    function setFieldError(field, msg) {
+      var el = errorEls[field];
+      if (el) el.textContent = msg;
+      if (field === 'intent') {
+        var serviceBtnsEl = form.querySelector('.service-btns');
+        if (serviceBtnsEl) serviceBtnsEl.classList.add('service-btns-error');
+      } else {
+        var input = form.querySelector('[name="' + field + '"]');
+        if (input) input.classList.add('input-error');
+      }
+    }
+
+    function showErrors(fieldErrors) {
+      Object.keys(fieldErrors).forEach(function (field) {
+        var val = fieldErrors[field];
+        var msg = Array.isArray(val) ? val[0] : val;
+        if (msg) setFieldError(field, msg);
+      });
+    }
+
+    function validateClient(data) {
+      var errors = {};
+      if (!data.name || !data.name.trim())
+        errors.name = 'Name is required';
+      if (!data.company || !data.company.trim())
+        errors.company = 'Company is required';
+      if (!data.email || !data.email.trim()) {
+        errors.email = 'Email is required';
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) {
+        errors.email = 'Please enter a valid email address';
+      }
+      if (!data.intent)
+        errors.intent = 'Please select what you are looking for';
+      if (!data.message || data.message.trim().length < 10)
+        errors.message = 'Please tell us a bit more (at least 10 characters)';
+      if (data.phone && data.phone.trim() && !/^[+\d\s\-().]+$/.test(data.phone.trim()))
+        errors.phone = 'Please enter a valid phone number';
+      return errors;
+    }
+
+    function showSuccess() {
+      // Pin the card to its current rendered height so flex centering works
+      var col = form.closest('.contact-form-col');
+      if (col) col.style.height = col.offsetHeight + 'px';
+
+      form.style.opacity = '0';
+      form.style.transition = 'opacity 0.2s ease';
+      setTimeout(function () {
+        form.hidden = true;
+        success.hidden = false;
+        success.style.opacity = '0';
+        success.style.transition = 'opacity 0.3s ease';
+        requestAnimationFrame(function () {
+          success.style.opacity = '1';
+          var col = success.closest('.contact-form-col');
+          (col || success).scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      }, 200);
+    }
+
+    // ── Service button toggles ────────────────────────────────────
+    var serviceBtns = form.querySelectorAll('.service-btn');
+    var intentInput = document.getElementById('cf-intent');
+
+    serviceBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        btn.classList.toggle('service-btn-selected');
+        var selected = Array.from(serviceBtns)
+          .filter(function (b) { return b.classList.contains('service-btn-selected'); })
+          .map(function (b) { return b.dataset.value; })
+          .join(',');
+        intentInput.value = selected;
+        // Clear error as soon as one is selected
+        var serviceBtnsEl = form.querySelector('.service-btns');
+        if (serviceBtnsEl) serviceBtnsEl.classList.remove('service-btns-error');
+        var el = errorEls['intent'];
+        if (el) el.textContent = '';
+      });
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      clearErrors();
+
+      var data = Object.fromEntries(new FormData(form));
+
+      // ── Client-side validation ────────────────────────────────
+      var clientErrors = validateClient(data);
+      if (Object.keys(clientErrors).length > 0) {
+        showErrors(clientErrors);
+        var firstField = Object.keys(clientErrors)[0];
+        var firstInput = form.querySelector('[name="' + firstField + '"]');
+        if (firstInput) firstInput.focus();
+        return;
+      }
+
+      // ── Submit to API ─────────────────────────────────────────
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending\u2026';
+      }
+
+      var controller = new AbortController();
+      var timer = setTimeout(function () { controller.abort(); }, 12000);
+
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+        signal: controller.signal,
+      })
+        .then(function (res) {
+          clearTimeout(timer);
+          if (res.ok) { showSuccess(); return; }
+          if (res.status === 422) {
+            return res.json().then(function (body) {
+              if (body.fields) showErrors(body.fields);
+            });
+          }
+          if (res.status === 429) {
+            alert('Too many requests. Please wait a few minutes and try again.');
+            return;
+          }
+          alert('Something went wrong. Please try again or email us directly.');
+        })
+        .catch(function (err) {
+          clearTimeout(timer);
+          alert(err && err.name === 'AbortError'
+            ? 'Request timed out. Please check your connection and try again.'
+            : 'Network error. Please check your connection and try again.');
+        })
+        .finally(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit';
+          }
+        });
+    });
+
+    // Clear individual field error as user types
+    form.querySelectorAll('.input').forEach(function (field) {
+      field.addEventListener('input', function () {
+        field.classList.remove('input-error');
+        var el = errorEls[field.name];
+        if (el) el.textContent = '';
+      });
+    });
+  })();
+</script>
+
+
+<style>
+  /* ── Body ───────────────────────────────────────────────────── */
+
+  .contact-body {
+    padding-top: var(--space-12);
+  }
+
+  /* ── Two-column grid ────────────────────────────────────────── */
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr 1.35fr;
+      gap: var(--space-16);
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .contact-grid {
+      grid-template-columns: 1fr 1.4fr;
+      gap: var(--space-20);
+    }
+  }
+
+  /* ── Scroll reveal ──────────────────────────────────────────── */
+
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out);
+  }
+
+  [data-reveal].revealed {
+    opacity: 1;
+    transform: none;
+  }
+
+  .contact-form-col[data-reveal] {
+    transition-delay: 120ms;
+  }
+
+  /* ── Left context column ────────────────────────────────────── */
+
+  .contact-context-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    position: sticky;
+    top: calc(var(--nav-height, 4rem) + var(--space-8));
+  }
+
+  /* Un-stick on mobile */
+  @media (max-width: 767px) {
+    .contact-context-col {
+      position: static;
+    }
+  }
+
+  .contact-eyebrow {
+    display: inline-block;
+    color: var(--primary-text);
+    letter-spacing: 0.12em;
+  }
+
+  .contact-h1 {
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  .contact-sub {
+    color: var(--muted-foreground);
+    margin: 0;
+    max-width: 44ch;
+  }
+
+  /* ── What to expect ─────────────────────────────────────────── */
+
+  .context-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .context-heading {
+    margin: 0;
+    color: var(--foreground);
+  }
+
+  .expect-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .expect-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .expect-check {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: var(--radius-full);
+    background: var(--primary);
+    color: var(--primary-foreground);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.15em;
+  }
+
+  .expect-item .p2 {
+    margin: 0;
+    color: var(--muted-foreground);
+    line-height: 1.55;
+  }
+
+  /* ── Location ───────────────────────────────────────────────── */
+
+  .contact-location {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--muted-foreground);
+    margin: 0;
+  }
+
+  /* ── Testimonial card ───────────────────────────────────────── */
+
+  .context-quote-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin: 0;
+    border-left: 3px solid var(--primary);
+    border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+  }
+
+  .context-quote-text {
+    font-size: var(--size-base);
+    font-weight: var(--weight-500);
+    color: var(--foreground);
+    line-height: 1.65;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .context-quote-attribution {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .context-quote-role {
+    font-size: var(--size-sm);
+    font-weight: var(--weight-600);
+    color: var(--foreground);
+  }
+
+  .context-quote-org {
+    font-size: var(--size-sm);
+    color: var(--muted-foreground);
+  }
+
+  /* ── Form column ────────────────────────────────────────────── */
+
+  .contact-form-col {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: 640px) {
+    .contact-form-col {
+      padding: var(--space-10);
+    }
+  }
+
+  /* ── Form ───────────────────────────────────────────────────── */
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  @media (min-width: 480px) {
+    .form-row-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .required-mark {
+    color: var(--destructive);
+    margin-left: 2px;
+  }
+
+  .contact-field-error {
+    color: var(--destructive);
+    min-height: 0;
+    margin: 0;
+  }
+
+  .contact-field-error:empty {
+    display: none;
+  }
+
+  .contact-textarea {
+    resize: vertical;
+    min-height: 8rem;
+    line-height: 1.6;
+  }
+
+  /* ── Service buttons ────────────────────────────────────────── */
+
+  .service-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .service-btns-error .service-btn {
+    border-color: var(--destructive);
+  }
+
+  .service-btn {
+    padding: var(--space-2) var(--space-5);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--foreground);
+    font-size: var(--size-sm);
+    font-weight: var(--weight-500);
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color var(--dur-200) var(--ease-out),
+                background var(--dur-200) var(--ease-out),
+                color var(--dur-200) var(--ease-out);
+  }
+
+  .service-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary-text);
+  }
+
+  .service-btn-selected {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  .service-btn-selected:hover {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: var(--primary-foreground);
+  }
+
+  /* Select wrapper */
+  .select-wrapper {
+    position: relative;
+  }
+
+  .contact-select {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    cursor: pointer;
+    padding-right: var(--space-10);
+  }
+
+  .select-chevron {
+    position: absolute;
+    right: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--muted-foreground);
+  }
+
+  /* Honeypot — visually hidden, not in tab order */
+  .hp-field {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .contact-submit {
+    width: 100%;
+    justify-content: center;
+    margin-top: var(--space-2);
+  }
+
+  /* ── Success state ──────────────────────────────────────────── */
+
+  .contact-success {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: var(--space-4);
+    padding: var(--space-10) var(--space-8);
+    min-height: 320px;
+  }
+
+  /* Ensure HTML hidden attribute is respected even with display:flex/grid above */
+  .contact-form[hidden],
+  .contact-success[hidden] {
+    display: none;
+  }
+
+  .success-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-full);
+    background: var(--primary);
+    color: var(--primary-foreground);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .success-heading {
+    margin: 0;
+  }
+
+  .success-body {
+    color: var(--muted-foreground);
+    margin: 0;
+  }
+
+  .success-link {
+    color: var(--primary-text);
+    text-underline-offset: 3px;
+  }
+
+  .success-link:hover {
+    color: var(--primary);
+  }
+
+  /* ── Separator ──────────────────────────────────────────────── */
+
+  .gradient-line {
+    margin: var(--space-4) 0;
+  }
+
+  /* ── "Not ready" section ────────────────────────────────────── */
+
+  .contact-alt {
+    padding-top: var(--space-10);
+  }
+
+  .contact-alt-heading {
+    margin-bottom: var(--space-8);
+    color: var(--foreground);
+  }
+
+  .contact-alt-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  @media (min-width: 640px) {
+    .contact-alt-cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .contact-alt-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+  }
+
+  .contact-alt-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-lg);
+    background: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-foreground);
+    flex-shrink: 0;
+    transition: background var(--duration-normal) var(--ease-out);
+  }
+
+  .contact-alt-card:hover .contact-alt-card-icon {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  .contact-alt-card-title {
+    margin: 0 0 var(--space-1);
+    color: var(--foreground);
+  }
+
+  .contact-alt-card-desc {
+    margin: 0;
+    color: var(--muted-foreground);
+  }
+
+  .contact-alt-card-arrow {
+    position: absolute;
+    top: var(--space-6);
+    right: var(--space-6);
+    color: var(--muted-foreground);
+    transition: color var(--duration-normal) var(--ease-out),
+                transform var(--duration-normal) var(--ease-out);
+  }
+
+  .contact-alt-card:hover .contact-alt-card-arrow {
+    color: var(--primary);
+    transform: translate(2px, -2px);
+  }
+</style>
