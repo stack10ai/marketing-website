@@ -90,9 +90,10 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
       dbTimeout,
     ]);
   } catch (err) {
-    // DB unavailable (e.g. no DATABASE_URL in local dev) — log and continue.
-    // The webhook below is the primary lead capture; don't fail the user.
-    console.error('[contact] DB insert failed:', err);
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error('[contact] DB insert failed:', msg);
+    // Temporarily surface DB error for diagnostics — remove after confirmed working
+    return json({ error: 'DB insert failed', detail: msg }, 500);
   }
 
   // ── Fire webhook (non-blocking — does not delay the response) ──
